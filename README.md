@@ -29,3 +29,9 @@ This work is licensed under **CC BY-NC-SA 4.0**
 ### Authors  
 Aqua75 · PulseChain Community Initiative  
 Version 2.1 – November 2025
+
+---
+
+📢 Discussion & Development
+Join the ProjectUSD Discussion Channel on Telegram:
+➡️ https://t.me/ProjectUSD_Discussion
