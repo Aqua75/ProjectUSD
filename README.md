@@ -33,5 +33,7 @@ Version 2.1 – November 2025
 ---
 
 📢 Discussion & Development
+
 Join the ProjectUSD Discussion Channel on Telegram:
+
 ➡️ https://t.me/ProjectUSD_Discussion
