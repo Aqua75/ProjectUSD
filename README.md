@@ -15,6 +15,7 @@
 - 🇫🇷 [Download French Edition (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-FR/ProjectUSD_Whitepaper_V2.1_FR_Francais.pdf)
 - 🇧🇷 [Download Brazilian Edition (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-PT-BR/ProjectUSD_Whitepaper_V2.1_pt-BR_Portugues.pdf)
 - 🇮🇹 [Download Italian Edition (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-IT/ProjectUSD_Whitepaper_V2.1_IT_Italiano.pdf)
+- 🇵🇱 [Download Polish Edition (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-PL/ProjectUSD_Whitepaper_V2.1_PL_Polski.pdf)
 
 ProjectUSD is a fully on-chain, algorithmic monetary system designed to achieve price stability without oracles, banks, or centralized control.  
 It represents the next evolution of decentralized finance - a self-regulating economy built entirely on logic, transparency, and immutable code.
