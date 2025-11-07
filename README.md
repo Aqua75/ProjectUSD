@@ -22,6 +22,7 @@
 - 🇷🇺 [Download Russian Edition (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-RU/ProjectUSD_Whitepaper_V2.1_RU_Russian.pdf)
 - 🇮🇳 [Download Hindi Edition (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-HI/ProjectUSD_Whitepaper_V2.1_HI_Hindi.pdf)
 - 🇹🇷 [Download Turkish Edition (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-TR/ProjectUSD_Whitepaper_V2.1_TR_Turkish.pdf)
+- 🇻🇳 [Download Vietnamese Edition (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-VI/ProjectUSD_Whitepaper_V2.1_VI_Vietnamese.pdf)
 
 ---
 
