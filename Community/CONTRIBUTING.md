@@ -80,12 +80,23 @@ can contact the author through the official ProjectUSD Telegram discussion group
 
 ## **3. Contribution Process**
 
-1. **Fork** this repository.  
+For most contributors, the safest way to make changes is by creating a **fork** —  
+a personal copy of this repository under your own GitHub account.  
+This allows you to work freely without affecting the official ProjectUSD repository.
+
+1. **Fork** this repository (for external contributors).  
+   - The fork will appear under your own GitHub account.  
+   - You can modify files, test ideas, and prepare pull requests safely.  
+
+   *(Note: The original author works directly in the main repository and does not require a fork.)*
+
 2. **Create a new branch** for your contribution:  
-   git checkout -b feature/your-topic
+git checkout -b feature/your-topic
+
 3. **Add or edit files**, making sure all changes are documented and formatted in Markdown.  
 4. **Commit** your changes with a clear message:  
-   git commit -m "Add stability diagram for controller mechanism"
+git commit -m "Add stability diagram for controller mechanism"
+
 5. **Submit a Pull Request** to the main branch.  
 
 When submitting your Pull Request, please include:
