@@ -71,7 +71,8 @@ can contact the author through the official ProjectUSD Telegram discussion group
 ---
 
 ### 💬 **Community Engagement**
-- Discuss new ideas in the official [Telegram group](https://t.me/ProjectUSD_Group)  
+- Follow official updates in the [Telegram Channel](https://t.me/ProjectUSD_PulseChain)  
+- Join the open [Discussion Group](https://t.me/ProjectUSD_Discussion) to share ideas and feedback  
 - Share educational threads or insights on X (Twitter) and other PulseChain forums  
 - Help onboard new members and guide them to relevant materials  
 
