@@ -94,6 +94,7 @@ Actions can include content removal, temporary restrictions, or, in severe cases
 
 As the project evolves, so will our conduct standards.  
 Suggestions for improvement to this Code can be made via Pull Request to:  
+https://github.com/Aqua75/ProjectUSD
 
 All revisions must preserve the spirit of open collaboration and mutual respect.
 
