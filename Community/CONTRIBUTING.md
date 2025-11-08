@@ -80,7 +80,7 @@ can contact the author through the official ProjectUSD Telegram discussion group
 
 ## **3. Contribution Process**
 
-For most contributors, the safest way to make changes is by creating a **fork** —  
+For most contributors, the safest way to make changes is by creating a **fork** -  
 a personal copy of this repository under your own GitHub account.  
 This allows you to work freely without affecting the official ProjectUSD repository.
 
