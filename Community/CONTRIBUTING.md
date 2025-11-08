@@ -81,7 +81,7 @@ can contact the author through the official ProjectUSD Telegram discussion group
 ## **3. Contribution Process**
 
 1. **Fork** this repository.  
-2. **Create a new branch** for your contribution:
+2. **Create a new branch** for your contribution:  
    git checkout -b feature/your-topic
 3. **Add or edit files**, making sure all changes are documented and formatted in Markdown.  
 4. **Commit** your changes with a clear message:  
