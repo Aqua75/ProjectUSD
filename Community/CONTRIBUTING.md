@@ -81,17 +81,21 @@ can contact the author through the official ProjectUSD Telegram discussion group
 ## **3. Contribution Process**
 
 1. **Fork** this repository.  
-2. **Create a new branch** for your contribution:  
+2. **Create a new branch** for your contribution:
+   git checkout -b feature/your-topic
 3. **Add or edit files**, making sure all changes are documented and formatted in Markdown.  
 4. **Commit** your changes with a clear message:  
+   git commit -m "Add stability diagram for controller mechanism"
 5. **Submit a Pull Request** to the main branch.  
-Include:
+
+When submitting your Pull Request, please include:
 - A brief description of the contribution  
 - Relevant references (whitepaper sections or equations)  
 - Any dependencies or tests, if applicable  
 
 All submissions will be reviewed openly by the community or maintainers.  
 If the content aligns with the philosophy and is technically accurate, it will be merged.
+
 
 ---
 
