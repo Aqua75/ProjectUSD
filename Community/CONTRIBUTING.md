@@ -96,7 +96,6 @@ When submitting your Pull Request, please include:
 All submissions will be reviewed openly by the community or maintainers.  
 If the content aligns with the philosophy and is technically accurate, it will be merged.
 
-
 ---
 
 ## **4. Quality Standards**
@@ -106,7 +105,8 @@ To maintain the credibility of the project, please ensure:
 - All claims or explanations are **verifiable** or **referenced** from the official whitepaper.  
 - Code contributions include **unit tests** or **simulation results**.  
 - Documentation follows **Markdown formatting** (for GitHub readability).  
-- English is preferred for technical documentation; translations are welcome in `/Whitepaper/`.
+- English is preferred for all technical documentation (files under `/Docs/` and `/Architecture/`).  
+- Translations of the Whitepaper are published separately under `/Whitepaper/`.
 
 ---
 
