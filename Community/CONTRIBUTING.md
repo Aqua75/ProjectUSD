@@ -51,8 +51,11 @@ ProjectUSD_Whitepaper_V2.1_[LanguageCode]_[LanguageName].pdf
 For example:
 
 ProjectUSD_Whitepaper_V2.1_FR_Francais.pdf
+
 ProjectUSD_Whitepaper_V2.1_TR_Turkish.pdf
+
 ProjectUSD_Whitepaper_V2.1_KR_Korean.pdf
+
 ProjectUSD_Whitepaper_V2.1_ID_Indonesian.pdf
 
 Community members who wish to assist (for example with proofreading or layout formatting)  
