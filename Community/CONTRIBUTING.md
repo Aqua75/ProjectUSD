@@ -45,12 +45,17 @@ See [`Docs/Developer_Guidelines.md`](../Docs/Developer_Guidelines.md) for full d
 ### 🌐 **Translations**
 All official translations of the ProjectUSD Whitepaper are created and maintained by the original author.  
 The translated editions are published in the `/Whitepaper/` directory using the following naming format:
+
 ProjectUSD_Whitepaper_V2.1_<LanguageCode>_<LanguageName>.pdf
 
 For example:
+
 ProjectUSD_Whitepaper_V2.1_FR_Francais.pdf
+
 ProjectUSD_Whitepaper_V2.1_TR_Turkish.pdf
+
 ProjectUSD_Whitepaper_V2.1_KR_Korean.pdf
+
 ProjectUSD_Whitepaper_V2.1_ID_Indonesian.pdf
 
 Community members who wish to assist (for example with proofreading or layout formatting)  
