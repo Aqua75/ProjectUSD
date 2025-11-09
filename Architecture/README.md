@@ -36,7 +36,7 @@ It describes how on-chain components interact to maintain equilibrium, autonomy,
 - **On-Chain Autonomy:** No external oracles, no human intervention.  
 - **Mathematical Feedback:** Stability arises from algorithmic reaction, not fixed pegs.  
 - **Transparency by Code:** Every variable and process verifiable on-chain.  
-- **Freeze Event:** Once activated, ProjectUSD becomes immutable and self-sustaining.  
+- **Freeze Event (Core only):** Once activated, only the **Immutable Core** becomes unchangeable; peripheral modules remain adjustable through timelocked governance.
 
 ---
 
