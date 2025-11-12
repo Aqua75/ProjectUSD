@@ -67,8 +67,8 @@ Erläuterung:
 
 | Kürzel | Bedingung | Bedeutung |
 |---------|------------|-----------|
-| I1 | `|P−R|/R ≤ 2 %` über N Epochen im Gleichgewicht | Peg bleibt innerhalb definierter Toleranz |
-| I2 | `|Δr| ≤ δr_max` immer | RateLimiter greift korrekt |
+| I1 | &#124;P−R&#124;/R ≤ 2 % über N Epochen im Gleichgewicht | Peg bleibt innerhalb definierter Toleranz |
+| I2 | &#124;Δr&#124; ≤ δr_max immer | RateLimiter greift korrekt |
 | I3 | `r ≥ 0` und `r ≤ r_cap` | keine negativen oder explosiven Zinsen |
 | I4 | `SurplusBuffer ≥ 0` | Puffer kann nie negativ werden |
 | I5 | `LimiterHit% < 25 %` | System operiert meist innerhalb Regelbandes |
@@ -140,7 +140,8 @@ Erläuterung:
 
 ## 9. Verification (Prüf- & Validierungsleitfaden)
 
-Ziel: Nachweis, dass der Controller P → R innerhalb definierter Halbwertszeit führt, ohne Über- oder Untersteuerung.
+**Ziel:**  
+Nachweis, dass der Controller **P → R** innerhalb definierter Halbwertszeit führt, ohne Über- oder Untersteuerung.
 
 **Methoden:**
 
@@ -154,9 +155,9 @@ Ziel: Nachweis, dass der Controller P → R innerhalb definierter Halbwertszeit 
 
 - **TelemetryAudit**  
   – Korrelation ε → Δr im Subgraph prüfen  
-  – Veröffentlichung wöchentlicher „State of the Peg“ Berichte
+  – Veröffentlichung wöchentlicher *State of the Peg*-Berichte  
 
-Akzeptanzkriterium:
+**Akzeptanzkriterium:**  
 MedianPegAbweichung < 100 bp über 30 Epochen; Halbwertszeit ≤ 10 Epochen; LimiterHit % < 25 %.
 
 ---
