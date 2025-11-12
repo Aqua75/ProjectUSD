@@ -164,11 +164,13 @@ MedianPegAbweichung < 100 bp über 30 Epochen; Halbwertszeit ≤ 10 Epochen; Lim
 
 ## 10. Hinweise & Risiken
 
-- Controller stabilisiert nur den internen Gleichgewichtspreis R; externer USD-Wert von PLS bleibt volatil.
+- Der Controller stabilisiert ausschließlich den **internen Gleichgewichtspreis R**, also das Verhältnis zwischen **PLS und ProjectUSD Coin**.  
+  Der externe Marktwert von PLS bleibt dabei volatil.  
 
-- Bei dauerhaftem DEX-Volumenmangel greifen Orakel-Fallback & Limiter.
+- Bei dauerhaftem Mangel an DEX-Liquidität greifen die Fallback-Mechanismen des Orakels und der RateLimiter.  
 
-- Psychologische Panikphasen können Abweichungen verlängern; System bleibt aber messbar stabil.
+- Psychologische Marktphasen (Panik oder Überhitzung) können temporäre Abweichungen verlängern;  
+  das System bleibt jedoch mathematisch messbar stabil.
 
 ---
 
