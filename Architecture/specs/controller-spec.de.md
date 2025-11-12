@@ -32,6 +32,11 @@ Damit ersetzt ProjectUSD externe Peg-Versprechen durch **Rückkopplungs-Regelung
 | `SurplusBuffer` | Systempuffer zur r-Glättung (Fees) | — | ProjectUSD |
 | `LimiterHit%` | Anteil der Epochen, in denen δr_max erreicht wird | — | % Epoche |
 
+**Legende:**  
+„—“ kennzeichnet Parameter ohne festen Beispielwert.  
+Diese Werte sind entweder dynamisch (z. B. ε), systemabhängig (z. B. EpochLength)  
+oder werden aus der Telemetrie abgeleitet (z. B. LimiterHit%).  
+
 ---
 
 ## 2. Funktionsprinzip (Algorithmus)
