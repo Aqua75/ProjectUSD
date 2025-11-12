@@ -32,6 +32,11 @@ ProjectUSD replaces external peg promises with **feedback-based stabilization**.
 | `SurplusBuffer` | System buffer for smoothing r via fees | — | ProjectUSD |
 | `LimiterHit%` | Share of epochs hitting the δr_max boundary | — | % of epochs |
 
+**Legend:**  
+“—” indicates parameters without a fixed example value.  
+These values are either dynamic (e.g., ε), system-defined (e.g., EpochLength),  
+or derived from telemetry (e.g., LimiterHit%).  
+
 ---
 
 ## 2. Algorithmic Principle
