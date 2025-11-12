@@ -133,13 +133,14 @@ Explanation:
 
 ## 9. Verification (Testing & Validation Guide)
 
-Goal: Demonstrate that the controller drives P → R within a defined half-life, without overshoot or undershoot.
+**Goal:**  
+Demonstrate that the controller drives **P → R** within a defined half-life, without overshoot or undershoot.
 
 **Methods:**
 
 - **SimKit (Backtest)**  
   – Feed PLS price series with ±30 %, ±50 %, ±70 % shocks  
-  – Apply `controllerStep()` per epoch  
+  – Apply `controllerStep()` once per epoch  
   – Metrics: half-life, limiter hit %, r volatility  
 
 - **UnitTests (Foundry)**  
@@ -147,9 +148,9 @@ Goal: Demonstrate that the controller drives P → R within a defined half-life,
 
 - **TelemetryAudit**  
   – Correlate ε → Δr in Subgraph  
-  – Publish weekly “State of the Peg” reports
+  – Publish weekly *State of the Peg* reports  
 
-Acceptance Criteria:
+**Acceptance Criteria:**  
 Median peg deviation < 100 bp over 30 epochs; half-life ≤ 10 epochs; LimiterHit % < 25 %.
 
 ---
