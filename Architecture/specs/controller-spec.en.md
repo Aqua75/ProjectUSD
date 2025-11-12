@@ -64,11 +64,11 @@ Explanation:
 
 | ID | Condition | Meaning |
 |----|------------|----------|
-| I1 | \`|P−R|/R ≤ 2 %\` over N epochs in equilibrium | Peg remains within defined tolerance |
-| I2 | \`|Δr| ≤ δr_max\` always | Rate limiter works correctly |
-| I3 | \`r ≥ 0\` and \`r ≤ r_cap\` | No negative or explosive interest rates |
-| I4 | \`SurplusBuffer ≥ 0\` | Buffer can never become negative |
-| I5 | \`LimiterHit% < 25 %\` | System operates mostly within normal bounds |
+| I1 | &#124;P−R&#124;/R ≤ 2 % over N epochs in equilibrium | Peg remains within defined tolerance |
+| I2 | &#124;Δr&#124; ≤ δr_max always | Rate limiter works correctly |
+| I3 | `r ≥ 0` and `r ≤ r_cap` | No negative or explosive interest rates |
+| I4 | `SurplusBuffer ≥ 0` | Buffer can never become negative |
+| I5 | `LimiterHit% < 25 %` | System operates mostly within normal bounds |
 
 ---
 
