@@ -3,6 +3,7 @@ title: "ProjectUSD – Controller SPEC v1"
 status: "Draft"
 last_updated: "2025-11-12"
 author: "Aqua75"
+language: "de"
 related_whitepaper_sections: ["Kap. 3 – Rückkopplung (R/r)", "Kap. 5.3 – Rate Limiter & Security Stack", "Glossar S. 20 – 21"]
 ---
 
