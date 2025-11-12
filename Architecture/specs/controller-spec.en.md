@@ -62,13 +62,13 @@ Explanation:
 
 ## 3. Invariants
 
-| ID | Condition               | Meaning                                     |                                        |                                      |
-| -- | ----------------------- | ------------------------------------------- | -------------------------------------- | ------------------------------------ |
-| I1 | `                       | P−R                                         | /R ≤ 2 %` over N epochs in equilibrium | Peg remains within defined tolerance |
-| I2 | `                       | Δr                                          | ≤ δr_max` always                       | Rate limiter works correctly         |
-| I3 | `r ≥ 0` and `r ≤ r_cap` | No negative or explosive interest rates     |                                        |                                      |
-| I4 | `SurplusBuffer ≥ 0`     | Buffer can never become negative            |                                        |                                      |
-| I5 | `LimiterHit% < 25 %`    | System operates mostly within normal bounds |                                        |                                      |
+| ID  | Condition | Meaning |
+|-----|------------|----------|
+| I1  | `|P−R|/R ≤ 2 %` over N epochs in equilibrium | Peg remains within defined tolerance |
+| I2  | `|Δr| ≤ δr_max` always | Rate limiter works correctly |
+| I3  | `r ≥ 0` and `r ≤ r_cap` | No negative or explosive interest rates |
+| I4  | `SurplusBuffer ≥ 0` | Buffer can never become negative |
+| I5  | `LimiterHit% < 25 %` | System operates mostly within normal bounds |
 
 ---
 
@@ -135,19 +135,19 @@ Explanation:
 
 Goal: Demonstrate that the controller drives P → R within a defined half-life, without overshoot or undershoot.
 
-Methods:
+**Methods:**
 
-SimKit (Backtest)
-– Feed PLS price series with ±30 %, ±50 %, ±70 % shocks
-– Apply controllerStep() per epoch
-– Metrics: half-life, limiter hits %, r volatility
+- **SimKit (Backtest)**  
+  – Feed PLS price series with ±30 %, ±50 %, ±70 % shocks  
+  – Apply `controllerStep()` per epoch  
+  – Metrics: half-life, limiter hit %, r volatility  
 
-UnitTests (Foundry)
-– Run ε, deadband, and limiter test cases C-01 – C-04
+- **UnitTests (Foundry)**  
+  – Run ε, deadband, and limiter test cases C-01 – C-04  
 
-TelemetryAudit
-– Correlate ε → Δr in Subgraph
-– Publish weekly “State of the Peg” reports
+- **TelemetryAudit**  
+  – Correlate ε → Δr in Subgraph  
+  – Publish weekly “State of the Peg” reports
 
 Acceptance Criteria:
 Median peg deviation < 100 bp over 30 epochs; half-life ≤ 10 epochs; LimiterHit % < 25 %.
