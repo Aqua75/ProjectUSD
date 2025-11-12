@@ -21,9 +21,9 @@ ProjectUSD replaces external peg promises with **feedback-based stabilization**.
 
 | Parameter | Description | Example | Unit |
 |------------|-------------|----------|------|
-| `R` | Equilibrium price (ProjectUSD → PLS) | 1.0000 | PLS per internal USD |
-| `P` | Market price (ProjectUSD on DEX / MedianTWAP) | 0.998–1.002 | PLS per USD |
-| `ε` | Deviation = P − R | — | PLS per USD |
+| `R` | Equilibrium price (ProjectUSD → PLS) | 1.0000 | PLS per ProjectUSD Coin (system equilibrium) |
+| `P` | Market price (ProjectUSD on DEX / MedianTWAP) | 0.998–1.002 | PLS per ProjectUSD Coin (market) |
+| `ε` | Deviation = P − R | — | PLS per ProjectUSD Coin (market) |
 | `r` | System rate (interest/debt rate per epoch) | 0 – 0.05 | 1/epoch |
 | `EpochLength` | Duration of one control cycle (e.g. 3600 blocks) | — | Blocks |
 | `Kp` | Proportional gain of the controller | 0.5 – 1.5 | — |
@@ -157,9 +157,14 @@ Median peg deviation < 100 bp over 30 epochs; half-life ≤ 10 epochs; LimiterHi
 
 ## 10. Notes & Risks
 
-- The controller stabilizes the internal equilibrium price R only; the external USD value of PLS remains volatile.
-- In cases of sustained low DEX liquidity, the oracle fallback and limiter mechanisms activate.
-- Psychological panic behavior can extend deviations, but the system remains measurably stable.
+- The controller stabilizes only the **internal equilibrium price R**,  
+  i.e., the relationship between **PLS and ProjectUSD Coin**.  
+  The external market value of PLS remains volatile.  
+
+- In periods of persistently low DEX liquidity, the oracle fallback and rate limiter mechanisms activate.  
+
+- Psychological market phases (panic or exuberance) may extend deviations temporarily,  
+  but the system remains mathematically measurable and stable.
 
 ---
 
