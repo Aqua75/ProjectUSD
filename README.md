@@ -26,6 +26,7 @@
 - 🇮🇩 [Download Indonesian Edition (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-ID/ProjectUSD_Whitepaper_V2.1_ID_Indonesian.pdf)
 - 🇰🇷 [Download Korean Edition (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-KR/ProjectUSD_Whitepaper_V2.1_KR_Korean.pdf)
 - 🇸🇦 [Download Arabic Edition (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-AR/ProjectUSD_Whitepaper_V2.1_AR_Arabic.pdf)
+- 🕉 [Download Sanskrit Edition (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-SA/ProjectUSD_Whitepaper_V2.1_SA_Sanskrit.pdf) *(Experimental)*
 
 ---
 
