@@ -21,9 +21,9 @@ Damit ersetzt ProjectUSD externe Peg-Versprechen durch **Rückkopplungs-Regelung
 
 | Parameter | Beschreibung | Beispielwert | Einheit |
 |------------|---------------|---------------|----------|
-| `R` | Gleichgewichtspreis (ProjectUSD → PLS) | 1.0000 | PLS pro USD intern |
-| `P` | Marktpreis (ProjectUSD auf DEX / MedianTWAP) | 0.998–1.002 | PLS pro USD |
-| `ε` | Abweichung = P − R | — | PLS pro USD |
+| `R` | Gleichgewichtspreis (ProjectUSD → PLS) | 1.0000 | PLS pro ProjectUSD Coin (Systemgleichgewicht) |
+| `P` | Marktpreis (ProjectUSD auf DEX / MedianTWAP) | 0.998–1.002 | PLS pro ProjectUSD Coin (Marktpreis) |
+| `ε` | Abweichung = P − R | — | PLS pro ProjectUSD Coin (Marktpreis) |
 | `r` | Systemrate (Zins/Schuldkosten p. Epoche) | 0 – 0.05 | 1/Epoche |
 | `EpochLength` | Dauer einer Regelperiode (z. B. 3600 Blöcke) | — | Blöcke |
 | `Kp` | Proportional-Verstärkung (des Controllers) | 0.5 – 1.5 | — |
