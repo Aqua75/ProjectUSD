@@ -64,13 +64,13 @@ Erläuterung:
 
 ## 3. Invarianten
 
-| Kürzel | Bedingung               | Bedeutung                                   |                                           |                                           |
-| ------ | ----------------------- | ------------------------------------------- | ----------------------------------------- | ----------------------------------------- |
-| I1     | `                       | P−R                                         | /R ≤ 2 %` über N Epochen im Gleichgewicht | Peg bleibt innerhalb definierter Toleranz |
-| I2     | `                       | Δr                                          | ≤ δr_max` immer                           | RateLimiter greift korrekt                |
-| I3     | `r ≥ 0` und `r ≤ r_cap` | keine negativen oder explosiven Zinsen      |                                           |                                           |
-| I4     | `SurplusBuffer ≥ 0`     | Puffer kann nie negativ werden              |                                           |                                           |
-| I5     | `LimiterHit% < 25 %`    | System operiert meist innerhalb Regelbandes |                                           |                                           |
+| Kürzel | Bedingung | Bedeutung |
+|---------|------------|-----------|
+| I1 | `|P−R|/R ≤ 2 %` über N Epochen im Gleichgewicht | Peg bleibt innerhalb definierter Toleranz |
+| I2 | `|Δr| ≤ δr_max` immer | RateLimiter greift korrekt |
+| I3 | `r ≥ 0` und `r ≤ r_cap` | keine negativen oder explosiven Zinsen |
+| I4 | `SurplusBuffer ≥ 0` | Puffer kann nie negativ werden |
+| I5 | `LimiterHit% < 25 %` | System operiert meist innerhalb Regelbandes |
 
 ---
 
@@ -141,19 +141,19 @@ Erläuterung:
 
 Ziel: Nachweis, dass der Controller P → R innerhalb definierter Halbwertszeit führt, ohne Über- oder Untersteuerung.
 
-Methoden:
+**Methoden:**
 
-SimKit (Backtest)
-– PLS-Preisreihe mit ±30 / 50 / 70 % Schocks speisen
-– controllerStep() pro Epoche anwenden
-– Metriken: Halbwertszeit, LimiterHit %, rVolatility
+- **SimKit (Backtest)**  
+  – PLS-Preisreihe mit ±30 / 50 / 70 % Schocks speisen  
+  – `controllerStep()` pro Epoche anwenden  
+  – Metriken: Halbwertszeit, LimiterHit %, rVolatility  
 
-UnitTests (Foundry)
-– ε, Deadband, Limiter Testfälle C-01 – C-04 ausführen
+- **UnitTests (Foundry)**  
+  – ε, Deadband, Limiter Testfälle C-01 – C-04 ausführen  
 
-TelemetryAudit
-– Korrelation ε → Δr in Subgraph prüfen
-– Veröffentlichung wöchentlicher „State of the Peg“ Berichte
+- **TelemetryAudit**  
+  – Korrelation ε → Δr im Subgraph prüfen  
+  – Veröffentlichung wöchentlicher „State of the Peg“ Berichte
 
 Akzeptanzkriterium:
 MedianPegAbweichung < 100 bp über 30 Epochen; Halbwertszeit ≤ 10 Epochen; LimiterHit % < 25 %.
