@@ -144,7 +144,7 @@ Ziel: Nachweis, dass der Controller P → R innerhalb definierter Halbwertszeit 
 **Methoden:**
 
 - **SimKit (Backtest)**  
-  – PLS-Preisreihe mit ±30 / 50 / 70 % Schocks speisen  
+  – PLS-Preisreihe mit ±30 %, ±50 %, ±70 % Schocks speisen  
   – `controllerStep()` pro Epoche anwenden  
   – Metriken: Halbwertszeit, LimiterHit %, rVolatility  
 
