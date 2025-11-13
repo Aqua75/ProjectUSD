@@ -230,6 +230,7 @@ Diese Elemente werden erst nach Backtesting & Simulation ergänzt.
 
 ## 11. Lizenz & Referenzen
 
-© 2025 Aqua75 / ProjectUSD
-Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation
+© 2025 Aqua75 / ProjectUSD  
+Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation  
 Verweis: ProjectUSD Whitepaper V2.1 (Kap. 4, 5.2, Glossar S. 22–24)
+
