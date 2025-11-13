@@ -25,8 +25,8 @@ the oracle must:
 - incorporate multiple DEX pools  
 - fail safely without creating instability  
 
-This document describes the v1 design:
-MedianTWAP across multiple DEX pools, weighted by liquidity.
+This document describes the v1 design:  
+**MedianTWAP** across multiple DEX pools, weighted by liquidity.
 
 ---
 
@@ -54,9 +54,9 @@ The oracle uses only PulseChain DEX pools that trade ProjectUSD Coin against PLS
 
 Defined as:
 
-- Pool1: ProjectUSD/PLS (DEX A)
-- Pool2: ProjectUSD/PLS (DEX B)
-- Pool3: ProjectUSD/PLS (DEX C)
+- `Pool1`: ProjectUSD/PLS (DEX A)  
+- `Pool2`: ProjectUSD/PLS (DEX B)  
+- `Pool3`: ProjectUSD/PLS (DEX C)  
 
 ...
 
@@ -115,9 +115,9 @@ The final stabilization uses a median across all valid TWAP values:
 - resistant to single-pool manipulation  
 - ideal across varying liquidity profiles  
 
-Final oracle output:
-`P = P_final`
-Unit: PLS per ProjectUSD Coin (market price)
+**Final oracle output:**  
+`P = P_final`  
+Unit: **PLS per ProjectUSD Coin (market price)**
 
 ---
 
@@ -164,7 +164,7 @@ This prevents a broken pool from destabilizing the system.
 
 All values are logged on-chain, e.g.:
 
-OracleUpdate(P, poolsUsed, block.number)
+`OracleUpdate(P, poolsUsed, block.number)`
 
 ---
 
@@ -214,18 +214,18 @@ Demonstrate that `P` remains stable, robust, and manipulation-resistant through 
 
 ## 10. Planned Enhancements
 
-This section intentionally describes future features that are not part of the v1 design.
+This section intentionally describes future features that are **not** part of the v1 design.
 
 Potential extensions:
 
-MAD Filter (Median Absolute Deviation)
-→ stronger outlier detection
+- **MAD Filter (Median Absolute Deviation)**  
+  → stronger outlier detection  
 
-Volatility Channel (internal PLS-volatility indicator)
-→ filtering extreme market phases
+- **Volatility Channel (internal PLS-volatility indicator)**  
+  → filtering extreme market phases  
 
-Multi-stage smoothing
-→ combination of MedianTWAP and predictive bands
+- **Multi-stage smoothing**  
+  → combination of MedianTWAP and predictive bands  
 
 These features will be added only after backtesting and simulation.
 
