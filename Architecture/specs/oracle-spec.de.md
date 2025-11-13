@@ -1,11 +1,15 @@
+---
 title: "ProjectUSD – Oracle SPEC v1"
 status: "Draft"
 last_updated: "2025-11-14"
 author: "Aqua75"
 language: "de"
 related_whitepaper_sections: ["Kap. 4 – Preissignale", "Kap. 5.2 – MedianTWAP", "Glossar S. 22–24"]
-ProjectUSD – Oracle SPEC v1
-Zweck
+---
+
+# ProjectUSD – Oracle SPEC v1
+
+## Zweck
 
 Das Oracle liefert den Marktpreis P von ProjectUSD Coin in PLS an den Controller.
 Es ist damit die primäre externe Eingabegröße für das Fehlersignal:
@@ -31,19 +35,19 @@ MedianTWAP über mehrere DEX-Pools, gewichtet nach Liquidität.
 
 ## 1. Grundprinzipien
 
-Das ProjectUSD Oracle (v1) basiert auf drei Kernideen:
+Das ProjectUSD Oracle (v1) basiert auf vier Kernideen:
 
-TWAP (Time-Weighted Average Price)
-→ glättet einzelne Trades / kurzfristige Manipulationsversuche.
+- **TWAP (Time-Weighted Average Price)**  
+  → glättet einzelne Trades und kurzfristige Manipulationsversuche.
 
-Mehrere Pools
-→ mehrere Informationsquellen reduzieren Angriffsvektoren.
+- **Mehrere Pools**  
+  → mehrere Informationsquellen reduzieren Angriffsvektoren.
 
-Liquiditätsgewichtung
-→ tiefe Pools haben mehr Aussagekraft als dünne.
+- **Liquiditätsgewichtung**  
+  → tiefere Pools haben mehr Aussagekraft als dünne.
 
-Medianbildung
-→ schützt vor Ausreißern (einzelne manipulierte Pools).
+- **Medianbildung**  
+  → schützt vor Ausreißern (einzelne manipulierte Pools).
 
 ---
 
@@ -53,21 +57,16 @@ Das Oracle nutzt ausschließlich PulseChain DEX-Paare, die ProjectUSD Coin gegen
 
 Bezeichnet als:
 
-Pool1: ProjectUSD/PLS (DEX A)
+- `Pool1`: ProjectUSD/PLS (DEX A)  
+- `Pool2`: ProjectUSD/PLS (DEX B)  
+- `Pool3`: ProjectUSD/PLS (DEX C)  
+- ...
 
-Pool2: ProjectUSD/PLS (DEX B)
+**Einschränkungen:**
 
-Pool3: ProjectUSD/PLS (DEX C)
-
-usw.
-
-Einschränkungen:
-
-nur Pools mit ausreichender historischer Liquidität
-
-nur Pools mit gültiger Reservenstruktur (keine leeren oder pausierten Paare)
-
-nur Pools mit konstanter Produktlogik (x*y = k / V3 sqrt(K) Gewichtung)
+- nur Pools mit ausreichender historischer Liquidität  
+- nur Pools mit gültiger Reservenstruktur (keine leeren oder pausierten Paare)  
+- nur Pools mit konstanter Produktlogik (`x * y = k` bzw. V3-√K-Gewichtung)
 
 ---
 
@@ -124,17 +123,19 @@ Einheit: PLS pro ProjectUSD Coin (Marktpreis)
 
 ## 5. Fail-Safe / STALE-Modus
 
-Ein Pool gilt als STALE, wenn:
-keine neuen Beobachtungen innerhalb STALEWindow
-Reserven unverändert trotz DEX-Aktivität
-TWAP nicht berechenbar
-On-chain Fehler im Reserveslot
+Ein Pool gilt als **STALE**, wenn:
 
-Regel:
-STALE-Pools werden für diese Epoche ignoriert
-Wenn alle Pools STALE → Oracle liefert `P = P_prev (Freeze)`
-Controller setzt in diesem Fall `Δr = 0`
-(siehe Controller-SPEC)
+- keine neuen Beobachtungen innerhalb `STALEWindow` vorliegen  
+- Reserven unverändert bleiben, obwohl auf der DEX Aktivität stattfindet  
+- der TWAP nicht berechenbar ist  
+- ein On-chain-Fehler im Reserveslot vorliegt  
+
+**Regel:**
+
+- STALE-Pools werden für diese Epoche ignoriert.  
+- Wenn alle Pools STALE sind → Oracle liefert `P = P_prev` (Freeze).  
+- Der Controller setzt in diesem Fall `Δr = 0`  
+  (siehe Controller-SPEC).
 
 Damit wird verhindert, dass ein defekter Pool Instabilität erzeugt.
 
@@ -142,26 +143,28 @@ Damit wird verhindert, dass ein defekter Pool Instabilität erzeugt.
 
 ## 6. Sicherheitsmechanismen
 
-Time dilation: Mindestdauer für TWAP, um Flash-Manipulation zu verhindern.
-Reserve Check: validiert, dass x * y stabil bleibt.
-MaxDeviationFilter: wenn ein Pool mehr als 10 % von der Medianlinie abweicht → disqualifiziert.
-MinLiquidityFilter: Pools unter LiquidityFloor werden nicht berücksichtigt.
-STALE-Marker: automatische Kennzeichnung fehlerhafter Pools.
+- **Time dilation** – Mindestdauer für TWAP, um Flash-Manipulation zu verhindern.  
+- **Reserve Check** – validiert, dass `x * y` im erwarteten Rahmen bleibt.  
+- **MaxDeviationFilter** – wenn ein Pool mehr als `10 %` von der Medianlinie abweicht → disqualifiziert.  
+- **MinLiquidityFilter** – Pools unter `LiquidityFloor` werden nicht berücksichtigt.  
+- **STALE-Marker** – automatische Kennzeichnung fehlerhafter Pools.
 
 ---
 
 ## 7. Integrationslogik mit dem Controller
 
-Ablauf pro Epoche:
-Oracle sammelt TWAP-Daten aus allen Pools
-Filter anwenden (STALE, MinLiquidity, MaxDeviation)
-Median bestimmen
-Wert als P publizieren
-Controller liest P und berechnet `ε = P − R`
-Controller erzeugt neues r_next
+**Ablauf pro Epoche:**
+
+1. Oracle sammelt TWAP-Daten aus allen Pools.  
+2. Filter anwenden (STALE, MinLiquidity, MaxDeviation).  
+3. Median bestimmen.  
+4. Wert als `P` publizieren.  
+5. Controller liest `P` und berechnet `ε = P − R`.  
+6. Controller erzeugt neues `r_next`.
 
 Alle Werte werden on-chain geloggt, z. B.:
-OracleUpdate(P, poolsUsed, block.number)
+
+`OracleUpdate(P, poolsUsed, block.number)`
 
 ---
 
@@ -181,8 +184,8 @@ Hinweis: Alles klar als „Design in Progress“ markiert.
 
 ## 9. Verification (Prüf- & Validierungsleitfaden)
 
-Ziel:
-Nachweis, dass P durch TWAP + Median stabil, robust und resistent gegen Manipulation ist.
+**Ziel:**  
+Nachweis, dass `P` durch TWAP + Median stabil, robust und resistent gegen Manipulation ist.
 
 Methoden:
 
@@ -201,10 +204,11 @@ Methoden:
 – Abweichung zu Median pro Pool
 – Monitoring des STALE-Status
 
-Akzeptanzkriterien:
-Medianabweichung < 1 % über 90 % der Epochen
-kein Flash-Manipulationsfenster innerhalb TWAPWindow
-Oracle-Ausfall führt zu kontrolliertem Controller-Δr = 0
+**Akzeptanzkriterien:**
+
+- Medianabweichung < 1 % über 90 % der Epochen  
+- kein Flash-Manipulationsfenster innerhalb `TWAPWindow`  
+- Oracle-Ausfall führt zu kontrolliertem `Controller-Δr = 0`
 
 ---
 
