@@ -50,7 +50,7 @@ The ProjectUSD Oracle (v1) is built on four fundamental ideas:
 
 ## 2. Data Sources (DEX Pools)
 
-The oracle uses only PulseChain DEX pools that trade ProjectUSD Coin against PLS.
+The oracle uses only **PulseChain DEX pools** that trade ProjectUSD Coin against PLS.
 
 Defined as:
 
@@ -143,11 +143,11 @@ This prevents a broken pool from destabilizing the system.
 
 ## 6. Safety Mechanisms
 
-- Time dilation – minimum TWAP duration to prevent flash manipulation
-- Reserve Check – validates that `x * y` remains within stable bounds
-- MaxDeviationFilter – pools deviating >10% from the median are disqualified
-- MinLiquidityFilter – pools below LiquidityFloor are ignored
-- STALE Marker – automatic tagging of faulty pools
+- **Time dilation** – minimum TWAP duration to prevent flash manipulation  
+- **Reserve Check** – validates that `x * y` remains within stable bounds  
+- **MaxDeviationFilter** – pools deviating >10% from the median are disqualified  
+- **MinLiquidityFilter** – pools below `LiquidityFloor` are ignored  
+- **STALE Marker** – automatic tagging of faulty pools  
 
 ---
 
