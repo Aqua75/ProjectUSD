@@ -73,12 +73,12 @@ nur Pools mit konstanter Produktlogik (x*y = k / V3 sqrt(K) Gewichtung)
 
 ## 3. Preisermittlung pro Pool
 
-3.1 Instant-Preis (Spot)
+### 3.1 Instant-Preis (Spot)
 
 Der Spotpreis eines AMM-Pools ist:
-P_spot = (Reserve_PLS / Reserve_ProjectUSD)
+`P_spot = (Reserve_PLS / Reserve_ProjectUSD)`
 
-3.2 TWAP pro Pool
+### 3.2 TWAP pro Pool
 
 Für jeden Pool wird ein TWAP über N Blöcke berechnet:
 P_twap = Σ (P_spot_i * Δt_i) / Σ Δt_i
@@ -87,9 +87,7 @@ Parameter:
 TWAPWindow = 900–3600 Blöcke
 MinObservations = 3
 
----
-
-## 3.3 Liquiditätsgewichtung
+### 3.3 Liquiditätsgewichtung
 
 Jeder Pool erhält ein Gewicht proportional zur Tiefe:
 w_i = sqrt(Reserve_PLS_i * Reserve_ProjectUSD_i)
@@ -100,7 +98,7 @@ Damit wird verhindert, dass dünne Pools das Ergebnis verzerren.
 
 ## 4. Aggregation über alle Pools
 
-4.1 Gewichteter Preis
+### 4.1 Gewichteter Preis
 
 Für jeden Pool:
 P_weighted_i = P_twap_i * w_i
@@ -108,9 +106,7 @@ P_weighted_i = P_twap_i * w_i
 Gesamtpreis:
 P_agg = (Σ P_weighted_i) / (Σ w_i)
 
----
-
-## 4.2 Medianbildung
+### 4.2 Medianbildung
 
 Zur finalen Stabilisierung wird ein Median über alle gültigen P_twap_i gebildet:
 P_final = median(P_twap_1, P_twap_2, ..., P_twap_n)
@@ -190,17 +186,17 @@ Nachweis, dass P durch TWAP + Median stabil, robust und resistent gegen Manipula
 
 Methoden:
 
-SimKit Backtests
+- **SimKit Backtests**
 – TWAP-Reaktion auf große Trades
 – Liquiditäts-Drops simulieren
 – Flash-Manipulationen testen
 
-Manipulation Tests
+- **Manipulation Tests**
 – Sandwich-Angriffe
 – Fake-Liquidität
 – Single-Pool-Angriffe
 
-TelemetryAudit
+- **TelemetryAudit**
 – Vergleich P_twap vs. P_spot
 – Abweichung zu Median pro Pool
 – Monitoring des STALE-Status
@@ -218,12 +214,14 @@ Dieser Abschnitt beschreibt bewusst zukünftige Features, die NICHT Teil des v1-
 
 Potenzielle Erweiterungen:
 
-MAD-Filter (Median Absolute Deviation)
-→ noch stärkere Ausreißererkennung
-Volatilitätskanal (interner PLS-Volatilitätsindikator)
-→ Filterung extrem instabiler Marktphasen
-Mehrstufige Preisglättung
-→ Kombination aus MedianTWAP und Vorhersageband
+- **MAD-Filter (Median Absolute Deviation)**  
+  → noch stärkere Ausreißererkennung
+
+- **Volatilitätskanal (interner PLS-Volatilitätsindikator)**  
+  → Filterung extrem instabiler Marktphasen
+
+- **Mehrstufige Preisglättung**  
+  → Kombination aus MedianTWAP und Vorhersageband
 
 Diese Elemente werden erst nach Backtesting & Simulation ergänzt.
 
