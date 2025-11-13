@@ -28,7 +28,7 @@ mehrere DEX-Pools berücksichtigen,
 
 fail-safe sein, ohne selbst Instabilität zu erzeugen.
 
-Dieses Dokument beschreibt das v1-Design (Option B):
+Dieses Dokument beschreibt das v1-Design:
 MedianTWAP über mehrere DEX-Pools, gewichtet nach Liquidität.
 
 ---
@@ -212,7 +212,7 @@ Methoden:
 
 ---
 
-## 10. Geplante Erweiterungen (Richtung Option C)
+## 10. Geplante Erweiterungen
 
 Dieser Abschnitt beschreibt bewusst zukünftige Features, die NICHT Teil des v1-Designs sind.
 
