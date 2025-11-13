@@ -1,10 +1,13 @@
+---
 title: "ProjectUSD – Oracle SPEC v1"
 status: "Draft"
 last_updated: "2025-11-14"
 author: "Aqua75"
 language: "en"
 related_whitepaper_sections: ["Ch. 4 – Price Signals", "Ch. 5.2 – MedianTWAP", "Glossary pp. 22–24"]
-ProjectUSD – Oracle SPEC v1
+---
+
+# ProjectUSD – Oracle SPEC v1
 
 ## Purpose
 
@@ -13,18 +16,14 @@ It is the primary external input for the error signal:
 
 `ε = P − R`
 
-Because ProjectUSD operates entirely without off-chain price feeds, banks, or centralized data sources,
+Because ProjectUSD operates entirely without off-chain price feeds, banks, or centralized data sources,  
 the oracle must:
 
-operate fully on-chain
-
-resist manipulation
-
-remain functional during low-liquidity conditions
-
-incorporate multiple DEX pools
-
-fail safely without creating instability
+- operate fully on-chain  
+- resist manipulation  
+- remain functional during low-liquidity conditions  
+- incorporate multiple DEX pools  
+- fail safely without creating instability  
 
 This document describes the v1 design:
 MedianTWAP across multiple DEX pools, weighted by liquidity.
@@ -35,17 +34,17 @@ MedianTWAP across multiple DEX pools, weighted by liquidity.
 
 The ProjectUSD Oracle (v1) is built on four fundamental ideas:
 
-TWAP (Time-Weighted Average Price)
-→ smooths out individual trades and short-term manipulation attempts.
+- **TWAP (Time-Weighted Average Price)**  
+  → smooths out individual trades and short-term manipulation attempts.  
 
-Multiple Pools
-→ reduces attack surface by combining several independent price sources.
+- **Multiple Pools**  
+  → reduces attack surface by combining several independent price sources.  
 
-Liquidity Weighting
-→ deeper pools carry more informational weight than shallow ones.
+- **Liquidity Weighting**  
+  → deeper pools carry more informational weight than shallow ones.  
 
-Median Filtering
-→ eliminates outliers (e.g., manipulated pools).
+- **Median Filtering**  
+  → eliminates outliers (e.g., manipulated pools).  
 
 ---
 
@@ -61,11 +60,11 @@ Defined as:
 
 ...
 
-Restrictions:
+**Restrictions:**
 
-- only pools with sufficient historical liquidity
-- only pools with valid reserve structure (no empty or paused pairs)
-- only pools using constant-product logic (x * y = k) or V3 √K liquidity model
+- only pools with sufficient historical liquidity  
+- only pools with valid reserve structure (no empty or paused pairs)  
+- only pools using constant-product logic (`x * y = k`) or V3 √K liquidity model  
 
 ---
 
@@ -81,11 +80,10 @@ Spot price of an AMM pool:
 Each pool computes a TWAP over N blocks:
 `P_twap = Σ (P_spot_i * Δt_i) / Σ Δt_i`
 
-Parameters:
+**Parameters:**
 
-TWAPWindow = 900–3600 blocks
-
-MinObservations = 3
+- `TWAPWindow = 900–3600 blocks`  
+- `MinObservations = 3`  
 
 ### 3.3 Liquidity Weighting
 
@@ -111,13 +109,11 @@ Aggregated price:
 The final stabilization uses a median across all valid TWAP values:
 `P_final = median(P_twap_1, P_twap_2, ..., P_twap_n)`
 
-Rationale:
+**Rationale:**
 
-robust against outliers
-
-resistant to single-pool manipulation
-
-ideal across varying liquidity profiles
+- robust against outliers  
+- resistant to single-pool manipulation  
+- ideal across varying liquidity profiles  
 
 Final oracle output:
 `P = P_final`
@@ -127,24 +123,19 @@ Unit: PLS per ProjectUSD Coin (market price)
 
 ## 5. Fail-Safe / STALE Mode
 
-A pool is considered STALE if:
+A pool is considered **STALE** if:
 
-no new observations within STALEWindow
+- no new observations within `STALEWindow`  
+- reserves remain unchanged despite DEX activity  
+- TWAP cannot be computed  
+- an on-chain reserve slot error is detected  
 
-reserves remain unchanged despite DEX activity
+**Rules:**
 
-TWAP cannot be computed
-
-an on-chain reserve slot error is detected
-
-Rules:
-
-STALE pools are ignored for the current epoch.
-
-If all pools become STALE → oracle outputs `P = P_prev` (freeze).
-
-The controller then sets `Δr = 0`
-(see Controller SPEC).
+- STALE pools are ignored for the current epoch.  
+- If **all** pools become STALE → oracle outputs `P = P_prev` (freeze).  
+- The controller then sets `Δr = 0`  
+  (see Controller SPEC).  
 
 This prevents a broken pool from destabilizing the system.
 
@@ -162,14 +153,14 @@ This prevents a broken pool from destabilizing the system.
 
 ## 7. Integration with the Controller
 
-Per-epoch process:
+**Per-epoch process:**
 
-- Oracle collects TWAP data from all pools.
-- Filters are applied (STALE, MinLiquidity, MaxDeviation).
-- Median is computed.
-- Value is published as P.
-- Controller reads P and computes `ε = P − R`.
-- Controller produces the new r_next.
+- Oracle collects TWAP data from all pools.  
+- Filters are applied (STALE, MinLiquidity, MaxDeviation).  
+- Median is computed.  
+- Value is published as `P`.  
+- Controller reads `P` and computes `ε = P − R`.  
+- Controller produces the new `r_next`.  
 
 All values are logged on-chain, e.g.:
 
@@ -193,33 +184,31 @@ Note: All elements clearly marked as “Design in Progress,” per quality stand
 
 ## 9. Verification (Testing & Validation Guide)
 
-Goal:
-Demonstrate that P remains stable, robust, and manipulation-resistant through TWAP + median filtering.
+**Goal:**  
+Demonstrate that `P` remains stable, robust, and manipulation-resistant through TWAP + median filtering.
 
-Methods:
+**Methods:**
 
-SimKit Backtests
-– TWAP response to large trades
-– simulated liquidity drops
-– flash manipulation tests
+- **SimKit Backtests**  
+  – TWAP response to large trades  
+  – simulated liquidity drops  
+  – flash manipulation tests  
 
-Manipulation Tests
-– sandwich attacks
-– fake-liquidity pools
-– single-pool attacks
+- **Manipulation Tests**  
+  – sandwich attacks  
+  – fake-liquidity pools  
+  – single-pool attacks  
 
-TelemetryAudit
-– compare P_twap vs. P_spot
-– deviation from per-pool median
-– STALE-status monitoring
+- **TelemetryAudit**  
+  – compare `P_twap` vs. `P_spot`  
+  – deviation from per-pool median  
+  – STALE-status monitoring  
 
-Acceptance Criteria:
+**Acceptance Criteria:**
 
-median deviation < 1% across 90% of epochs
-
-no flash-manipulation window within TWAPWindow
-
-oracle failure results in controlled `Controller-Δr = 0`
+- median deviation < 1% across 90% of epochs  
+- no flash-manipulation window within `TWAPWindow`  
+- oracle failure results in controlled `Controller-Δr = 0`  
 
 ---
 
@@ -244,6 +233,7 @@ These features will be added only after backtesting and simulation.
 
 ## 11. License & References
 
-© 2025 Aqua75 / ProjectUSD
-License: MIT for code, CC BY-NC-SA 4.0 for documentation
-Reference: ProjectUSD Whitepaper V2.1 (Ch. 4, 5.2, Glossary pp. 22–24)
+© 2025 Aqua75 / ProjectUSD  
+License: MIT for code, CC BY-NC-SA 4.0 for documentation  
+Reference: ProjectUSD Whitepaper V2.1 (Ch. 4, 5.2, Glossary pp. 22–24)  
+
