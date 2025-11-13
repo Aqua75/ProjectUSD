@@ -1,4 +1,3 @@
-```markdown
 title: "ProjectUSD – Oracle SPEC v1"
 status: "Draft"
 last_updated: "2025-11-14"
