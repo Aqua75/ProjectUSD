@@ -14,19 +14,15 @@ related_whitepaper_sections: ["Kap. 4 – Preissignale", "Kap. 5.2 – MedianTWA
 Das Oracle liefert den Marktpreis P von ProjectUSD Coin in PLS an den Controller.
 Es ist damit die primäre externe Eingabegröße für das Fehlersignal:
 
-ε = P − R
+`ε = P − R`
 
 Da ProjectUSD vollständig ohne Offchain-Preisfeeds, Banken oder zentrale Datenquellen auskommt, muss das Oracle:
 
-ausschließlich on-chain arbeiten,
-
-manipulationsresistent sein,
-
-mit geringer Liquidität zurechtkommen,
-
-mehrere DEX-Pools berücksichtigen,
-
-fail-safe sein, ohne selbst Instabilität zu erzeugen.
+- ausschließlich on-chain arbeiten  
+- manipulationsresistent sein  
+- mit geringer Liquidität zurechtkommen  
+- mehrere DEX-Pools berücksichtigen  
+- fail-safe sein, ohne selbst Instabilität zu erzeugen  
 
 Dieses Dokument beschreibt das v1-Design:
 MedianTWAP über mehrere DEX-Pools, gewichtet nach Liquidität.
@@ -83,8 +79,9 @@ Für jeden Pool wird ein TWAP über N Blöcke berechnet:
 `P_twap = Σ (P_spot_i * Δt_i) / Σ Δt_i`
 
 Parameter:
-TWAPWindow = 900–3600 Blöcke
-MinObservations = 3
+
+- `TWAPWindow = 900–3600 Blöcke`  
+- `MinObservations = 3`
 
 ### 3.3 Liquiditätsgewichtung
 
@@ -111,9 +108,9 @@ Zur finalen Stabilisierung wird ein Median über alle gültigen P_twap_i gebilde
 `P_final = median(P_twap_1, P_twap_2, ..., P_twap_n)`
 
 Warum Median?
-robust gegen Ausreißer
-resistent gegen einzelne manipulierte Pools
-ideal bei unterschiedlichen Liquiditätsprofilen
+- robust gegen Ausreißer  
+- resistent gegen einzelne manipulierte Pools  
+- ideal bei unterschiedlichen Liquiditätsprofilen
 
 Finaler Oracle-Output:
 `P = P_final`
@@ -187,22 +184,22 @@ Hinweis: Alles klar als „Design in Progress“ markiert.
 **Ziel:**  
 Nachweis, dass `P` durch TWAP + Median stabil, robust und resistent gegen Manipulation ist.
 
-Methoden:
+**Methoden:**
 
-- **SimKit Backtests**
-– TWAP-Reaktion auf große Trades
-– Liquiditäts-Drops simulieren
-– Flash-Manipulationen testen
+- **SimKit Backtests**  
+  – TWAP-Reaktion auf große Trades  
+  – Liquiditäts-Drops simulieren  
+  – Flash-Manipulationen testen  
 
-- **Manipulation Tests**
-– Sandwich-Angriffe
-– Fake-Liquidität
-– Single-Pool-Angriffe
+- **Manipulation Tests**  
+  – Sandwich-Angriffe  
+  – Fake-Liquidität  
+  – Single-Pool-Angriffe  
 
-- **TelemetryAudit**
-– Vergleich P_twap vs. P_spot
-– Abweichung zu Median pro Pool
-– Monitoring des STALE-Status
+- **TelemetryAudit**  
+  – Vergleich `P_twap` vs. `P_spot`  
+  – Abweichung zum Median pro Pool  
+  – Monitoring des STALE-Status
 
 **Akzeptanzkriterien:**
 
@@ -214,7 +211,7 @@ Methoden:
 
 ## 10. Geplante Erweiterungen
 
-Dieser Abschnitt beschreibt bewusst zukünftige Features, die NICHT Teil des v1-Designs sind.
+Dieser Abschnitt beschreibt bewusst zukünftige Features, die **nicht** Teil des v1-Designs sind.
 
 Potenzielle Erweiterungen:
 
