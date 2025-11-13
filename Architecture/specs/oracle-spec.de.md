@@ -81,7 +81,7 @@ Der Spotpreis eines AMM-Pools ist:
 ### 3.2 TWAP pro Pool
 
 Für jeden Pool wird ein TWAP über N Blöcke berechnet:
-P_twap = Σ (P_spot_i * Δt_i) / Σ Δt_i
+`P_twap = Σ (P_spot_i * Δt_i) / Σ Δt_i`
 
 Parameter:
 TWAPWindow = 900–3600 Blöcke
@@ -90,7 +90,7 @@ MinObservations = 3
 ### 3.3 Liquiditätsgewichtung
 
 Jeder Pool erhält ein Gewicht proportional zur Tiefe:
-w_i = sqrt(Reserve_PLS_i * Reserve_ProjectUSD_i)
+`w_i = sqrt(Reserve_PLS_i * Reserve_ProjectUSD_i)`
 
 Damit wird verhindert, dass dünne Pools das Ergebnis verzerren.
 
@@ -101,15 +101,15 @@ Damit wird verhindert, dass dünne Pools das Ergebnis verzerren.
 ### 4.1 Gewichteter Preis
 
 Für jeden Pool:
-P_weighted_i = P_twap_i * w_i
+`P_weighted_i = P_twap_i * w_i`
 
 Gesamtpreis:
-P_agg = (Σ P_weighted_i) / (Σ w_i)
+`P_agg = (Σ P_weighted_i) / (Σ w_i)`
 
 ### 4.2 Medianbildung
 
 Zur finalen Stabilisierung wird ein Median über alle gültigen P_twap_i gebildet:
-P_final = median(P_twap_1, P_twap_2, ..., P_twap_n)
+`P_final = median(P_twap_1, P_twap_2, ..., P_twap_n)`
 
 Warum Median?
 robust gegen Ausreißer
@@ -117,7 +117,7 @@ resistent gegen einzelne manipulierte Pools
 ideal bei unterschiedlichen Liquiditätsprofilen
 
 Finaler Oracle-Output:
-P = P_final
+`P = P_final`
 Einheit: PLS pro ProjectUSD Coin (Marktpreis)
 
 ---
@@ -132,8 +132,8 @@ On-chain Fehler im Reserveslot
 
 Regel:
 STALE-Pools werden für diese Epoche ignoriert
-Wenn alle Pools STALE → Oracle liefert P = P_prev (Freeze)
-Controller setzt in diesem Fall Δr = 0
+Wenn alle Pools STALE → Oracle liefert `P = P_prev (Freeze)`
+Controller setzt in diesem Fall `Δr = 0`
 (siehe Controller-SPEC)
 
 Damit wird verhindert, dass ein defekter Pool Instabilität erzeugt.
@@ -157,7 +157,7 @@ Oracle sammelt TWAP-Daten aus allen Pools
 Filter anwenden (STALE, MinLiquidity, MaxDeviation)
 Median bestimmen
 Wert als P publizieren
-Controller liest P und berechnet ε = P − R
+Controller liest P und berechnet `ε = P − R`
 Controller erzeugt neues r_next
 
 Alle Werte werden on-chain geloggt, z. B.:
