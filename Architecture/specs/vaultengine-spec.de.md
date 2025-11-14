@@ -85,14 +85,17 @@ struct Vault {
     uint256 collateral;   // PLS in Wei
     uint256 debt;         // ProjectUSD Coin (interne Units)
 }
+```
 
 ### 3.2 Globale Zustände
 
+```solidity
 mapping (uint256 => Vault) vaults;
 uint256 totalCollateral;   // Summe aller PLS in Vaults
 uint256 totalDebt;         // Summe aller Schulden in ProjectUSD Coin
 uint256 surplusBuffer;     // Systempuffer (Fees, Überschüsse)
 uint256 badDebt;           // uneinbringliche Restschulden
+```
 
 ---
 
