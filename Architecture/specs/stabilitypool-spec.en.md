@@ -81,42 +81,41 @@ mapping (address => uint256) PLS_credits;   // allocated PLS from liquidations
 
 ### 4.1 Deposit & Withdrawal
 
-deposit(uint256 amountProjectUSD)
-– increases deposits[msg.sender],
-– increases totalDeposits.
+- `deposit(uint256 amountProjectUSD)`  
+  – increases `deposits[msg.sender]`,  
+  – increases `totalDeposits`.  
 
-withdraw(uint256 amountProjectUSD)
-– decreases the deposit (if sufficient),
-– decreases totalDeposits,
-– LP additionally receives accumulated PLS_credits.
+- `withdraw(uint256 amountProjectUSD)`  
+  – decreases the deposit (if sufficient),  
+  – decreases `totalDeposits`,  
+  – LP additionally receives accumulated `PLS_credits`.  
 
 ### 4.2 Liquidation Integration
 
-When liquidation(VaultID) is triggered in the VaultEngine:
+When `liquidation(VaultID)` is triggered in the VaultEngine:
 
-The liquidation module calls:
-absorbDebt(VaultID id, uint256 debt, uint256 collateralPLS)
+1. The liquidation module calls  
+   `absorbDebt(VaultID id, uint256 debt, uint256 collateralPLS)`.  
 
-The StabilityPool absorbs the debt:
-totalDeposits -= debt
+2. The StabilityPool absorbs the debt:  
+   `totalDeposits -= debt`  
 
-The collateral is fully allocated to LPs:
-totalPLSClaimable += collateralPLS
+3. The collateral is fully allocated to LPs:  
+   `totalPLSClaimable += collateralPLS`  
 
-Distribution is proportional to deposit share:
+4. Distribution is proportional to deposit share:  
 
-LP_share = deposits[LP] / totalDeposits_before
+   `LP_share = deposits[LP] / totalDeposits_before`  
 
-PLS_credits[LP] += LP_share * collateralPLS
+   `PLS_credits[LP] += LP_share * collateralPLS`  
 
 ### 4.3 Surpluses from VaultEngine
 
 When the VaultEngine collects system fees:
 
-surplusBuffer grows
-
-these fees may be directed to the StabilityPool
-(the exact mechanism is defined in StabilityPool v2)
+- `surplusBuffer` grows  
+- these fees may be directed to the StabilityPool  
+  (the exact mechanism is defined in StabilityPool v2)  
 
 ---
 
@@ -124,25 +123,20 @@ these fees may be directed to the StabilityPool
 
 A vault becomes liquidatable when:
 
-CR ≤ LiquidationCR
+`CR ≤ LiquidationCR`
 
-The liquidation module:
+**The liquidation module:**
 
-reads debt and collateral from the VaultEngine,
+- reads `debt` and `collateral` from the VaultEngine,  
+- calls `absorbDebt()` in the StabilityPool,  
+- sets the vault in the VaultEngine to `debt = 0`, `collateral = 0`,  
+- updates `totalDebt` and `totalCollateral`.  
 
-calls absorbDebt() in the StabilityPool,
+The StabilityPool is **never** responsible for:
 
-sets the vault in the VaultEngine to debt = 0, collateral = 0,
-
-updates totalDebt and totalCollateral.
-
-The StabilityPool is never responsible for:
-
-price computation,
-
-liquidation triggers,
-
-penalty definitions.
+- price computation,  
+- liquidation triggers,  
+- penalty definitions.  
 
 These are defined in the Liquidation SPEC.
 
@@ -181,62 +175,54 @@ These are defined in the Liquidation SPEC.
 | `PoolFeeShare`     | open   | in connection with SurplusBuffer  |
 | `DistributionMode` | open   | linear vs. per-epoch distribution |
 
-All parameters are explicitly marked as “design in progress”
+**All parameters are explicitly marked as “design in progress”**  
 and will be finalized through simulation and backtesting.
 
 ---
 
 ## 9. Verification (Testing & Validation Guide)
 
-Goal:
+**Goal:**  
 Ensure that:
 
-liquidations work without BadDebt,
+- liquidations work without BadDebt,  
+- LPs receive correct proportional PLS payouts,  
+- the pool’s accounting remains stable and consistent.  
 
-LPs receive correct proportional PLS payouts,
+**Methods:**
 
-the pool’s accounting remains stable and consistent.
+- **UnitTests (Foundry):**  
+  – deposit & withdrawal,  
+  – multiple simultaneous LPs,  
+  – debt absorption under various scenarios.  
 
-Methods:
+- **Property-based tests:**  
+  – random LP movements during long liquidation sequences.  
 
-UnitTests (Foundry):
-– deposit & withdrawal,
-– multiple simultaneous LPs,
-– debt absorption under various scenarios.
+- **SimKit scenarios:**  
+  – severe price crashes → many vaults liquidated,  
+  – long high-volatility stress phases.  
 
-Property-based tests:
-– random LP movements during long liquidation sequences.
+**Acceptance Criteria:**
 
-SimKit scenarios:
-– severe price crashes → many vaults liquidated,
-– long high-volatility stress phases.
-
-Acceptance Criteria:
-
-all invariants (S1–S5) hold in all simulations,
-
-no remaining system debt (BadDebt = 0),
-
-all LPs receive exactly proportional PLS credits.
+- all invariants (S1–S5) hold in all simulations,  
+- no remaining system debt (`BadDebt = 0`),  
+- all LPs receive exactly proportional PLS credits.  
 
 ---
 
 ## 10. Interaction with Other SPECS
 
-VaultEngine-SPEC: provides collateral and debt data.
-
-Controller-SPEC: influences system debt evolution via r_epoch.
-
-Oracle-SPEC: indirectly relevant as price basis for liquidation thresholds.
-
-Liquidation-SPEC: defines triggers and liquidation mechanics.
-
-Security-SPEC: validates deposit/withdraw logic, caps & safety checks.
+- **VaultEngine-SPEC:** provides collateral and debt data.  
+- **Controller-SPEC:** influences system debt evolution via `r_epoch`.  
+- **Oracle-SPEC:** indirectly relevant as price basis for liquidation thresholds.  
+- **Liquidation-SPEC:** defines triggers and liquidation mechanics.  
+- **Security-SPEC:** validates deposit/withdraw logic, caps & safety checks.  
 
 ---
 
 ## 11. License & References
 
-© 2025 Aqua75 / ProjectUSD
-License: MIT for code, CC BY-NC-SA 4.0 for documentation
-Reference: ProjectUSD Whitepaper V2.1 (Ch. 6, 7, Glossary pp. 22–24)
+© 2025 Aqua75 / ProjectUSD  
+License: MIT for code, CC BY-NC-SA 4.0 for documentation  
+Reference: ProjectUSD Whitepaper V2.1 (Ch. 6, 7, Glossary pp. 22–24)  
