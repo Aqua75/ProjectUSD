@@ -79,6 +79,7 @@ Die VaultEngine garantiert:
 
 ### 3.1 Vault
 
+```solidity
 struct Vault {
     address owner;        // Besitzer
     uint256 collateral;   // PLS in Wei
@@ -170,15 +171,14 @@ Für jeden Vault gilt:
 
 ### 5.2 Mindestanforderungen
 
-Mindestbesicherung:
-CR ≥ MCR nach jeder Benutzeraktion (mint, withdraw).
+**Mindestbesicherung:**  
+`CR ≥ MCR` nach jeder Benutzeraktion (`mint`, `withdraw`).
 
-Liquidierbarkeit:
-Ein Vault ist potentiell liquidierbar, wenn:
+**Liquidierbarkeit:**  
+Ein Vault ist potentiell liquidierbar, wenn:  
+`CR ≤ LiquidationCR`
 
-CR ≤ LiquidationCR
-
-Die konkrete Auslösung (wann, durch wen, mit welcher Belohnung)
+Die konkrete Auslösung (wann, durch wen, mit welcher Belohnung)  
 wird in der Liquidations-SPEC geregelt.
 
 ---
