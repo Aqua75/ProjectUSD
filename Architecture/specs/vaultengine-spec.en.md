@@ -102,65 +102,64 @@ uint256 badDebt;           // uncollectible residual debt
 
 ## 4. Core Functions (High Level API)
 
-Exact function signatures will be specified in a later Contract SPEC.
-Here we only describe behavior and invariants.
+> Exact function signatures will be specified in a later Contract SPEC.  
+> Here we only describe behavior and invariants.
 
 ### 4.1 Vault Lifecycle
 
-openVault()
-– creates a new VaultID with owner = msg.sender,
-– initial collateral = 0, debt = 0.
+- `openVault()`  
+  – creates a new `VaultID` with `owner = msg.sender`,  
+  – initial `collateral = 0`, `debt = 0`.  
 
-deposit(VaultID id, uint256 amountPLS)
-– increases the vault’s collateral,
-– increases totalCollateral.
+- `deposit(VaultID id, uint256 amountPLS)`  
+  – increases the vault’s `collateral`,  
+  – increases `totalCollateral`.  
 
-withdraw(VaultID id, uint256 amountPLS)
-– decreases the vault’s collateral,
-– checks CollateralRatio ≥ MCR afterwards,
-– decreases totalCollateral.
+- `withdraw(VaultID id, uint256 amountPLS)`  
+  – decreases the vault’s `collateral`,  
+  – checks `CollateralRatio ≥ MCR` afterwards,  
+  – decreases `totalCollateral`.  
 
 ### 4.2 Borrowing & Repayment
 
-mint(VaultID id, uint256 amountProjectUSD)
-– increases the vault’s debt,
-– increases totalDebt,
-– checks CollateralRatio ≥ MCR and debt ≥ DebtFloor,
-– transfers the newly minted ProjectUSD Coins to the owner.
+- `mint(VaultID id, uint256 amountProjectUSD)`  
+  – increases the vault’s `debt`,  
+  – increases `totalDebt`,  
+  – checks `CollateralRatio ≥ MCR` and `debt ≥ DebtFloor`,  
+  – transfers the newly minted ProjectUSD Coins to the `owner`.  
 
-repay(VaultID id, uint256 amountProjectUSD)
-– reduces the vault’s debt (not below 0),
-– reduces totalDebt,
-– interest portions are settled first, then principal.
+- `repay(VaultID id, uint256 amountProjectUSD)`  
+  – reduces the vault’s `debt` (not below 0),  
+  – reduces `totalDebt`,  
+  – interest portions are settled first, then principal.  
 
 ### 4.3 Rate Application (Controller Integration)
 
-applyEpochRate(uint256 r_epoch)
-– called once per epoch (only by the Controller or an authorized module),
-– updates debt of all vaults according to:
-debt_next = debt_prev * (1 + r_epoch)
-– accumulates the difference debt_next − debt_prev system-wide
-in surplusBuffer,
-– updates totalDebt.
+- `applyEpochRate(uint256 r_epoch)`  
+  – called once per epoch (only by the Controller or an authorized module),  
+  – updates `debt` of all vaults according to:  
+    `debt_next = debt_prev * (1 + r_epoch)`  
+  – accumulates the difference `debt_next − debt_prev` system-wide in `surplusBuffer`,  
+  – updates `totalDebt`.  
 
-For efficiency, the implementation may use “global multipliers”
-instead of updating each position individually. The invariant, however,
+For efficiency, the implementation may use “global multipliers”  
+instead of updating each position individually. The invariant, however,  
 remains the same.
 
 ### 4.4 Liquidation & Redemption Hooks
 
-liquidate(VaultID id, LiquidationContext ctx)
-– callable only by the liquidation module,
-– checks whether CollateralRatio < LiquidationCR,
-– adjusts collateral, debt, totalCollateral, totalDebt, surplusBuffer,
-and badDebt according to the procedure defined in the
-liquidation-redemption-spec.
+- `liquidate(VaultID id, LiquidationContext ctx)`  
+  – callable only by the liquidation module,  
+  – checks whether `CollateralRatio < LiquidationCR`,  
+  – adjusts `collateral`, `debt`, `totalCollateral`, `totalDebt`, `surplusBuffer`,  
+    and `badDebt` according to the procedure defined in the  
+    `liquidation-redemption-spec`.  
 
-redeem(uint256 amountProjectUSD, RedemptionContext ctx)
-– callable only by the redemption module,
-– reduces system-wide totalDebt,
-– moves collateral from overcollateralized vaults to the redeemer,
-– details see liquidation-redemption-spec.
+- `redeem(uint256 amountProjectUSD, RedemptionContext ctx)`  
+  – callable only by the redemption module,  
+  – reduces system-wide `totalDebt`,  
+  – moves collateral from overcollateralized vaults to the redeemer,  
+  – details see `liquidation-redemption-spec`.  
 
 ---
 
@@ -170,24 +169,22 @@ redeem(uint256 amountProjectUSD, RedemptionContext ctx)
 
 For each vault:
 
-CR = (collateral * P) / debt
+`CR = (collateral * P) / debt`
 
-collateral in PLS
-
-P in PLS per ProjectUSD Coin
-
-debt in ProjectUSD Coin
+- `collateral` in PLS  
+- `P` in PLS per ProjectUSD Coin  
+- `debt` in ProjectUSD Coin  
 
 ### 5.2 Minimum Requirements
 
-Minimum collateralization:
-CR ≥ MCR after every user action (mint, withdraw).
+**Minimum collateralization:**  
+`CR ≥ MCR` after every user action (`mint`, `withdraw`).
 
-Liquidatability:
-A vault becomes potentially liquidatable when:
-CR ≤ LiquidationCR
+**Liquidatability:**  
+A vault becomes potentially liquidatable when:  
+`CR ≤ LiquidationCR`
 
-The concrete triggering (when, by whom, with which reward)
+The concrete triggering (when, by whom, with which reward)  
 is defined in the Liquidation SPEC.
 
 ---
@@ -203,8 +200,8 @@ is defined in the Liquidation SPEC.
 | V5 | `badDebt` increases only via liquidation | Uncollectible debt cannot emerge “silently”. |
 | V6 | `surplusBuffer ≥ 0`                      | Buffer can never become negative.            |
 
-Note:
-Σ denotes the sum over all existing vaults.
+**Note:**  
+`Σ` denotes the sum over all existing vaults.
 
 ---
 
@@ -218,8 +215,10 @@ Note:
 | `BadDebt`          | amount of uncollectible debt         | VaultEngine events    |
 | `SurplusLevel`     | size of the system buffer            | VaultEngine events    |
 
-Recommendation:
-- weekly “State of the System” reports analogous to the “State of the Peg” reports from the Controller SPEC.
+**Recommendation:**
+
+- weekly “State of the System” reports analogous to the  
+  “State of the Peg” reports from the Controller SPEC.  
 
 ---
 
@@ -234,69 +233,65 @@ Recommendation:
 | `r_epoch` granularity         | defined in Controller | shared simulation basis with Controller |
 | `FeeSplit` (surplus vs. pool) | open                  | definition in StabilityPool SPEC        |
 
-All parameters are explicitly to be understood as “design in progress”
+**All parameters are explicitly to be understood as “design in progress”**  
 until simulations and backtests are available.
 
 ---
 
 ## 9. Verification (Testing & Validation Guide)
 
-Goal:
+**Goal:**  
 Demonstrate that the VaultEngine:
 
-fulfills all invariants in Section 6,
+- fulfills all invariants in Section 6,  
+- cooperates correctly with the Controller,  
+- remains consistent under stress (price crashes, mass liquidations).  
 
-cooperates correctly with the Controller,
+**Methods:**
 
-remains consistent under stress (price crashes, mass liquidations).
+- **UnitTests (Foundry)**  
+  – creation, funding, and closing of vaults  
+  – tests for `mint`, `repay`, `deposit`, `withdraw`  
+  – targeted attempts to violate invariants (must revert)  
 
-Methods:
+- **Property-based tests**  
+  – random sequences of user actions over many epochs  
+  – ensure `totalCollateral` and `totalDebt` remain consistent  
 
-UnitTests (Foundry)
-– creation, funding, and closing of vaults
-– tests for mint, repay, deposit, withdraw
-– targeted attempts to violate invariants (must revert)
+- **SimKit scenarios**  
+  – coupled with Controller and Oracle simulations  
+  – price crashes, overload, long sideways phases  
+  – evaluation of `SystemCR`, `BadDebt`, `SurplusBuffer`  
 
-Property-based tests
-– random sequences of user actions over many epochs
-– ensure totalCollateral and totalDebt remain consistent
+**Acceptance Criteria:**
 
-SimKit scenarios
-– coupled with Controller and Oracle simulations
-– price crashes, overload, long sideways phases
-– evaluation of SystemCR, BadDebt, SurplusBuffer
-
-Acceptance Criteria:
-
-no invariant from Section 6 is violated in tests,
-
-under extreme price shocks, BadDebt stays within predefined risk bounds,
-
-application of r_epoch leads to traceable, reproducible debt paths.
+- no invariant from Section 6 is violated in tests,  
+- under extreme price shocks, `BadDebt` stays within predefined risk bounds,  
+- application of `r_epoch` leads to traceable, reproducible debt paths.  
 
 ---
 
 ## 10. Interaction with Other SPECS
 
-Controller SPEC: defines how r_epoch is computed.
-The VaultEngine only applies this value deterministically.
+- **Controller SPEC:** defines how `r_epoch` is computed.  
+  The VaultEngine only applies this value deterministically.
 
-Oracle SPEC: provides P for CR calculations and liquidation triggers
-(via the liquidation module, not directly inside the VaultEngine).
+- **Oracle SPEC:** provides `P` for CR calculations and liquidation triggers  
+  (via the liquidation module, not directly inside the VaultEngine).
 
-Liquidation-Redemption SPEC: describes in detail how
-liquidate() and redeem() interact with the VaultEngine.
+- **Liquidation-Redemption SPEC:** describes in detail how  
+  `liquidate()` and `redeem()` interact with the VaultEngine.
 
-StabilityPool SPEC: defines how fees and surpluses from
-surplusBuffer are routed into pools or used for system stabilization.
+- **StabilityPool SPEC:** defines how fees and surpluses from  
+  `surplusBuffer` are routed into pools or used for system stabilization.
 
-Security SPEC: lists all protection mechanisms (reentrancy, caps, rate limits)
-and refers to the concrete checks implemented in the VaultEngine.
+- **Security SPEC:** lists all protection mechanisms (reentrancy, caps, rate limits)  
+  and refers to the concrete checks implemented in the VaultEngine.
 
 ---
 
 ## 11. License & References
 
-© 2025 Aqua75 / ProjectUSD
-License: MIT for code, CC BY-NC-SA 4.0 for documentation
-Reference: ProjectUSD Whitepaper V2.1 (Ch. 2, 5.1, 6, Glossary pp. 18–24)
+© 2025 Aqua75 / ProjectUSD  
+License: MIT for code, CC BY-NC-SA 4.0 for documentation  
+Reference: ProjectUSD Whitepaper V2.1 (Ch. 2, 5.1, 6, Glossary pp. 18–24)  
