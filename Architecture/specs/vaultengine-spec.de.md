@@ -95,7 +95,6 @@ uint256 badDebt;           // uneinbringliche Restschulden
 
 ---
 
-```markdown
 ## 4. Kernfunktionen (High Level API)
 
 > Die genaue Signatur wird in einer späteren Contract-SPEC präzisiert.  
