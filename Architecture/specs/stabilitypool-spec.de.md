@@ -67,6 +67,7 @@ Das System bleibt dadurch extrem stabil, selbst bei starken Preisstürzen.
 struct StabilityPool {
     uint256 totalDeposits;      // Summe aller eingezahlten ProjectUSD Coins
     uint256 totalPLSClaimable;  // Gesamtmenge an PLS, die den LPs zusteht (nicht ausgezahlt)
+    
 }
 ```
 ### 3.2 Individuelle Depositoren
