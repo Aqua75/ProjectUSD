@@ -212,8 +212,8 @@ wird in der Liquidations-SPEC geregelt.
 | `BadDebt`          | Höhe uneinbringlicher Schulden             | VaultEngine-Events    |
 | `SurplusLevel`     | Höhe des Systempuffers                     | VaultEngine-Events    |
 
-Empfehlung: wöchentliche „State of the System“-Berichte analog
-zum „State of the Peg“ aus der Controller-SPEC.
+Empfehlung: 
+- wöchentliche „State of the System“-Berichte analog zum „State of the Peg“ aus der Controller-SPEC.
 
 ---
 
@@ -228,7 +228,7 @@ zum „State of the Peg“ aus der Controller-SPEC.
 | `r_epoch`-Granularität        | definiert im Controller | gemeinsame Simulationsbasis mit Controller |
 | `FeeSplit` (Surplus vs. Pool) | noch offen              | Definition in StabilityPool-SPEC           |
 
-Alle Parameter sind ausdrücklich als Design in Progress zu verstehen,
+**Alle Parameter sind ausdrücklich als Design in Progress zu verstehen,**
 bis Simulationen und Backtests vorliegen.
 
 ---
