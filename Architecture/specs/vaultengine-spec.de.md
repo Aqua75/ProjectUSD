@@ -79,7 +79,6 @@ Die VaultEngine garantiert:
 
 ### 3.1 Vault
 
-```solidity
 struct Vault {
     address owner;        // Besitzer
     uint256 collateral;   // PLS in Wei
