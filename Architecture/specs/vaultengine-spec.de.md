@@ -86,6 +86,8 @@ struct Vault {
     uint256 debt;         // ProjectUSD Coin (interne Units)
 }
 
+### 3.2 Globale Zustände
+
 mapping (uint256 => Vault) vaults;
 uint256 totalCollateral;   // Summe aller PLS in Vaults
 uint256 totalDebt;         // Summe aller Schulden in ProjectUSD Coin
