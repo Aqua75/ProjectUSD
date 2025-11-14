@@ -86,8 +86,6 @@ struct Vault {
     uint256 debt;         // ProjectUSD Coin (interne Units)
 }
 
-### 3.2 Globale Zustände
-
 mapping (uint256 => Vault) vaults;
 uint256 totalCollateral;   // Summe aller PLS in Vaults
 uint256 totalDebt;         // Summe aller Schulden in ProjectUSD Coin
@@ -96,66 +94,65 @@ uint256 badDebt;           // uneinbringliche Restschulden
 
 ---
 
+```markdown
 ## 4. Kernfunktionen (High Level API)
 
-Die genaue Signatur wird in einer späteren Contract-SPEC präzisiert.
-Hier werden nur Verhalten und Invarianten beschrieben.
+> Die genaue Signatur wird in einer späteren Contract-SPEC präzisiert.  
+> Hier werden nur Verhalten und Invarianten beschrieben.
 
 ### 4.1 Vault-Lifecycle
 
-openVault()
-– erzeugt einen neuen VaultID mit owner = msg.sender,
-– initial collateral = 0, debt = 0.
+- `openVault()`  
+  – erzeugt einen neuen `VaultID` mit `owner = msg.sender`,  
+  – initial `collateral = 0`, `debt = 0`.
 
-deposit(VaultID id, uint256 amountPLS)
-– erhöht collateral des Vaults,
-– erhöht totalCollateral.
+- `deposit(VaultID id, uint256 amountPLS)`  
+  – erhöht `collateral` des Vaults,  
+  – erhöht `totalCollateral`.
 
-withdraw(VaultID id, uint256 amountPLS)
-– reduziert collateral des Vaults,
-– prüft anschließend CollateralRatio ≥ MCR,
-– reduziert totalCollateral.
+- `withdraw(VaultID id, uint256 amountPLS)`  
+  – reduziert `collateral` des Vaults,  
+  – prüft anschließend `CollateralRatio ≥ MCR`,  
+  – reduziert `totalCollateral`.
 
 ### 4.2 Schuldaufnahme & Rückzahlung
 
-mint(VaultID id, uint256 amountProjectUSD)
-– erhöht debt des Vaults,
-– erhöht totalDebt,
-– prüft CollateralRatio ≥ MCR und debt ≥ DebtFloor,
-– übergibt die geminteten ProjectUSD Coins an den owner.
+- `mint(VaultID id, uint256 amountProjectUSD)`  
+  – erhöht `debt` des Vaults,  
+  – erhöht `totalDebt`,  
+  – prüft `CollateralRatio ≥ MCR` und `debt ≥ DebtFloor`,  
+  – übergibt die geminteten ProjectUSD Coins an den `owner`.
 
-repay(VaultID id, uint256 amountProjectUSD)
-– reduziert debt des Vaults (nicht unter 0),
-– reduziert totalDebt,
-– ggf. werden anteilige Zinsen zuerst bedient, Principal danach.
+- `repay(VaultID id, uint256 amountProjectUSD)`  
+  – reduziert `debt` des Vaults (nicht unter 0),  
+  – reduziert `totalDebt`,  
+  – ggf. werden anteilige Zinsen zuerst bedient, Principal danach.
 
 ### 4.3 Rate-Anwendung (Controller-Integration)
 
-applyEpochRate(uint256 r_epoch)
-– wird einmal pro Epoche aufgerufen (nur durch den Controller oder ein autorisiertes Modul),
-– aktualisiert debt aller Vaults entsprechend der Formel:
+- `applyEpochRate(uint256 r_epoch)`  
+  – wird einmal pro Epoche aufgerufen (nur durch den Controller oder ein autorisiertes Modul),  
+  – aktualisiert `debt` aller Vaults entsprechend der Formel:  
+    `debt_next = debt_prev * (1 + r_epoch)`  
+  – akkumuliert die Differenz `debt_next − debt_prev` systemweit im `surplusBuffer`,  
+  – aktualisiert `totalDebt`.
 
-debt_next = debt_prev * (1 + r_epoch)
-
-– akkumuliert die Differenz debt_next − debt_prev systemweit im surplusBuffer,
-– aktualisiert totalDebt.
-
-Zur Effizienz kann die Implementation mit „globalen Multiplikatoren“ arbeiten,
+Zur Effizienz kann die Implementation mit „globalen Multiplikatoren“ arbeiten,  
 statt jede Position einzeln zu aktualisieren. Die Invariante bleibt jedoch identisch.
 
 ### 4.4 Liquidations- und Redemption-Hooks
 
-liquidate(VaultID id, LiquidationContext ctx)
-– nur aufrufbar durch das Liquidation-Modul,
-– prüft, ob CollateralRatio < LiquidationCR,
-– passt collateral, debt, totalCollateral, totalDebt, surplusBuffer und badDebt
-entsprechend dem in liquidation-redemption-spec definierten Verfahren an.
+- `liquidate(VaultID id, LiquidationContext ctx)`  
+  – nur aufrufbar durch das Liquidation-Modul,  
+  – prüft, ob `CollateralRatio < LiquidationCR`,  
+  – passt `collateral`, `debt`, `totalCollateral`, `totalDebt`, `surplusBuffer` und `badDebt`  
+    entsprechend dem in `liquidation-redemption-spec` definierten Verfahren an.
 
-redeem(uint256 amountProjectUSD, RedemptionContext ctx)
-– nur aufrufbar durch das Redemption-Modul,
-– reduziert systemweite totalDebt,
-– bewegt Collateral aus übersicherten Vaults an den Redeemer,
-– Details siehe liquidation-redemption-spec.
+- `redeem(uint256 amountProjectUSD, RedemptionContext ctx)`  
+  – nur aufrufbar durch das Redemption-Modul,  
+  – reduziert systemweite `totalDebt`,  
+  – bewegt Collateral aus übersicherten Vaults an den Redeemer,  
+  – Details siehe `liquidation-redemption-spec`.
 
 ---
 
