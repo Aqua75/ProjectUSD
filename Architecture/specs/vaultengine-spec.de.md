@@ -160,15 +160,13 @@ statt jede Position einzeln zu aktualisieren. Die Invariante bleibt jedoch ident
 
 ### 5.1 Collateral Ratio (CR)
 
-Für jeden Vault:
+Für jeden Vault gilt:
 
-CR = (collateral * P) / debt
+`CR = (collateral * P) / debt`
 
-collateral in PLS
-
-P in PLS pro ProjectUSD Coin
-
-debt in ProjectUSD Coin
+- `collateral` in PLS  
+- `P` in PLS pro ProjectUSD Coin  
+- `debt` in ProjectUSD Coin  
 
 ### 5.2 Mindestanforderungen
 
@@ -196,8 +194,8 @@ wird in der Liquidations-SPEC geregelt.
 | V5 | `badDebt` wird nur durch Liquidation erhöht | uneinbringliche Schuld entsteht nicht „heimlich“. |
 | V6 | `surplusBuffer ≥ 0`                         | Puffer kann nie negativ werden.                   |
 
-Hinweis:
-Σ bezeichnet die Summe über alle existierenden Vaults.
+**Hinweis:**  
+`Σ` bezeichnet die Summe über alle existierenden Vaults.
 
 ---
 
@@ -234,66 +232,58 @@ bis Simulationen und Backtests vorliegen.
 
 ## 9. Verification (Prüf- & Validierungsleitfaden)
 
-Ziel:
+**Ziel:**  
 Nachweis, dass die VaultEngine:
 
-alle Invarianten aus Abschnitt 6 einhält,
+- alle Invarianten aus Abschnitt 6 einhält,  
+- korrekt mit dem Controller zusammenarbeitet,  
+- unter Stressbedingungen (Preisstürze, Massenliquidationen) konsistent bleibt.
 
-korrekt mit dem Controller zusammenarbeitet,
+**Methoden:**
 
-unter Stressbedingungen (Preisstürze, Massenliquidationen) konsistent bleibt.
+- **UnitTests (Foundry)**  
+  – Erstellung, Befüllung und Schließung von Vaults  
+  – Tests für `mint`, `repay`, `deposit`, `withdraw`  
+  – gezielte Verletzungsversuche der Invarianten (sollten revertieren)
 
-Methoden:
+- **Property-Based Tests**  
+  – zufällige Sequenzen von Benutzeraktionen über viele Epochen  
+  – Sicherstellung, dass `totalCollateral` und `totalDebt` konsistent bleiben
 
-UnitTests (Foundry)
-– Erstellung, Befüllung und Schließung von Vaults
-– Tests für mint, repay, deposit, withdraw
-– gezielte Verletzungsversuche der Invarianten (sollten revertieren)
+- **SimKit-Szenarien**  
+  – Kopplung an Controller- und Oracle-Simulation  
+  – Preisstürze, Überlastung, lange Seitwärtsphasen  
+  – Auswertung von `SystemCR`, `BadDebt`, `SurplusBuffer`
 
-Property-Based Tests
-– zufällige Sequenzen von Benutzeraktionen über viele Epochen
-– Sicherstellung, dass totalCollateral und totalDebt konsistent bleiben
+**Akzeptanzkriterien:**
 
-SimKit-Szenarien
-– Kopplung an Controller- und Oracle-Simulation
-– Preisstürze, Überlastung, lange Seitwärtsphasen
-– Auswertung von SystemCR, BadDebt, SurplusBuffer
-
-Akzeptanzkriterien:
-
-keine Invariante aus Abschnitt 6 wird in Tests verletzt,
-
-unter extremen Preisschocks bleibt BadDebt innerhalb
-vorher definierter Risikoschwellen,
-
-die Anwendung von r_epoch führt zu nachvollziehbaren,
-reproduzierbaren Schuldenpfaden.
+- keine Invariante aus Abschnitt 6 wird in Tests verletzt,  
+- unter extremen Preisschocks bleibt `BadDebt` innerhalb vorher definierter Risikoschwellen,  
+- die Anwendung von `r_epoch` führt zu nachvollziehbaren, reproduzierbaren Schuldenpfaden.
 
 ---
 
 ## 10. Interaktion mit anderen SPECS
 
-Controller-SPEC: definiert, wie r_epoch berechnet wird.
-VaultEngine wendet den Wert nur deterministisch an.
+- **Controller-SPEC:** definiert, wie `r_epoch` berechnet wird.  
+  Die VaultEngine wendet den Wert nur deterministisch an.
 
-Oracle-SPEC: liefert P für CR-Berechnungen und Liquidations-Trigger
-(über Liquidationsmodul, nicht direkt in der VaultEngine).
+- **Oracle-SPEC:** liefert `P` für CR-Berechnungen und Liquidations-Trigger  
+  (über das Liquidationsmodul, nicht direkt in der VaultEngine).
 
-Liquidation-Redemption-SPEC: beschreibt detailliert, wie
-liquidate() und redeem() auf die VaultEngine zugreifen.
+- **Liquidation-Redemption-SPEC:** beschreibt detailliert, wie  
+  `liquidate()` und `redeem()` auf die VaultEngine zugreifen.
 
-StabilityPool-SPEC: definiert, wie Gebühren und Überschüsse aus
-surplusBuffer in Pools fließen oder für Systemstabilisierung genutzt werden.
+- **StabilityPool-SPEC:** definiert, wie Gebühren und Überschüsse aus  
+  `surplusBuffer` in Pools fließen oder für Systemstabilisierung genutzt werden.
 
-Security-SPEC: listet alle Schutzmechanismen (Reentrancy, Caps, RateLimits)
-und verweist auf konkrete Checks in der VaultEngine-Implementierung.
+- **Security-SPEC:** listet alle Schutzmechanismen (Reentrancy, Caps, RateLimits)  
+  und verweist auf konkrete Checks in der VaultEngine-Implementierung.
 
 ---
 
 ## 11. Lizenz & Referenzen
 
-© 2025 Aqua75 / ProjectUSD
-Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation
+© 2025 Aqua75 / ProjectUSD  
+Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation  
 Verweis: ProjectUSD Whitepaper V2.1 (Kap. 2, 5.1, 6, Glossar S. 18–24)
-
-
