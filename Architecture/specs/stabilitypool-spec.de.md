@@ -66,10 +66,10 @@ Das System bleibt dadurch extrem stabil, selbst bei starken Preisstürzen.
 ```solidity
 struct StabilityPool {
     uint256 totalDeposits;      // Summe aller eingezahlten ProjectUSD Coins
-    uint256 totalPLSClaimable;  // Gesamtmenge an PLS, die den LPs zusteht (nicht ausgezahlt)
-    
+    uint256 totalPLSClaimable;  // Gesamtmenge an PLS, die den LPs zusteht (nicht ausgezahlt) 
 }
 ```
+
 ### 3.2 Individuelle Depositoren
 
 ```solidity
@@ -83,41 +83,42 @@ mapping (address => uint256) PLS_credits;   // zugewiesene PLS aus Liquidationen
 
 ### 4.1 Einzahlung & Entnahme
 
-deposit(uint256 amountProjectUSD)
-– erhöht deposits[msg.sender],
-– erhöht totalDeposits.
+- `deposit(uint256 amountProjectUSD)`  
+  – erhöht `deposits[msg.sender]`,  
+  – erhöht `totalDeposits`.  
 
-withdraw(uint256 amountProjectUSD)
-– reduziert den Deposit (soweit vorhanden),
-– reduziert totalDeposits,
-– LP erhält zusätzlich seine bisher angesammelten PLS_credits.
+- `withdraw(uint256 amountProjectUSD)`  
+  – reduziert den Deposit (soweit vorhanden),  
+  – reduziert `totalDeposits`,  
+  – LP erhält zusätzlich seine bisher angesammelten `PLS_credits`.  
 
 ### 4.2 Liquidation-Integration
 
-Wenn liquidation(VaultID) in der VaultEngine ausgelöst wird:
+Wenn `liquidation(VaultID)` in der VaultEngine ausgelöst wird:
 
-Das Liquidation-Modul ruft
-absorbDebt(VaultID id, uint256 debt, uint256 collateralPLS)
-auf.
+1. Das Liquidation-Modul ruft  
+   `absorbDebt(VaultID id, uint256 debt, uint256 collateralPLS)`  
+   auf.
 
-Der StabilityPool übernimmt die Schuld:
-totalDeposits -= debt
+2. Der StabilityPool übernimmt die Schuld:  
+   `totalDeposits -= debt`
 
-Das Collateral fließt vollständig an die LPs:
-totalPLSClaimable += collateralPLS
+3. Das Collateral fließt vollständig an die LPs:  
+   `totalPLSClaimable += collateralPLS`
 
-Anteilige Verteilung erfolgt proportional nach LP-Anteil:
+4. Die anteilige Verteilung erfolgt proportional nach LP-Anteil:
 
-LP_share = deposits[LP] / totalDeposits_before
+   `LP_share = deposits[LP] / totalDeposits_before`  
 
-PLS_credits[LP] += LP_share * collateralPLS
+   `PLS_credits[LP] += LP_share * collateralPLS`
 
 ### 4.3 Überschüsse aus VaultEngine
 
 Wenn die VaultEngine Systemgebühren erzeugt:
 
-surplusBuffer wächst ← diese Gebühren können dem StabilityPool zugeführt werden
-(Mechanismus wird in StabilityPool v2 spezifiziert).
+- `surplusBuffer` wächst  
+- diese Gebühren können dem StabilityPool zugeführt werden  
+  (Mechanismus wird in StabilityPool v2 spezifiziert).
 
 ---
 
@@ -125,26 +126,20 @@ surplusBuffer wächst ← diese Gebühren können dem StabilityPool zugeführt w
 
 Ein Vault wird liquidierbar, wenn:
 
-CR ≤ LiquidationCR
+`CR ≤ LiquidationCR`
 
-Das Liquidation-Modul:
+**Das Liquidation-Modul:**
 
-liest debt und collateral aus der VaultEngine,
+- liest `debt` und `collateral` aus der VaultEngine,  
+- ruft `absorbDebt()` im StabilityPool auf,  
+- setzt den Vault in der VaultEngine auf `debt = 0`, `collateral = 0`,  
+- aktualisiert `totalDebt` und `totalCollateral`.  
 
-ruft absorbDebt() im StabilityPool auf,
+Der StabilityPool ist **niemals** verantwortlich für:
 
-setzt den Vault in der VaultEngine auf debt = 0, collateral = 0,
-
-aktualisiert totalDebt und totalCollateral.
-
-Der StabilityPool ist niemals für:
-
-Preisberechnungen,
-
-Liquidations-Trigger,
-
-Penalty-Definitionen
-verantwortlich.
+- Preisberechnungen  
+- Liquidations-Trigger  
+- Penalty-Definitionen  
 
 Diese Logik liegt in der Liquidation-SPEC.
 
@@ -183,62 +178,54 @@ Diese Logik liegt in der Liquidation-SPEC.
 | `PoolFeeShare`     | offen  | in Verbindung mit SurplusBuffer |
 | `DistributionMode` | offen  | linear vs. pro-epoch            |
 
-Alle Parameter befinden sich im Design-in-Progress-Status
+**Alle Parameter befinden sich im Design-in-Progress-Status**  
 und werden durch Simulationen und Backtests festgelegt.
 
 ---
 
 ## 9. Verification (Prüf- & Validierungsleitfaden)
 
-Ziel:
+**Ziel:**  
 Sicherstellen, dass:
 
-Liquidationen ohne BadDebt funktionieren,
+- Liquidationen ohne BadDebt funktionieren,  
+- LPs proportional korrekt PLS erhalten,  
+- die Pool-Buchhaltung immer stabil und konsistent bleibt.  
 
-LPs proportional korrekt PLS erhalten,
+**Methoden:**
 
-Pool-Buchhaltung immer stabil und konsistent bleibt.
+- **UnitTests (Foundry):**  
+  – Ein-/Auszahlung,  
+  – multiple simultane LPs,  
+  – Debt-Absorption in verschiedenen Szenarien.  
 
-Methoden:
+- **Property-Based Tests:**  
+  – zufällige LP-Bewegungen während Serien von Liquidationen.  
 
-UnitTests (Foundry):
-– Ein-/Auszahlung,
-– multiple simultane LPs,
-– Debt-Absorption in verschiedenen Szenarien.
+- **SimKit-Szenarien:**  
+  – starke Preisstürze → viele Vaults liquidieren gleichzeitig,  
+  – langfristige Stressphasen mit hoher Volatilität.  
 
-Property-Based Tests:
-– Zufällige LP-Bewegungen während Serien von Liquidationen.
+**Akzeptanzkriterien:**
 
-SimKit Szenarien:
-– starke Preisstürze → viele Vaults liquidieren gleichzeitig,
-– langfristige Stressphasen mit hoher Volatilität.
-
-Akzeptanzkriterien:
-
-alle Invarianten (S1–S5) bleiben in jeder Simulation gültig,
-
-keine Schuldenreste im System (BadDebt = 0),
-
-alle LPs erhalten exakt proportional berechnete PLS-Credits.
+- alle Invarianten (S1–S5) bleiben in jeder Simulation gültig,  
+- keine Schuldenreste im System (`BadDebt = 0`),  
+- alle LPs erhalten exakt proportional berechnete PLS-Credits.  
 
 ---
 
 ## 10. Interaktion mit anderen SPECS
 
-VaultEngine-SPEC: liefert Collateral und Debt-Daten.
-
-Controller-SPEC: beeinflusst Systemdebt-Entwicklung über r_epoch.
-
-Oracle-SPEC: indirekt relevant als Preisbasis für Liquidationen.
-
-Liquidation-SPEC: definiert Trigger und Liquidationsmechanik.
-
-Security-SPEC: validiert Ein-/Auszahlungslogik, Caps & Safety-Checks.
+- **VaultEngine-SPEC:** liefert Collateral- und Debt-Daten.  
+- **Controller-SPEC:** beeinflusst die Systemdebt-Entwicklung über `r_epoch`.  
+- **Oracle-SPEC:** indirekt relevant als Preisbasis für Liquidationen.  
+- **Liquidation-SPEC:** definiert Trigger und Liquidationsmechanik.  
+- **Security-SPEC:** validiert Ein-/Auszahlungslogik, Caps & Safety-Checks.  
 
 ---
 
 ## 11. Lizenz & Referenzen
 
-© 2025 Aqua75 / ProjectUSD
-Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation
-Verweis: ProjectUSD Whitepaper V2.1 (Kap. 6, 7, Glossar S. 22–24)
+© 2025 Aqua75 / ProjectUSD  
+Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation  
+Verweis: ProjectUSD Whitepaper V2.1 (Kap. 6, 7, Glossar S. 22–24)  
