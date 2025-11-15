@@ -112,23 +112,23 @@ uint256 maxLPExposure;         // maximale System-LP-Position in ProjectUSD Coin
 
 ### 5.2 Bereitstellen von Liquidität
 
-- `provideLiquidity(uint256 amountProjectUSD, uint256 amountPLS)
-  – fügt im DEX-Pool Liquidität hinzu
-  – erhält DEX-spezifische LP-Token
-  – aktualisiert systemLP.lpTokens, usdAmount, plsAmount
+- `provideLiquidity(uint256 amountProjectUSD, uint256 amountPLS)`  
+  – fügt im DEX-Pool Liquidität hinzu  
+  – erhält DEX-spezifische LP-Token  
+  – aktualisiert `systemLP.lpTokens`, `usdAmount`, `plsAmount` 
 
 ### 5.3 Abziehen von Liquidität
 
-- `withdrawLiquidity(uint256 lpTokenAmount)
-  – löst LP-Token im DEX ein
-  – erhält PLS & ProjectUSD Coin zurück
-  – bucht zurück in System-LP-Cache
+- `withdrawLiquidity(uint256 lpTokenAmount)`  
+  – löst LP-Token im DEX ein  
+  – erhält PLS & ProjectUSD Coin zurück  
+  – bucht zurück in System-LP-Cache  
 
 ### 5.4 Parameter Constraints
 
-- LP darf niemals mehr als maxLPExposure bereitstellen
-- keine täglichen LP-Deltas > definierter Rate-Limiter
-- LP-Funktion immer nur durch Governance oder MultiSig
+- LP darf niemals mehr als `maxLPExposure` bereitstellen  
+- keine täglichen LP-Deltas > definierter Rate-Limiter  
+- LP-Funktion immer nur durch Governance oder MultiSig  
 
 ---
 
