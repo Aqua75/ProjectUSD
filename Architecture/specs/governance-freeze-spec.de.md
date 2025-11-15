@@ -239,7 +239,7 @@ Nach dem Freeze:
 **Telemetrie enthält u. a.:**
 
 - `isFrozenFlag`  
-- Systemdebt  
+- Systemschuld (totalDebt)  
 - Collateral-Verteilungen  
 - Liquidationsdaten  
 - Vault-Status  
