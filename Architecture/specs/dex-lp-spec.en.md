@@ -160,9 +160,8 @@ System checks for every LP action:
 
 where:
 
-P = oracle price (PLS per ProjectUSD Coin)
-
-Δ = allowed deviation, e.g. 2%
+- `P` = oracle price (PLS per ProjectUSD Coin)  
+- `Δ` = allowed deviation, e.g. 2%  
 
 ---
 
