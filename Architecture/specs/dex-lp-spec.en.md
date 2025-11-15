@@ -102,36 +102,34 @@ uint256 maxLPExposure;         // maximum allowed LP exposure in ProjectUSD Coin
 
 ### 5.1 Activation & Parameters
 
-enableLP(uint256 maxExposure)
-– activates system-LP
-– sets maximum exposure
+- `enableLP(uint256 maxExposure)`  
+  – activates system-LP  
+  – sets maximum exposure  
 
-disableLP()
-– deactivates system-LP
-– prevents further liquidity additions
-– withdrawal of existing LP positions remains possible
+- `disableLP()`  
+  – deactivates system-LP  
+  – prevents further liquidity additions  
+  – withdrawal of existing LP positions remains possible  
 
 ### 5.2 Providing Liquidity
 
-provideLiquidity(uint256 amountProjectUSD, uint256 amountPLS)
-– adds liquidity to the DEX pool
-– receives DEX-specific LP tokens
-– updates systemLP.lpTokens, usdAmount, plsAmount
+- `provideLiquidity(uint256 amountProjectUSD, uint256 amountPLS)`  
+  – adds liquidity to the DEX pool  
+  – receives DEX-specific LP tokens  
+  – updates `systemLP.lpTokens`, `usdAmount`, `plsAmount`  
 
 ### 5.3 Removing Liquidity
 
-withdrawLiquidity(uint256 lpTokenAmount)
-– redeems LP tokens in the DEX
-– receives PLS & ProjectUSD Coin back
-– updates the System-LP cache
+- `withdrawLiquidity(uint256 lpTokenAmount)`  
+  – redeems LP tokens in the DEX  
+  – receives PLS & ProjectUSD Coin back  
+  – updates the System-LP cache  
 
 ### 5.4 Parameter Constraints
 
-LP may never exceed maxLPExposure
-
-no daily LP changes > rate-limit threshold
-
-LP functions callable only through Governance or MultiSig
+- LP may **never** exceed `maxLPExposure`  
+- no daily LP changes > defined rate-limit threshold  
+- LP functions callable only through Governance or MultiSig  
 
 ---
 
@@ -139,33 +137,26 @@ LP functions callable only through Governance or MultiSig
 
 ### 6.1 Supported DEX Types
 
-Constant-Product-AMM (x*y=k)
-
-Concentrated Liquidity AMM (CLAMM, PulseX v2)
-
-Weighted Balancer pools (optional)
+- Constant-Product-AMM (`x*y=k`)  
+- Concentrated Liquidity AMM (CLAMM, PulseX v2)  
+- Weighted Balancer pools (optional)  
 
 ### 6.2 Simulation & Safety Requirements
 
 Each LP action must:
 
-respect slippage parameters (maxSlippage)
-
-use private RPC endpoints / relays
-
-trigger errors when:
-
-liquidity in the pool is too shallow
-
-pathological AMM states are detected
-
-price deviation exceeds safe bounds (Oracle Deviation Check)
+- respect slippage parameters (`maxSlippage`)  
+- use private RPC endpoints / relays  
+- trigger errors when:  
+  - liquidity in the pool is too shallow  
+  - pathological AMM states are detected  
+  - price deviation exceeds safe bounds (Oracle Deviation Check)  
 
 ### 6.3 Internal Benchmark
 
 System checks for every LP action:
 
-PLS_per_USD_LP ≤ P * (1 + Δ)
+`PLS_per_USD_LP ≤ P * (1 + Δ)`
 
 where:
 
@@ -208,91 +199,56 @@ P = oracle price (PLS per ProjectUSD Coin)
 | `LPActivationMode` | open   | governance decision       |
 | `LPExitMode`       | open   | planned freeze workflow   |
 
-All parameters are explicitly marked as “design in progress”,
+**All parameters are explicitly marked as “design in progress”**,  
 until modeling & backtesting are complete.
 
 ---
 
 ## 10. Verification (Testing & Validation Guide)
 
-Goal:
+**Goal:**  
 Demonstrate that system-LP:
 
-is safely activated/deactivated,
+- is safely activated/deactivated,  
+- cannot operate without authorization,  
+- never exceeds exposure limits,  
+- keeps LP-token and PLS/ProjectUSD balances accurate.  
 
-cannot operate without authorization,
+**Methods:**
 
-never exceeds exposure limits,
+- **UnitTests:**  
+  – activation/deactivation  
+  – slippage violation attempts  
+  – provide/withdraw liquidity  
 
-keeps LP-token and PLS/ProjectUSD balances accurate.
+- **Property-based tests:**  
+  – random LP actions under strong volatility  
 
-Methods:
+- **AMM simulation:**  
+  – impermanent loss scenarios  
+  – price distortion tests  
+  – manipulated block sequences  
 
-UnitTests:
-– activation/deactivation
-– slippage violation attempts
-– provide/withdraw liquidity
+**Acceptance Criteria:**
 
-Property-based tests:
-– random LP actions under strong volatility
-
-AMM simulation:
-– impermanent loss scenarios
-– price distortion tests
-– manipulated block sequences
-
-Acceptance Criteria:
-
-invariants L1–L5 hold in all tests,
-
-no LP transaction exceeds exposure limits,
-
-LP-position values match DEX pool values exactly.
+- invariants L1–L5 hold in all tests,  
+- no LP transaction exceeds exposure limits,  
+- LP-position values match DEX pool values exactly.  
 
 ---
 
 ## 11. Interaction with Other SPECS
 
-VaultEngine-SPEC: may relay collateral/debt to system-LP (optional).
-
-Controller-SPEC: influences r_epoch → system deleveraging may change LP behavior.
-
-Oracle-SPEC: provides price basis for LP slippage checks.
-
-Security-SPEC: defines MEV protection & rate limits.
-
-Governance-Freeze-SPEC: determines when LP must be disabled.
+- **VaultEngine-SPEC:** may relay collateral/debt to system-LP (optional).  
+- **Controller-SPEC:** influences `r_epoch` → system deleveraging may change LP behavior.  
+- **Oracle-SPEC:** provides price basis for LP slippage checks.  
+- **Security-SPEC:** defines MEV protection & rate limits.  
+- **Governance-Freeze-SPEC:** determines when LP must be disabled.  
 
 ---
 
 ## 12. License & References
 
-© 2025 Aqua75 / ProjectUSD
-License: MIT for code, CC BY-NC-SA 4.0 for documentation
-Reference: ProjectUSD Whitepaper V2.1 (Ch. 7, Glossary pp. 20–24)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+© 2025 Aqua75 / ProjectUSD  
+License: MIT for code, CC BY-NC-SA 4.0 for documentation  
+Reference: ProjectUSD Whitepaper V2.1 (Ch. 7, Glossary pp. 20–24)  
