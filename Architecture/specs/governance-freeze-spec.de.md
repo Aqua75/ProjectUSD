@@ -232,25 +232,18 @@ Mutationen oder Upgrades erlaubt.
 
 Nach dem Freeze:
 
-Monitoring kann nur noch lesend erfolgen
+- Monitoring kann nur noch lesend erfolgen  
+- kein Parameter ist veränderbar  
+- nur noch On-Chain-Metriken werden angezeigt  
 
-kein Parameter ist veränderbar
+**Telemetrie enthält u. a.:**
 
-nur noch On-Chain-Metriken werden angezeigt
-
-Telemetrie enthält:
-
-isFrozenFlag
-
-Systemdebt
-
-Collateral-Verteilungen
-
-Liquidationsdaten
-
-Vault-Status
-
-Surplus-Daten
+- `isFrozenFlag`  
+- Systemdebt  
+- Collateral-Verteilungen  
+- Liquidationsdaten  
+- Vault-Status  
+- Surplus-Daten  
 
 ---
 
@@ -273,67 +266,61 @@ Nach Freeze sind alle Parameter final.
 
 ## 9. Verification (Prüf- & Validierungsleitfaden)
 
-Ziel:
+**Ziel:**  
 Nachweis, dass:
 
-der Freeze sicher aktiviert wird,
+- der Freeze sicher aktiviert wird,  
+- danach keine Parameteränderung mehr möglich ist,  
+- alle Mutationspfade deaktiviert sind,  
+- keine Governance- oder Admin-Rolle existiert.  
 
-danach keine Parameteränderung mehr möglich ist,
+**Methoden:**
 
-alle Mutationspfade deaktiviert sind,
+- **UnitTests:**  
+  – Aktivierung von `activateFreeze()`  
+  – sicherstellen, dass alle Setter revertieren  
+  – sicherstellen, dass Governance zurückgesetzt ist  
 
-keine Governance- oder Admin-Rolle existiert.
+- **Static Analysis:**  
+  – Prüfung, dass es keinen Upgrade-Pfad gibt  
+  – Prüfung, dass keine ungeschützten Mutationsfunktionen existieren  
 
-Methoden:
+- **Property-Based Tests:**  
+  – zufällige Angriffsversuche (Parameter-Mutationen)  
 
-UnitTests:
-– Aktivierung von activateFreeze()
-– sicherstellen, dass alle Setter revertieren
-– sicherstellen, dass Governance zurückgesetzt ist
+**Akzeptanzkriterien:**
 
-Static Analysis:
-– Prüfung, dass es keinen Upgrade-Pfad gibt
-– Prüfung, dass keine ungeschützten Mutationsfunktionen existieren
-
-Property-Based Tests:
-– zufällige Angriffsversuche (Parameter-Mutationen)
-
-Akzeptanzkriterien:
-
-alle Invarianten G1–G5 bleiben in 100 % aller Tests bestehen
-
-Freeze ist nach Aktivierung nicht auflösbar
-
-keine einzige Funktion erlaubt Änderungen am Systemzustand
-
-System verhält sich strikt deterministisch
+- alle Invarianten G1–G5 bleiben in 100 % aller Tests bestehen,  
+- Freeze ist nach Aktivierung nicht auflösbar,  
+- keine einzige Funktion erlaubt Änderungen am Systemzustand,  
+- System verhält sich strikt deterministisch.  
 
 ---
 
 ## 10. Interaktion mit anderen SPECS
 
-VaultEngine-SPEC:
-– bleibt unveränderlich nach Freeze
+- **VaultEngine-SPEC:**  
+  – bleibt unveränderlich nach Freeze  
 
-Controller-SPEC:
-– algorithmisch, nicht governance-gesteuert
+- **Controller-SPEC:**  
+  – algorithmisch, nicht governance-gesteuert  
 
-Oracle-SPEC:
-– governance-unabhängiger Medianizer
+- **Oracle-SPEC:**  
+  – governance-unabhängiger Medianizer  
 
-StabilityPool-SPEC:
-– keine Parameter änderbar nach Freeze
+- **StabilityPool-SPEC:**  
+  – keine Parameter änderbar nach Freeze  
 
-DEX-LP-SPEC:
-– System-LP wird vollständig deaktiviert
+- **DEX-LP-SPEC:**  
+  – System-LP wird vollständig deaktiviert  
 
-Security-SPEC:
-– alle Sicherheitsgrenzen nur vor Freeze einstellbar
+- **Security-SPEC:**  
+  – alle Sicherheitsgrenzen nur vor Freeze einstellbar  
 
 ---
 
 ## 11. Lizenz & Referenzen
 
-© 2025 Aqua75 / ProjectUSD
-Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation
-Verweis: ProjectUSD Whitepaper V2.1 (Kap. 8, Glossar S. 24–26)
+© 2025 Aqua75 / ProjectUSD  
+Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation  
+Verweis: ProjectUSD Whitepaper V2.1 (Kap. 8, Glossar S. 24–26)  
