@@ -87,9 +87,9 @@ struct LPStatus {
 }
 ```
 
-```solidity
 ### 4.2 Globale Zustände
 
+```solidity
 LPStatus systemLP;
 address dexPoolAddress;        // Ziel-Pool (z. B. ProjectUSD/PLS)
 uint256 maxLPExposure;         // maximale System-LP-Position in ProjectUSD Coin
@@ -101,36 +101,34 @@ uint256 maxLPExposure;         // maximale System-LP-Position in ProjectUSD Coin
 
 ### 5.1 Aktivierung & Parameter
 
-enableLP(uint256 maxExposure)
-– aktiviert System-LP
-– setzt maximale Projekt-Exposure
+- `enableLP(uint256 maxExposure)`  
+  – aktiviert System-LP  
+  – setzt maximale Projekt-Exposure  
 
-disableLP()
-– deaktiviert System-LP
-– ermöglicht kein weiteres Bereitstellen von Liquidität
-– Entzug vorhandener LP-Positionen bleibt möglich
+- `disableLP()`  
+  – deaktiviert System-LP  
+  – ermöglicht kein weiteres Bereitstellen von Liquidität  
+  – Entzug vorhandener LP-Positionen bleibt möglich  
 
 ### 5.2 Bereitstellen von Liquidität
 
-provideLiquidity(uint256 amountProjectUSD, uint256 amountPLS)
-– fügt im DEX-Pool Liquidität hinzu
-– erhält DEX-spezifische LP-Token
-– aktualisiert systemLP.lpTokens, usdAmount, plsAmount
+- `provideLiquidity(uint256 amountProjectUSD, uint256 amountPLS)
+  – fügt im DEX-Pool Liquidität hinzu
+  – erhält DEX-spezifische LP-Token
+  – aktualisiert systemLP.lpTokens, usdAmount, plsAmount
 
 ### 5.3 Abziehen von Liquidität
 
-withdrawLiquidity(uint256 lpTokenAmount)
-– löst LP-Token im DEX ein
-– erhält PLS & ProjectUSD Coin zurück
-– bucht zurück in System-LP-Cache
+- `withdrawLiquidity(uint256 lpTokenAmount)
+  – löst LP-Token im DEX ein
+  – erhält PLS & ProjectUSD Coin zurück
+  – bucht zurück in System-LP-Cache
 
 ### 5.4 Parameter Constraints
 
-LP darf niemals mehr als maxLPExposure bereitstellen
-
-keine täglichen LP-Deltas > definierter Rate-Limiter
-
-LP-Funktion immer nur durch Governance oder MultiSig
+- LP darf niemals mehr als maxLPExposure bereitstellen
+- keine täglichen LP-Deltas > definierter Rate-Limiter
+- LP-Funktion immer nur durch Governance oder MultiSig
 
 ---
 
@@ -140,33 +138,26 @@ LP-Funktion immer nur durch Governance oder MultiSig
 
 Unterstützte AMM-Modelle:
 
-Constant-Product-AMM (x*y=k)
-
-Concentrated Liquidity (CLAMM, PulseX v2)
-
-Weighted Balancer Pools (optional)
+- Constant-Product-AMM (`x*y=k`)  
+- Concentrated Liquidity (CLAMM, PulseX v2)  
+- Weighted Balancer Pools (optional)  
 
 ### 6.2 Simulation & Schutz
 
 Jede LP-Transaktion muss:
 
-Slippage-Parameter respektieren (maxSlippage)
-
-private RPCs/Relays nutzen
-
-Fehlermeldungen auslösen, wenn:
-
-Liquidität im Pool zu tief ist
-
-pathologische AMM-Zustände erkannt werden
-
-Preisabweichung zu stark ist (Oracle Deviation Check)
+- Slippage-Parameter respektieren (`maxSlippage`)  
+- private RPCs/Relays nutzen  
+- Fehlermeldungen auslösen, wenn:  
+  - Liquidität im Pool zu tief ist  
+  - pathologische AMM-Zustände erkannt werden  
+  - Preisabweichung zu stark ist (Oracle Deviation Check)  
 
 ### 6.3 Interner Benchmark
 
 System prüft bei jeder LP-Aktion:
 
-PLS_per_USD_LP ≤ P * (1 + Δ)
+`PLS_per_USD_LP ≤ P * (1 + Δ)`
 
 wobei:
 
@@ -209,70 +200,56 @@ P = Oracle-Preis (PLS per ProjectUSD Coin)
 | `LPActivationMode` | offen  | Governance-Entscheidung      |
 | `LPExitMode`       | offen  | geplanter Freeze-Workflow    |
 
-Alle Parameter sind Design-in-Progress,
+**Alle Parameter sind Design-in-Progress**,  
 bis Modeling & Backtests vollständig sind.
 
 ---
 
 ## 10. Verification (Prüf- & Testleitfaden)
 
-Ziel:
+**Ziel:**  
 Nachweis, dass System-LP:
 
-sicher aktiviert/deaktiviert wird,
+- sicher aktiviert/deaktiviert wird,  
+- nicht unautorisiert handeln kann,  
+- nie überexponiert ist,  
+- korrekte LP-Token- und PLS/ProjectUSD-Balancen führt.  
 
-nicht unautorisiert handeln kann,
+**Methoden:**
 
-nie überexponiert ist,
+- **UnitTests:**  
+  – Aktivieren/Deaktivieren  
+  – Slippage-Verletzungsversuche  
+  – Provide/Withdraw Liquidität  
 
-korrekte LP-Token- und PLS/ProjectUSD-Balancen führt.
+- **Property-Based Tests:**  
+  – zufällige LP-Bewegungen unter starker Volatilität  
 
-Methoden:
+- **AMM-Simulation:**  
+  – IL-Szenarien  
+  – Preisverzerrungen  
+  – manipulierte Blöcke  
 
-UnitTests:
-– Aktivieren/Deaktivieren
-– Slippage-Verletzungsversuche
-– Provide/Withdraw Liquidität
+**Akzeptanzkriterien:**
 
-Property-Based Tests:
-– zufällige LP-Bewegungen unter starker Volatilität
-
-AMM-Simulation:
-– IL-Szenarien
-– Preisverzerrungen
-– manipulierte Blöcke
-
-Akzeptanzkriterien:
-
-Invarianten L1–L5 bleiben in allen Tests gültig
-
-keine LP-Transaktion riskiert Exposure über Cap
-
-LP-Positionswerte stimmen exakt mit DEX-Poolwerten überein
+- Invarianten L1–L5 bleiben in allen Tests gültig,  
+- keine LP-Transaktion riskiert Exposure über Cap,  
+- LP-Positionswerte stimmen exakt mit DEX-Poolwerten überein.  
 
 ---
 
 ## 11. Interaktion mit anderen SPECS
 
-VaultEngine-SPEC:
-– kann Collateral/Schulden an System-LP weiterreichen (optional)
-
-Controller-SPEC:
-– beeinflusst r_epoch → System-Deleveraging kann LP-Verhalten verändern
-
-Oracle-SPEC:
-– liefert den Preis für LP-Slippage-Checks
-
-Security-SPEC:
-– definiert MEV-Schutz & Rate-Limits
-
-Governance-Freeze-SPEC:
-– legt fest, wann LP deaktiviert wird
+- **VaultEngine-SPEC:** kann Collateral/Schulden an System-LP weiterreichen (optional).  
+- **Controller-SPEC:** beeinflusst `r_epoch` → System-Deleveraging kann LP-Verhalten verändern.  
+- **Oracle-SPEC:** liefert den Preis für LP-Slippage-Checks.  
+- **Security-SPEC:** definiert MEV-Schutz & Rate-Limits.  
+- **Governance-Freeze-SPEC:** legt fest, wann LP deaktiviert wird.  
 
 ---
 
 ## 12. Lizenz & Referenzen
 
-© 2025 Aqua75 / ProjectUSD
-Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation
-Verweis: ProjectUSD Whitepaper V2.1 (Kap. 7, Glossar S. 20–24)
+© 2025 Aqua75 / ProjectUSD  
+Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation  
+Verweis: ProjectUSD Whitepaper V2.1 (Kap. 7, Glossar S. 20–24)  
