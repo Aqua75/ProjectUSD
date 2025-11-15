@@ -229,25 +229,18 @@ allows mutations or upgrades.
 
 After the freeze:
 
-monitoring is read-only
+- monitoring is read-only  
+- no parameter is modifiable  
+- only on-chain metrics are shown  
 
-no parameter is modifiable
+**Telemetry includes:**
 
-only on-chain metrics are shown
-
-Telemetry includes:
-
-isFrozenFlag
-
-system debt
-
-collateral distribution
-
-liquidation data
-
-vault status
-
-surplus data
+- `isFrozenFlag`  
+- system debt  
+- collateral distribution  
+- liquidation data  
+- vault status  
+- surplus data  
 
 ---
 
@@ -268,67 +261,61 @@ All parameters become final after the freeze.
 
 ## 9. Verification (Testing & Validation Guide)
 
-Goal:
+**Goal:**  
 Verify that:
 
-the freeze is activated safely,
+- the freeze is activated safely,  
+- no parameter changes are possible afterwards,  
+- all mutation paths are disabled,  
+- no governance or admin role exists.  
 
-no parameter changes are possible afterwards,
+**Methods:**
 
-all mutation paths are disabled,
+- **UnitTests:**  
+  – activation of `activateFreeze()`  
+  – verify all setters revert  
+  – verify governance is removed  
 
-no governance or admin role exists.
+- **Static analysis:**  
+  – verify no upgrade path exists  
+  – verify no unprotected mutation functions exist  
 
-Methods:
+- **Property-based tests:**  
+  – random mutation attempts  
 
-UnitTests:
-– activation of activateFreeze()
-– verify all setters revert
-– verify governance is removed
+**Acceptance Criteria:**
 
-Static analysis:
-– verify no upgrade path exists
-– verify no unprotected mutation functions exist
-
-Property-based tests:
-– random mutation attempts
-
-Acceptance Criteria:
-
-all invariants G1–G5 hold in 100% of tests,
-
-freeze cannot be undone,
-
-no function permits state changes after freeze,
-
-system behaves strictly deterministically.
+- all invariants G1–G5 hold in 100% of tests,  
+- freeze cannot be undone,  
+- no function permits state changes after freeze,  
+- system behaves strictly deterministically.  
 
 ---
 
 ## 10. Interaction with Other SPECS
 
-VaultEngine-SPEC:
-– remains immutable after freeze
+- **VaultEngine-SPEC:**  
+  – remains immutable after freeze  
 
-Controller-SPEC:
-– algorithmic, not governance-driven
+- **Controller-SPEC:**  
+  – algorithmic, not governance-driven  
 
-Oracle-SPEC:
-– governance-independent medianizer
+- **Oracle-SPEC:**  
+  – governance-independent medianizer  
 
-StabilityPool-SPEC:
-– no parameters modifiable after freeze
+- **StabilityPool-SPEC:**  
+  – no parameters modifiable after freeze  
 
-DEX-LP-SPEC:
-– system LP is fully disabled
+- **DEX-LP-SPEC:**  
+  – system LP is fully disabled  
 
-Security-SPEC:
-– all limits adjustable only before freeze
+- **Security-SPEC:**  
+  – all limits adjustable only before freeze  
 
 ---
 
 ## 11. License & References
 
-© 2025 Aqua75 / ProjectUSD
-License: MIT for code, CC BY-NC-SA 4.0 for documentation
-Reference: ProjectUSD Whitepaper V2.1 (Ch. 8, Glossary pp. 24–26)
+© 2025 Aqua75 / ProjectUSD  
+License: MIT for code, CC BY-NC-SA 4.0 for documentation  
+Reference: ProjectUSD Whitepaper V2.1 (Ch. 8, Glossary pp. 24–26)  
