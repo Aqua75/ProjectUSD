@@ -96,7 +96,7 @@ Nicht erforderlich sind Schutzmaßnahmen gegen:
 - Admin-Key-Compromise  
 - Hintertüren  
 
-(wird durch Option A + Freeze grundsätzlich ausgeschlossen).
+(wird Freeze grundsätzlich ausgeschlossen).
 
 ---
 
@@ -275,7 +275,7 @@ Nachweis, dass das System nach Freeze:
 
 **Akzeptanzkriterien:**
 
-- S1–S7 werden nie verletzt  
+- S1–S7 (Sicherheitsinvarianten in Abschnitt 5) werden nie verletzt  
 - kein Upgrade möglich (verifizierbar über Bytecode)  
 - Reentrancy unmöglich  
 - Liquidation immer sicher  
