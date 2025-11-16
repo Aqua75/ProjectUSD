@@ -149,74 +149,52 @@ Die Fehlertexte sind unveränderlich.
 
 ### 4.1 VaultEngine
 
-keine Reentrancy
-
-keine externen Aufrufe innerhalb von State-Änderungen
-
-Validierung aller Vault-Eingaben
-
-CR-Prüfung vor jeder Aktion
-
-totalDebt-Konsistenz-Kontrolle
-
-keine Flash-Mint-Mechaniken
+- keine Reentrancy  
+- keine externen Aufrufe innerhalb von State-Änderungen  
+- Validierung aller Vault-Eingaben  
+- CR-Prüfung vor jeder Aktion  
+- `totalDebt`-Konsistenz-Kontrolle  
+- keine Flash-Mint-Mechaniken  
 
 ### 4.2 StabilityPool
 
-kein direkter Zugriff von externen Contracts
-
-nur Liquidation-Modul darf absorbDebt() auslösen
-
-PLS-Verteilung proportional, nicht durch Loops (Gas-Sicherheit)
-
-keine negativen Pool-Stände (Invariante SP3)
+- kein direkter Zugriff von externen Contracts  
+- nur das Liquidation-Modul darf `absorbDebt()` auslösen  
+- PLS-Verteilung proportional, nicht durch Loops (Gas-Sicherheit)  
+- keine negativen Pool-Stände (Invariante SP3)  
 
 ### 4.3 Liquidation-Modul
 
-Nutzung von „Snapshot“-Daten, niemals Live-Preismanipulation
-
-atomare Liquidationen:
-– debt absorbieren
-– collateral transferieren
-– Vault zurücksetzen
-
-keine externen Calls mit untrusted data
+- Nutzung von Snapshot-Daten, niemals Live-Preismanipulation  
+- atomare Liquidationen:  
+  – debt absorbieren  
+  – collateral transferieren  
+  – Vault zurücksetzen  
+- keine externen Calls mit untrusted data  
 
 ### 4.4 Oracle-Modul
 
-Median-Mechanismus aus mehreren Feeds
-
-Starke Outlier-Filterung
-
-Block-Delay-Cap zur Anti-Spoofing-Prävention
-
-nie weniger als N-Mindestfeeds
-
-Schutz vor DEX-Only-Manipulation
+- Median-Mechanismus aus mehreren Feeds  
+- starke Outlier-Filterung  
+- Block-Delay-Cap zur Anti-Spoofing-Prävention  
+- niemals weniger als `N_feeds`  
+- Schutz vor DEX-Only-Manipulation  
 
 ### 4.5 Controller
 
-Berechnung von r_epoch ist deterministisch
-
-keine Live-Parameteränderungen
-
-keine Kontrollmechanismen durch Governance
-
-uninterpretiert und unveränderlich
-
-keine Stimulationspfade von außen
+- Berechnung von `r_epoch` ist deterministisch  
+- keine Live-Parameteränderungen  
+- keine Kontrollmechanismen durch Governance  
+- uninterpretiert und unveränderlich  
+- keine Stimulationspfade von außen  
 
 ### 4.6 DEX-LP-System
 
-nur vor Freeze aktivierbar
-
-Anti-MEV-Slippage-Grenzen
-
-Einsatz privater RPC durch Offchain-Bot (optional)
-
-keine LP-Operation im selben Block wie Liquidation
-
-Hard-Cap: maxLPExposure
+- nur vor Freeze aktivierbar  
+- Anti-MEV-Slippage-Grenzen  
+- Einsatz privater RPC durch Offchain-Bot (optional)  
+- keine LP-Operation im selben Block wie Liquidation  
+- Hard-Cap: `maxLPExposure`  
 
 ---
 
@@ -238,27 +216,18 @@ Hard-Cap: maxLPExposure
 
 Nach dem Freeze:
 
-Monitoring ist rein lesend
+- Monitoring ist rein lesend  
+- alle Parameter sind statisch  
 
-alle Parameter sind statisch
+**Telemetrie liefert nur wesentliche Werte:**
 
-Telemetrie liefert nur:
-
-Wesentliche Werte:
-
-isFrozen
-
-totalDebt
-
-Vault-Kennzahlen
-
-Liquidationsereignisse
-
-StabilityPool-Daten
-
-Gebührenentwicklungen
-
-Systemrisiken (berechnet, nicht parametergesteuert)
+- `isFrozen`  
+- `totalDebt`  
+- Vault-Kennzahlen  
+- Liquidationsereignisse  
+- StabilityPool-Daten  
+- Gebührenentwicklungen  
+- Systemrisiken (berechnet, nicht parametergesteuert)  
 
 ---
 
@@ -278,73 +247,66 @@ Nach Freeze sind alle Parameter final gesperrt.
 
 ## 8. Verification (Prüf- & Validierungsleitfaden)
 
-Ziel:
+**Ziel:**  
 Nachweis, dass das System nach Freeze:
 
-unveränderlich ist,
+- unveränderlich ist,  
+- deterministisch funktioniert,  
+- alle Invarianten einhält,  
+- sicherheitskritische Angriffe zuverlässig verhindert.  
 
-deterministisch funktioniert,
+**Methoden:**
 
-alle Invarianten einhält,
+- **UnitTests:**  
+  – Vault-Interaktionen  
+  – Liquidationen  
+  – Systemdebt-Änderungen  
+  – Slippage-Verletzungsversuche  
 
-sicherheitskritische Angriffe zuverlässig verhindert.
+- **Property-Based Tests:**  
+  – zufällige State-Folgen  
+  – extrem volatile Szenarien  
+  – Oracle-Manipulationsversuche  
 
-Methoden:
+- **Static Analysis:**  
+  – Verbot von Upgrades  
+  – Reentrancy-Scan  
+  – Unreachable Branch Checks  
 
-UnitTests:
-– Vault-Interaktionen
-– Liquidationen
-– Systemdebt-Änderungen
-– Slippage-Verletzungsversuche
+**Akzeptanzkriterien:**
 
-Property-Based Tests:
-– zufällige State-Folgen
-– extrem volatile Szenarien
-– Oracle-Manipulationsversuche
-
-Static Analysis:
-– Verbot von Upgrades
-– Reentrancy-Scan
-– Unreachable Branch Checks
-
-Akzeptanzkriterien:
-
-S1–S7 verletzt nie
-
-Kein Upgrade möglich (verifizierbar über Bytecode)
-
-Reentrancy unmöglich
-
-Liquidation immer sicher
-
-Controller arbeitet deterministisch
+- S1–S7 werden nie verletzt  
+- kein Upgrade möglich (verifizierbar über Bytecode)  
+- Reentrancy unmöglich  
+- Liquidation immer sicher  
+- Controller arbeitet deterministisch  
 
 ---
 
 ## 9. Interaktion mit anderen SPECS
 
-VaultEngine-SPEC:
-– Sicherheit durch invariantenbasiertes Minting/Burning
+- **VaultEngine-SPEC:**  
+  – Sicherheit durch invariantenbasiertes Minting/Burning  
 
-Controller-SPEC:
-– deterministische Rate-Berechnung, unveränderlich
+- **Controller-SPEC:**  
+  – deterministische Rate-Berechnung, unveränderlich  
 
-Oracle-SPEC:
-– manipulationsresistenter Medianizer
+- **Oracle-SPEC:**  
+  – manipulationsresistenter Medianizer  
 
-StabilityPool-SPEC:
-– schützt Systemdebt durch sofortige Liquidationen
+- **StabilityPool-SPEC:**  
+  – schützt Systemdebt durch sofortige Liquidationen  
 
-DEX-LP-SPEC:
-– Anti-MEV-Schutz und LP-Caps
+- **DEX-LP-SPEC:**  
+  – Anti-MEV-Schutz und LP-Caps  
 
-Governance-Freeze-SPEC:
-– Security-Modell abgeschlossen nach Freeze
+- **Governance-Freeze-SPEC:**  
+  – Security-Modell abgeschlossen nach Freeze  
 
 ---
 
 ## 10. Lizenz & Referenzen
 
-© 2025 Aqua75 / ProjectUSD
-Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation
-Verweis: ProjectUSD Whitepaper V2.1 (Kap. 9, 8, Glossar S. 26–28)
+© 2025 Aqua75 / ProjectUSD  
+Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation  
+Verweis: ProjectUSD Whitepaper V2.1 (Kap. 9, 8, Glossar S. 26–28)  
