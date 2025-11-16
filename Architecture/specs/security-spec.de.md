@@ -96,7 +96,7 @@ Nicht erforderlich sind Schutzmaßnahmen gegen:
 - Admin-Key-Compromise  
 - Hintertüren  
 
-(wird Freeze grundsätzlich ausgeschlossen).
+(wird durch Freeze grundsätzlich ausgeschlossen).
 
 ---
 
