@@ -350,40 +350,32 @@ Redemption {
 
 ### 11.1 UnitTests
 
-correct indexing of events
-
-correctness of CR, R, and price calculations
-
-proper aggregation over vault groups
-
-correct generation of time series
+- correct indexing of events  
+- correctness of CR, R, and price calculations  
+- proper aggregation over vault groups  
+- correct generation of time series  
 
 ---
 
 ### 11.2 Property-Based Tests
 
-bulk liquidations
-
-redemption spikes
-
-CR collapses
-
-feed outages
+- bulk liquidations  
+- redemption spikes  
+- CR collapses  
+- feed outages  
 
 ---
 
 ### 11.3 Consistency Checks
 
-collateral and debt sum checks
-
-comparison of aggregated vault values vs on-chain state
-
-verification of all invariants
+- collateral and debt sum checks
+- comparison of aggregated vault values vs on-chain state
+- verification of all invariants
 
 ---
 
 ## 12. License & References
 
-© 2025 Aqua75 / ProjectUSD
-License: MIT for code, CC BY-NC-SA 4.0 for documentation
-References: ProjectUSD Whitepaper V2.1 (Ch. 6–9, Glossary pp. 24–28)
+© 2025 Aqua75 / ProjectUSD  
+License: MIT for code, CC BY-NC-SA 4.0 for documentation  
+References: ProjectUSD Whitepaper V2.1 (Ch. 6–9, Glossary pp. 24–28)  
