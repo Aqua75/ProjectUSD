@@ -107,7 +107,7 @@ Schutzmechanismen:
 
 ## 1.6 Liquidationskosten
 
-Es existieren keine Liquidationsgebühren.
+Es existieren keine Liquidationsgebühren.  
 Die „Belohnung“ für Liquidatoren ergibt sich ausschließlich aus:
 
 - das PLS, das sie aus dem StabilityPool erhalten  
@@ -172,7 +172,7 @@ Redemption ermöglicht es, ProjectUSD Coin jederzeit gegen PLS einzutauschen
 
 Dies schafft einen absoluten Mindestwert für ProjectUSD und stabilisiert den Peg.
 
-1 ProjectUSD Coin → (1 / R) PLS
+`1 ProjectUSD Coin → (1 / R) PLS`
 
 R = Systemgleichgewichtspreis aus Controller-SPEC.
 
