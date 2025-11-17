@@ -27,8 +27,7 @@ und garantieren langfristige Systemstabilität ohne zentrale Eingriffe.
 
 Ein Vault wird liquidiert, wenn:
 
-Collateral Ratio (CR) < LiquidationCR
-
+`CR` < `LiquidationCR`
 
 Das heißt, der Marktpreis von PLS (Collateral) ist relativ zum Systemwert der Schuld zu stark gefallen.
 
@@ -62,17 +61,12 @@ OraclePrice = Median aus mehreren Preisfeeds.
 
 Eine Liquidation erfolgt in einem atomaren Ablauf, ohne Zwischenzustände:
 
-Oracle liefert aktuellen Preis
-
-Vault wird als unterbesichert erkannt
-
-StabilityPool absorbiert die Schulden
-
-PLS (Collateral) wird an StabilityPool-Teilnehmer verteilt
-
-Vault wird auf collateral = 0 / debt = 0 gesetzt
-
-Event wird ausgelöst (Liquidation(...))
+- Oracle liefert aktuellen Preis  
+- Vault wird als unterbesichert erkannt  
+- StabilityPool absorbiert die Schulden  
+- PLS (Collateral) wird an StabilityPool-Teilnehmer verteilt  
+- Vault wird auf `collateral = 0` / `debt = 0` gesetzt  
+- Event wird ausgelöst (`Liquidation(...)`)  
 
 Kein Teil dieses Vorgangs kann durch MEV manipuliert werden.
 
@@ -82,9 +76,8 @@ Kein Teil dieses Vorgangs kann durch MEV manipuliert werden.
 
 Der StabilityPool erfüllt zwei Aufgaben:
 
-Schulden absorbieren
-
-PLS aus der Liquidation an Einzahler verteilen
+- Schulden absorbieren  
+- PLS aus der Liquidation an Einzahler verteilen  
 
 Der Liquidationsalgorithmus:
 
@@ -99,21 +92,16 @@ Keine Aktion ruft externe Verträge auf → kein Reentrancy-Risiko.
 ---
 
 ## 1.5 Sicherheit & MEV-Schutz
+
 Schutzmechanismen:
 
-keine externen Calls
-
-atomische Ausführung
-
-keine Slippage
-
-kein Preisvergleich mit DEX (reiner Medianizer)
-
-keine Flashloan-Abhängigkeiten
-
-Preisschwelle nur über Oracle manipulierbar (durch Median fast unmöglich)
-
-Liquidation und LP-Operationen dürfen nie im selben Block stattfinden
+- keine externen Calls  
+- atomische Ausführung  
+- keine Slippage  
+- kein Preisvergleich mit DEX (reiner Medianizer)  
+- keine Flashloan-Abhängigkeiten  
+- Preisschwelle nur über Oracle manipulierbar (durch Median fast unmöglich)  
+- Liquidation und LP-Operationen dürfen nie im selben Block stattfinden  
 
 ---
 
@@ -122,7 +110,7 @@ Liquidation und LP-Operationen dürfen nie im selben Block stattfinden
 Es existieren keine Liquidationsgebühren.
 Die „Belohnung“ für Liquidatoren ergibt sich ausschließlich aus:
 
-dem PLS, das sie aus dem StabilityPool erhalten
+- das PLS, das sie aus dem StabilityPool erhalten  
 
 ---
 
@@ -142,48 +130,36 @@ dem PLS, das sie aus dem StabilityPool erhalten
 
 Telemetriepunkte:
 
-Anzahl aktiver Vaults
-
-Liquidationsereignisse
-
-absorbierte Schulden
-
-verteiltes Collateral
-
-durchschnittliche CR aller Vaults
-
-Oracle-Preisabweichungen
+- Anzahl aktiver Vaults  
+- Liquidationsereignisse  
+- absorbierte Schulden  
+- verteiltes Collateral  
+- durchschnittliche CR aller Vaults  
+- Oracle-Preisabweichungen  
 
 ---
 
 ## 1.9 Tests (Liquidation)
-UnitTests
 
-Liquidation bei CR < LiquidationCR
+### UnitTests
 
-Kein Liquidation bei CR >= LiquidationCR
+- Liquidation bei `CR < LiquidationCR`  
+- keine Liquidation bei `CR >= LiquidationCR`  
+- Debt-Absorption durch StabilityPool  
+- CR-Berechnung korrekt  
+- atomarer Ablauf garantiert  
 
-Debt-Absorption durch StabilityPool
+### Property-Based Tests
 
-CR-Berechnung korrekt
+- Preis-Chaos-Simulation  
+- Liquidationsstürme  
+- Oracle-Ausreißer  
 
-Atomarer Ablauf garantiert
+### Static Analysis
 
-Property-Based Tests
-
-Preis-Chaos-Simulation
-
-Liquidationsstürme
-
-Oracle-Ausreißer
-
-Static Analysis
-
-Reentrancy unmöglich
-
-keine externen Calls
-
-keine Loops mit unbounded iteration
+- Reentrancy unmöglich  
+- keine externen Calls  
+- keine Loops mit unbounded iteration  
 
 ---
 
@@ -204,39 +180,28 @@ R = Systemgleichgewichtspreis aus Controller-SPEC.
 
 ### 2.2 Warum Redemption notwendig ist
 
-erzeugt garantierten Mindestwert
-
-verhindert langfristige Unterdeckung
-
-eliminiert PLS/ProjectUSD Arbitrage-Zonen
-
-hält den Marktpreis nahe R
-
-ermöglicht automatische Preiskorrekturen
-
-schützt Nutzer langfristig
+- erzeugt garantierten Mindestwert  
+- verhindert langfristige Unterdeckung  
+- eliminiert PLS/ProjectUSD Arbitrage-Zonen  
+- hält den Marktpreis nahe R  
+- ermöglicht automatische Preiskorrekturen  
+- schützt Nutzer langfristig  
 
 ---
 
 ### 2.3 Ablauf der Redemption
 
-Nutzer sendet ProjectUSD Coin an VaultEngine
+- Nutzer sendet ProjectUSD Coin an VaultEngine  
+- System wählt den am stärksten überbesicherten Vault  
+- Collateral dieses Vaults wird reduziert  
+- Schulden dieses Vaults werden reduziert  
+- Nutzer erhält entsprechend PLS  
 
-System wählt den am stärksten überbesicherten Vault
+Redemption ist **nicht**:
 
-Dessen Collateral wird reduziert
-
-Dessen Schulden werden verringert
-
-Nutzer erhält entsprechend PLS
-
-Redemption ist nicht:
-
-ein Liquidationsmechanismus
-
-ein Notfallmechanismus
-
-ein Preisfixing durch Governance
+- ein Liquidationsmechanismus  
+- ein Notfallmechanismus  
+- ein Preisfixing durch Governance  
 
 Es ist ein reiner, algorithmischer Prozess.
 
@@ -246,35 +211,26 @@ Es ist ein reiner, algorithmischer Prozess.
 
 Vaults werden in folgender Reihenfolge reduziert:
 
-höchstes CR zuerst
-
-nächstes höchstes CR
-
-usw.
+- höchstes CR zuerst  
+- nächstes höchstes CR  
+- usw.  
 
 Dies stellt sicher:
 
-fairen Ausgleich
-
-keine Überbelastung einzelner Nutzer
-
-natürliche Harmonisierung der Collateralstruktur
+- fairen Ausgleich  
+- keine Überbelastung einzelner Nutzer  
+- natürliche Harmonisierung der Collateralstruktur  
 
 ---
 
 ### 2.5 Sicherheit & MEV-Schutz
 
-keine externen Calls
-
-keine DEX-Interaktionen
-
-Oracle-Preis + R sind die einzigen Faktoren
-
-Redemption-Volumen per Block begrenzbar (RedeemLimit)
-
-kein Flashloan-Arbitrage, da Systempreis ≠ DEX-Preis
-
-atomare Ausführung
+- keine externen Calls  
+- keine DEX-Interaktionen  
+- Oracle-Preis + R sind die einzigen Faktoren  
+- Redemption-Volumen per Block begrenzbar (`RedeemLimit`)  
+- kein Flashloan-Arbitrage (Systempreis ≠ DEX-Preis)  
+- atomare Ausführung  
 
 ---
 
@@ -292,71 +248,61 @@ atomare Ausführung
 
 ### 2.7 Telemetrie & Monitoring
 
-Gesamt-Redemption-Volumen
-
-Anzahl betroffener Vaults
-
-Durchschnittliche CR-Veränderung
-
-Collateral-Abfluss durch Redemption
-
-Oracle-Preisbewegungen
-
-R (Systemgleichgewichtspreis)
+- Gesamt-Redemption-Volumen  
+- Anzahl betroffener Vaults  
+- durchschnittliche CR-Veränderung  
+- Collateral-Abfluss durch Redemption  
+- Oracle-Preisbewegungen  
+- `R` (Systemgleichgewichtspreis)  
 
 ---
 
 ### 2.8 Tests (Redemption)
-UnitTests
 
-Redemption reduziert ausschließlich überbesicherte Vaults
+### UnitTests
 
-CR-Reihenfolge korrekt
+- Redemption reduziert ausschließlich überbesicherte Vaults  
+- CR-Reihenfolge korrekt  
+- atomare Abläufe  
+- Preisberechnung korrekt  
 
-atomare Abläufe
+### Property-Based Tests
 
-Preisberechnung korrekt
+- Extrempreisbewegungen  
+- Multi-Redemption-Szenarien  
+- Stress-Redemption  
 
-Property-Based Tests
+### Static Analysis
 
-Extrempreisbewegungen
-
-Multi-Redemption-Szenarien
-
-Stress-Redemption
-
-Static Analysis
-
-keine externen Calls
-
-keine manipulationsanfälligen Loops
+- keine externen Calls  
+- keine manipulationsanfälligen Loops  
 
 ---
 
 ## 3. Interaktion mit anderen SPECS
 
-VaultEngine-SPEC:
-– Liquidationen und Redemptions verändern Vaults atomar
+- **VaultEngine-SPEC:**  
+  – Liquidationen und Redemptions verändern Vaults atomar  
 
-StabilityPool-SPEC:
-– absorbiert Schulden aus Liquidationen
+- **StabilityPool-SPEC:**  
+  – absorbiert Schulden aus Liquidationen  
 
-Oracle-SPEC:
-– Preisquelle für CR
+- **Oracle-SPEC:**  
+  – Preisquelle für CR  
 
-Controller-SPEC:
-– R bestimmt Redemption-Raten
+- **Controller-SPEC:**  
+  – R bestimmt Redemption-Raten  
 
-Security-SPEC:
-– garantiert atomare, manipulationsfreie Abläufe
+- **Security-SPEC:**  
+  – garantiert atomare, manipulationsfreie Abläufe  
 
-Freeze-SPEC:
-– Liquidation & Redemption bleiben nach Freeze unverändert
+- **Freeze-SPEC:**  
+  – Liquidation & Redemption bleiben nach Freeze unverändert  
 
 ---
 
-## 4. Lizenz & Referenzen
+## Lizenz
 
-© 2025 Aqua75 / ProjectUSD
-Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation
-Verweis: ProjectUSD Whitepaper V2.1 (Kap. 6, 9, Glossar S. 18–22)
+© 2025 Aqua75 / ProjectUSD  
+Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation  
+Verweis: ProjectUSD Whitepaper V2.1 (Kap. 6, 9, Glossar S. 18–22)  
