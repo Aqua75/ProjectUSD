@@ -278,23 +278,23 @@ This ensures:
 
 ## 3. Interaction with Other SPECS
 
-VaultEngine-SPEC:
-– liquidation and redemption modify vaults atomically
+- **VaultEngine-SPEC:**  
+  – liquidation and redemption modify vaults atomically  
 
-StabilityPool-SPEC:
-– absorbs debt during liquidation
+- **StabilityPool-SPEC:**  
+  – absorbs debt during liquidation  
 
-Oracle-SPEC:
-– provides all CR and redemption prices
+- **Oracle-SPEC:**  
+  – provides all CR and redemption prices  
 
-Controller-SPEC:
-– defines the equilibrium price R
+- **Controller-SPEC:**  
+  – defines the equilibrium price `R`  
 
-Security-SPEC:
-– ensures atomic, manipulation-free execution
+- **Security-SPEC:**  
+  – ensures atomic, manipulation-free execution  
 
-Freeze-SPEC:
-– liquidation & redemption remain immutable after freeze
+- **Freeze-SPEC:**  
+  – liquidation & redemption remain immutable after freeze  
 
 ---
 
