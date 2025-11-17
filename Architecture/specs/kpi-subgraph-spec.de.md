@@ -361,15 +361,13 @@ Redemption {
 
 ### 11.3 Konsistenzprüfungen
 
-Summenprüfungen für Collateral und Debt
-
-Vergleich von Vault-Gesamtwerten mit On-Chain-Zustand
-
-Prüfen aller Invarianten
+- Summenprüfungen für Collateral und Debt
+- Vergleich von Vault-Gesamtwerten mit On-Chain-Zustand
+- Prüfen aller Invarianten
 
 ---
 
-## 
+## 12. Lizenz & Referenzen
 
 © 2025 Aqua75 / ProjectUSD  
 Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation  
