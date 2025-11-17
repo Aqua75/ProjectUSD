@@ -27,11 +27,11 @@ and ensure long-term stability without any central control.
 
 A vault is liquidated when:
 
-CR < LiquidationCR
+`CR < LiquidationCR`
 
 Where:
 
-CR = (collateral * OraclePrice) / debt
+`CR = (collateral * OraclePrice) / debt`
 
 Goal of liquidation:
 
@@ -57,19 +57,14 @@ The price comes exclusively from the Oracle Medianizer
 
 ## 1.3 Liquidation Flow (atomic)
 
-Liquidation happens as a single atomic operation:
+Liquidation happens as a single **atomic** operation:
 
-Oracle provides latest price
-
-Vault is detected as undercollateralized
-
-StabilityPool absorbs the vault debt
-
-collateral (PLS) is distributed pro-rata
-
-vault is reset to collateral = 0 / debt = 0
-
-event emitted (Liquidation(...))
+- Oracle provides latest price  
+- vault is detected as undercollateralized  
+- StabilityPool absorbs the vault debt  
+- collateral (PLS) is distributed pro-rata  
+- vault is reset to `collateral = 0` / `debt = 0`  
+- event emitted (`Liquidation(...)`)  
 
 No intermediate state is externally visible.
 
@@ -79,9 +74,8 @@ No intermediate state is externally visible.
 
 The StabilityPool performs:
 
-absorbing system debt
-
-distributing collateral to depositors
+- absorbing system debt  
+- distributing collateral to depositors  
 
 Algorithm (simplified):
 
@@ -99,19 +93,13 @@ No external contracts are called.
 
 Liquidation is protected by:
 
-no external calls
-
-atomic execution
-
-no slippage
-
-no DEX price exposure
-
-no flash-loan dependency
-
-Medianizer prevents spoofed price feeds
-
-liquidation and LP operations cannot happen in the same block
+- no external calls  
+- atomic execution  
+- no slippage  
+- no DEX price exposure  
+- no flash-loan dependency  
+- Medianizer prevents spoofed price feeds  
+- liquidation and LP operations cannot happen in the same block  
 
 ---
 
@@ -121,7 +109,7 @@ ProjectUSD charges no liquidation fee.
 
 Liquidators earn:
 
-the PLS received from the StabilityPool during liquidation
+- the PLS received from the StabilityPool during liquidation  
 
 ---
 
@@ -139,49 +127,36 @@ the PLS received from the StabilityPool during liquidation
 
 ## 1.8 Telemetry & Monitoring
 
-number of active vaults
-
-liquidation events
-
-absorbed system debt
-
-distributed collateral
-
-average CR of all vaults
-
-oracle deviation indicators
+- number of active vaults  
+- liquidation events  
+- absorbed system debt  
+- distributed collateral  
+- average CR of all vaults  
+- oracle deviation indicators  
 
 ---
 
 ## 1.9 Tests (Liquidation)
 
-UnitTests
+### UnitTests
 
-liquidation when CR < LiquidationCR
+- liquidation when `CR < LiquidationCR`  
+- no liquidation when `CR >= LiquidationCR`  
+- StabilityPool debt absorption  
+- CR calculation correctness  
+- atomic execution guaranteed  
 
-no liquidation when CR >= LiquidationCR
+### Property-Based Tests
 
-StabilityPool debt absorption
+- price-chaos simulations  
+- liquidation storms  
+- oracle outlier scenarios  
 
-CR calculation correctness
+### Static Analysis
 
-atomic execution guaranteed
-
-Property-Based Tests
-
-price-chaos simulations
-
-liquidation storms
-
-oracle outlier scenarios
-
-Static Analysis
-
-no reentrancy possible
-
-no external calls
-
-no unbounded loops
+- no reentrancy possible  
+- no external calls  
+- no unbounded loops  
 
 ---
 
@@ -194,47 +169,36 @@ for PLS at the system equilibrium price R, not at market price.
 
 This creates an absolute price floor and maintains peg stability.
 
-1 ProjectUSD → (1 / R) PLS
+`1 ProjectUSD → (1 / R) PLS`
 
-Where R is defined in Controller-SPEC.
+Where `R` is defined in Controller-SPEC.
 
 ---
 
 ### 2.2 Why Redemption is Necessary
 
-creates a guaranteed minimum value
-
-prevents long-term underpricing
-
-removes PLS/ProjectUSD arbitrage zones
-
-keeps market price near R
-
-enables automatic price correction
-
-gives long-term protection to holders
+- creates a guaranteed minimum value  
+- prevents long-term underpricing  
+- removes PLS/ProjectUSD arbitrage zones  
+- keeps market price near `R`  
+- enables automatic price correction  
+- gives long-term protection to holders  
 
 ---
 
 ### 2.3 Redemption Flow
 
-user sends ProjectUSD Coin to the VaultEngine
+- user sends ProjectUSD Coin to the VaultEngine  
+- system selects the most overcollateralized vault  
+- that vault’s collateral is reduced  
+- that vault’s debt is reduced  
+- user receives PLS at system rate  
 
-system selects the most overcollateralized vault
+Redemption is **not**:
 
-that vault’s collateral is reduced
-
-that vault’s debt is reduced
-
-user receives PLS at system rate
-
-Redemption is not:
-
-a liquidation
-
-an emergency tool
-
-a governance-controlled price mechanism
+- a liquidation  
+- an emergency tool  
+- a governance-controlled price mechanism  
 
 It is a pure algorithmic stabilizer.
 
@@ -244,35 +208,26 @@ It is a pure algorithmic stabilizer.
 
 Vaults are processed in this order:
 
-highest CR first
-
-then the next highest
-
-etc.
+- highest CR first  
+- then the next highest  
+- etc.  
 
 This ensures:
 
-fairness
-
-no individual user is drained disproportionately
-
-natural smoothing of overall collateral structure
+- fairness  
+- no individual user is drained disproportionately  
+- natural smoothing of overall collateral structure
 
 ---
 
 ### 2.5 Security & MEV Protection
 
-no external calls
-
-no DEX exposure
-
-only Oracle price + R determine redemption
-
-optional per-block RedeemLimit
-
-no flash-loan arbitrage possible
-
-atomic execution
+- no external calls  
+- no DEX exposure  
+- only Oracle price + `R` determine redemption  
+- optional per-block `RedeemLimit`  
+- no flash-loan arbitrage possible  
+- atomic execution  
 
 ---
 
@@ -290,44 +245,34 @@ atomic execution
 
 ### 2.7 Telemetry & Monitoring
 
-total redemption volume
-
-number of affected vaults
-
-average CR change
-
-collateral outflow
-
-oracle price movement
-
-equilibrium price R
+- total redemption volume  
+- number of affected vaults  
+- average CR change  
+- collateral outflow  
+- oracle price movement  
+- equilibrium price `R`  
 
 ---
 
 ### 2.8 Tests (Redemption)
-UnitTests
 
-redemption selects only overcollateralized vaults
+#### UnitTests
 
-CR-ordering correct
+- redemption selects only overcollateralized vaults  
+- CR-ordering correct  
+- atomic execution  
+- correct price computation  
 
-atomic execution
+#### Property-Based Tests
 
-correct price computation
+- extreme price movement  
+- multiple redemption chains  
+- stress redemption  
 
-Property-Based Tests
+#### Static Analysis
 
-extreme price movement
-
-multiple redemption chains
-
-stress redemption
-
-Static Analysis
-
-no external calls
-
-no manipulable loops
+- no external calls  
+- no manipulable loops  
 
 ---
 
@@ -355,6 +300,6 @@ Freeze-SPEC:
 
 ## 4. License & References
 
-© 2025 Aqua75 / ProjectUSD
-License: MIT for code, CC BY-NC-SA 4.0 for documentation
-Reference: ProjectUSD Whitepaper V2.1 (Ch. 6, 9, Glossary pp. 18–22)
+© 2025 Aqua75 / ProjectUSD  
+License: MIT for code, CC BY-NC-SA 4.0 for documentation  
+Reference: ProjectUSD Whitepaper V2.1 (Ch. 6, 9, Glossary pp. 18–22)  
