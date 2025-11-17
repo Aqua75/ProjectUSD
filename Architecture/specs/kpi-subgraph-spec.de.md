@@ -343,23 +343,19 @@ Redemption {
 
 ### 11.1 UnitTests
 
-korrekte Indexierung aller Events
+- korrekte Indexierung aller Events  
+- Korrektheit von CR-, R- und Preisberechnungen  
+- Aggregation über Vault-Gruppen  
+- Zeitreihen richtig erzeugt  
 
-Korrektheit von CR-, R- und Preisberechnungen
+---
 
-Aggregation über Vault-Gruppen
+### 11.2 Property-Based Tests
 
-Zeitreihen richtig erzeugt
-
-11.2 Property-Based Tests
-
-Bulk-Liquidationen
-
-Redemption-Spikes
-
-CR-Stürze
-
-Feed-Ausfälle
+- Bulk-Liquidationen  
+- Redemption-Spikes  
+- CR-Stürze  
+- Feed-Ausfälle  
 
 ---
 
@@ -373,8 +369,8 @@ Prüfen aller Invarianten
 
 ---
 
-## 12. Lizenz & Referenzen
+## 
 
-© 2025 Aqua75 / ProjectUSD
-Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation
-Referenzen: ProjectUSD Whitepaper V2.1 (Kap. 6–9, Glossar S. 24–28)
+© 2025 Aqua75 / ProjectUSD  
+Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation  
+Referenzen: ProjectUSD Whitepaper V2.1 (Kap. 6–9, Glossar S. 24–28)  
