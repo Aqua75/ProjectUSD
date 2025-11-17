@@ -301,7 +301,7 @@ Dies stellt sicher:
 
 ---
 
-## Lizenz
+## Lizenz & Referenzen
 
 © 2025 Aqua75 / ProjectUSD  
 Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation  
