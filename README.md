@@ -5,6 +5,17 @@
 
 ---
 
+## 🌐 What is ProjectUSD?
+
+ProjectUSD is a **fully on-chain, algorithmic monetary system** designed for PulseChain.  
+It achieves economic stability **without banks, without governance, without oracles,  
+and without centralized intervention of any kind.**
+
+It represents the next evolution of decentralized finance:  
+a **self-regulating economic engine** powered solely by transparent, immutable logic.
+
+---
+
 ## 📘 Whitepaper V2.1
 
 **Available Editions:**
@@ -30,28 +41,60 @@
 
 ---
 
-ProjectUSD is a fully on-chain, algorithmic monetary system designed to achieve price stability without oracles, banks, or centralized control.  
-It represents the next evolution of decentralized finance - a self-regulating economy built entirely on logic, transparency, and immutable code.
+## 🧩 Technical Architecture
+
+ProjectUSD is built from five immutable core modules:
+
+- **VaultEngine** – Collateral, debt, and CR logic  
+- **Controller** – Autonomous equilibrium engine (R & r-epochs)  
+- **Oracle** – Medianized, deviation-safe pricing  
+- **Liquidation & Redemption Engine** – Stability enforcement  
+- **StabilityPool** – Collective risk absorption  
+
+A detailed architectural explanation is available at:
+
+➡ `/Architecture/README.en.md`
 
 ---
 
-### Status  
-🧩 *Conceptual Blueprint – open for developers, researchers, and investors*
+## 📂 Full Technical Specification Library (SPECS)
 
-### License  
-This work is licensed under **CC BY-NC-SA 4.0**  
-(Attribution–NonCommercial–ShareAlike)
+ProjectUSD contains one of the most complete SPEC frameworks in decentralized finance:
+
+➡ `/Architecture/specs/README.en.md`  
+➡ `/Architecture/specs/README.de.md`
+
+These include:
+
+- VaultEngine SPEC  
+- Controller SPEC  
+- Oracle SPEC  
+- Liquidation & Redemption SPEC  
+- StabilityPool SPEC  
+- Security SPEC  
+- Governance & Freeze SPEC  
+- Freeze Checklist  
+- KPI Subgraph SPEC  
+- Incident Runbook  
+- DEX-LP SPEC (optional)
+
+Everything is **audit-ready, modular, consistent, and bilingual (EN/DE).**
 
 ---
 
-### Authors  
-Aqua75 · PulseChain Community Initiative  
-Version 2.1 – November 2025
+## 📌 Status  
+🧩 *Completed architecture & full SPEC blueprint — now open for developers, auditors, and investors.*
 
 ---
 
-📢 Discussion & Development
+## 🔗 Discussion & Development
 
-Join the ProjectUSD Discussion Channel on Telegram:
+Join the ProjectUSD community on Telegram:
 
-➡️ https://t.me/ProjectUSD_Discussion
+➡ https://t.me/ProjectUSD_Discussion
+
+---
+
+## 🪙 License  
+Creative Commons **BY-NC-SA 4.0**  
+© 2025 Aqua75 – PulseChain Community Initiative
