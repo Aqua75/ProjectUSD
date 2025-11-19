@@ -74,7 +74,7 @@ Auditoren und Forscher.
 ## 📘 Referenz
 
 Alle Architekturkonzepte basieren auf dem  
-[ProjectUSD Whitepaper V2.1 – Vision & Architektur einer selbstregulierenden Blockchain-Ökonomie](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-DE/ProjectUSD.Whitepaper.V2.1.DE.Deutsch.pdf)
+[ProjectUSD Whitepaper V2.1 – Vision & Architektur einer selbstregulierenden Blockchain-Ökonomie](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-DE/ProjectUSD.Whitepaper.V2.1.German.pdf)
 
 
 ---
