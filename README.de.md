@@ -1,6 +1,8 @@
 # ProjectUSD  
 ### Autonomes Geldsystem für PulseChain
 
+**Sprache:** 🇩🇪 Deutsch | [🇬🇧 English](./README.en.md)
+
 > *„Wenn der Code nicht lügen kann, muss es der Mensch auch nicht mehr.“*
 
 ---
