@@ -26,7 +26,7 @@ It describes how on-chain components interact to maintain equilibrium, autonomy,
 | Layer | Description |
 |-------|--------------|
 | **Immutable Core** | Contains the unchangeable logic: Vaults, Controller, Liquidations, and Redemption. Once frozen, it cannot be altered or paused. |
-| **Periphery Layer** | Optional extensions: Collateral adapters, AMO modules, Peg-Stability mechanisms, and analytics interfaces. |
+| **Periphery Layer** | Optional extensions: collateral adapters, analytics modules, and other non-core features. |
 | **Governance Layer** | Limited to coordination and upgrades of the periphery. No control over the immutable core. |
 
 ---
@@ -37,6 +37,35 @@ It describes how on-chain components interact to maintain equilibrium, autonomy,
 - **Mathematical Feedback:** Stability arises from algorithmic reaction, not fixed pegs.  
 - **Transparency by Code:** Every variable and process verifiable on-chain.  
 - **Freeze Event (Core only):** Once activated, only the **Immutable Core** becomes unchangeable; peripheral modules remain adjustable through timelocked governance.
+
+---
+
+## 📂 Technical Specifications (SPECS)
+
+The complete set of technical specifications – covering every core module,  
+security concept, freeze mechanism, stability logic, liquidation engine,  
+Subgraph KPIs, and diagnostic procedures – is available in:
+
+**➡ `/Architecture/specs/`**
+
+Two full entry points exist:
+
+- 🇬🇧 **SPECS Overview (English)**  
+  `/Architecture/specs/README.en.md`
+
+- 🇩🇪 **SPECS Übersicht (Deutsch)**  
+  `/Architecture/specs/README.de.md`
+
+These files provide:
+
+- a full module overview  
+- direct links to all specifications  
+- recommended reading order  
+- core vs periphery structure  
+- references to the ProjectUSD Whitepaper  
+
+The SPECS folder represents the **complete technical foundation** of ProjectUSD  
+for developers, auditors, and researchers.
 
 ---
 
