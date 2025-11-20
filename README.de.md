@@ -96,6 +96,22 @@ Offizielle Diskussionsgruppe:
 
 ---
 
+## ⚠️ Keine offizielle Implementierung enthalten
+
+Dieses Repository enthält ausschließlich **Spezifikationen und Dokumentation**.  
+ProjectUSD veröffentlicht, unterstützt, überprüft oder wartet **keine** Smart-Contract-Implementierungen.
+
+Jede externe Implementierung auf Basis dieser Spezifikationen ist **unabhängig**  
+und wird **nicht** von Aqua75 oder dem ProjectUSD-Projekt geprüft oder validiert.
+
+Es darf **nicht** angenommen werden, dass ein beliebiger On-Chain-Contract,  
+der behauptet, den ProjectUSD-SPECS zu folgen, offiziell, sicher oder autorisiert ist.
+
+Der offizielle Umfang von ProjectUSD umfasst ausschließlich  
+**Architektur, Forschung und Spezifikationen**.
+
+---
+
 ## 🪙 Lizenz  
 Creative Commons **BY-NC-SA 4.0**  
 © 2025 Aqua75 – PulseChain Community Initiative
