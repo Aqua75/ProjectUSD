@@ -97,6 +97,21 @@ Join the ProjectUSD community on Telegram:
 
 ---
 
+## ⚠️ No Official Implementation Included
+
+This repository contains **specifications and documentation only**.  
+ProjectUSD does **not** publish, endorse, verify, or maintain any smart contract implementations.
+
+Any third-party implementation based on these specifications is **independent** and  
+**not reviewed or validated** by Aqua75 or the ProjectUSD team.
+
+Do **not** assume that any on-chain contract claiming to follow ProjectUSD SPECS  
+is official, secure, or affiliated with this repository.
+
+ProjectUSD’s official scope is **architecture, research, and specifications only**.
+
+---
+
 ## 🪙 License  
 Creative Commons **BY-NC-SA 4.0**  
 © 2025 Aqua75 – PulseChain Community Initiative
