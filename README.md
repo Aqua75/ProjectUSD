@@ -97,18 +97,24 @@ Join the ProjectUSD community on Telegram:
 
 ---
 
-## ⚠️ No Official Implementation Included
+## ⚠️ Implementation Notice
 
-This repository contains **specifications and documentation only**.  
-ProjectUSD does **not** publish, endorse, verify, or maintain any smart contract implementations.
+This repository contains the official ProjectUSD specifications only.
 
-Any third-party implementation based on these specifications is **independent** and  
-**not reviewed or validated** by Aqua75 or the ProjectUSD team.
+Smart contract implementations may be developed by independent teams.
+Whether a specific implementation is secure can only be evaluated through:
 
-Do **not** assume that any on-chain contract claiming to follow ProjectUSD SPECS  
-is official, secure, or affiliated with this repository.
+- **open audits**,  
+- **peer review**,  
+- **open-source transparency**,  
+- **formal verification**,  
 
-ProjectUSD’s official scope is **architecture, research, and specifications only**.
+—not through this document.
+
+ProjectUSD does not publish smart contracts and does not designate any implementation as official.
+
+Users should rely only on implementations that have undergone verification
+by **reputable auditors** and whose source code is fully transparent.
 
 ---
 
