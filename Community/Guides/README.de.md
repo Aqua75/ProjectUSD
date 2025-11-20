@@ -11,11 +11,11 @@ und sinnvolle Beteiligung.
 ## 📘 Dokumente
 
 ### **1. Self-Starter Guide**
-- **[selfstarter-guide.md](./selfstarter-guide.md)**  
+- **[selfstarter-guide.md](./selfstarter-guide.de.md)**  
   Ein praktischer Leitfaden für alle, die sofort loslegen möchten.
 
 ### **2. Part-Time Steward Plan**
-- **[parttime-steward-plan.md](./parttime-steward-plan.md)**  
+- **[parttime-steward-plan.md](./parttime-steward-plan.de.md)**  
   Ein strukturierter Plan für Community-Stewards,  
   die ProjectUSD regelmäßig in Teilzeit unterstützen.
 
