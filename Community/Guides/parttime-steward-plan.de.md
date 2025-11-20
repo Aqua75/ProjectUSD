@@ -87,7 +87,7 @@ So entsteht ein positiver Kreislauf konstruktiver Beiträge.
 
 ## 🌱 Entwicklungsmöglichkeiten
 
-Langfristige Stewards können zu:
+Langfristige Stewards können sich entwickeln zu:
 
 - Dokumentations-Maintainer  
 - Forschungs-Koordinatoren  
