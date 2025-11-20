@@ -96,19 +96,24 @@ Offizielle Diskussionsgruppe:
 
 ---
 
-## ⚠️ Keine offizielle Implementierung enthalten
+## ⚠️ Hinweis zur Implementierung
 
-Dieses Repository enthält ausschließlich **Spezifikationen und Dokumentation**.  
-ProjectUSD veröffentlicht, unterstützt, überprüft oder wartet **keine** Smart-Contract-Implementierungen.
+Dieses Repository enthält ausschließlich die offiziellen Spezifikationen von ProjectUSD.
 
-Jede externe Implementierung auf Basis dieser Spezifikationen ist **unabhängig**  
-und wird **nicht** von Aqua75 oder dem ProjectUSD-Projekt geprüft oder validiert.
+Smart-Contract-Implementierungen können von unabhängigen Entwicklerteams erstellt werden.
+Ob eine konkrete Implementation sicher ist, lässt sich ausschließlich durch:
 
-Es darf **nicht** angenommen werden, dass ein beliebiger On-Chain-Contract,  
-der behauptet, den ProjectUSD-SPECS zu folgen, offiziell, sicher oder autorisiert ist.
+- **öffentliche Audits**,  
+- **Peer-Review**,  
+- **Open-Source-Transparenz**,  
+- **formale Verifikation**  
 
-Der offizielle Umfang von ProjectUSD umfasst ausschließlich  
-**Architektur, Forschung und Spezifikationen**.
+beurteilen – nicht durch dieses Dokument.
+
+ProjectUSD veröffentlicht selbst **keine** Smart-Contracts und gibt **keine** Implementierung als offiziell aus.
+
+Nutzer sollten ausschließlich Implementationen verwenden,
+die von **anerkannten Auditoren** überprüft wurden und deren Code **öffentlich einsehbar** ist.
 
 ---
 
