@@ -1,7 +1,7 @@
 # ProjectUSD  
 ### Autonomous Monetary System for PulseChain
 
-**Language:** 🇬🇧 English | [🇩🇪 Deutsch](./README.de.md)
+**Language:** 🇬🇧 English | [🇩🇪 German](./README.de.md)
 
 > *"When the code cannot lie, humanity no longer needs to."*
 
