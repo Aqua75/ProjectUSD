@@ -43,9 +43,9 @@ Es startet leer – und das ist beabsichtigt.
 
 ## 4. Warum Nutzer Vaults öffnen – und es nicht primär um Zinsen geht
 Ein häufiger Irrtum ist, dass Nutzer Vaults öffnen, „um Zinsen zu verdienen“.  
-Das ist falsch.
+Das ist falsch – zumindest als Hauptmotiv.
 
-Vaults werden eröffnet, um:
+Vaults werden vor allem eröffnet, um:
 
 - Liquidität zu erhalten, ohne PLS verkaufen zu müssen  
 - ProjectUSD als stabile Recheneinheit zu nutzen  
@@ -53,7 +53,23 @@ Vaults werden eröffnet, um:
 - Hebelstrategien umzusetzen  
 - Kaufkraft zu erhöhen  
 
-Die Systemrate (r) ist ein Regelmechanismus zur Stabilisierung, keine Nutzerbelohnung.
+Die **Systemrate (r)** ist ein geldpolitisches Regelinstrument:
+
+- sie kann positiv sein (Zinskosten für Schuldner, Erträge für Sparer)  
+- sie kann negativ sein (Anreiz ProjectUSD zu halten oder zu prägen)  
+- sie kann neutral sein  
+
+### Ergänzung:  
+**Ja, einige Nutzer werden Vaults auch aufgrund möglicher Zinsgewinne eröffnen.**  
+Positive r-Phasen können dazu führen, dass das Halten von ProjectUSD oder die Teilnahme am Stability Pool Rendite abwirft. Diese Zinsen sind jedoch:
+
+- dynamisch,  
+- nicht garantiert,  
+- systemabhängig,  
+- und dienen primär der **Preis-Stabilisierung**, nicht der Nutzerbelohnung.
+
+Zinsgewinne sind ein **Nebenprodukt** der Rückkopplungsmechanik –  
+nicht der Kernanreiz für das Öffnen eines Vaults.
 
 ## 5. Warum das System ohne LPs starten kann
 Stablecoins brauchen erst dann LPs, wenn Nutzer aktiv handeln wollen.
