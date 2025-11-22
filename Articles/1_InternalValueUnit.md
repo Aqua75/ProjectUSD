@@ -1,7 +1,7 @@
 # Das Problem der fehlenden Wertreferenz auf PulseChain  
 ## Warum eine selbstregulierende native Recheneinheit ökonomisch unvermeidlich ist
 
-PulseChain ist eine schnelle, permissionless Blockchain – doch aus ökonomischer Sicht fehlt ihr ein zentrales Element, das jede stabile Wirtschaftsordnung benötigt:  
+PulseChain ist eine schnelle, erlaubnisfreie Blockchain – doch aus ökonomischer Sicht fehlt ihr ein zentrales Element, das jede stabile Wirtschaftsordnung benötigt:  
 **eine interne, verlässliche, algorithmisch rückgekoppelte Recheneinheit.**
 
 Solange diese fehlt, bleibt PulseChain nicht mehr als ein Marktplatz mit ständigem Kapitalabfluss.  
