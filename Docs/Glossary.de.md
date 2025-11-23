@@ -1,104 +1,91 @@
-# Glossary – Terminology of the ProjectUSD Specification  
+# Glossary – Key Terms of the ProjectUSD Specification
 
-Dieses Glossar definiert zentrale Begriffe, die in der wirtschaftlichen, mathematischen  
-und architektonischen Spezifikation von ProjectUSD verwendet werden.  
-Es beschreibt **keine Implementierung**, sondern ausschließlich theoretische Module  
-und Konzepte des Designs.
+Dieses Glossar definiert die zentralen Begriffe, die in der ökonomischen und architektonischen
+Spezifikation von ProjectUSD verwendet werden.
+
+Die folgenden Begriffe beschreiben **Modelle und Funktionsmodule innerhalb der Spezifikation**.
+Wenn ein **externes Entwicklerteam** die Spezifikation umsetzt, würden diese Module
+entsprechend ihrer definierten Rollen wirken – rein gemäß den Regeln des Designs,
+nicht als garantiertes Live-System.
 
 ---
 
 ## **R – Redemption Price (Gleichgewichtspreis)**  
-Der interne, theoretische Referenzwert in der ProjectUSD-Architektur.  
-R fungiert als ökonomischer Gleichgewichtspunkt, um den sich ein  
-selbststabilisierendes Wertesystem ausrichten kann.  
-Der Begriff ist rein konzeptionell und wird ausschließlich durch  
-on-chain messbare Mechanismen definiert.
+Der interne Referenzwert, um den sich ein implementiertes System stabilisieren würde.  
+R dient als mathematischer Gleichgewichtspreis und entsteht ausschließlich aus
+on-chain messbaren Größen – ohne Orakel oder Fiat-Bezug.
 
 ---
 
 ## **r – System Rate**  
-Ein variabler Steuerparameter innerhalb der theoretischen Kontrolllogik.  
-Die Systemrate r repräsentiert den mathematischen Regler, der in der  
-Spezifikation zur Modellierung von Nachfrageverhalten, Anreizen  
-und Gleichgewichtsrückführung eingesetzt wird.
+Ein variabler Steuerparameter in der Spezifikation.  
+Bei einer Umsetzung würde r als Regler für Nachfrage, Anreize und Marktreaktionen dienen
+und auf Abweichungen zwischen Marktpreis P und Gleichgewichtspreis R reagieren.
 
 ---
 
-## **Vault (Konzeptionelles Collateral-Modul)**  
-Ein Vault ist ein **theoretischer Baustein** der Architektur, der die Regeln für  
-Kollateralisierung und Ausgabe der Einheit „ProjectUSD“ beschreibt.  
-Das Vault-Modul definiert Konzepte wie Besicherungsgrad, Liquidationsbedingungen  
-und die Interaktion zwischen Collateral und Systemverpflichtungen –  
-rein auf Spezifikationsebene, ohne Bezug zu einer konkreten Implementierung.
+## **Vault (Collateral-Modul)**  
+Ein in der Spezifikation definiertes Modul, das beschreibt, wie Sicherheiten hinterlegt,
+wie Schulden erzeugt und wie Risiken abgefedert werden könnten.  
+Falls implementiert, würde ein Vault-Modul die Regeln für Besicherung,
+Liquidation und Schuldenmanagement vorgeben.
 
 ---
 
-## **Stability Pool (Konzeptionelles Stabilitätsmodul)**  
-Ein in der Spezifikation definiertes Modell für kollektive Risikopuffer.  
-Es beschreibt, wie ein System theoretisch mit unterbesicherten Positionen  
-umgehen kann und welche Mechanismen eine selbstkorrigierende Struktur  
-begünstigen würden.  
-Der Stability Pool existiert ausschließlich als konzeptionelles Element  
-innerhalb der Architektur.
+## **Stability Pool (kollektiver Risikopuffer)**  
+Ein konzeptionelles Modell zur Behandlung unterbesicherter Positionen.
+Bei einer Implementierung würde dieses Modul als gemeinsamer Liquiditätspool wirken,
+der theoretisch Schulden absorbieren und Collateral umverteilen könnte.
 
 ---
 
 ## **Redemption Engine**  
-Ein theoretischer Mechanismus, der erklärt, wie ein internes Gleichgewicht  
-zwischen R (Redemption Price) und dem Marktpreis modelliert werden kann.  
-Er beschreibt, wie Arbitragestrukturen in einem autonomen System  
-zu Preiskonvergenz führen könnten.  
-Es handelt sich um ein **Definitionsmodul**, nicht um eine Implementierung.
+Ein im Design definiertes Preisanker-Modul.
+Würde die Spezifikation umgesetzt, könnte dieser Mechanismus Arbitragekräfte aktivieren,
+sodass Marktpreise langfristig zu R konvergieren.
 
 ---
 
 ## **AMO – Algorithmic Market Operations**  
-In der Spezifikation definierte optionale, algorithmische Steuerungsmechanismen.  
-AMOs beschreiben abstrakt, wie ein System in bestimmten Modellen  
-Liquidität oder Reserven anpassen könnte, sofern es innerhalb klarer  
-mathematischer Grenzen operiert.  
-AMOs sind **rein theoretische Komponenten** des Designs.
+Optionale Module der Spezifikation, die erklären, wie ein System durch begrenzte,
+algorithmische Mechanismen Liquidität beeinflussen *könnte*.  
+AMOs sind konzeptionelle Erweiterungen – nicht notwendig für die Kernfunktion.
 
 ---
 
 ## **PSM – Peg Stability Module**  
-Ein optionales, rein spezifikatives Konzept zur Modellierung von  
-Kurstreibung und Liquiditätspuffern.  
-In der Architektur wird der PSM als theoretische Ergänzung beschrieben,  
-die externe stabile Einheiten nutzen *könnte*, ohne dass dies für die  
-Funktionsweise der Kernlogik notwendig wäre.
+Ein in der Spezifikation beschriebener optionaler Mechanismus zur Modellierung
+kurzfristiger Liquiditätsreibung.  
+Falls implementiert, würde der PSM externe Stablecoins in engem Rahmen nutzen,
+ohne die Autonomie des Systems zu beeinträchtigen.
 
 ---
 
 ## **Surplus Buffer**  
-Ein konzeptioneller ökonomischer Puffer innerhalb der Architektur.  
-Er dient dazu, modelltheoretisch zu erklären, wie interne Überschüsse  
-in einem autonomen System aufgefangen, gespeichert oder verteilt  
-werden könnten.
+Ein definierter ökonomischer Puffer innerhalb der Architektur.  
+In einer möglichen Umsetzung würde dieser Überschüsse speichern
+und theoretisch dazu dienen, r-Schwankungen oder langfristige Sparmodelle zu glätten.
 
 ---
 
 ## **Immutable Core**  
-Der in der Spezifikation definierte Kernbereich aller kritischen Regeln  
-und mathematischen Mechanismen.  
-Der Immutable Core beschreibt, **welche Teile eines autonomen Systems  
-nach einem Freeze-Konzept unveränderlich sein müssten**, um  
-dauerhafte Stabilität und Manipulationsfreiheit zu ermöglichen.
+Der in der Spezifikation festgelegte Bereich aller kritischen Funktionen,
+der bei einer Implementierung nach einem Freeze-Konzept unveränderlich wäre.  
+Der Immutable Core definiert, welche Mechanismen dauerhaft fix sein müssen,
+damit ein autonomes System stabil und fälschungssicher bleibt.
 
 ---
 
 ## **Freeze Event**  
-Ein theoretischer Begriff, der beschreibt, wann ein Systemkern nach  
-vollständigem Audit und Stabilitätsnachweis dauerhaft eingefroren wird  
-und ab diesem Zeitpunkt nicht mehr änderbar ist.  
-Das Freeze Event ist ein **architektonisches Prinzip**, kein  
-umzusetzender realer Vorgang.
+Ein theoretisch definierter Zeitpunkt in einer möglichen Implementierung,
+an dem der Kerncode eingefroren und dauerhaft unveränderlich würde.  
+Der Begriff beschreibt ein Architekturprinzip – kein tatsächliches Ereignis
+in diesem Repository.
 
 ---
 
 ## **Controller**  
-Ein mathematisches Regelsystem, das in der Spezifikation definiert,  
-wie r (System Rate) in Abhängigkeit von Abweichungen zwischen  
-Marktpreis P und Gleichgewichtspreis R angepasst werden könnte.  
-Der Controller ist ein **rein theoretisches Modell** zur Beschreibung  
-selbststabilisierender, algorithmischer Geldpolitik.
+Ein mathematisches Regelsystem, das die Beziehung zwischen P (Marktpreis), R (Gleichgewichtspreis)
+und r (Systemrate) modelliert.  
+Bei einer Implementierung würde der Controller die zentrale Rolle der
+selbststabilisierenden Rückkopplung übernehmen.
