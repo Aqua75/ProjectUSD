@@ -43,9 +43,9 @@ Neue Artikel folgen der gleichen Struktur:
 ```
 Articles/
 └── artikel-titel-kebab-case/
-├── artikel-titel-kebab-case.en.md
-├── artikel-titel-kebab-case.de.md
-└── optionale-diagramme.png
+  ├── artikel-titel-kebab-case.en.md
+  ├── artikel-titel-kebab-case.de.md
+  └── optionale-diagramme.png
 ```
 ---
 
