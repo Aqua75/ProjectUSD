@@ -67,6 +67,6 @@ open research.
 
 ---
 
-🪙 License  
+## 🪙 License  
 Creative Commons BY-NC-SA 4.0  
 © 2025 Aqua75 – PulseChain Community Initiative
