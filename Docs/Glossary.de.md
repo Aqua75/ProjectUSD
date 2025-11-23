@@ -1,4 +1,4 @@
-# Glossary – Key Terms of the ProjectUSD Specification
+# Glossary – Schlüsselbegriffe der ProjectUSD-Spezifikation
 
 Dieses Glossar definiert die zentralen Begriffe der ProjectUSD-Spezifikation.  
 Die beschriebenen Module zeigen, wie die Komponenten in einer späteren Implementierung  
