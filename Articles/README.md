@@ -40,17 +40,13 @@ and how pure algorithmic regulation can create stable monetary equilibria.
 ## 🧭 Structure & Expansion
 
 New articles follow the same structure:
-
+```
 Articles/
-
-└── article-title-kebab-case/
-
-├── article-title-kebab-case.en.md
-
-├── article-title-kebab-case.de.md
-
-└── optional-diagrams.png
-
+└── artikel-titel-kebab-case/
+  ├── artikel-titel-kebab-case.en.md
+  ├── artikel-titel-kebab-case.de.md
+  └── optionale-diagramme.png
+```
 ---
 
 ## 🧩 Purpose of These Articles
