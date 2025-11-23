@@ -42,9 +42,13 @@ and how pure algorithmic regulation can create stable monetary equilibria.
 New articles follow the same structure:
 
 Articles/
+
 └── article-title-kebab-case/
+
 ├── article-title-kebab-case.en.md
+
 ├── article-title-kebab-case.de.md
+
 └── optional-diagrams.png
 
 ---
