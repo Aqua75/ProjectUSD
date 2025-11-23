@@ -86,24 +86,48 @@ desto weniger relevant wird Fiat als sicherer Hafen.
 
 ---
 
-## Externe vs. interne Kaufkraft  
+## Externe vs. interne Kaufkraft
 
-Es gibt zwei Arten von Kaufkraft:  
-- **Externe Kaufkraft** — sie misst, was PulseChain der Außenwelt wert ist,  
-- **Interne Kaufkraft** — sie misst, was ein Token *innerhalb* der Chain kaufen kann.
+Es gibt zwei Arten von Kaufkraft:
 
-Wenn ProjectUSD funktioniert, bleibt die interne Kaufkraft stabil,  
-selbst wenn der Dollarpreis schwankt.  
-Innerhalb des Systems entspricht ein ProjectUSD  
-immer einer konstanten Einheit wirtschaftlicher Leistung.
+- **Externe Kaufkraft** – sie misst, was PulseChain der Außenwelt wert ist (z. B. in PLS, USD oder anderen externen Assets).  
+- **Interne Kaufkraft** – sie misst, was ein Token *innerhalb* der PulseChain-Wirtschaft leisten und bewirken kann.
 
-Kapital bleibt auch in Abschwüngen produktiv:  
-Es kann Zinsen verdienen, als Collateral dienen  
-und in Anwendungen zirkulieren.  
-Diese Nutzung kompensiert oft nominale Fiatverluste.  
+Genau hier entsteht oft ein Missverständnis:
 
-Wenn der interne Markt wächst, verschiebt sich der Anreiz —  
-**Geld auf PulseChain wird nicht nur sicher, sondern produktiv.**
+Wenn jemand sagt:  
+„Ich konnte früher für 100 ProjectUSD mehr PLS kaufen als heute – also ist die Kaufkraft gefallen“,  
+dann verwechselt er externe Preise mit interner ökonomischer Leistung.
+
+### 🔹 ProjectUSD stabilisiert sich nicht gegenüber PLS.  
+### 🔹 ProjectUSD stabilisiert sich gegenüber R – seiner eigenen internen Wirtschaftseinheit.
+
+Das bedeutet:
+
+**Wenn du heute weniger PLS für dieselben ProjectUSD bekommst,  
+dann ist nicht ProjectUSD schwächer geworden – PLS ist stärker geworden.**
+
+PLS ist ein spekulativer Vermögenswert. Sein Preis kann steigen oder fallen,  
+und diese Schwankungen sagen nichts über die inneren Kräfte und die Stabilität  
+der ProjectUSD-Ökonomie aus.
+
+### Die interne Kaufkraft von ProjectUSD bleibt stabil,  
+weil sie nicht an den Preis eines einzelnen Tokens gebunden ist,  
+sondern an den mathemisch definierten Gleichgewichtswert R.
+
+Innerhalb des Systems entspricht 1 ProjectUSD deshalb  
+immer derselben Funktion und derselben ökonomischen Leistung –  
+egal, wie stark externe Assetpreise schwanken.
+
+Kapital bleibt selbst in Abschwüngen produktiv:  
+Es kann Zinsen verdienen, als Collateral dienen und in Anwendungen zirkulieren.  
+Diese Nutzung kompensiert oft nominale Fiatverluste und sorgt dafür,  
+dass interne Dynamik wertvoller wird als externe Kursschwankungen.
+
+Wenn der interne Markt wächst, verschiebt sich der Anreiz:  
+Geld auf PulseChain ist nicht nur sicher, sondern produktiv –  
+und seine Kaufkraft wird nicht durch externe Preise definiert,  
+sondern durch die Stabilität der eigenen Wirtschaft.
 
 ---
 
