@@ -29,7 +29,7 @@ If supply and demand on a blockchain are linked through feedback, equilibrium ca
 
 The ProjectUSD controller constantly measures how far the market price deviates from the internal equilibrium price **R**.
 
-- If the market overheats → **r** rises → minting becomes more expensive  
+- If the market overheats → **r** rises → minting becomes more expensive and holding less attractive
 - If the price falls → **r** drops → saving and minting become attractive  
 
 This creates a mathematically regulated interest and savings mechanism that stabilizes the money supply.
