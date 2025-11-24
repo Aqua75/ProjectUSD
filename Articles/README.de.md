@@ -50,6 +50,19 @@ Wert im System zu halten, anstatt ihn in Marktabschwüngen wieder zu verlieren.
 
 ---
 
+### 4. Investoren-Mechanismen in ProjectUSD – Technische Zusammenfassung  
+Eine technische Übersicht darüber, wie Investoren durch ProjectUSD profitieren –  
+einschließlich systembasierter Cashflows, Liquidationsgewinne, Arbitrage  
+und wertsteigernder Collateral-Effekte auf PLS.
+
+- 🇩🇪 Deutsch:  
+  [`investor-mechanisms/investor-mechanisms.de.md`](./investor-mechanisms/investor-mechanisms.de.md)
+
+- 🇬🇧 Englisch:  
+  [`investor-mechanisms/investor-mechanisms.en.md`](./investor-mechanisms/investor-mechanisms.en.md)
+
+---
+
 ## 🧭 Struktur & Erweiterungen
 
 Neue Artikel folgen der gleichen Struktur:
