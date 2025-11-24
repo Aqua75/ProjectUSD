@@ -56,7 +56,7 @@ system-based cashflows, liquidation profits, arbitrage, and collateral-driven
 value appreciation.
 
 - 🇬🇧 English:  
-  [`investor-mechanisms/investor-mechanisms.md`](./investor-mechanisms/investor-mechanisms.md)
+  [`investor-mechanisms/investor-mechanisms.md`](./investor-mechanisms/investor-mechanisms.en.md)
 
 - 🇩🇪 German:  
   [`investor-mechanisms/investor-mechanisms.de.md`](./investor-mechanisms/investor-mechanisms.de.md)
