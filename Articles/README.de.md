@@ -40,7 +40,7 @@ Algorithmik stabile, selbstregulierende monetäre Gleichgewichte erzeugen kann.
 ### 3. ProjectUSD und Kaufkraft (PulseChain)
 Ein umfassender Artikel darüber, wie ProjectUSD externe Kaufkraft in
 interne ökonomische Stabilität verwandelt und PulseChain ermöglicht,
-Wert im System zu halten, statt ihn in Marktabschwüngen zu verlieren.
+Wert im System zu halten, anstatt ihn in Marktabschwüngen wieder zu verlieren.
 
 - 🇩🇪 Deutsch:  
   [`projectusd-and-purchasing-power/projectusd-and-purchasing-power.de.md`](./projectusd-and-purchasing-power/projectusd-and-purchasing-power.de.md)
