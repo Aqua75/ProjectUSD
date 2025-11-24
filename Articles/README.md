@@ -50,6 +50,19 @@ losing it during market downturns.
 
 ---
 
+### 4. Investor Mechanisms in ProjectUSD – Technical Summary  
+A technical overview of how investors benefit from ProjectUSD through  
+system-based cashflows, liquidation profits, arbitrage, and collateral-driven  
+value appreciation.
+
+- 🇬🇧 English:  
+  [`investor-mechanisms/investor-mechanisms.md`](./investor-mechanisms/investor-mechanisms.md)
+
+- 🇩🇪 German:  
+  [`investor-mechanisms/investor-mechanisms.de.md`](./investor-mechanisms/investor-mechanisms.de.md)
+
+---
+
 ## 🧭 Structure & Expansion
 
 New articles follow the same structure:
