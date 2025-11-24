@@ -37,6 +37,19 @@ and how pure algorithmic regulation can create stable monetary equilibria.
 
 ---
 
+### 3. ProjectUSD and Purchasing Power (PulseChain)
+A comprehensive explanation of how ProjectUSD transforms external purchasing power
+into internal economic stability, enabling PulseChain to retain value instead of
+losing it during market downturns.
+
+- 🇬🇧 English:  
+  [`projectusd-and-purchasing-power/projectusd-and-purchasing-power.en.md`](./projectusd-and-purchasing-power/projectusd-and-purchasing-power.en.md)
+
+- 🇩🇪 German:  
+  [`projectusd-and-purchasing-power/projectusd-and-purchasing-power.de.md`](./projectusd-and-purchasing-power/projectusd-and-purchasing-power.de.md)
+
+---
+
 ## 🧭 Structure & Expansion
 
 New articles follow the same structure:
