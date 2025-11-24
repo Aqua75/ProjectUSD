@@ -29,7 +29,7 @@ Wenn Angebot und Nachfrage über Feedback miteinander verbunden sind, entsteht e
 
 Der ProjectUSD-Controller misst fortlaufend, wie stark der Marktpreis vom internen Gleichgewichtspreis **R** abweicht.
 
-- Wenn der Markt überhitzt → **r** steigt → Minten wird teurer  
+- Wenn der Markt überhitzt → **r** steigt → Minten wird teurer und Halten weniger attraktiv  
 - Wenn der Preis fällt → **r** sinkt → Sparen und Minten werden attraktiver  
 
 So entsteht ein mathematisch regulierter Zins- und Sparmechanismus, der das System stabilisiert.
