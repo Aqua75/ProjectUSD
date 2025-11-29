@@ -315,6 +315,18 @@ Eine Implementierung ist nur konform, wenn:
 6. Ergebnisse offen veröffentlichen
 7. am Konsolidierungsprozess teilnehmen
 
+# Hinweis zur Spezifikation
+
+Dieses Dokument ist Teil der offiziellen ProjectUSD-Spezifikation.
+Es definiert Standards, Architekturprinzipien und Anforderungen für unabhängige Implementierungen.
+
+Das Repository enthält keine Smart Contracts und keine Software-Implementierung.
+Alle Implementierungen sind vollständig unabhängig und tragen ihre eigene technische und rechtliche Verantwortung.
+
+Der Name "ProjectUSD" darf ausschließlich für Implementierungen verwendet werden,
+die vollständig dieser Spezifikation entsprechen und den Konsolidierungsprozess durchlaufen haben.
+Andere Varianten müssen klar als Forks gekennzeichnet sein.
+
 # Schlusswort
 
 Dieses Playbook stellt sicher, dass:
@@ -325,5 +337,3 @@ Dieses Playbook stellt sicher, dass:
 - ein einziger stabiler Wertstandard auf PulseChain entsteht
 
 ProjectUSD ist ein offenes, gemeinschaftsbasiertes Projekt, dessen Stärke in klaren Regeln und konsequenter Dezentralität liegt.
-
-**The blueprint is complete and open for everyone. Any skilled programmer can program it, because all instructions are free for anyone to read and use. https://github.com/Aqua75/ProjectUSD**
