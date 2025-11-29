@@ -53,6 +53,7 @@ ProjectUSD is built from five immutable core modules:
 - **Liquidation & Redemption Engine** – Stability enforcement  
 - **StabilityPool** – Collective risk absorption  
 
+
 > ### 🔍 Clarification: Internal TWAP Oracle  
 > The “Oracle” module in ProjectUSD is **not** an external price oracle.  
 > It does **not** use Chainlink, Pyth, DIA, APIs, or any off-chain data.  
@@ -66,6 +67,7 @@ ProjectUSD is built from five immutable core modules:
 > - fully deterministic and on-chain  
 >  
 > This ensures that ProjectUSD remains an **autonomous, oracle-free monetary system** while still allowing the controller to observe its own AMM-based market behavior.
+
 
 A detailed architectural explanation is available at:
 
