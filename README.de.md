@@ -52,6 +52,8 @@ ProjectUSD besteht aus fünf unveränderlichen Kernmodulen:
 - **Liquidation & Redemption Engine** – Stabilitätsdurchsetzung  
 - **StabilityPool** – Kollektiver Risikopuffer  
 
+---
+
 > ### 🔍 Klarstellung: Internes TWAP-Oracle  
 > Das „Oracle“-Modul in ProjectUSD ist **kein** externes Preis-Oracle.  
 > Es verwendet **weder** Chainlink, Pyth, DIA, APIs **noch** sonstige Off-Chain-Datenquellen.  
@@ -67,6 +69,8 @@ ProjectUSD besteht aus fünf unveränderlichen Kernmodulen:
 >  
 > Damit bleibt ProjectUSD ein **autonomes, oracle-freies Währungssystem**,  
 > während der Controller dennoch das Verhalten seines eigenen AMM-Marktes beobachten kann.
+
+---
 
 Detaillierte Erklärung:
 
