@@ -30,6 +30,8 @@ Ziel:
 - maximale Qualität ohne Zentralsteuerung
 - maximale Robustheit ohne spätere Upgrades
 
+---
+
 # 1. Grundprinzipien
 
 ## 1.1 No-Governance
@@ -60,6 +62,8 @@ Ziel:
 - jeder Beitrag ist open source
 - jede Abweichung muss dokumentiert werden
 
+---
+
 # 2. Namens- und Spezifikationsschutz
 
 ## 2.1 Definition des Namens
@@ -87,6 +91,8 @@ kennzeichnen.
 - Vermeidung von Fake-Projekten
 - klare Zuordnung der offiziellen Architektur
 
+---
+
 # 3. Scope & Responsibility
 
 Dieses Repository enthält:
@@ -105,6 +111,8 @@ Es enthält **keine Implementierung** und übernimmt **keine Verantwortung** fü
 - Audits fremder Implementierungen
 
 Implementierende Teams tragen die volle Verantwortung für ihren Code.
+
+---
 
 # 4. Implementierungsanforderungen
 
@@ -138,6 +146,8 @@ Alle Implementierungen müssen identische:
 
 verwenden.
 
+---
+
 # 5. Coding-Richtlinien
 
 ## 5.1 Struktur
@@ -149,6 +159,8 @@ verwenden.
 - gut lesbarer Code
 - klar kommentierte Funktionen
 - dokumentierte Entscheidungen
+
+---
 
 # 6. Simulationen
 
@@ -179,6 +191,8 @@ Simulationen müssen:
 
 sein.
 
+---
+
 # 7. Sicherheitsrichtlinien
 
 ## 7.1 Mindestanforderungen
@@ -192,6 +206,8 @@ sein.
 - Proxy-Pattern
 - zentrale Notfallfunktionen
 
+---
+
 # 8. Referenz-Spezifikation
 
 Die Referenz-Spezifikation definiert:
@@ -203,12 +219,16 @@ Die Referenz-Spezifikation definiert:
 
 Sie ist das „Grundgesetz“ für jede Implementierung.
 
+---
+
 # 9. Multi-Team-Wettbewerb
 
 - mehrere Implementierungen sind erlaubt
 - volle Transparenz ist verpflichtend
 - Spezifikationstreue ist Pflicht
 - kein Team darf vor Abschluss der Konsolidierung ins Mainnet deployen
+
+---
 
 # 10. Konsolidierungsprozess
 
@@ -221,6 +241,8 @@ Der Konsolidierungsprozess umfasst:
 5. Reduktion auf Finalkandidaten
 6. Community-basierte Evaluierung
 7. finale Auswahl
+
+---
 
 # 11. Deployment-Standards
 
@@ -250,6 +272,8 @@ Nach dem Deployment sind:
 
 möglich.
 
+---
+
 # 12. Weiterentwicklung nach dem Deployment
 
 Erlaubt sind:
@@ -267,6 +291,8 @@ Nicht erlaubt sind:
 - funktionale Erweiterungen
 - Parameteranpassungen
 
+---
+
 # 13. Governance-Freiheit
 
 Nach dem Deployment existieren:
@@ -277,6 +303,8 @@ Nach dem Deployment existieren:
 - keine zentralen Instanzen
 
 Das System wird ausschließlich durch Marktkräfte gesteuert.
+
+---
 
 # 14. Versionierung & Repository-Struktur
 
@@ -290,6 +318,8 @@ Das System wird ausschließlich durch Marktkräfte gesteuert.
 - `v0.x` Entwicklungsprototypen
 - `v1.0` finale Spezifikation
 - `v1.0-mainnet` Deployment
+
+---
 
 # 15. Compliance Checklist
 
@@ -305,6 +335,8 @@ Eine Implementierung ist nur konform, wenn:
 - [ ] keine externen Preisfeeds verwendet werden
 - [ ] alle Parameter unveränderlich sind
 
+---
+
 # 16. How to Start as a Developer
 
 1. Playbook vollständig lesen
@@ -314,6 +346,8 @@ Eine Implementierung ist nur konform, wenn:
 5. Tests für Normal- und Extremfälle bauen
 6. Ergebnisse offen veröffentlichen
 7. am Konsolidierungsprozess teilnehmen
+
+---
 
 # Hinweis zur Spezifikation
 
@@ -326,6 +360,8 @@ Alle Implementierungen sind vollständig unabhängig und tragen ihre eigene tech
 Der Name "ProjectUSD" darf ausschließlich für Implementierungen verwendet werden,
 die vollständig dieser Spezifikation entsprechen und den Konsolidierungsprozess durchlaufen haben.
 Andere Varianten müssen klar als Forks gekennzeichnet sein.
+
+---
 
 # Schlusswort
 
