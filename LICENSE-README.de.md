@@ -1,52 +1,27 @@
-# Lizenz- und Namensrichtlinie für das ProjectUSD-Repository (Deutsch)
+# ProjectUSD – Richtlinie zu Name und Attribution (Deutsch)
 
-Dieses Repository enthält die offizielle ProjectUSD-Spezifikation, Dokumentation,
-Architekturtexte, das Developer Playbook und begleitende Materialien.
+**ProjectUSD** ist ein originales Open-Source-Konzept, veröffentlicht von  
+**Aqua75 / PulseChain Community Initiative** unter der  
+**Creative Commons BY-NC-SA 4.0** Lizenz.
 
-Alle Inhalte unterliegen der Lizenz:
+Diese Lizenz gilt für alle ProjectUSD-Whitepaper, Übersetzungen und Medieninhalte,  
+die in diesem Repository und seinen Releases veröffentlicht werden.
 
-**Creative Commons BY-NC-SA 4.0**
+Das Konzept darf unter denselben Lizenzbedingungen studiert oder erweitert werden,  
+jedoch sind der **Name „ProjectUSD“ und das zugehörige Logo** reservierte Kennzeichen  
+des ursprünglichen, auf PulseChain basierenden Designs.
 
----
+Jede Implementierung auf PulseChain muss der offiziellen ProjectUSD-Spezifikation  
+und dem Konsolidierungsprozess entsprechen, um den Namen „ProjectUSD“ verwenden zu dürfen.
 
-## Nutzung des Namens „ProjectUSD“
+Alle anderen Implementierungen – auf PulseChain oder anderswo – müssen klar als  
+unabhängige Forks gekennzeichnet sein **und müssen eine eindeutige Attribution auf  
+die Originalquelle enthalten:**
 
-Der Name **„ProjectUSD“** und alle damit verbundenen Markenkennzeichen dürfen
-nicht frei verwendet werden.
-
-### Implementierungen **auf PulseChain**
-Jede Implementation auf PulseChain, die den Namen „ProjectUSD“ verwenden möchte,
-muss:
-
-- vollständig der offiziellen ProjectUSD-Spezifikation entsprechen  
-- den Konsolidierungsprozess durchlaufen haben  
-
-Nur dann darf der Name genutzt werden.
-
-### Implementierungen **außerhalb PulseChain**  
-oder nicht-konforme Implementierungen auf PulseChain:
-
-Alle anderen Implementierungen – auf PulseChain oder außerhalb – müssen:
-
-- klar als **unabhängige Forks** gekennzeichnet sein  
-- und eine Attribution zur Originalquelle enthalten:
-
-> Basierend auf dem „ProjectUSD“-Konzept von Aqua75  
+> Basierend auf dem „ProjectUSD“-Konzept von Aqua75 / PulseChain Community Initiative  
 > (https://github.com/Aqua75/ProjectUSD)
 
----
+Die unautorisierte Verwendung des Namens oder Logos außerhalb des PulseChain-Kontexts  
+stellt einen Verstoß gegen die Lizenzbedingungen dar.
 
-## Verbotene Nutzung
-
-- Nutzung des Namens „ProjectUSD“ für nicht-spezifikationskonforme Systeme  
-- Nutzung des Namens/Logos für Off-Chain-Produkte  
-- kommerzielle Nutzung ohne Zustimmung  
-- jede Darstellung als „offizielle Version“, wenn nicht konsolidiert  
-- jede Form von irreführendem Branding
-
----
-
-## Urheberrecht
-
-© 2025 Aqua75 – Alle Rechte am Namen und Logo „ProjectUSD“.  
-Der Inhalt dieses Repositories steht unter **Creative Commons BY-NC-SA 4.0**.
+© 2025 Aqua75 – Alle Rechte am Namen und Logo „ProjectUSD“ vorbehalten.
