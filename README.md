@@ -77,7 +77,7 @@ A detailed architectural explanation is available at:
 
 ProjectUSD contains one of the most complete SPEC frameworks in decentralized finance:
 
-➡ `/Architecture/specs/README.en.md`  
+➡ `/Architecture/specs/README.md`  
 ➡ `/Architecture/specs/README.de.md`
 
 These include:
