@@ -56,7 +56,7 @@ Es stehen zwei Einstiegspunkte zur Verfügung:
   `/Architecture/specs/README.de.md`
 
 - 🇬🇧 **SPECS Overview (English)**  
-  `/Architecture/specs/README.en.md`
+  `/Architecture/specs/README.md`
 
 Diese Dateien bieten:
 
