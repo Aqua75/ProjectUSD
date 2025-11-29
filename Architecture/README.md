@@ -51,7 +51,7 @@ Subgraph KPIs, and diagnostic procedures – is available in:
 Two full entry points exist:
 
 - 🇬🇧 **SPECS Overview (English)**  
-  `/Architecture/specs/README.en.md`
+  `/Architecture/specs/README.md`
 
 - 🇩🇪 **SPECS Übersicht (Deutsch)**  
   `/Architecture/specs/README.de.md`
