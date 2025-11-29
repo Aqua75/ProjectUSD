@@ -104,14 +104,20 @@ Ein stabiles Ökosystem erzeugt stabile Einnahmen.
 
 ---
 
-## 3.3 Mehr Liquidität, mehr Arbitrage, bessere Märkte  
+## 3.3 Neue Liquiditätskorridore und echte Arbitrage-Dreiecke  
 Sobald ProjectUSD existiert, entstehen neue stabile Handelskorridore:
 
 - ProjectUSD ↔ PLS  
 - ProjectUSD ↔ PLSX  
 - ProjectUSD ↔ USDL  
 
-Diese Dreiecke erzeugen:
+**Aus diesen Paaren entstehen mehrere Arbitrage-Dreiecke**, z. B.:
+
+- ProjectUSD – PLS – USDL  
+- ProjectUSD – PLS – PLSX  
+- ProjectUSD – PLSX – USDL  
+
+Diese geschlossenen Handelskreise erzeugen:
 
 - sauberere Preisfindung  
 - robustere Pegs  
@@ -120,7 +126,7 @@ Diese Dreiecke erzeugen:
 - höhere Arbitrageaktivität  
 
 Stablecoins leben von Liquidität –  
-und ProjectUSD ist ein Liquiditätsmultiplikator für das gesamte Ökosystem.
+**und ProjectUSD ist ein Liquiditätsmultiplikator für das gesamte Ökosystem.**
 
 ---
 
