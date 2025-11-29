@@ -55,7 +55,7 @@ The complete set of rules that must be met before a final core can be deployed o
 This folder currently includes:
 
 - **Developer_Playbook.de.md** – German version  
-- **Developer_Playbook.en.md** – English version  
+- **Developer_Playbook.md** – English version  
 
 Additional translations may be added in the future.
 
