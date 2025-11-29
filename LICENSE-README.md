@@ -11,9 +11,12 @@ While the concept may be studied or extended under the same license terms,
 the **name “ProjectUSD” and its logo** are reserved identifiers of the original  
 PulseChain-based design.
 
-Any fork, derivative, or re-implementation **outside PulseChain**  
-must not use the same name or logo,  
-and must include a clear attribution referencing the original source:
+Any implementation on PulseChain must comply with the ProjectUSD specification
+and the consolidation process in order to use the name.
+
+All other implementations – on PulseChain or elsewhere – must be labeled as
+independent forks **and must include a clear attribution referencing the
+original source:**
 
 > Based on the “ProjectUSD” concept by Aqua75 / PulseChain Community Initiative  
 > (https://github.com/Aqua75/ProjectUSD)
