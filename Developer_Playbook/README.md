@@ -1,4 +1,4 @@
-# Developer Playbook
+# ProjectUSD Developer Playbook
 
 This folder contains the official **ProjectUSD Developer Playbook** in all available languages.
 
