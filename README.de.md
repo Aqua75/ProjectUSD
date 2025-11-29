@@ -52,6 +52,22 @@ ProjectUSD besteht aus fünf unveränderlichen Kernmodulen:
 - **Liquidation & Redemption Engine** – Stabilitätsdurchsetzung  
 - **StabilityPool** – Kollektiver Risikopuffer  
 
+> ### 🔍 Klarstellung: Internes TWAP-Oracle  
+> Das „Oracle“-Modul in ProjectUSD ist **kein** externes Preis-Oracle.  
+> Es verwendet **weder** Chainlink, Pyth, DIA, APIs **noch** sonstige Off-Chain-Datenquellen.  
+>  
+> Stattdessen handelt es sich um einen **rein on-chain berechneten TWAP-Reader**,  
+> der seine Informationen ausschließlich aus dem ProjectUSD/PLS-AMM-Pool  
+> auf PulseChain ableitet.  
+>  
+> - keine externen Abhängigkeiten  
+> - keine Governance-Updates  
+> - keine Admin-Eingriffe  
+> - vollständig deterministisch und on-chain  
+>  
+> Damit bleibt ProjectUSD ein **autonomes, oracle-freies Währungssystem**,  
+> während der Controller dennoch das Verhalten seines eigenen AMM-Marktes beobachten kann.
+
 Detaillierte Erklärung:
 
 ➡ `/Architecture/README.de.md`
@@ -63,7 +79,7 @@ Detaillierte Erklärung:
 ProjectUSD enthält eine der vollständigsten SPECS-Bibliotheken in ganz DeFi:
 
 ➡ `/Architecture/specs/README.de.md`  
-➡ `/Architecture/specs/README.en.md`
+➡ `/Architecture/specs/README.md`
 
 Die SPECS umfassen:
 
