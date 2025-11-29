@@ -1,4 +1,4 @@
-# Developer_Playbook.de.md
+# Developer_Playbook
 *Standards, Regeln und Best Practices für die technische Umsetzung von ProjectUSD*
 
 # Einleitung
