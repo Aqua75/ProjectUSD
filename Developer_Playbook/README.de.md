@@ -55,7 +55,7 @@ Alle Bedingungen, die erfüllt sein müssen, bevor ein finaler Core auf PulseCha
 Dieser Ordner enthält derzeit:
 
 - **Developer_Playbook.de.md** – deutsche Version  
-- **Developer_Playbook.en.md** – englische Version  
+- **Developer_Playbook.md** – englische Version  
 
 Weitere Übersetzungen können in Zukunft hinzugefügt werden.
 
