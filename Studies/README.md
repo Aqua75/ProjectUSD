@@ -114,8 +114,6 @@ The studies are designed to be:
 - auditable  
 - self-consistent  
 
-If you wish to contribute improvements, propose corrections or request deeper analysis, please open an Issue or Pull Request in the main repository.
-
 All contributions must follow:
 
 - academic rigor  
