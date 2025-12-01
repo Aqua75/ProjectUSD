@@ -61,7 +61,7 @@ ProjectUSD kann jederzeit zum Gleichgewichtspreis \(R\) gegen PLS eingelöst wer
 - \(R_t\): Gleichgewichtspreis in Periode \(t\)
 - \(P_t\): Marktpreis laut Oracle (Median-TWAP)
 - \(r_t\): Systemrate (Zins / Sparrate)
-- \(\varepsilon_t\): Preisabweichung  
+- \(\varepsilon_t\): Preisabweichung
 
 ```math
 \varepsilon_t = \frac{P_t - R_t}{R_t}
