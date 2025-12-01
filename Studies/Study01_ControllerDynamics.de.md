@@ -170,42 +170,50 @@ $$
 
 ## 📊 Szenario 1 – Überbewertung (P > R)
 
+Wenn der Marktpreis oberhalb des Gleichgewichtspreises liegt:
+
 - r steigt  
 - Neuverschuldung wird unattraktiver  
-- Prägung + Verkauf von ProjectUSD  
-- P fällt in Richtung R  
+- Prägung und Verkauf von ProjectUSD nimmt zu  
+- P fällt graduell zurück in Richtung R  
 
-_Plac­eholder:_ `[Diagramm 1: Pfad P → R bei +1 %]`
+Dieses Szenario beschreibt eine kontrollierte Abwärtskonvergenz des Marktpreises hin zum internen Gleichgewichtswert.
 
 ---
 
 ## 📊 Szenario 2 – Unterbewertung (P < R)
 
+Wenn der Marktpreis unter dem Gleichgewichtspreis liegt:
+
 - r sinkt  
-- Redemption-Arbitrage erzeugt Nachfrage  
+- Redemption-Arbitrage erzeugt zusätzliche Nachfrage  
 - P steigt in Richtung R  
 
-_Plac­eholder:_ `[Diagramm 2: Pfad P → R bei −1 %]`
+Dieses Szenario beschreibt eine Aufwärtsbewegung, getrieben durch arbitragebasierte Nachfrage und reduzierten ökonomischen Druck auf Schuldner.
 
 ---
 
 ## 📊 Szenario 3 – Extreme Volatilität
 
-- Oracle-TWAP glättet Preisschocks  
-- Controller reagiert verzögert  
-- Arbitrage korrigiert schnelle Ausschläge  
+Bei kurzfristigen Marktverwerfungen oder starken Preisschwankungen:
 
-_Plac­eholder:_ `[Diagramm 3: Oracle-Lag bei Volatilität]`
+- das Oracle (Median-TWAP) glättet Schocks  
+- der Controller reagiert bewusst verzögert, um Übersteuerung zu vermeiden  
+- Arbitrage korrigiert schnelle, nicht nachhaltige Ausschläge  
+
+Dieses Szenario beleuchtet das Zusammenspiel zwischen geglätteten Daten, verzögerter Regellogik und schneller Marktreaktion.
 
 ---
 
 ## 📊 Szenario 4 – Niedrige Liquidität
 
-- illiquide oder manipulierte Pools werden gefiltert  
-- Controller setzt temporär aus  
-- Redemption bildet die Hauptstabilisierungsquelle  
+In illiquiden oder manipulierten Marktphasen:
 
-_Plac­eholder:_ `[Diagramm 4: Verhalten bei STALE-Pools]`
+- illiquide oder auffällige Pools werden gefiltert  
+- der Controller kann seine Aktivität temporär einschränken  
+- Redemption fungiert als robuste Hauptstabilisierungsquelle  
+
+Dieses Szenario zeigt, wie das System in Phasen geringer Marktverlässlichkeit auf die internen Mechanismen der Wertdefinition zurückgreift.
 
 ---
 
