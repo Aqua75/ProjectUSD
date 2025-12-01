@@ -8,9 +8,11 @@ Wissenschaftliche Analyse der algorithmischen Geldpolitik eines autonomen On-Cha
 ProjectUSD ist ein vollständig on-chain operierendes, algorithmisches Geldsystem auf PulseChain. Die Stabilität des Stablecoins entsteht nicht durch externe Orakel, Banking-Backups oder Governance-Eingriffe, sondern durch die interne Rückkopplungsmechanik zwischen dem Marktpreis \(P\), dem Gleichgewichtspreis \(R\) und der Systemrate \(r\).
 
 Diese Studie analysiert die mathematische Struktur und Stabilitätsdynamik des Controllers, der Preisabweichungen misst und über die Variable \(r\) Anreize für Schuldner und Sparer setzt. Ein formales Modell für die Abweichung  
-\[
+
+$$
 \varepsilon = \frac{P - R}{R}
-\]  
+$$  
+
 bildet die Grundlage für eine proportionale Regelfunktion mit Deadband, Rate-Limiter und Obergrenzen.  
 
 Theoretische Simulationsszenarien untersuchen Über- und Unterbewertung, starke Volatilität und niedrige Liquidität. Die Ergebnisse zeigen, dass ProjectUSD durch die Kombination aus Controller, Redemption-Engine und Stability Pool eine robuste Rückführung von \(P \rightarrow R\) ermöglichen kann, jedoch Verzögerungen, Orakel-Bias und Stressphasen berücksichtigt werden müssen.
@@ -60,9 +62,10 @@ ProjectUSD kann jederzeit zum Gleichgewichtspreis \(R\) gegen PLS eingelöst wer
 - \(P_t\): Marktpreis laut Oracle (Median-TWAP)  
 - \(r_t\): Systemrate (Zins / Sparrate)  
 - \(\varepsilon_t\): Preisabweichung  
-  \[
+
+  $$
   \varepsilon_t = \frac{P_t - R_t}{R_t}
-  \]
+  $$
 
 - \(\text{EpochLength}\): Anzahl Blöcke pro Regelschritt  
 
@@ -73,29 +76,35 @@ ProjectUSD kann jederzeit zum Gleichgewichtspreis \(R\) gegen PLS eingelöst wer
 Die vorläufige Controller-Spezifikation folgt einer proportionalen Regelung:
 
 1. Abweichung berechnen  
-   \[
+
+   $$
    \varepsilon_t = \frac{P_t - R_t}{R_t}
-   \]
+   $$
 
 2. Deadband prüfen  
-   \[
+
+   $$
    |\varepsilon_t| < \varepsilon_{\text{db}} \Rightarrow \Delta r_t = 0
-   \]
+   $$
 
 3. Proportionale Anpassung  
-   \[
+
+   $$
    \Delta r_t = K_p \cdot \varepsilon_t
-   \]
+   $$
 
 4. Rate-Limiter  
-   \[
-   \Delta r_t^{\text{clamped}} = \max\left(-\delta r_{\max}, \min(\delta r_{\max}, \Delta r_t)\right)
-   \]
+
+   $$
+   \Delta r_t^{\text{clamped}} = 
+   \max\left(-\delta r_{\max}, \min(\delta r_{\max}, \Delta r_t)\right)
+   $$
 
 5. Neue Rate  
-   \[
-   r_{t+1} = \text{clip}(r_t + \Delta r_t^{\text{clamped}},\, 0,\, r_{\text{cap}})
-   \]
+
+   $$
+   r_{t+1} = \text{clip}\big(r_t + \Delta r_t^{\text{clamped}},\, 0,\, r_{\text{cap}}\big)
+   $$
 
 ---
 
@@ -103,9 +112,9 @@ Die vorläufige Controller-Spezifikation folgt einer proportionalen Regelung:
 
 ## 3.1 Preisabweichung
 
-\[
+$$
 \varepsilon_t = \frac{P_t - R_t}{R_t}
-\]
+$$
 
 Eine dimensionslose Größe, interpretierbar als prozentuale Über- oder Unterbewertung.
 
@@ -113,41 +122,41 @@ Eine dimensionslose Größe, interpretierbar als prozentuale Über- oder Unterbe
 
 ## 3.2 Dynamik des Reglers
 
-\[
+$$
 \Delta r_t =
 \begin{cases}
 0, & |\varepsilon_t| < \varepsilon_{\text{db}} \\
 K_p \varepsilon_t, & \text{sonst}
 \end{cases}
-\]
+$$
 
-\[
+$$
 r_{t+1} = \text{clip}\big(r_t + \Delta r_t^{\text{clamped}}, 0, r_{\text{cap}}\big)
-\]
+$$
 
 ---
 
 ## 3.3 Vereinfachtes lineares Modell
 
-\[
+$$
 \varepsilon_t \approx \alpha \cdot \frac{S_t - D_t}{D_t}
-\]
+$$
 
-\[
+$$
 \Delta S_{t+1} \approx -\beta_s \Delta r_t,
 \quad
 \Delta D_{t+1} \approx +\beta_d \Delta r_t
-\]
+$$
 
-\[
+$$
 \varepsilon_{t+1} \approx (1 - \kappa K_p)\varepsilon_t
-\]
+$$
 
 Stabilitätsbedingung:
 
-\[
+$$
 0 < \kappa K_p < 2
-\]
+$$
 
 ---
 
@@ -170,13 +179,19 @@ Stabilitätsbedingung:
 # 5. Diskussion – Arbitrage, Psychologie & Reaktionszeit
 
 ## 5.1 Arbitrageure  
-Operativer Transmissionsmechanismus des Pegrückwegs.
+
+Operativer Transmissionsmechanismus des Pegrückwegs:
+
+- \(P < R\): Kaufen, redeem, Gewinn in PLS  
+- \(P > R\): Prägen, verkaufen, später tilgen  
 
 ## 5.2 Marktpsychologie  
-Vertrauen → stabilisierend  
-Zweifel → reflexiv und destabilisierend
+
+- Vertrauen → stabilisierend  
+- Zweifel → reflexiv und destabilisierend  
 
 ## 5.3 Zeitskalen  
+
 - Sekunden–Minuten: Noise  
 - Epochen: Controller  
 - Wochen: strukturelle Reallokation
@@ -195,24 +210,27 @@ Zweifel → reflexiv und destabilisierend
 
 # 7. Schlussfolgerung
 
-Der Controller ist ein zentraler Baustein des autonomen Geldsystems von ProjectUSD. Seine Wirksamkeit ist hoch, jedoch abhängig von Liquidität, Arbitrageeffizienz und Oracle-Qualität.
+Der Controller ist ein zentraler Baustein des autonomen Geldsystems von ProjectUSD. Seine Wirksamkeit ist hoch, jedoch abhängig von Liquidität, Arbitrageeffizienz und Oracle-Qualität. Die Kombination aus Controller, Redemption-Engine und Stability Pool bildet einen robusten, aber komplexen Rückkopplungskreis, dessen Parameter sorgfältig kalibriert und kontinuierlich überwacht werden müssen.
 
 ---
 
 # 8. Next Steps
 
 - SimKit-Framework aufbauen  
-- Parameterraum kalibrieren  
+- Parameterraum für \(K_p\), \(\varepsilon_{\text{db}}\), \(\delta r_{\max}\) kalibrieren  
 - Liquiditäts- und Schockmodelle testen  
-- Messmetriken definieren  
+- Messmetriken (PegDeviation, HalfLife, LimiterHit-Rate) definieren  
 - nichtlineare AMM-Dynamiken ergänzen  
 
 ---
 
 # 9. Verification
 
-- Parameter-Validierung  
+- Parameter-Validierung gegen Spezifikation  
 - Formel-Konsistenzprüfung  
-- Reproduktion der Szenarien  
-- Logik-Kohärenztest  
-- Stabilitätsanalyse gemäß \(0 < \kappa K_p < 2\)
+- Reproduktion der Szenarien in Simulation  
+- Logik-Kohärenztest zwischen Controller, Oracle, Redemption, Stability Pool  
+- Stabilitätsanalyse gemäß  
+  $$
+  0 < \kappa K_p < 2
+  $$
