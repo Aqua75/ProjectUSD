@@ -105,18 +105,6 @@ This ensures:
 
 ---
 
-## Contribution & Review
-
-This repository is maintained in a curated and consolidated form.  
-External Issues, Pull Requests or code submissions are not part of the workflow.
-
-For feedback, research suggestions, clarifications or discussion,  
-please use the official ProjectUSD community group on Telegram:
-
-https://t.me/ProjectUSD_Discussion
-
----
-
 ## License and Attribution
 
 ProjectUSD is an original open-source concept published by  
@@ -158,24 +146,23 @@ constitutes a breach of the license terms.
 
 ---
 
-## Contact & Further Reading
+## Contribution, Contact & Further Reading
 
-For discussions, questions, clarification or collaboration regarding ProjectUSD,  
-please use the official community discussion group:
+This repository is maintained in a curated and consolidated form.  
+External Issues, Pull Requests or code submissions are not part of the workflow.
+
+For feedback, questions, clarification or discussion regarding ProjectUSD,  
+please use the official ProjectUSD community group:
 
 **Telegram (ProjectUSD Discussion Group)**  
 https://t.me/ProjectUSD_Discussion
 
-This channel is the central contact point for:
+This channel serves as the central point for:
 
 - research-related questions  
 - technical clarifications  
 - architectural discussions  
 - feedback on studies or documentation  
-
-Since this repository is maintained in a curated and consolidated form,  
-external Pull Requests are not part of the workflow.  
-All inquiries should be directed to the discussion group above.
 
 ### Key Documentation
 
