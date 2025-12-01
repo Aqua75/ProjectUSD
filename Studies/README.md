@@ -107,19 +107,13 @@ This ensures:
 
 ## Contribution & Review
 
-The studies are designed to be:
+This repository is maintained in a curated and consolidated form.  
+External Issues, Pull Requests or code submissions are not part of the workflow.
 
-- technically precise  
-- logically verifiable  
-- auditable  
-- self-consistent  
+For feedback, research suggestions, clarifications or discussion,  
+please use the official ProjectUSD community group on Telegram:
 
-All contributions must follow:
-
-- academic rigor  
-- source-based reasoning  
-- neutrality  
-- consistency with the immutable ProjectUSD architecture  
+https://t.me/ProjectUSD_Discussion
 
 ---
 
