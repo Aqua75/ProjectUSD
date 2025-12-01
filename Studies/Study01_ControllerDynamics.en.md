@@ -174,42 +174,50 @@ $$
 
 ## 📊 Scenario 1 – Overvaluation (P > R)
 
-- r increases  
-- borrowing becomes less attractive  
-- users mint and sell ProjectUSD  
-- P declines toward R  
+When the market price stands above the equilibrium price:
 
-*[Diagram 1 placeholder]*
+- r increases  
+- new borrowing becomes less attractive  
+- users mint and sell additional ProjectUSD  
+- P gradually moves downward toward R  
+
+This scenario describes a controlled downward convergence of the market price toward the internal equilibrium value.
 
 ---
 
 ## 📊 Scenario 2 – Undervaluation (P < R)
 
+When the market price is below the equilibrium price:
+
 - r decreases  
-- redemption arbitrage increases demand  
+- redemption arbitrage generates additional demand  
 - P rises toward R  
 
-*[Diagram 2 placeholder]*
+This scenario illustrates an upward adjustment driven by arbitrage demand and reduced economic pressure on borrowers.
 
 ---
 
 ## 📊 Scenario 3 – Extreme Volatility
 
-- TWAP smooths rapid swings  
-- controller responds with a delay  
-- arbitrage corrects fast deviations  
+During sudden market shocks or rapid price fluctuations:
 
-*[Diagram 3 placeholder]*
+- the oracle (Median-TWAP) smooths the incoming price data  
+- the controller reacts intentionally with delay to avoid overshooting  
+- arbitrage rapidly corrects short-lived deviations  
+
+This scenario highlights the interplay between smoothed oracle data, delayed controller response, and fast market-driven correction.
 
 ---
 
 ## 📊 Scenario 4 – Low Liquidity
 
-- illiquid pools are filtered  
-- controller temporarily pauses  
-- redemption becomes the primary stabilizer  
+In illiquid or potentially manipulated market conditions:
 
-*[Diagram 4 placeholder]*
+- illiquid or anomalous pools are filtered out  
+- the controller may temporarily limit its activity  
+- redemption becomes the primary stabilizing mechanism  
+
+This scenario shows how the system relies on internal redemption dynamics when external market data becomes unreliable.
 
 ---
 
