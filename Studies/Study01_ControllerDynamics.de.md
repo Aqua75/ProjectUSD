@@ -175,7 +175,7 @@ $$
 - Prägung + Verkauf von ProjectUSD  
 - P fällt in Richtung R  
 
-_Plac­eholder:_ `[Diagramm 1: Pfad P → R bei +1 %]`
+<img src="./Images/Study01_Diagram1.png" width="50%">
 
 ---
 
