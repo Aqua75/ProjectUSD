@@ -92,6 +92,7 @@ Gas costs, scalability, and performance benchmarking vs Ethereum.
 All documents follow the format:
 
 Study-XX-Short-Title.de.md
+
 Study-XX-Short-Title.en.md
 
 
