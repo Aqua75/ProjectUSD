@@ -1,121 +1,125 @@
 # Study 01 – Controller-Dynamik & Preisrückkopplung in ProjectUSD
-Wissenschaftliche Analyse der algorithmischen Geldpolitik eines autonomen On-Chain-Systems
+*Wissenschaftliche Analyse der algorithmischen Geldpolitik eines autonomen On-Chain-Systems*  
+*(Level-3 Research Format)*
 
 ---
 
 ## Abstract
 
-ProjectUSD ist ein vollständig on-chain operierendes, algorithmisches Geldsystem auf PulseChain. Die Stabilität des Stablecoins entsteht nicht durch externe Orakel, Banking-Backups oder Governance-Eingriffe, sondern durch die interne Rückkopplungsmechanik zwischen dem Marktpreis \(P\), dem Gleichgewichtspreis \(R\) und der Systemrate \(r\).
+ProjectUSD ist ein vollständig on-chain operierendes, algorithmisches Geldsystem auf PulseChain. Die Preisstabilität entsteht nicht durch externe Orakel, Banken oder Governance-Eingriffe, sondern durch einen **internen Rückkopplungskreis** zwischen:
 
-Diese Studie analysiert die mathematische Struktur und Stabilitätsdynamik des Controllers, der Preisabweichungen misst und über die Variable \(r\) Anreize für Schuldner und Sparer setzt. Ein formales Modell für die Abweichung  
+- dem Marktpreis P  
+- dem Gleichgewichtspreis R  
+- der Systemrate r  
+
+Diese Studie analysiert die mathematische Struktur dieses Controllers, der Abweichungen zwischen Markt- und Gleichgewichtspreis misst und über r die ökonomischen Anreize von Schuldnern, Haltern und Arbitrageuren beeinflusst.
+
+Wir entwickeln ein formales Modell für die Preisabweichung, leiten Konvergenzbedingungen ab und diskutieren vier Szenarien: Überbewertung, Unterbewertung, extreme Volatilität und niedrige Liquidität.
+
+---
+
+# 1. Einleitung – Algorithmische Rückkopplung statt zentraler Steuerung
+
+ProjectUSD ersetzt klassische Zentralbankmechanismen durch **deterministische, unveränderliche Logik**.
+
+Der Regelkreis:
+
+1. DEX-Märkte bilden den Spotpreis P.  
+2. Das Oracle ermittelt via Median-TWAP einen geglätteten Wert.  
+3. Der Controller berechnet die Abweichung zwischen P und R.  
+4. Die Systemrate r wird angepasst.  
+5. Die Änderung von r beeinflusst Angebot, Nachfrage und Arbitrage.  
+6. Diese Kräfte bewegen P wieder in Richtung R.
+
+---
+
+# 2. Systembeschreibung
+
+## 2.1 Kernelemente von ProjectUSD
+
+### Vaults
+- Nutzer hinterlegen PLS als Sicherheit  
+- prägen ProjectUSD  
+- Unterbesicherung führt zu Liquidation
+
+### Stability Pool
+- fängt Liquidationen ab  
+- vernichtet ProjectUSD-Supply  
+- verteilt PLS-Gewinne
+
+### Redemption Engine
+- Einlösung von ProjectUSD zu R  
+- arbitragebasierter Preisanker  
+- reduziert die schwächsten Vaults
+
+---
+
+## 2.2 Definition zentraler Variablen
+
+- **Rₜ** – Gleichgewichtspreis  
+- **Pₜ** – Marktpreis laut Oracle  
+- **rₜ** – Systemrate  
+- **εₜ** – relative Preisabweichung  
 
 $$
-\varepsilon = \frac{P - R}{R}
-$$  
-
-bildet die Grundlage für eine proportionale Regelfunktion mit Deadband, Rate-Limiter und Obergrenzen.  
-
-Theoretische Simulationsszenarien untersuchen Über- und Unterbewertung, starke Volatilität und niedrige Liquidität. Die Ergebnisse zeigen, dass ProjectUSD durch die Kombination aus Controller, Redemption-Engine und Stability Pool eine robuste Rückführung von \(P \rightarrow R\) ermöglichen kann, jedoch Verzögerungen, Orakel-Bias und Stressphasen berücksichtigt werden müssen.
-
----
-
-# 1. Einleitung – Algorithmische Rückkopplung als Kernprinzip
-
-ProjectUSD verfolgt das Ziel, eine autonome, selbstregulierende Recheneinheit für die PulseChain-Ökonomie bereitzustellen. Anstelle eines extern fixierten 1:1-Peg zu Fiat basiert das System auf:
-
-- einem **internen Gleichgewichtspreis \(R\)**  
-- einem **gehandelten Marktpreis \(P\)**  
-- einer **algorithmenbasierten Systemrate \(r\)**  
-
-Der Controller bildet das Herzstück dieser geldpolitischen Architektur. Er misst Preisabweichungen zwischen \(P\) und \(R\) und passt die Systemrate \(r\) an, wodurch sich Anreize für Verschuldung, Sparen, Arbitrage und Haltebereitschaft verschieben.
-
-Der Rückkopplungspfad lautet:
-
-1. DEX-Märkte bestimmen einen Spotpreis \(P\).  
-2. Das on-chain Oracle ermittelt über Median-TWAP einen robusten Wert.  
-3. Der Controller berechnet aus der Abweichung \(\varepsilon = (P-R)/R\) eine Anpassung \(\Delta r\).  
-4. Die Veränderung der Systemrate beeinflusst Angebot, Nachfrage und Arbitrageströme.  
-5. Diese ökonomischen Effekte wirken zurück auf den Marktpreis \(P\).  
-
-Damit ersetzt ProjectUSD klassische, institutionelle Geldpolitik durch **deterministische, unveränderliche Logik**, die nach dem Freeze-Event nicht mehr modifiziert werden kann.
-
----
-
-# 2. Systembeschreibung – Variablen und relevante Module
-
-## 2.1 Relevante Komponenten
-
-### Vaults  
-Nutzer hinterlegen PLS als Sicherheit und prägen ProjectUSD. Sinkt die Besicherung unter die Mindestschwelle, erfolgt eine automatische Liquidation.
-
-### Stability Pool  
-Nutzer hinterlegen ProjectUSD, um Liquidationen abzufedern und PLS-Gewinne zu erhalten. Liquidierte Schulden werden aus dem Pool beglichen und der entsprechende ProjectUSD-Supply vernichtet.
-
-### Redemption-Engine  
-ProjectUSD kann jederzeit zum Gleichgewichtspreis \(R\) gegen PLS eingelöst werden. Arbitrageure nutzen Abweichungen zwischen \(P\) und \(R\), wodurch natürliche Reversionseffekte entstehen.
-
----
-
-## 2.2 Zentrale Variablen
-
-- **Rₜ**: Gleichgewichtspreis in Periode t  
-- **Pₜ**: Marktpreis laut Oracle (Median-TWAP)  
-- **rₜ**: Systemrate (Zins / Sparrate)  
-- **εₜ**: Preisabweichung  
-
-```math
 \varepsilon_t = \frac{P_t - R_t}{R_t}
-```
+$$
 
-- **EpochLength**: Anzahl Blöcke pro Regelschritt
+- **EpochLength** – Anzahl Blöcke pro Regelschritt
 
 ---
 
-## 2.3 Funktionsweise des Controllers
+## 2.3 Der Controller als Regler
 
-Die vorläufige Controller-Spezifikation folgt einer proportionalen Regelung:
+> ## 📘 Definition – Reglerlogik  
+> Der Controller übersetzt Preisabweichungen in Anpassungen von r, um P wieder an R anzunähern.
 
-### 1. Abweichung berechnen
-```math
+### 1. Preisabweichung
+
+$$
 \varepsilon_t = \frac{P_t - R_t}{R_t}
-```
+$$
 
-### 2. Deadband prüfen
-```math
+### 2. Deadband
+
+$$
 |\varepsilon_t| < \varepsilon_{\text{db}} \Rightarrow \Delta r_t = 0
-```
+$$
 
 ### 3. Proportionale Anpassung
-```math
+
+$$
 \Delta r_t = K_p \cdot \varepsilon_t
-```
+$$
 
 ### 4. Rate-Limiter
-```math
+
+$$
 \Delta r_t^{\text{clamped}} =
 \max\left(-\delta r_{\max}, \min(\delta r_{\max}, \Delta r_t)\right)
-```
+$$
 
-### 5. Neue Rate
-```math
+### 5. Neue Systemrate
+
+$$
 r_{t+1} = \text{clip}\big(r_t + \Delta r_t^{\text{clamped}}, 0, r_{\text{cap}}\big)
-```
+$$
 
 ---
 
-# 3. Mathematische Analyse
+# 3. Mathematische Herleitung
 
 ## 3.1 Preisabweichung
 
+> 📘 **Definition – Relative Peg-Abweichung**
+
 $$
 \varepsilon_t = \frac{P_t - R_t}{R_t}
 $$
 
-Eine dimensionslose Größe, interpretierbar als prozentuale Über- oder Unterbewertung.
-
 ---
 
-## 3.2 Dynamik des Reglers
+## 3.2 Proportionale Regelfunktion
 
 $$
 \Delta r_t =
@@ -125,108 +129,188 @@ K_p \varepsilon_t, & \text{sonst}
 \end{cases}
 $$
 
-$$
-r_{t+1} = \text{clip}\big(r_t + \Delta r_t^{\text{clamped}}, 0, r_{\text{cap}}\big)
-$$
-
 ---
 
-## 3.3 Vereinfachtes lineares Modell
+## 3.3 Einfaches dynamisches Modell
+
+> 📘 **Modell – Lineare Preisapproximation**
+
+Preisabweichung in Abhängigkeit von Angebot Sₜ und Nachfrage Dₜ:
 
 $$
 \varepsilon_t \approx \alpha \cdot \frac{S_t - D_t}{D_t}
 $$
 
+Einfluss der Rate auf Angebot und Nachfrage:
+
 $$
-\Delta S_{t+1} \approx -\beta_s \Delta r_t,
-\quad
+\Delta S_{t+1} \approx -\beta_s \Delta r_t
+$$
+
+$$
 \Delta D_{t+1} \approx +\beta_d \Delta r_t
 $$
+
+Lineare Rekursion der Abweichung:
 
 $$
 \varepsilon_{t+1} \approx (1 - \kappa K_p)\varepsilon_t
 $$
 
-Stabilitätsbedingung:
-
-$$
-0 < \kappa K_p < 2
-$$
-
----
-
-# 4. Theoretische Simulationsszenarien
-
-## 4.1 Moderate Überbewertung  
-`[Diagramm 1: Pfad P → R bei ε = +1%]`
-
-## 4.2 Moderate Unterbewertung  
-`[Diagramm 2: Pfad P → R bei ε = -1%]`
-
-## 4.3 Extreme Volatilität  
-`[Diagramm 3: Verzögerung durch Oracle-TWAP bei hohen Schwankungen]`
-
-## 4.4 Niedrige Liquidität  
-`[Diagramm 4: Verhalten des Controllers bei STALE-Pools]`
+> 📘 **Theorem – Konvergenzbedingung**  
+> Der Controller stabilisiert das System genau dann, wenn gilt:
+>
+> $$
+> 0 < \kappa K_p < 2
+> $$
 
 ---
 
-# 5. Diskussion – Arbitrage, Psychologie & Reaktionszeit
+# 4. Simulationsszenarien
 
-## 5.1 Arbitrageure  
+## 📊 Szenario 1 – Überbewertung (P > R)
 
-Operativer Transmissionsmechanismus des Pegrückwegs:
+- r steigt  
+- Neuverschuldung wird unattraktiver  
+- Prägung + Verkauf von ProjectUSD  
+- P fällt in Richtung R  
 
-- \(P < R\): Kaufen, redeem, Gewinn in PLS  
-- \(P > R\): Prägen, verkaufen, später tilgen  
-
-## 5.2 Marktpsychologie  
-
-- Vertrauen → stabilisierend  
-- Zweifel → reflexiv und destabilisierend  
-
-## 5.3 Zeitskalen  
-
-- Sekunden–Minuten: Noise  
-- Epochen: Controller  
-- Wochen: strukturelle Reallokation
+_Plac­eholder:_ `[Diagramm 1: Pfad P → R bei +1 %]`
 
 ---
 
-# 6. Risiken & Grenzen
+## 📊 Szenario 2 – Unterbewertung (P < R)
 
-- Verzögerungen durch Oracle und Epoch-Lag  
-- Liquiditätsbias  
-- Stressphasen und Liquidationskaskaden  
-- Modellrisiken  
-- psychologische Reflexivität  
+- r sinkt  
+- Redemption-Arbitrage erzeugt Nachfrage  
+- P steigt in Richtung R  
+
+_Plac­eholder:_ `[Diagramm 2: Pfad P → R bei −1 %]`
+
+---
+
+## 📊 Szenario 3 – Extreme Volatilität
+
+- Oracle-TWAP glättet Preisschocks  
+- Controller reagiert verzögert  
+- Arbitrage korrigiert schnelle Ausschläge  
+
+_Plac­eholder:_ `[Diagramm 3: Oracle-Lag bei Volatilität]`
+
+---
+
+## 📊 Szenario 4 – Niedrige Liquidität
+
+- illiquide oder manipulierte Pools werden gefiltert  
+- Controller setzt temporär aus  
+- Redemption bildet die Hauptstabilisierungsquelle  
+
+_Plac­eholder:_ `[Diagramm 4: Verhalten bei STALE-Pools]`
+
+---
+
+# 5. Diskussion
+
+## 5.1 Arbitrage als Transmissionsmechanismus
+
+Arbitrageure sind die ökonomischen Akteure, die die Logik des Controllers in Markttransaktionen übersetzen:
+
+- **P < R:**  
+  Kaufen von ProjectUSD an der DEX, Redemption zu R, Realisierung eines Profits in PLS → P steigt.
+
+- **P > R:**  
+  Prägung neuer ProjectUSD gegen Collateral, Verkauf über dem Gleichgewichtspreis, späteres Tilgen → P fällt.
+
+---
+
+## 5.2 Marktpsychologie
+
+> 📘 **Beobachtung – Erwartungen als Verstärker**
+
+- Vertrauen in die Mechanik → stabilisierend  
+- Zweifel an Reaktionsgeschwindigkeit oder Robustheit → reflexiv, destabilisierend  
+
+Kommunizierte Kennzahlen wie durchschnittliche Peg-Abweichung und Halbwertszeit der Rückführung können Vertrauen messbar machen.
+
+---
+
+## 5.3 Reaktionszeiten
+
+- **Sekunden–Minuten:** DEX-Noise, kurzfristige Volatilität  
+- **Epochen-Skala:** Anpassung der Systemrate r  
+- **Tage–Wochen:** strukturelle Reallokation von Schulden, Collateral und Stability-Pool-Positionen  
+
+---
+
+# 6. Grenzen & Risiken
+
+## 6.1 Verzögerungen
+
+- Oracle-Lag (TWAP-Fenster)  
+- Regel-Lag (Epochenlänge)  
+- Behavioral-Lag (Reaktionszeit der Nutzer)
+
+## 6.2 Orakel-Bias
+
+- Liquiditätsbias (Preis dominiert von einem Pool)  
+- STALE-Daten bei illiquiden Paaren  
+- Notwendigkeit von Filter- und Sicherungslogiken
+
+## 6.3 Stressphasen
+
+- Liquidationswellen bei starken PLS-Crashs  
+- temporäre Dominanz von Liquidationen über normale Marktaktivität  
+- r-Limiter, die die Anpassungsgeschwindigkeit deckeln
+
+## 6.4 Parameterrisiko
+
+- Kₚ zu hoch → Oszillationen  
+- Kₚ zu niedrig → träge Rückführung  
+- schlechte Kombination mit EpochLength → unerwartete Dynamik
+
+## 6.5 Psychologische Risiken
+
+- Übervertrauen („System fängt alles ab“)  
+- Panik („System kollabiert bei Stress“)  
+
+Beides kann Marktreaktionen verstärken, die über die mathematische Logik hinausgehen.
 
 ---
 
 # 7. Schlussfolgerung
 
-Der Controller ist ein zentraler Baustein des autonomen Geldsystems von ProjectUSD. Seine Wirksamkeit ist hoch, jedoch abhängig von Liquidität, Arbitrageeffizienz und Oracle-Qualität. Die Kombination aus Controller, Redemption-Engine und Stability Pool bildet einen robusten, aber komplexen Rückkopplungskreis, dessen Parameter sorgfältig kalibriert und kontinuierlich überwacht werden müssen.
+Der Controller ist ein zentraler Baustein im autonomen Stabilitätsmechanismus von ProjectUSD. Er misst Preisabweichungen zwischen P und R und übersetzt sie in Anpassungen der Systemrate r, die wiederum das Verhalten von Schuldnern, Sparern und Arbitrageuren beeinflusst.
+
+In Kombination mit:
+
+- der Redemption Engine  
+- dem Stability Pool  
+- der Oracle-Architektur  
+
+entsteht ein geschlossener Rückkopplungspfad, der darauf ausgelegt ist, P immer wieder in die Nähe von R zurückzuführen. Die Stabilität hängt jedoch maßgeblich von sorgfältig gewählten Parametern, ausreichender Liquidität und der Effizienz der Arbitrage ab.
 
 ---
 
 # 8. Next Steps
 
-- SimKit-Framework aufbauen  
-- Parameterraum für \(K_p\), \(\varepsilon_{\text{db}}\), \(\delta r_{\max}\) kalibrieren  
-- Liquiditäts- und Schockmodelle testen  
-- Messmetriken (PegDeviation, HalfLife, LimiterHit-Rate) definieren  
-- nichtlineare AMM-Dynamiken ergänzen  
+- Aufbau eines dedizierten Simulationsframeworks (SimKit)  
+- systematische Schocksimulationen (Preiscrash, Liquiditätsschocks, Orakel-Fehler)  
+- Kalibrierung der Parameter Kₚ, ε_db, δr_max und EpochLength  
+- Definition und Messung von Kennzahlen wie PegDeviation, HalfLife(P → R) und LimiterHit-Rate  
+- Erweiterung der Modelle um nichtlineare AMM-Dynamiken und realistische Orderflow-Profile  
 
 ---
 
-## 9. Verification
+# 9. Verification
 
-- Parameter-Validierung gegen Spezifikation  
-- Formel-Konsistenzprüfung  
-- Reproduktion der Szenarien in Simulation  
-- Logik-Kohärenztest zwischen Controller, Oracle, Redemption, Stability Pool  
-- Stabilitätsanalyse gemäß:
+> 📘 **Prüfkriterien für Reviewer**
 
-```math
+- Konsistenz von Symbolen und Parametern gegenüber der offiziellen Spezifikation  
+- formale Überprüfung der Herleitung der Konvergenzbedingung  
+- Reproduktion der beschriebenen Szenarien im Simulationsframework  
+- Prüfung der Kohärenz des Regelkreises (Controller ↔ Oracle ↔ Redemption ↔ Stability Pool)  
+- Validierung, dass für praxisnahe Parameterbereiche tatsächlich gilt:
+
+$$
 0 < \kappa K_p < 2
-```
+$$
