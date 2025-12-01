@@ -179,7 +179,7 @@ $$
 - users mint and sell ProjectUSD  
 - P declines toward R  
 
-*[Diagram 1 placeholder]*
+<img src="./Images/Study01_Diagram1.png" width="50%">
 
 ---
 
