@@ -142,31 +142,34 @@ ProjectUSD is an original open-source concept published by
 **Aqua75 / PulseChain Community Initiative**  
 under the **Creative Commons BY-NC-SA 4.0** license.
 
-This license applies to all documentation, specifications, whitepapers, studies and media in this repository.
+This license applies to all documentation, specifications, studies, whitepapers and media in this repository.
 
 However, the **name “ProjectUSD” and the ProjectUSD logo** are protected identifiers of the original PulseChain-based design.
 
-### Use of the Name “ProjectUSD”
+### Allowed Use of the Name “ProjectUSD”
 
-Any implementation deployed on **PulseChain** must:
+Implementations deployed on **PulseChain** must:
 
 1. fully comply with the official ProjectUSD specification, and  
 2. pass the consolidation process  
 
-in order to use the name **“ProjectUSD”**.
+to use the name **“ProjectUSD”**.
 
-All other implementations — on PulseChain or elsewhere — must be clearly labeled as **independent forks**, and must include the following attribution:
+### Independent Forks
+
+All other implementations — on PulseChain or elsewhere — must be clearly labeled as **independent forks**, and must include the attribution:
 
 > Based on the “ProjectUSD” concept by Aqua75 / PulseChain Community Initiative  
 > https://github.com/Aqua75/ProjectUSD
 
 Unauthorized use of the name or logo outside the PulseChain context  
-constitutes a breach of the license terms.
+violates the license terms.
 
-© 2025 Aqua75 – All rights reserved for the name and logo **“ProjectUSD”**.
+© 2025 Aqua75 — All rights reserved for the name and logo **“ProjectUSD”**.
 
 ---
 
-## 🪙 License  
+## 🪙 License
+
 Creative Commons **BY-NC-SA 4.0**  
 © 2025 Aqua75 – PulseChain Community Initiative
