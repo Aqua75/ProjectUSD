@@ -63,11 +63,11 @@ ProjectUSD kann jederzeit zum Gleichgewichtspreis \(R\) gegen PLS eingelöst wer
 - \(r_t\): Systemrate (Zins / Sparrate)  
 - \(\varepsilon_t\): Preisabweichung  
 
-  $$
-  \varepsilon_t = \frac{P_t - R_t}{R_t}
-  $$
+```math
+\varepsilon_t = \frac{P_t - R_t}{R_t}
+```
 
-- \(\text{EpochLength}\): Anzahl Blöcke pro Regelschritt  
+- \(\text{EpochLength}\): Anzahl Blöcke pro Regelschritt
 
 ---
 
@@ -219,13 +219,14 @@ Der Controller ist ein zentraler Baustein des autonomen Geldsystems von ProjectU
 
 ---
 
-# 9. Verification
+## 9. Verification
 
 - Parameter-Validierung gegen Spezifikation  
 - Formel-Konsistenzprüfung  
 - Reproduktion der Szenarien in Simulation  
 - Logik-Kohärenztest zwischen Controller, Oracle, Redemption, Stability Pool  
-- Stabilitätsanalyse gemäß  
-  $$
-  0 < \kappa K_p < 2
-  $$
+- Stabilitätsanalyse gemäß:
+
+```math
+0 < \kappa K_p < 2
+```
