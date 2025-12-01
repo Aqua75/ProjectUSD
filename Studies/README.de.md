@@ -17,7 +17,7 @@ Alle Studien folgen einem gemeinsamen **Level-3-Research-Format**, das gewährle
 - saubere Trennung von Theorie, Mechanismus-Design und empirischen Annahmen  
 - professionelle Lesbarkeit für Entwickler, Forscher und Auditoren  
 
-Jede Studie ist verfügbar auf **Deutsch (.de.md)** und **Englisch (.md)**.
+Jede Studie ist verfügbar auf **Deutsch (.de.md)** und **Englisch (.en.md)**.
 
 ---
 
