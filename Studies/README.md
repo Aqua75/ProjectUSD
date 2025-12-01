@@ -125,28 +125,69 @@ All contributions must follow:
 
 ---
 
-## License
+## License and Attribution
 
-All research studies are provided under the **ProjectUSD Open Architecture License**, which allows public reading, academic use and independent implementation, provided that derivative systems clearly identify themselves as independent forks unless they follow the exact ProjectUSD specification.
+ProjectUSD is an original open-source concept published by  
+**Aqua75 / PulseChain Community Initiative**  
+under the **Creative Commons BY-NC-SA 4.0** license.
 
-For details, see the license file in the main repository.
+This license applies to all:
+
+- whitepapers  
+- research studies  
+- translations  
+- specifications  
+- media assets  
+- diagrams and explanatory materials  
+
+contained in this repository and its official releases.
+
+While the concept may be studied, extended or implemented under the same license terms,  
+the **name “ProjectUSD” and the ProjectUSD logo** are protected identifiers of the original PulseChain-based design.
+
+### Use of the Name “ProjectUSD”
+
+Any implementation deployed on **PulseChain** must:
+
+1. fully comply with the official ProjectUSD specification, and  
+2. pass the consolidation process  
+
+in order to use the name **“ProjectUSD”**.
+
+All other implementations — on PulseChain or elsewhere — **must be clearly labeled as independent forks**, and must include a visible attribution:
+
+> Based on the “ProjectUSD” concept by Aqua75 / PulseChain Community Initiative  
+> https://github.com/Aqua75/ProjectUSD
+
+Unauthorized use of the name or logo outside the PulseChain context  
+constitutes a breach of the license terms.
+
+© 2025 Aqua75 – All rights reserved for the name and logo **“ProjectUSD”**.
 
 ---
 
 ## Contact & Further Reading
 
-For the full architectural specification of ProjectUSD, including:
+For the full specification, supporting research studies, development guidelines and system architecture, please refer to:
 
-- system diagrams  
-- module specifications  
-- oracle design  
-- stability mechanisms  
-- edge-case handling  
+- **Main ProjectUSD Repository**  
+  https://github.com/Aqua75/ProjectUSD
 
-please refer to the main repository:
+### Key Documentation
 
-**https://github.com/Aqua75/ProjectUSD**
+- **Whitepaper (German)**  
+  `ProjectUSD_Whitepaper_V2.1_german.pdf`
 
----
+- **Architecture & Module Specifications**  
+  `/Architecture/`
 
-*This research series aims to document the internal logic, resilience and economic behavior of ProjectUSD with clarity, transparency and scientific rigor.*
+- **Developer Playbook**  
+  `/Developer_Playbook/`
+
+- **Research Studies (Deutsch & Englisch)**  
+  `/Studies/`
+
+- **Articles & Concept Papers**  
+  `/Articles/`
+
+For collaboration inquiries, research contributions or discussions, please open an Issue or Pull Request in the main repository.
