@@ -127,7 +127,7 @@ Whether a specific implementation is secure can only be evaluated through:
 - **open-source transparency**,  
 - **formal verification**,  
 
-—not through this document.
+— not through this document.
 
 ProjectUSD does not publish smart contracts and does not designate any implementation as official.
 
