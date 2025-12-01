@@ -73,9 +73,7 @@ This study analyzes:
 - **R** – equilibrium (redemption) price  
 - **P** – market price (Median-TWAP)  
 - **ε** – relative price deviation:  
-  $$
-  \varepsilon_t = \frac{P_t - R}{R}
-  $$
+  $$\varepsilon_t = \frac{P_t - R}{R}$$  
 - **r** – system rate  
 - **t** – epoch index  
 
