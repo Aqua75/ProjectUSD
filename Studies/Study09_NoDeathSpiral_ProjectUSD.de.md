@@ -59,7 +59,7 @@ Death Spirals benötigen mindestens einen der folgenden Mechanismen:
 | 4. Collateral-Dumping | System muss Assets verkaufen, wenn Preis fällt | Ja |
 | 5. Exogene Orakel mit Fehlpreisrisiko | Fehlerhafte Feeds erzeugen falsche Liquidationen | Ja |
 
-None of these mechanisms exist in ProjectUSD.
+Keiner dieser Mechanismen existiert in ProjectUSD.
 
 ---
 
