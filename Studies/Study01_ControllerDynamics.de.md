@@ -58,9 +58,9 @@ ProjectUSD kann jederzeit zum Gleichgewichtspreis \(R\) gegen PLS eingelöst wer
 
 ## 2.2 Zentrale Variablen
 
-- \(R_t\): Gleichgewichtspreis in Periode \(t\)  
-- \(P_t\): Marktpreis laut Oracle (Median-TWAP)  
-- \(r_t\): Systemrate (Zins / Sparrate)  
+- \(R_t\): Gleichgewichtspreis in Periode \(t\)
+- \(P_t\): Marktpreis laut Oracle (Median-TWAP)
+- \(r_t\): Systemrate (Zins / Sparrate)
 - \(\varepsilon_t\): Preisabweichung  
 
 ```math
