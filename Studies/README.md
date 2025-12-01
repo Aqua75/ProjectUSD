@@ -15,7 +15,7 @@ Each study follows a unified **Level-3 Research Format**, ensuring:
 - clear separation of theory, mechanism design and empirical reasoning  
 - professional readability for developers, researchers and auditors  
 
-Every study is available in **German (.de.md)** and **English (.md)**.
+Every study is available in **German (.de.md)** and **English (.en.md)**.
 
 ---
 
