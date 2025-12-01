@@ -168,10 +168,22 @@ constitutes a breach of the license terms.
 
 ## Contact & Further Reading
 
-For the full specification, supporting research studies, development guidelines and system architecture, please refer to:
+For discussions, questions, clarification or collaboration regarding ProjectUSD,  
+please use the official community discussion group:
 
-- **Main ProjectUSD Repository**  
-  https://github.com/Aqua75/ProjectUSD
+**Telegram (ProjectUSD Discussion Group)**  
+https://t.me/ProjectUSD_Discussion
+
+This channel is the central contact point for:
+
+- research-related questions  
+- technical clarifications  
+- architectural discussions  
+- feedback on studies or documentation  
+
+Since this repository is maintained in a curated and consolidated form,  
+external Pull Requests are not part of the workflow.  
+All inquiries should be directed to the discussion group above.
 
 ### Key Documentation
 
@@ -189,5 +201,3 @@ For the full specification, supporting research studies, development guidelines 
 
 - **Articles & Concept Papers**  
   `/Articles/`
-
-For collaboration inquiries, research contributions or discussions, please open an Issue or Pull Request in the main repository.
