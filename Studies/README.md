@@ -175,8 +175,8 @@ For the full specification, supporting research studies, development guidelines 
 
 ### Key Documentation
 
-- **Whitepaper (German)**  
-  `ProjectUSD_Whitepaper_V2.1_german.pdf`
+- **Whitepaper (English)**  
+  `ProjectUSD.Whitepaper.V2.1.EN.Englisch.pdf`
 
 - **Architecture & Module Specifications**  
   `/Architecture/`
