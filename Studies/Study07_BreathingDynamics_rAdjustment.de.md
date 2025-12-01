@@ -10,7 +10,7 @@ ProjectUSD ist ein vollständig on-chain operierendes, autonom reguliertes Gelds
 Im Gegensatz zu fiatgedeckten Stablecoins beruht seine Stabilität nicht auf externen Sicherheiten, sondern auf einer **dynamischen Regelung**, die Preisabweichungen misst und über die Systemrate **r** wirtschaftliche Gegenkräfte aktiviert.
 
 Diese Studie untersucht die sogenannte **Atmungsdynamik** des Systems:  
-Wie Preisabweichungen (ε = P − R), Controller-Reaktionen (Δr), Arbitrage über Redemption und Angebot/Nachfrage-Effekte gemeinsam Volatilität absorbieren.  
+Wie Preisabweichungen (ε = (P − R) / R), Controller-Reaktionen (Δr), Arbitrage über Redemption und Angebots-/Nachfrageeffekte gemeinsam Volatilität absorbieren.  
 Wir modellieren die Regelkreise, analysieren stressabhängiges Verhalten und identifizieren Grenzen sowie Bedingungen für Systemstabilität.
 
 ---
@@ -47,7 +47,7 @@ ProjectUSD stellt bewusst auf dynamische Stabilität ab:
 
 - R = interner Gleichgewichtspreis  
 - P = Median-TWAP-Marktpreis  
-- ε = P − R  
+- ε = relative Preisabweichung  
 - r = Systemrate, die Angebot und Nachfrage beeinflusst
 
 ---
@@ -69,53 +69,50 @@ Die Studie untersucht:
 
 ## 2.1 Grundvariablen
 
-Wir verwenden die definitorischen Größen aus Whitepaper und ControllerSPEC:
-
 - **R** – Gleichgewichtspreis (Redemption-Preis)  
 - **P** – Marktpreis (Median-TWAP)  
-- **ε = P − R** – Preisabweichung  
+- **ε** – relative Preisabweichung:  
+  $$\varepsilon_t = \frac{P_t - R}{R}$$  
 - **r** – Systemrate je Epoche  
 - **t** – Zeit in Epochen  
-
-Der Controller berechnet aus εₜ die neue Systemrate rₜ₊₁.
 
 ---
 
 ## 2.2 Oracle-Modell: Glättung vor der Regelung
 
-Das Oracle besteht aus:
+Das Oracle nutzt:
 
-- mehreren DEX-Pools  
+- mehrere DEX-Pools  
 - Liquiditätsgewichtung  
-- TWAP-Berechnung pro Pool  
-- Medianbildung  
+- TWAP-Berechnungen  
+- Medianfilter  
 - Outlier-Filter  
-- STALE-Mechanismen
+- STALE-Schutzmechanismen
 
-Der endgültige Marktpreis:
+Finaler Marktpreis:
 
 $$
 P = \text{median}(P_{\text{twap},1}, \dots, P_{\text{twap},n})
 $$
 
-Das Oracle liefert ein **gefiltertes, langsam reagierendes** Preissignal, damit der Controller nicht auf Rauschen reagiert.
+Das Oracle liefert ein **gefiltertes, träge reagierendes** Signal.
 
 ---
 
 ## 2.3 Controller-Logik: ε → r
 
-Preisabweichung:
+Die relative Abweichung:
 
 $$
-\varepsilon_t = P_t - R
+\varepsilon_t = \frac{P_t - R}{R}
 $$
 
-Wenn die relative Abweichung innerhalb des Deadbands liegt, bleibt r konstant.
+Wenn |ε| innerhalb des Deadbands liegt → r bleibt unverändert.
 
-Sonst:
+Außerhalb:
 
 $$
-\Delta r_t = K_p \cdot \frac{\varepsilon_t}{R}
+\Delta r_t = K_p \cdot \varepsilon_t
 $$
 
 mit Begrenzung:
@@ -124,7 +121,7 @@ $$
 \Delta r_t = \text{clamp}(\Delta r_t,\ -\delta r_{\max},\ +\delta r_{\max})
 $$
 
-und Aktualisierung:
+Neue Systemrate:
 
 $$
 r_{t+1} = r_t + \Delta r_t
@@ -132,14 +129,14 @@ $$
 
 Interpretation:
 
-- **P > R → r steigt** → Schulden werden teurer → Emission sinkt → P fällt  
-- **P < R → r sinkt** → Schulden werden billiger → Nachfrage steigt → P steigt  
+- **ε > 0 (P > R)** → r steigt → Emission sinkt → P fällt  
+- **ε < 0 (P < R)** → r sinkt → Nachfrage steigt → P steigt  
 
 ---
 
-## 2.4 Angebot und Nachfrage als Funktionen von r
+## 2.4 Angebots- und Nachfragefunktionen
 
-Linearisierte qualitative Beziehungen:
+Qualitative Näherungen:
 
 **Emission:**
 
@@ -150,10 +147,10 @@ $$
 **Nachfrage:**
 
 $$
-D(r) \approx D_0 - \beta_r (r - r_0)
+D(r) \approx D_0 + \beta_r (-r)
 $$
 
-**Marktpreisreaktion:**
+**Preiswirkung durch Gesamtmenge Q:**
 
 $$
 P(Q) \approx P^* - \gamma (Q - Q^*)
@@ -165,100 +162,103 @@ Damit wirkt r indirekt über Angebots- und Nachfrageverschiebungen auf den Preis
 
 ## 2.5 Lokale Stabilitätsanalyse
 
-Für kleine Kₚ und moderate Preisempfindlichkeit c gilt:
+Für kleine Kₚ und moderate Preisänderungskoeffizienten gilt:
 
 $$
-r_{t+1} = r_t + K_p'(P_t - R)
+r_{t+1} = r_t + K_p \cdot \varepsilon_t
 $$
 
 $$
 P_{t+1} = P^* - c(r_t - r^*) + u_t
 $$
 
-Eigenwertanalyse zeigt:
+Die Eigenwertanalyse ergibt:
 
-- System ist lokal stabil  
-- zeigt gedämpfte Oszillationen  
-- nähert sich monoton dem Gleichgewicht an  
-
-Stabilität ist abhängig von:  
-Kₚ, Deadband, δr_max, Arbitrageintensität und Oracle-Glättung.
+- gedämpfte Oszillationen möglich  
+- Monotone Konvergenz bei geeigneten Parametern  
+- Stabilität abhängig von: Kₚ, Deadband, δr_max, Arbitrage, Oracle-Glättung  
 
 ---
 
 # 3. Dynamik in volatilen Märkten
 
-## 3.1 Arbitrage & Redemption als schneller Preisanker
+## 3.1 Arbitrage & Redemption als schnelle Korrekturkraft
 
-**Unterbewertung (P < R):**
+**P < R:**
 
 - Arbitrageure kaufen ProjectUSD  
-- Redemption löst ihn zu R ein  
+- Redeem zu R  
 - Supply sinkt  
-- P steigt
+- P steigt in Richtung R  
 
-**Überbewertung (P > R):**
+**P > R:**
 
-- Neue Prägung (sofern r dies zulässt)  
-- Verkauf zu hoher Bewertung  
-- Angebot steigt  
-- P fällt  
+- Prägung (sofern r dies zulässt)  
+- Verkauf über Markt  
+- Angebot wächst → P fällt  
 
-Arbitrage wirkt als **schneller** Mechanismus.  
-Der Controller ist der **langsame**, systemische Mechanismus.
+Arbitrage ist der **schnelle Mechanismus**,  
+der Controller die **langsame, systemische Komponente**.
 
 ---
 
-## 3.2 Rolle des Orakels bei hoher DEX-Volatilität
+## 3.2 Oracle als Volatilitätsfilter
 
-TWAP und Median:
+TWAP + Median:
 
-- glätten Flash-Spikes  
-- filtern manipulierte Pools  
-- reduzieren kurzfristige Preisexzesse  
-
-Der Controller reagiert nur auf Trends, nicht auf Rauschen.
+- dämpfen Preisrauschen  
+- verhindern Überreaktion  
+- filtern Manipulation  
+- erzeugen ein stabiles Eingangssignal für den Controller
 
 ---
 
 ## 3.3 r als Schockabsorber bei PLS-Volatilität
 
-Da R den Preis ProjectUSD/PLS beschreibt, bleibt die interne Stabilität erhalten – selbst wenn PLS gegenüber externen Assets stark schwankt.
+Da ProjectUSD **in PLS** bewertet wird, wirken externe USD-Preisbewegungen nicht direkt destabiliserend.
 
 Bei starkem PLS-Preisverfall:
 
-- Vault-Collateral fällt → Liquidationen  
-- Stability Pool erhält PLS → ProjectUSD-Supply sinkt  
-- P sinkt kurzfristig  
-- Controller erkennt P < R → r sinkt  
-- Nachfrage steigt → P stabilisiert  
+1. Liquidationen → Stability Pool erhält Collateral  
+2. ProjectUSD-Supply sinkt  
+3. kurzfristiger Abwärtsdruck auf P  
+4. ε < 0 → r wird gesenkt  
+5. Nachfrage steigt → P stabilisiert sich
 
 ---
 
-# 4. Szenarien: niedriger vs. hoher Stress
+# 4. Szenarien: Niedriger, mittlerer und hoher Stress
 
 ## 4.1 Niedriger Stress
 
-- geringe P-Abweichungen  
-- arbitragefreundliche Marktverhältnisse  
-- Controller reagiert moderat  
-- Peg-Deviation bleibt klein  
-- r bleibt meist im Deadband oder nahe daran  
+- kleine Preisabweichungen  
+- schnelle Arbitrage  
+- r bleibt stabil oder bewegt sich nur leicht  
+- P verbleibt eng um R  
 
 ---
 
-## 4.2 Hoher Stress (z. B. 50 % PLS-Crash)
+## 4.2 Mittlerer Stress (z. B. Intraday-Volatilität)
+
+- ε schwankt moderat  
+- r passt sich über mehrere Epochen an  
+- leichte Oszillationen möglich  
+- Redemption glättet Abweichungen nach unten  
+
+---
+
+## 4.3 Hoher Stress (PLS-Crash, Marktpanik)
 
 Ablauf:
 
-1. Liquidationswelle  
-2. ProjectUSD-Supply sinkt  
-3. kurzfristiger Verkaufsdruck auf P  
-4. Arbitrage kauft unterbewertete Coins  
-5. Controller senkt r über mehrere Epochen  
-6. Stabilisierung des Pegs innerhalb des R-Korridors  
+1. Liquidationswellen  
+2. Supply sinkt  
+3. P fällt kurzfristig  
+4. Arbitrage setzt ein  
+5. r wird massiv gesenkt  
+6. P nähert sich wieder R an  
 
-Während externe Preise kollabieren, bleibt die interne Einheit ProjectUSD in PLS relativ stabil.
+So entsteht ein **endogener Dämpfungsmechanismus**, der Schocks absorbiert.
 
 ---
 
@@ -266,84 +266,91 @@ Während externe Preise kollabieren, bleibt die interne Einheit ProjectUSD in PL
 
 ## 5.1 Expansion (Einatmen)
 
-(P < R) → r sinkt  
-→ Emission/Halten wird attraktiver  
-→ Nachfrage steigt  
-→ Supply kontrahiert durch Redemption  
-→ P nähert sich wieder R  
+Wenn P < R → ε < 0:
+
+- r sinkt  
+- Schuldenaufnahme wird attraktiver  
+- Nachfrage steigt  
+- Redemption reduziert Supply  
+- P bewegt sich nach oben Richtung R
+
+---
 
 ## 5.2 Kontraktion (Ausatmen)
 
-(P > R) → r steigt  
-→ Emission wird teurer  
-→ Nachfrage fällt  
-→ Angebot wächst langsamer  
-→ P sinkt  
+Wenn P > R → ε > 0:
 
-## 5.3 Deadband & RateLimiter
+- r steigt  
+- Emission wird teurer  
+- Nachfrage sinkt  
+- Angebot wächst langsamer  
+- P bewegt sich nach unten Richtung R
 
-- Deadband verhindert Überreaktion auf Mikrovolatilität  
-- Limiter verhindert extreme r-Sprünge  
-- gemeinsam sorgen beide für **glatte Atmung statt Hyperventilation**
+---
+
+## 5.3 Rolle von Deadband & RateLimiter
+
+Deadband:
+
+- verhindert Überreaktion auf Mikrovolatilität  
+
+RateLimiter:
+
+- begrenzt maximale r-Änderungen  
+- schützt vor reflexiver Instabilität  
+- erzeugt „sanftes Atmen“ statt abruptem Verhalten
+
+---
 
 ## 5.4 Surplus-Puffer als langfristige Stabilisierung
 
 Der Surplus-Puffer:
 
-- sammelt Gebühren  
-- kann langfristige Sparraten finanzieren  
-- stabilisiert r im Zeitverlauf  
-- wirkt wie eine „Lunge mit Reservetank“
+- speichert Gebühren  
+- kann negative r-Phasen kompensieren  
+- wirkt als langfristiger Energiespeicher des Systems  
 
 ---
 
 # 6. Grenzen & Risiken
 
 ## 6.1 Technische Risiken
-
-- Smart-Contract-Risiko  
-- Oracle-STALE führt zu eingefrorenem r  
-- erforderliche Audits vor Freeze-Event
+- Smart-Contract-Risiken  
+- STALE-Oracle → r friert temporär ein  
+- Verlässlichkeit der PulseChain-Infrastruktur  
 
 ## 6.2 Ökonomische Risiken
-
 - geringe DEX-Liquidität → träge Arbitrage  
-- Panikverhalten kann rationale Mechanismen temporär überlagern  
-- Parameterwahl kritisch: Kₚ, Deadband, δr_max
+- Marktpanik kann Controller-Signale überlagern  
+- Parameterwahl (Kₚ, δr_max) entscheidend
 
 ## 6.3 Offene Designfragen
-
-- negative r-Phasen sicher umsetzbar?  
-- Langzeit-Sparraten und ihre Wechselwirkung mit r  
-- Interaktion mit PSM/AMO in späteren Phasen  
+- optimale r-Spannbreite  
+- langfristige r-Niveaus  
+- Interaktion mit späteren PSM/AMO-Modulen  
 
 ---
 
 # 7. Schlussfolgerung
 
-ProjectUSD stabilisiert sich nicht durch starre Fixierung, sondern durch **kontrollierte, atmende Anpassung** des monetären Gleichgewichts.
+ProjectUSD stabilisiert sich nicht durch starre Fixierung, sondern durch ein **atmendes**, dynamisches Gleichgewicht.  
+Die Preisabweichung ε, die Controller-Reaktion Δr, Arbitrage und Redemption bilden einen geschlossenen Regelkreis, der:
 
-Kernmechanismen:
+- Schocks absorbiert  
+- Gleichgewicht wiederherstellt  
+- systemische Stabilität erzeugt  
 
-- **Median-TWAP-Oracle**  
-- **Proportional-Controller (ε → r)**  
-- **Arbitrage & Redemption**  
-- **Surplus-Puffer & Stability Pool**  
-
-Gemeinsam erzeugen sie eine robuste, autonome Form dynamischer Stabilität:  
-Preisabweichungen werden gedämpft, Schocks absorbiert, Gleichgewichtszustände wiederhergestellt.
-
-Die Atmungsmechanik macht ProjectUSD zu einem **adaptiven, selbststabilisierenden Geldsystem**, dessen Verhalten formal analysierbar, simulierbar und überprüfbar ist.
+Diese Atmungsdynamik macht ProjectUSD zu einem **adaptiven, selbststabilisierenden Geldsystem**, das ohne externe Orakel, Banken oder Governance funktioniert.
 
 ---
 
 # 8. Verification
 
 > ## 📘 Prüfkriterien für Reviewer
-- Ist die Controller-Logik korrekt beschrieben?  
-- Ist der Zusammenhang zwischen ε, r und P konsistent?  
-- Wurde die Arbitragewirkung korrekt modelliert?  
-- Sind die Stabilitätsannahmen realistisch?  
-- Ist der Übergang zwischen Mikro- und Makrovolatilität sauber dargestellt?  
+- Wird die korrekte Formel für ε verwendet?  
+- Ist die Controller-Kopplung ε → r korrekt dargestellt?  
+- Sind Supply- und Nachfrageeffekte konsistent modelliert?  
+- Sind Stabilitätsannahmen realistisch?  
+- Ist die Atmungsmechanik vollständig und logisch beschrieben?  
 
-Diese Studie bildet die Basis für weiterführende Forschung zur dynamischen Modellierung, zur Parameteroptimierung und zu systemweiten Stresssimulationen.
+Dieses Dokument bildet die Grundlage für weitere Forschung zur Systemdynamik, Parameteroptimierung und Simulation von Stressszenarien.
