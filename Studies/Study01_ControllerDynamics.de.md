@@ -75,36 +75,31 @@ ProjectUSD kann jederzeit zum Gleichgewichtspreis \(R\) gegen PLS eingelöst wer
 
 Die vorläufige Controller-Spezifikation folgt einer proportionalen Regelung:
 
-1. Abweichung berechnen  
+### 1. Abweichung berechnen
+```math
+\varepsilon_t = \frac{P_t - R_t}{R_t}
+```
 
-   $$
-   \varepsilon_t = \frac{P_t - R_t}{R_t}
-   $$
+### 2. Deadband prüfen
+```math
+|\varepsilon_t| < \varepsilon_{\text{db}} \Rightarrow \Delta r_t = 0
+```
 
-2. Deadband prüfen  
+### 3. Proportionale Anpassung
+```math
+\Delta r_t = K_p \cdot \varepsilon_t
+```
 
-   $$
-   |\varepsilon_t| < \varepsilon_{\text{db}} \Rightarrow \Delta r_t = 0
-   $$
+### 4. Rate-Limiter
+```math
+\Delta r_t^{\text{clamped}} =
+\max\left(-\delta r_{\max}, \min(\delta r_{\max}, \Delta r_t)\right)
+```
 
-3. Proportionale Anpassung  
-
-   $$
-   \Delta r_t = K_p \cdot \varepsilon_t
-   $$
-
-4. Rate-Limiter  
-
-   $$
-   \Delta r_t^{\text{clamped}} = 
-   \max\left(-\delta r_{\max}, \min(\delta r_{\max}, \Delta r_t)\right)
-   $$
-
-5. Neue Rate  
-
-   $$
-   r_{t+1} = \text{clip}\big(r_t + \Delta r_t^{\text{clamped}},\, 0,\, r_{\text{cap}}\big)
-   $$
+### 5. Neue Rate
+```math
+r_{t+1} = \text{clip}\big(r_t + \Delta r_t^{\text{clamped}}, 0, r_{\text{cap}}\big)
+```
 
 ---
 
