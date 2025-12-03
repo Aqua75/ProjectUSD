@@ -136,7 +136,7 @@ Externe Preisänderungen spielen dabei keine Rolle.
 
 Eine ausführliche Analyse der internen Kaufkraft findest du im diesem Artikel:
 
-[„ProjectUSD – und das Geheimnis der Kaufkraft“](https://github.com/Aqua75/ProjectUSD/blob/main/Articles/projectusd-and-purchasing-power/projectusd-and-purchasing-power.de.md).
+[„ProjectUSD – und das Geheimnis der Kaufkraft“](https://github.com/Aqua75/ProjectUSD/blob/main/Articles/projectusd-and-purchasing-power/projectusd-and-purchasing-power.de.md)
 
 ---
 
