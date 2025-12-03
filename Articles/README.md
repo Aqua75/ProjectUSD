@@ -90,6 +90,20 @@ and why the name naturally triggers conversation and curiosity.
 
 ---
 
+### 7. Understanding the Core Variables P, R and r  
+A clear and technically precise article explaining the three central variables of ProjectUSD:  
+**P** (market price), **R** (internal equilibrium price) and **r** (system rate).  
+It describes how these variables interact to maintain price stability without an oracle,  
+without a USD peg, and without governance intervention.
+
+- 🇬🇧 English:  
+  [`core-variables-p-r-r/understanding-p-r-r.en.md`](./core-variables-p-r-r/understanding-p-r-r.en.md)
+
+- 🇩🇪 German:  
+  [`core-variables-p-r-r/understanding-p-r-r.de.md`](./core-variables-p-r-r/understanding-p-r-r.de.md)
+
+---
+
 ## 🧭 Structure & Expansion
 
 New articles follow the same structure:
