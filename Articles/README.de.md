@@ -76,6 +76,20 @@ das gesamte System stabiler und widerstandsfähiger machen.
 
 ---
 
+### 6. Die Bedeutung des Namens ProjectUSD  
+Ein erklärender Artikel darüber, warum der Name „ProjectUSD“ intuitiv entstand,  
+warum er nicht auf den US-Dollar verweist, wie das Akronym  
+**Unbreakable Stable Division** die Identität des Systems beschreibt  
+und wieso der Name Menschen sofort ins Gespräch führt.
+
+- 🇩🇪 Deutsch:  
+  [`meaning-of-the-name-projectusd/meaning-of-the-name-projectusd.de.md`](./meaning-of-the-name-projectusd/meaning-of-the-name-projectusd.de.md)
+
+- 🇬🇧 Englisch:  
+  [`meaning-of-the-name-projectusd/meaning-of-the-name-projectusd.en.md`](./meaning-of-the-name-projectusd/meaning-of-the-name-projectusd.en.md)
+
+---
+
 ## 🧭 Struktur & Erweiterungen
 
 Neue Artikel folgen der gleichen Struktur:
