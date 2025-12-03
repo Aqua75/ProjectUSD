@@ -90,6 +90,20 @@ und wieso der Name Menschen sofort ins Gespräch führt.
 
 ---
 
+### 7. Verständnis der Kernvariablen P, R und r  
+Ein klarer, technisch präziser Artikel über die drei zentralen Größen von ProjectUSD:  
+**P** (Marktpreis), **R** (interner Gleichgewichtspreis) und **r** (Systemrate).  
+Er erklärt, wie diese Variablen zusammenarbeiten, um Preisstabilität ohne Orakel,  
+ohne USD-Peg und ohne Governance-Eingriffe zu ermöglichen.
+
+- 🇩🇪 Deutsch:  
+  [`core-variables-p-r-r/understanding-p-r-r.de.md`](./core-variables-p-r-r/understanding-p-r-r.de.md)
+
+- 🇬🇧 Englisch:  
+  [`core-variables-p-r-r/understanding-p-r-r.en.md`](./core-variables-p-r-r/understanding-p-r-r.en.md)
+
+---
+
 ## 🧭 Struktur & Erweiterungen
 
 Neue Artikel folgen der gleichen Struktur:
