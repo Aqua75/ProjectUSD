@@ -134,7 +134,7 @@ er stabilisiert auch die **Kaufkraft des Tokens innerhalb der PulseChain-Ökonom
 1 ProjectUSD entspricht immer einer **konstanten Einheit wirtschaftlicher Aktivität** innerhalb des Systems.  
 Externe Preisänderungen spielen dabei keine Rolle.
 
-Eine ausführliche Analyse der internen Kaufkraft findest du im eigenen Artikel  
+Eine ausführliche Analyse der internen Kaufkraft findest du im diesem Artikel:
 [„ProjectUSD – und das Geheimnis der Kaufkraft“](https://github.com/Aqua75/ProjectUSD/blob/main/Articles/projectusd-and-purchasing-power/projectusd-and-purchasing-power.de.md).
 
 ---
