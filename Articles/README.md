@@ -76,15 +76,29 @@ triangles make the entire system more resilient.
 
 ---
 
+### 6. The Meaning of the Name ProjectUSD  
+An explanatory article covering why the name “ProjectUSD” was chosen,  
+why it does not refer to the US dollar, how the acronym  
+**Unbreakable Stable Division** defines the system’s identity,  
+and why the name naturally triggers conversation and curiosity.
+
+- 🇬🇧 English:  
+  [`meaning-of-the-name-projectusd/meaning-of-the-name-projectusd.en.md`](./meaning-of-the-name-projectusd/meaning-of-the-name-projectusd.en.md)
+
+- 🇩🇪 German:  
+  [`meaning-of-the-name-projectusd/meaning-of-the-name-projectusd.de.md`](./meaning-of-the-name-projectusd/meaning-of-the-name-projectusd.de.md)
+
+---
+
 ## 🧭 Structure & Expansion
 
 New articles follow the same structure:
 ```
 Articles/
-└── artikel-titel-kebab-case/
-  ├── artikel-titel-kebab-case.en.md
-  ├── artikel-titel-kebab-case.de.md
-  └── optionale-diagramme.png
+└── article-title-kebab-case/
+├── article-title-kebab-case.en.md
+├── article-title-kebab-case.de.md
+└── optional-diagram.png
 ```
 ---
 
