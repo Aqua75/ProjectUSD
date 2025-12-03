@@ -13,7 +13,7 @@ bündelt (z. B. Diagramme, Tabellen oder weitere Dokumente).
 
 ## 📚 Verfügbare Artikel
 
-### 1. Internal Value Unit Problem (PulseChain)
+### 1. Problem fehlender interner Wertmaß-Einheiten (PulseChain)
 Analyse des grundlegenden Problems fehlender interner Wertmaß-Einheiten
 auf PulseChain und warum ein natives, autonomes Geldsystem notwendig ist.
 
@@ -25,7 +25,7 @@ auf PulseChain und warum ein natives, autonomes Geldsystem notwendig ist.
 
 ---
 
-### 2. Autonomous Money Systems Without Capital
+### 2. Autonome Geldsysteme ohne externes Kapital
 Warum autonome Geldsysteme kein externes Kapital benötigen und wie reine
 Algorithmik stabile, selbstregulierende monetäre Gleichgewichte erzeugen kann.
 
