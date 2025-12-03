@@ -56,14 +56,14 @@ Diese Einlösbarkeit erzeugt einen natürlichen Wertanker und sorgt dafür, dass
 
 Zwischen P und R besteht fast immer eine kleine Differenz.
 
-Diese Abweichung heißt:
+Diese **relative** Abweichung nennen wir:
 
-**ε = P − R**
+**ε = (P − R) / R**
 
-- ε > 0 → P ist überbewertet  
-- ε < 0 → P ist unterbewertet  
+- ε > 0 → P liegt relativ über R (Überbewertung)  
+- ε < 0 → P liegt relativ unter R (Unterbewertung)  
 
-Die Größe von ε bestimmt, **wie stark der Controller r anpasst**.
+Die Größe von ε bestimmt, wie stark der Controller r angepasst wird.
 
 ---
 
