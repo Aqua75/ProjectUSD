@@ -77,6 +77,38 @@ A detailed architectural explanation is available at:
 
 ---
 
+## 🚀 Quickstart for Developers
+
+For developers, auditors, and researchers who want to dive directly into the technical structure, the central entry points are:
+
+### **1. Architecture Overview**
+➡ [`/Architecture/README.md`](./Architecture/README.md)  
+High-level system architecture, module overview, and data flows.
+
+### **2. Complete SPECS**
+➡ [`/Architecture/specs/README.md`](./Architecture/specs/README.md)  
+Formal specifications of all core modules:
+
+- VaultEngine  
+- Controller  
+- Oracle  
+- Liquidation & Redemption  
+- StabilityPool  
+- Security  
+- Governance & Freeze  
+- KPI Subgraph  
+- Incident Runbook  
+
+### **3. Developer Playbook**
+➡ [`/Developer_Playbook/README.md`](./Developer_Playbook/README.md)  
+Practical developer guide, standards, recommendations, and workflow.
+
+### **4. Glossary**
+➡ [`/Glossary.md`](./Glossary.md)  
+Defined terminology for mechanisms, variables, and formulas.
+
+---
+
 ## 📂 Full Technical Specification Library (SPECS)
 
 ProjectUSD contains one of the most complete SPEC frameworks in decentralized finance:
