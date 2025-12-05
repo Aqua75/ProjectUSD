@@ -116,7 +116,7 @@ ProjectUSD contains one of the most complete SPEC frameworks in decentralized fi
 ➡ `/Architecture/specs/README.md`  
 ➡ `/Architecture/specs/README.de.md`
 
-These include:
+This section provides the **entire audit-ready blueprint** of the system, including:
 
 - VaultEngine SPEC  
 - Controller SPEC  
@@ -130,7 +130,7 @@ These include:
 - Incident Runbook  
 - DEX-LP SPEC (optional)
 
-Everything is **audit-ready, modular, consistent, and bilingual (EN/DE).**
+All specifications are **modular**, **consistent**, and available in **English and German**.
 
 ---
 
