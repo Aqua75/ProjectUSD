@@ -79,15 +79,15 @@ A detailed architectural explanation is available at:
 
 ## 🚀 Quickstart for Developers
 
-For developers, auditors, and researchers who want to dive directly into the technical structure, the central entry points are:
+For developers, auditors, and researchers who want to enter directly into the technical foundations of ProjectUSD, the following documents serve as the primary entry points:
 
 ### **1. Architecture Overview**
 ➡ [`/Architecture/README.md`](./Architecture/README.md)  
-High-level system architecture, module overview, and data flows.
+A high-level introduction to the system architecture, core modules, and internal data flows.
 
-### **2. Complete SPECS**
+### **2. Complete Specifications (SPECS)**
 ➡ [`/Architecture/specs/README.md`](./Architecture/specs/README.md)  
-Formal specifications of all core modules:
+The formal, audit-ready specifications of all core components:
 
 - VaultEngine  
 - Controller  
@@ -101,11 +101,11 @@ Formal specifications of all core modules:
 
 ### **3. Developer Playbook**
 ➡ [`/Developer_Playbook/README.md`](./Developer_Playbook/README.md)  
-Practical developer guide, standards, recommendations, and workflow.
+A practical guide for development workflow, standards, conventions, and recommended best practices.
 
 ### **4. Glossary**
 ➡ [`/Glossary.md`](./Glossary.md)  
-Defined terminology for mechanisms, variables, and formulas.
+Definitions of terms, mechanisms, variables, economic concepts, and formula notation used throughout the system.
 
 ---
 
