@@ -46,7 +46,7 @@ Damit erfüllt ProjectUSD exakt das Ziel, das Mushegian mit RICO anstrebte, alle
 ---
 
 # 3 Die zentrale Mechanik  
-P R und r als Rückkopplungssystem
+P, R und r als Rückkopplungssystem
 
 Die entscheidende Gemeinsamkeit zwischen RICO und ProjectUSD ist der Gedanke, dass ein Wertmaß nicht fixiert werden muss, sondern sich durch Abweichungen selbst reguliert.
 
