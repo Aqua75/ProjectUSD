@@ -78,6 +78,42 @@ Detaillierte Erklärung:
 
 ---
 
+## 🚀 Schnellstart für Entwickler
+
+Für Entwickler, Auditoren und Forscher, die direkt in die technische Struktur einsteigen möchten, sind die zentralen Einstiegspunkte:
+
+### **1. Architekturüberblick**
+➡ [`/Architecture/README.de.md`](./Architecture/README.de.md)  
+Hohe Ebene der Systemarchitektur, Modulübersicht, Datenflüsse.
+
+### **2. Vollständige SPECS**
+➡ [`/Architecture/specs/README.de.md`](./Architecture/specs/README.de.md)  
+Formale Spezifikationen aller Kernmodule:
+
+- VaultEngine  
+- Controller  
+- Oracle  
+- Liquidation und Redemption  
+- StabilityPool  
+- Security  
+- Governance und Freeze  
+- KPI-Subgraph  
+- Incident-Runbook  
+
+### **3. Entwickler-Playbook**
+➡ [`/Developer_Playbook/README.de.md`](./Developer_Playbook/README.de.md)  
+Praktischer Leitfaden für Entwickler, Standards, Empfehlungen und Workflow.
+
+### **4. Glossar**
+➡ [`/Glossary.de.md`](./Glossary.de.md)  
+Definierte Fachbegriffe für Mechanismen, Variablen und Formeln.
+
+---
+
+Diese vier Einstiegspunkte bilden die Grundlage für jede Implementierung von ProjectUSD und ermöglichen Entwicklern eine schnelle und vollständige Orientierung im Systemdesign.
+
+---
+
 ## 📂 Vollständige technische Spezifikationen (SPECS)
 
 ProjectUSD enthält eine der vollständigsten SPECS-Bibliotheken in ganz DeFi:
