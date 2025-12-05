@@ -121,7 +121,7 @@ ProjectUSD enthält eine der vollständigsten SPECS-Bibliotheken in ganz DeFi:
 ➡ `/Architecture/specs/README.de.md`  
 ➡ `/Architecture/specs/README.md`
 
-Die SPECS umfassen:
+Dieser Abschnitt bildet das **vollständige audit-bereite Blueprint** des Systems und umfasst:
 
 - VaultEngine SPEC  
 - Controller SPEC  
@@ -135,7 +135,7 @@ Die SPECS umfassen:
 - Incident-Runbook  
 - DEX-LP SPEC (optional)
 
-Alles ist **auditfähig, modular, konsistent und zweisprachig (DE/EN).**
+Alle Spezifikationen sind **modular**, **konsistent** und in **Deutsch und Englisch** verfügbar.
 
 ---
 
