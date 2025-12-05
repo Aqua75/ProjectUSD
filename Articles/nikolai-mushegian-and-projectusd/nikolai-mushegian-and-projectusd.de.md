@@ -1,4 +1,4 @@
-# Von RICO zu ProjectUSD  
+# Nikolai Mushegians RICO Konzept und seine Weiterführung in ProjectUSD  
 Wie die Vision eines autonomen Geldes weiterlebt
 
 ## Einleitung
