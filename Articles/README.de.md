@@ -104,6 +104,19 @@ ohne USD-Peg und ohne Governance-Eingriffe zu ermöglichen.
 
 ---
 
+### 8. Nikolai Mushegians RICO Konzept und seine Weiterführung in ProjectUSD  
+Ein historisch und technisch fundierter Artikel darüber, wie Nikolai Mushegians  
+ursprüngliches RICO Konzept in ProjectUSD seine moderne, vollständig implementierte  
+Weiterentwicklung findet.
+
+- 🇩🇪 Deutsch:  
+  [`nikolai-mushegian-and-projectusd/nikolai-mushegian-and-projectusd.de.md`](./nikolai-mushegian-and-projectusd/nikolai-mushegian-and-projectusd.de.md)
+
+- 🇬🇧 Englisch:  
+  [`nikolai-mushegian-and-projectusd/nikolai-mushegian-and-projectusd.en.md`](./nikolai-mushegian-and-projectusd/nikolai-mushegian-and-projectusd.en.md)
+
+---
+
 ## 🧭 Struktur & Erweiterungen
 
 Neue Artikel folgen der gleichen Struktur:
