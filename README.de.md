@@ -143,10 +143,10 @@ Alle Spezifikationen sind **modular**, **konsistent** und in **Deutsch und Engli
 
 ProjectUSD stellt zwei kuratierte Dokumentensammlungen bereit, die über die technischen Spezifikationen hinausgehen und das ökonomische Fundament des Systems vertiefen.
 
-### 📝 Artikel (Conceptual Articles)
+### 📝 Artikel
 
 ➡ [`/Articles`](./Articles)  
-Grundlegende Analysen und Essays zu zentralen Konzepten wie:
+Grundlegende Analysen und Essays zu zentralen Konzepten wie beispielsweise:
 - interne Werteinheit und Kaufkraft
 - Bedeutung des Namens ProjectUSD
 - das P R r Modell
@@ -154,10 +154,10 @@ Grundlegende Analysen und Essays zu zentralen Konzepten wie:
 
 Diese Texte bilden das theoretische Fundament des Designs und erläutern die Konzepte hinter den SPECS.
 
-### 📑 Studien (Formal Studies)
+### 📑 Studien
 
 ➡ [`/Studies`](./Studies)  
-Wissenschaftliche Studienreihen zu Themen wie:
+Wissenschaftliche Studienreihen zu Themen wie beispielsweise:
 - Stabilitätsmechanismen und Anti Reflexivität
 - Spieltheorie des Systems
 - Collateral Modelle und Stresstests
