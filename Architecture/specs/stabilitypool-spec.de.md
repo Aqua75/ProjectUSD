@@ -117,8 +117,8 @@ Wenn `liquidation(VaultID)` in der VaultEngine ausgelöst wird:
 Wenn die VaultEngine Systemgebühren erzeugt:
 
 - `surplusBuffer` wächst  
-- diese Gebühren können dem StabilityPool zugeführt werden  
-  (Mechanismus wird in StabilityPool v2 spezifiziert).
+- diese Gebühren können dem Stability Pool zugeführt werden  
+  (Mechanismus wird in Stability Pool v2 spezifiziert).
 
 ---
 
@@ -131,7 +131,7 @@ Ein Vault wird liquidierbar, wenn:
 **Das Liquidation-Modul:**
 
 - liest `debt` und `collateral` aus der VaultEngine,  
-- ruft `absorbDebt()` im StabilityPool auf,  
+- ruft `absorbDebt()` im Stability Pool auf,  
 - setzt den Vault in der VaultEngine auf `debt = 0`, `collateral = 0`,  
 - aktualisiert `totalDebt` und `totalCollateral`.  
 
