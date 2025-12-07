@@ -9,12 +9,62 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Apply labels based on issue content
+
+      # ------------------------------
+      # Label: implementation
+      # ------------------------------
+      - name: Add label: implementation
+        if: |
+          contains(github.event.issue.title, 'implement') ||
+          contains(github.event.issue.title, 'implementation') ||
+          contains(github.event.issue.body, 'implement') ||
+          contains(github.event.issue.body, 'solidity') ||
+          contains(github.event.issue.body, 'contract')
         uses: actions-ecosystem/action-add-labels@v1
         with:
+          labels: implementation
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          labels: |
-            {{#containsAny(issue.title, issue.body, "spec", "SPEC", "definition", "module", "invariant")}}spec{{/containsAny}}
-            {{#containsAny(issue.title, issue.body, "implement", "implementation", "deploy", "contract", "solidity")}}implementation{{/containsAny}}
-            {{#containsAny(issue.title, issue.body, "research", "paper", "analysis", "theory", "study")}}research{{/containsAny}}
-            {{#containsAny(issue.title, issue.body, "simulation", "model", "modelling", "twap test", "stress test")}}simulation{{/containsAny}}
+
+      # ------------------------------
+      # Label: spec
+      # ------------------------------
+      - name: Add label: spec
+        if: |
+          contains(github.event.issue.title, 'spec') ||
+          contains(github.event.issue.body, 'spec') ||
+          contains(github.event.issue.body, 'definition') ||
+          contains(github.event.issue.body, 'invariant') ||
+          contains(github.event.issue.body, 'module')
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: spec
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      # ------------------------------
+      # Label: research
+      # ------------------------------
+      - name: Add label: research
+        if: |
+          contains(github.event.issue.body, 'analysis') ||
+          contains(github.event.issue.body, 'research') ||
+          contains(github.event.issue.body, 'study') ||
+          contains(github.event.issue.body, 'paper')
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: research
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      # ------------------------------
+      # Label: simulation
+      # ------------------------------
+      - name: Add label: simulation
+        if: |
+          contains(github.event.issue.body, 'simulation') ||
+          contains(github.event.issue.body, 'model') ||
+          contains(github.event.issue.body, 'modelling') ||
+          contains(github.event.issue.body, 'twap') ||
+          contains(github.event.issue.body, 'stress')
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: simulation
+          github_token: ${{ secrets.GITHUB_TOKEN }}
