@@ -1,5 +1,5 @@
 ---
-title: "ProjectUSD – StabilityPool SPEC v1"
+title: "ProjectUSD – Stability Pool SPEC v1"
 status: "Draft"
 last_updated: "2025-11-15"
 author: "Aqua75"
@@ -7,11 +7,11 @@ language: "en"
 related_whitepaper_sections: ["Ch. 6 – Liquidation & Redemption", "Ch. 7 – Stability Layer", "Glossary pp. 22–24"]
 ---
 
-# ProjectUSD – StabilityPool SPEC v1
+# ProjectUSD – Stability Pool SPEC v1
 
 ## Purpose
 
-The **StabilityPool** is a central safety mechanism in the ProjectUSD system.  
+The **Stability Pool** is a central safety mechanism in the ProjectUSD system.  
 It serves to:
 
 - absorb system-wide debt (ProjectUSD Coin) during liquidations,  
@@ -19,7 +19,7 @@ It serves to:
 - accept surpluses and fees from the VaultEngine,  
 - prevent or strictly limit BadDebt.
 
-The StabilityPool enables an **instant, loss-minimizing liquidation model**,  
+The Stability Pool enables an **instant, loss-minimizing liquidation model**,  
 that works without auctions or external bidders and is therefore:
 
 - fast,  
@@ -30,7 +30,7 @@ that works without auctions or external bidders and is therefore:
 
 ## 1. Core Concept
 
-The StabilityPool follows one simple principle:
+The Stability Pool follows one simple principle:
 
 > **Liquidity Providers (LPs) deposit ProjectUSD Coins into the pool.  
 > When a vault is liquidated, the pool absorbs its debt –  
@@ -51,7 +51,7 @@ This ensures high stability even in severe market downturns.
 | Role                  | Description |
 |-----------------------|-------------|
 | **Depositor (LP)**    | Deposits ProjectUSD into the pool & receives PLS from liquidations |
-| **StabilityPool**     | Aggregates liquidity for debt absorption |
+| **Stability Pool**    | Aggregates liquidity for debt absorption |
 | **VaultEngine**       | Provides collateral and debt values, increases `surplusBuffer` |
 | **Liquidation Module**| Executes liquidations and calls pool functions |
 | **Controller**        | Indirectly involved through `r_epoch` and system debt dynamics |
@@ -60,7 +60,7 @@ This ensures high stability even in severe market downturns.
 
 ## 3. Data Structures
 
-### 3.1 StabilityPool
+### 3.1 Stability Pool
 
 ```solidity
 struct StabilityPool {
@@ -97,7 +97,7 @@ When `liquidation(VaultID)` is triggered in the VaultEngine:
 1. The liquidation module calls  
    `absorbDebt(VaultID id, uint256 debt, uint256 collateralPLS)`.  
 
-2. The StabilityPool absorbs the debt:  
+2. The Stability Pool absorbs the debt:  
    `totalDeposits -= debt`  
 
 3. The collateral is fully allocated to LPs:  
@@ -114,8 +114,8 @@ When `liquidation(VaultID)` is triggered in the VaultEngine:
 When the VaultEngine collects system fees:
 
 - `surplusBuffer` grows  
-- these fees may be directed to the StabilityPool  
-  (the exact mechanism is defined in StabilityPool v2)  
+- these fees may be directed to the Stability Pool  
+  (the exact mechanism is defined in Stability Pool v2)  
 
 ---
 
@@ -128,11 +128,11 @@ A vault becomes liquidatable when:
 **The liquidation module:**
 
 - reads `debt` and `collateral` from the VaultEngine,  
-- calls `absorbDebt()` in the StabilityPool,  
+- calls `absorbDebt()` in the Stability Pool,  
 - sets the vault in the VaultEngine to `debt = 0`, `collateral = 0`,  
 - updates `totalDebt` and `totalCollateral`.  
 
-The StabilityPool is **never** responsible for:
+The Stability Pool is **never** responsible for:
 
 - price computation,  
 - liquidation triggers,  
