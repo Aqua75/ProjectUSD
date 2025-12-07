@@ -134,6 +134,36 @@ All specifications are **modular**, **consistent**, and available in **English a
 
 ---
 
+## 📚 Research Library
+
+ProjectUSD provides two curated document collections that extend beyond the technical specifications and deepen the economic foundations of the system.
+
+### 📝 Articles
+
+➡ [`/Articles`](./Articles)  
+Analytical essays and conceptual papers covering topics such as:
+- internal value units and purchasing power  
+- the meaning of the name ProjectUSD  
+- the P R r model  
+- theoretical principles of autonomous monetary systems  
+
+These texts provide the conceptual framework behind the design and help explain the reasoning that informs the SPECS.
+
+### 📑 Studies
+
+➡ [`/Studies`](./Studies)  
+Formal research studies covering subjects such as:
+- stability mechanisms and anti reflexivity  
+- system game theory  
+- collateral models and stress simulations  
+- liquidity and arbitrage behaviour  
+- long term surplus development  
+- gas usage and efficiency models  
+
+These studies offer quantitative models, simulations and deeper analytical insights into system behaviour.
+
+---
+
 ## 📌 Status  
 🧩 *Completed architecture & full SPEC blueprint — now open for developers, auditors, and investors.*
 
