@@ -1,5 +1,5 @@
 ---
-title: "ProjectUSD – StabilityPool SPEC v1"
+title: "ProjectUSD – Stability Pool SPEC v1"
 status: "Draft"
 last_updated: "2025-11-15"
 author: "Aqua75"
@@ -7,11 +7,11 @@ language: "de"
 related_whitepaper_sections: ["Kap. 6 – Liquidation & Redemption", "Kap. 7 – Stability Layer", "Glossar S. 22–24"]
 ---
 
-# ProjectUSD – StabilityPool SPEC v1
+# ProjectUSD – Stability Pool SPEC v1
 
 ## Zweck
 
-Der **StabilityPool** ist ein zentraler Sicherheitsmechanismus im ProjectUSD-System.  
+Der **Stability Pool** ist ein zentraler Sicherheitsmechanismus im ProjectUSD-System.  
 Er dient dazu:
 
 - systemweite Schulden (*ProjectUSD Coin*) im Liquidationsfall zu absorbieren,  
@@ -19,7 +19,7 @@ Er dient dazu:
 - Überschüsse und Gebühren aus der VaultEngine aufzunehmen,  
 - BadDebt zu verhindern oder stark zu begrenzen.
 
-Der StabilityPool ermöglicht ein **verlustarmes, sofortiges Liquidationsmodell**,  
+Der Stability Pool ermöglicht ein **verlustarmes, sofortiges Liquidationsmodell**,  
 das ohne Auktionen oder externe Bieter auskommt und damit:
 
 - schnell,  
@@ -31,9 +31,9 @@ arbeitet.
 
 ## 1. Kernkonzept
 
-Der StabilityPool folgt einem einfachen Prinzip:
+Der Stability Pool folgt einem einfachen Prinzip:
 
-> **Liquidity Providers (LPs) hinterlegen ProjectUSD Coins im StabilityPool.  
+> **Liquidity Providers (LPs) hinterlegen ProjectUSD Coins im Stability Pool.  
 > Wenn ein Vault liquidiert wird, übernimmt der Pool dessen Schulden –  
 > und erhält dafür das Collateral dieses Vaults.**
 
@@ -52,7 +52,7 @@ Das System bleibt dadurch extrem stabil, selbst bei starken Preisstürzen.
 | Rolle                 | Beschreibung |
 |-----------------------|--------------|
 | **Depositor (LP)**   | Hinterlegt ProjectUSD im Pool & erhält anteilig PLS aus Liquidationen |
-| **StabilityPool**     | Aggregiert Schuldenabsorptionskapital |
+| **Stability Pool**    | Aggregiert Schuldenabsorptionskapital |
 | **VaultEngine**       | Liefert Schulden- & Collateral-Werte, erhöht `surplusBuffer` |
 | **Liquidation-Modul** | Führt Liquidationen aus und ruft Pool-Funktionen auf |
 | **Controller**        | Indirekt beteiligt über `r_epoch` und Systemdebt-Entwicklung |
@@ -61,7 +61,7 @@ Das System bleibt dadurch extrem stabil, selbst bei starken Preisstürzen.
 
 ## 3. Datenstrukturen
 
-### 3.1 StabilityPool
+### 3.1 Stability Pool
 
 ```solidity
 struct StabilityPool {
@@ -100,7 +100,7 @@ Wenn `liquidation(VaultID)` in der VaultEngine ausgelöst wird:
    `absorbDebt(VaultID id, uint256 debt, uint256 collateralPLS)`  
    auf.
 
-2. Der StabilityPool übernimmt die Schuld:  
+2. Der Stability Pool übernimmt die Schuld:  
    `totalDeposits -= debt`
 
 3. Das Collateral fließt vollständig an die LPs:  
@@ -135,7 +135,7 @@ Ein Vault wird liquidierbar, wenn:
 - setzt den Vault in der VaultEngine auf `debt = 0`, `collateral = 0`,  
 - aktualisiert `totalDebt` und `totalCollateral`.  
 
-Der StabilityPool ist **niemals** verantwortlich für:
+Der Stability Pool ist **niemals** verantwortlich für:
 
 - Preisberechnungen  
 - Liquidations-Trigger  
