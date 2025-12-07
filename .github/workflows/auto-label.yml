@@ -1,0 +1,20 @@
+name: Auto Label Issues
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  label_issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Apply labels based on issue content
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          labels: |
+            {{#containsAny(issue.title, issue.body, "spec", "SPEC", "definition", "module", "invariant")}}spec{{/containsAny}}
+            {{#containsAny(issue.title, issue.body, "implement", "implementation", "deploy", "contract", "solidity")}}implementation{{/containsAny}}
+            {{#containsAny(issue.title, issue.body, "research", "paper", "analysis", "theory", "study")}}research{{/containsAny}}
+            {{#containsAny(issue.title, issue.body, "simulation", "model", "modelling", "twap test", "stress test")}}simulation{{/containsAny}}
