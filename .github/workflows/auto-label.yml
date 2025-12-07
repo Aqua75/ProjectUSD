@@ -1,15 +1,64 @@
-name: Auto Label Issues
+name: Auto label issues
+
 on:
   issues:
     types: [opened]
 
+permissions:
+  issues: write
+
 jobs:
-  triage:
+  label:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: github/issue-labeler@v3
+      - name: Add labels via github script
+        uses: actions/github-script@v7
         with:
-          configuration-path: .github/issue-labeler.yml
-          sync-labels: false
-          enable-statistics: false
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue;
+            const title = (issue.title || '').toLowerCase();
+            const body = (issue.body || '').toLowerCase();
+
+            const labelsToAdd = [];
+
+            function has(words) {
+              return words.some(w =>
+                title.includes(w) || body.includes(w)
+              );
+            }
+
+            // implementation
+            if (has(['implement', 'implementation', 'solidity', 'contract', 'deployment', 'deploy'])) {
+              labelsToAdd.push('implementation');
+            }
+
+            // spec
+            if (has(['spec', 'specification', 'invariant', 'definition', 'module'])) {
+              labelsToAdd.push('spec');
+            }
+
+            // research
+            if (has(['research', 'analysis', 'paper', 'study'])) {
+              labelsToAdd.push('research');
+            }
+
+            // simulation
+            if (has(['simulation', 'simulate', 'model', 'modelling', 'twap', 'stress test', 'stress-test', 'stress'])) {
+              labelsToAdd.push('simulation');
+            }
+
+            if (labelsToAdd.length === 0) {
+              console.log('No matching labels for this issue');
+              return;
+            }
+
+            console.log('Adding labels:', labelsToAdd);
+
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              labels: labelsToAdd,
+            });
