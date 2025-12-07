@@ -1,0 +1,29 @@
+name: Auto Issue Response
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  auto-response:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add automatic response
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Thank you for your issue!
+
+            Please note the following important information:
+
+            - This repository publishes the **formal ProjectUSD specification**.
+            - **No implementation support is provided.**
+            - **No smart contracts are maintained here.**
+            - All implementations are fully independent and must be audited externally.
+            - The maintainers do not provide confirmations, reviews or technical guidance.
+
+            Your issue has been recorded.  
+            Other developers or researchers may still engage in discussion.
