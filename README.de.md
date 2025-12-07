@@ -139,6 +139,36 @@ Alle Spezifikationen sind **modular**, **konsistent** und in **Deutsch und Engli
 
 ---
 
+## 📚 Forschungsbibliothek
+
+ProjectUSD stellt zwei kuratierte Dokumentensammlungen bereit, die über die technischen Spezifikationen hinausgehen und das ökonomische Fundament des Systems vertiefen.
+
+### 📝 Artikel (Conceptual Articles)
+
+➡ [`/Articles`](./Articles)  
+Grundlegende Analysen und Essays zu zentralen Konzepten wie:
+- interne Werteinheit und Kaufkraft
+- Bedeutung des Namens ProjectUSD
+- das P R r Modell
+- ökonomische Prinzipien autonomer Geldsysteme
+
+Diese Texte bilden das theoretische Fundament des Designs und erläutern die Konzepte hinter den SPECS.
+
+### 📑 Studien (Formal Studies)
+
+➡ [`/Studies`](./Studies)  
+Wissenschaftliche Studienreihen zu Themen wie:
+- Stabilitätsmechanismen und Anti Reflexivität
+- Spieltheorie des Systems
+- Collateral Modelle und Stresstests
+- Liquiditäts und Arbitrageverhalten
+- langfristiger Surplus Aufbau
+- Gas und Effizienzmodelle
+
+Die Studien liefern quantitative Modelle, Simulationen und vertiefende Systemanalysen.
+
+---
+
 ## 📌 Status  
 🧩 *Architektur & vollständiger SPEC-Bauplan abgeschlossen – offen für Entwickler, Auditoren und Investoren.*
 
