@@ -146,7 +146,7 @@ ProjectUSD stellt zwei kuratierte Dokumentensammlungen bereit, die über die tec
 ### 📝 Artikel
 
 ➡ [`/Articles`](./Articles)  
-Grundlegende Analysen und Essays zu zentralen Konzepten wie beispielsweise:
+Grundlegende Analysen und Essays zu zentralen Konzepten wie:
 - interne Werteinheit und Kaufkraft
 - Bedeutung des Namens ProjectUSD
 - das P R r Modell
@@ -157,7 +157,7 @@ Diese Texte bilden das theoretische Fundament des Designs und erläutern die Kon
 ### 📑 Studien
 
 ➡ [`/Studies`](./Studies)  
-Wissenschaftliche Studienreihen zu Themen wie beispielsweise:
+Wissenschaftliche Studienreihen zu Themen wie:
 - Stabilitätsmechanismen und Anti Reflexivität
 - Spieltheorie des Systems
 - Collateral Modelle und Stresstests
