@@ -59,16 +59,19 @@ sondern eine algorithmisch gesteuerte **ökonomische Regulierungskraft**.
 
 ---
 
-## **P – Nachfrageimpuls**
-P ist der externe, marktseitige Nachfragefaktor.  
-Er entsteht durch:
+## P – Marktpreis / Nachfrageimpuls
+P ist der vom Markt erzeugte Preisimpuls.  
+Er basiert auf dem tatsächlich beobachteten Marktpreis des ProjectUSD-PLS AMM-Pairs  
+(typischerweise über den TWAP-Wert oder dessen kurzfristige Abweichung).  
 
-- Kaufdruck  
-- Verkaufsdruck  
-- Marktvolumen  
-- Liquiditätsverschiebungen  
+Damit ist P:
 
-P beeinflusst, wie stark der Controller R und r anpassen bzw. durchsetzen muss.
+- der externe Marktpreis bzw. die Marktpreisbewegung  
+- der Nachfrage- und Angebotsschock, den der Markt verursacht  
+- der Faktor, der die Controllerreaktion auslöst  
+- die einzige externe Größe im P-R-r Modell
+
+P steht somit für **die Marktpreisrealität**, während R und r rein **systeminterne Regelgrößen** sind.
 
 ---
 
