@@ -1,153 +1,124 @@
 # ProjectUSD – Glossar (Deutsch)
 ### Vollständige Definitionen aller zentralen Systembegriffe, Variablen, Mechaniken und Modelle
 
-Dieses Glossar enthält alle Begriffe aus:
+Dieses Glossar umfasst sämtliche relevanten Begriffe aus:
 - der ProjectUSD-Architektur  
-- den vollständigen SPECS  
+- den SPECS  
 - dem Whitepaper  
 - dem P-R-r Modell  
-- dem Controller-System  
-- der VaultEngine  
+- der Controller-Logik  
+- VaultEngine  
 - Liquidation & Redemption  
-- Studien und technischen Artikeln  
+- den Studien und Research-Artikeln  
 
-Es ersetzt frühere Glossarversionen vollständig.
+Diese Version ersetzt alle früheren Glossare vollständig.
 
 ---
 
 # 🧩 Grundbegriffe
 
 **ProjectUSD**  
-Autonomes, algorithmisches Geldsystem für PulseChain. Es besitzt keinen Admin-Key, keine Governance, keine Upgrades und keine externen Orakel. Alle Prozesse folgen einer vollständig deterministischen Systemlogik.
+Autonomes, algorithmisches Geldsystem auf PulseChain ohne Orakel, Governance oder zentrale Eingriffe. Das System folgt ausschließlich deterministischen Regeln.
 
 **Autonome Geldpolitik**  
-Die Gesamtheit der Regeln, über die ProjectUSD seine Kaufkraft erhält. Diese Geldpolitik ist vollständig algorithmisch und nicht menschlich steuerbar.
+Regelsystem, durch das ProjectUSD langfristig Kaufkraft erhält. Vollständig algorithmisch, nicht menschlich steuerbar.
 
 ---
 
 # 🧠 Zentrale Variablen: P, R, r
 
-## **R – Interne Werteinheit (Kaufkraftanker)**
-R ist die zentrale interne Referenzgröße des Systems.  
-Es handelt sich um die algorithmisch definierte Werteinheit, gegen die das System stabilisiert wird.
+## **R – Interne Werteinheit (Kaufkraftanker)**  
+Die interne Referenzgröße, gegen die der Wert von ProjectUSD stabilisiert wird.  
+R bestimmt:  
+- den Redemption-Preis  
+- den Stabilitätsmaßstab des Controllers  
+- das interne Gleichgewicht des Systems  
 
-- Redemptions werden zu R ausgeführt  
-- Der Controller bewertet Preisabweichungen relativ zu R  
-- R ist unveränderlich und dient als stabiler Wertanker  
-
-R ist nicht der Marktpreis, sondern der **interne Maßstab**, anhand dessen ProjectUSD seine Kaufkraft bewahrt.
-
----
-
-## **r – Kombinierte Schuld- und Sparerate**
-r ist ein interner Systemparameter, der die strukturelle Dynamik von:
-
-- Systemverschuldung  
-- impliziter Sparrate  
-- langfristiger Angebotselastizität  
-
-steuert.
-
-Der Controller passt r an, um:
-
-- strukturelle Spannungen abzubauen  
-- Nachfrageimpulse zu absorbieren  
-- Stabilität in zukünftigen Epochen sicherzustellen  
-
-r ist **keine Epoche**, kein Preis und kein Nutzerparameter —  
-sondern eine algorithmisch gesteuerte **ökonomische Regulierungskraft**.
+R ist unveränderlich und bildet die Grundlage der Kaufkraftstabilität.
 
 ---
 
-## P – Marktpreis / Nachfrageimpuls
-P ist der vom Markt erzeugte Preisimpuls.  
-Er basiert auf dem tatsächlich beobachteten Marktpreis des ProjectUSD-PLS AMM-Pairs  
-(typischerweise über den TWAP-Wert oder dessen kurzfristige Abweichung).  
+## **r – Kombinierte Schuld- und Sparerate**  
+Interner Parameter, der die strukturelle Dynamik des Systems steuert.  
+r beeinflusst:  
+- die Wachstumsrate der Systemschuld  
+- die implizite Sparrate  
+- die langfristige Angebotselastizität  
 
-Damit ist P:
+r wird durch den Controller dynamisch angepasst, um strukturelle Spannungen abzubauen.
 
-- der externe Marktpreis bzw. die Marktpreisbewegung  
-- der Nachfrage- und Angebotsschock, den der Markt verursacht  
-- der Faktor, der die Controllerreaktion auslöst  
-- die einzige externe Größe im P-R-r Modell
+---
 
-P steht somit für **die Marktpreisrealität**, während R und r rein **systeminterne Regelgrößen** sind.
+## **P – Marktpreis / Nachfrageimpuls**  
+P ist der vom Markt erzeugte Preisimpuls, basierend auf dem tatsächlich beobachteten TWAP-Preis des ProjectUSD-PLS-AMM-Pairs.
+
+P repräsentiert:  
+- Marktpreisbewegungen  
+- Nachfrage- oder Angebotsschocks  
+- externe Preisrealitäten  
+
+P ist der **einzige externe Faktor** im P-R-r-Modell.
 
 ---
 
 # 🔢 P-R-r Modell
 
-**P-R-r Modell**  
-Das zentrale ökonomische Modell zur Stabilisierung von ProjectUSD.  
+Das zentrale ökonomische Modell von ProjectUSD.  
 Es beschreibt die Interaktion von:
 
-- **P** – Nachfrageimpuls  
-- **R** – Interne Werteinheit (Preisanker / Kaufkraftmaßstab)  
-- **r** – Kombinierte Schuld- und Sparerate  
+- **P** – Marktpreisimpuls  
+- **R** – interne Werteinheit (Preisanker)  
+- **r** – kombinierte Schuld- und Sparerate  
 
-Das Modell erklärt:
-
-- wie Kaufkraft stabil bleibt  
-- wie der Controller Nachfrage absorbiert  
-- wie das Angebot elastisch wird  
-- wie Epochen wechseln  
-- wie Preisabweichungen geglättet werden  
-
-Es ist der Kern der autonomen Stabilitätslogik.
+Das Modell erklärt:  
+- Preisstabilität  
+- Nachfrageabsorption  
+- Epochenwechsel  
+- Angebots- und Sparverhalten  
+- langfristige Wertkonsistenz  
 
 ---
 
 # 🕒 Epochen & Controllerphasen
 
-## **R-Epoche (Restore)**
-Operative Phase, in der das System aktiv Preisabweichungen korrigiert  
-und den Wertanker R durchsetzt.
-
-Typische Merkmale:
-
+## **R-Epoche (Restore)**  
+Phase, in der das System aktiv Preisabweichungen korrigiert und den Wertanker R durchsetzt.  
+Typische Merkmale:  
 - erhöhte Redemption-Aktivität  
 - starke Controllerintervention  
-- Rückführung des Preises in Richtung R  
+- Rückführung des Preises auf R  
 
 ---
 
-## **r-Epoche (Rebalance)**
-Phase struktureller Feinjustierung, in der der Controller:
-
-- r dynamisch anpasst  
-- zukünftigen Stress reduziert  
-- Systemparametrik balanciert  
-
-Dies geschieht in Zeiten geringerer Marktspannung.
+## **r-Epoche (Rebalance)**  
+Phase struktureller Feinjustierung.  
+Der Controller passt r an, um zukünftige Spannungen zu vermeiden und Balance herzustellen.
 
 ---
 
-## **Epoch Transition**
-Der algorithmische Wechsel zwischen R-Epoche und r-Epoche.  
-Er wird ausgelöst durch:
+## **Epoch Transition**  
+Automatischer Wechsel zwischen R-Epoche und r-Epoche, ausgelöst durch:
 
-- Veränderungen in P (Nachfrageimpuls)  
-- beobachtete Abweichungen von R  
-- strukturelle Spannungen in r  
-- Messgrößen des Controllers  
-
-Dieser Prozess ist vollständig automatisiert und basiert ausschließlich auf P-R-r-Dynamik.
+- Marktpreisbewegungen (P)  
+- Abweichungen von R  
+- strukturellen Stress  
+- Controller-Metriken  
 
 ---
 
 # 🏛 Architekturbegriffe
 
 **Unveränderlicher Core (Immutable Core)**  
-Der dauerhaft unveränderliche Systemkern: VaultEngine, Controller, Oracle/TWAP-Modul, Liquidation/Redemption, StabilityPool.
+Dauerhaft unveränderliche Module: VaultEngine, Controller, StabilityPool, Redemption, Liquidation, TWAP-Modul.
 
 **Freeze-Event**  
-Der Moment, in dem der Core für immer eingefroren wird. Danach existieren keine Upgrades oder Eingriffsmöglichkeiten.
+Der Moment, in dem der Core eingefroren wird. Danach sind Upgrades unmöglich.
 
 **Deterministische Ausführung**  
-Jede Systemaktion hat vorhersehbare, eindeutig definierte Ergebnisse.
+Alle Abläufe führen bei gleichen Eingaben zu genau gleichen Ergebnissen.
 
 **No-Admin-Key**  
-Es existiert kein Schlüssel, der Änderungen am System erlauben könnte.
+Es existiert kein Schlüssel, der Eingriffe oder Parameteränderungen erlauben würde.
 
 ---
 
@@ -160,126 +131,154 @@ Benutzerposition bestehend aus Collateral und erzeugter Schuld.
 Collateral-Wert geteilt durch Schuld.
 
 **Minimum Collateral Ratio (MCR)**  
-Unterer Grenzwert; bei Unterschreitung kommt es zur Liquidation.
+Untergrenze; bei Unterschreitung erfolgt Liquidation.
+
+**Debt Ceiling**  
+Maximal erlaubte Systemschuld (gesamt oder pro Collateralgruppe).
 
 **Systemschuld**  
 Alle ausgegebenen ProjectUSD-Einheiten.
 
-**Debt Ceiling**  
-Maximal zulässige Systemschuld (gesamt oder pro Collateralgruppe).
-
-**Debt Expansion / Contraction**  
-Veränderung des Systemangebots durch Controller-Modell oder Nachfrage.
+**Debt Expansion / Debt Contraction**  
+Erhöhung bzw. Verringerung der Systemschuld durch Controller-Mechanismen.
 
 **Collateral Bucket**  
-Untergruppe von Collateralarten, die gemeinsame Parameter teilen.
+Gruppe von Collateralarten mit gemeinsamen Parametern.
+
+**Debt Floor (Mindestschuldmenge)**  
+Die minimal erforderliche Schuld, die ein Vault erzeugen muss, um gültig zu sein.
 
 ---
 
 # 💥 Liquidation & Redemption
 
 **Liquidation**  
-Erzwungene Schließung eines Vaults, wenn CR < MCR fällt.
+Erzwungene Abwicklung eines Vaults bei CR < MCR.
 
 **Pro-Rata-Liquidation**  
-Aufteilung der unterbesicherten Position proportional auf StabilityPool-Teilnehmer.
+Verteilung der unterbesicherten Position auf StabilityPool-Teilnehmer proportional zu deren Anteil.
 
 **Liquidation Penalty**  
-Strafaufschlag, der in den StabilityPool fließt.
+Strafaufschlag, der an den StabilityPool ausgezahlt wird.
 
-**Hard Liquidation / Soft Liquidation**  
-Abhängig vom Systemstress:  
-– Soft = schonender  
-– Hard = vollständige Abwicklung
+**Liquidation Discount**  
+Abschlag, zu dem StabilityProvider Collateral in einer Liquidation erhalten.
+
+**Soft Liquidation / Hard Liquidation**  
+Unterschiedliche Liquidationsformen je nach Systemstress.
 
 ---
 
-## **Redemption**
-Eintausch von ProjectUSD gegen PLS zum Wertanker **R**.  
-Redemptions erzwingen Preiskorrektur Richtung R.
+## **Redemption**  
+Eintausch von ProjectUSD gegen PLS zum festen Wertanker R.
 
 **Redemption Queue**  
 Reihenfolge der abzuarbeitenden Vaults.
 
-**Targeted Redemption**  
-Bevorzugte Abwicklung basierend auf Collateral Ratio.
+**Redemption Spread**  
+Optionaler systemischer Korrekturfaktor, der Redemptions leicht modifiziert.
+
+**Redemption Density**  
+Intensität der Redemption-Aktivität über mehrere Blöcke hinweg.
 
 ---
 
-# 📊 Preisermittlung, Oracle & TWAP
+# 🏦 StabilityPool
+
+**StabilityPool**  
+Liquiditätspool, der Liquidationen übernimmt und dafür Collateral erhält.
+
+**Stability Provider (SP)**  
+Teilnehmer, die ProjectUSD im StabilityPool hinterlegen und Liquidationsgewinne erhalten.
+
+**Stability Pool Utilization**  
+Grad, zu dem der Pool durch Liquidationen beansprucht wird.
+
+---
+
+# 📊 Oracle, Preisermittlung & TWAP
 
 **Oracleless Design**  
-Keine externen Preisorakel; nur On-Chain-Daten.
+Keine externen Oracle; Preisermittlung ausschließlich On-Chain.
 
 **TWAP (Time-Weighted Average Price)**  
-Zeitgewichteter Durchschnittspreis aus dem AMM-Pool.
+Zeitgewichteter Durchschnittspreis aus dem AMM.
 
 **TWAP-Window**  
-Betrachtungszeitraum für die Preisaggregation.
+Zeitraum, aus dem der Durchschnitt berechnet wird.
+
+**Oracle Window Shift (TWAP-Rollperiode)**  
+Weiterbewegen des TWAP-Fensters, um neue Daten einzubeziehen.
 
 **Deviation Limit**  
-Maximal tolerierte Abweichung zwischen TWAP-Preis und Systemparametern.
+Maximal tolerierte Abweichung zwischen TWAP und Systemparametern.
+
+**Deviation Trigger**  
+Auslöser, bei dem die R-Epoche aktiviert wird.
 
 ---
 
-# 🛡 Sicherheit, Invarianten & Systemlogik
+# 🛡 Sicherheit & Invarianten
 
 **Atomarität**  
-Operationen sind vollständig oder gar nicht gültig.
+Operationen sind entweder vollständig gültig oder werden vollständig rückgängig gemacht.
 
 **Invarianten**  
-Regeln, die niemals verletzt werden dürfen (z. B. CR ≥ MCR).
-
-**Fail-Safe Mode**  
-Zustand, der bei extremen Anomalien aktiviert wird.
+Systemregeln, die niemals verletzt werden dürfen (z. B. CR ≥ MCR).
 
 **State Transition Function**  
-Mathematisch definierte Funktion aller gültigen Zustandswechsel.
+Formale Definition aller gültigen Zustandswechsel.
+
+**Fail-Safe Mode**  
+Zustand, der bei extremen Abweichungen aktiviert wird.
+
+**Invariant Enforcement Layer**  
+Schicht, die sicherstellt, dass Invarianten konsequent eingehalten werden.
 
 **Deterministic Path**  
-Ein Ablauf, der bei gleichen Eingaben immer identische Ergebnisse liefert.
+Pfad, der bei gleichen Eingaben identische Ergebnisse produziert.
 
 ---
 
-# 📈 Monitoring & Analysemetriken
+# 📈 Analysemetriken & Monitoring
 
 **Epoch Tracker**  
-Überwachungssystem für R- und r-Epochen.
+Überwachung der Epochen (R und r).
 
 **Collateral Health Index**  
-Zustandsmaß für Besicherungsstruktur.
+Zustandsmaß für die durchschnittliche Besicherung des Systems.
 
 **Redemption Pressure Index**  
 Messgröße für Redemption-Stress.
 
-**Stability Pool Utilization**  
-Nutzungsauslastung des StabilityPools.
-
 **System Stress Level**  
-Makroindikator für Systembelastung.
+Makroindikator für Markt- und Systembelastung.
+
+**Controller Saturation**  
+Zustand, bei dem der Controller r nicht weiter anpassen kann.
+
+**Supply Elasticity Envelope**  
+Der erlaubte dynamische Rahmen, innerhalb dessen das System die Geldmenge elastisch regulieren darf.
 
 ---
 
-# 🧾 Meta- und Organisationsbegriffe
+# 👥 Organisationsbegriffe
 
-**Spezifikation (SPEC)**  
-Formaler technischer Bauplan eines Moduls.
-
-**Open-Source-Blueprint**  
-Gesamtheit der SPECS, Artikel und Studien.
+**SPEC (Spezifikation)**  
+Formale technische Beschreibung eines Systemmoduls.
 
 **Independent Implementation**  
-Unabhängige Implementierung außerhalb dieses Repositories.
+Unabhängige Implementierung außerhalb des offiziellen Repositories.
 
-**Invariant Enforcement Layer**  
-Sicherungsebene, die Invarianten durchsetzt.
+**Open-Source-Blueprint**  
+Gesamtheit aller SPECS, Artikel und Studien.
 
 **Incident-Runbook**  
-Prozessdokumentation für Anomalien in externen Implementationen.
+Dokumentation zur Behandlung unerwarteter Ereignisse in Dritt-Implementierungen.
 
 ---
 
 # 📌 Schlussbemerkung
 
-Dieses Glossar bildet die vollständige definitorische Grundlage von ProjectUSD und stellt sicher,  
-dass alle Module, SPECS, Artikel und Studien konsistent verstanden werden.
+Dieses Glossar bildet die vollständige definitorische Grundlage von ProjectUSD  
+und stellt sicher, dass alle Module, SPECS, Artikel und Studien konsistent verstanden werden.
