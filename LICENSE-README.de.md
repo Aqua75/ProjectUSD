@@ -24,4 +24,4 @@ die Originalquelle enthalten:**
 Die unautorisierte Verwendung des Namens oder Logos außerhalb des PulseChain-Kontexts  
 stellt einen Verstoß gegen die Lizenzbedingungen dar.
 
-© 2025 Aqua75 – Alle Rechte am Namen und Logo „ProjectUSD“ vorbehalten.
+© 2026 Aqua75 – Alle Rechte am Namen und Logo „ProjectUSD“ vorbehalten.
