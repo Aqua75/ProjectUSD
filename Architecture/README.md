@@ -78,4 +78,4 @@ All architectural concepts are derived from the
 
 ### 🪙 License
 Creative Commons **BY-NC-SA 4.0**  
-© 2025 Aqua75 – PulseChain Community Initiative
+© 2026 Aqua75 – PulseChain Community Initiative
