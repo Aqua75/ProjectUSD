@@ -165,7 +165,7 @@ Wissenschaftliche Studienreihen zu Themen wie:
 - langfristiger Surplus Aufbau
 - Gas und Effizienzmodelle
 
-Die Studien liefern quantitative Modelle, Simulationen und vertiefende Systemanalysen.
+Die Studien liefern quantitative Modelle, konzeptionelle Rahmenwerke und vertiefende Analysen zum strukturellen Verhalten des ProjectUSD-Systems.
 
 ---
 
@@ -239,4 +239,4 @@ stellt einen Verstoß gegen die Lizenzbedingungen dar.
 ## 🪙 Lizenz
 
 Creative Commons **BY-NC-SA 4.0**  
-© 2025 Aqua75 – PulseChain Community Initiative
+© 2026 Aqua75 – PulseChain Community Initiative
