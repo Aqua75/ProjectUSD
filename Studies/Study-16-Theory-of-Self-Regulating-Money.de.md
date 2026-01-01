@@ -30,11 +30,11 @@ Philosophisch verschiebt sich damit die Frage von "Ist das schon real?" zu "Welc
 
 Diese Studie untersucht fünf Leitfragen:
 
-1. Was ist Geld in theoretischer Hinsicht, Funktion, Ursprung, Legitimität  
-2. Was heißt Stabilität, Fixierung an einen externen Maßstab oder interne dynamische Balance  
-3. Was bedeutet Autonomie in Systemen und ist ein Geldsystem überhaupt autonom möglich  
-4. Wie übersetzt ProjectUSD die Idee der Autonomie in Mechanismen, R, r, Vaults, Stability Pool, Redemption, Immutable Core  
-5. Welche normativen Konsequenzen hat Code als Geldordnung, Verantwortung, Freiheit, Gerechtigkeit, Fehlertoleranz
+1. Was ist Geld in theoretischer Hinsicht, Funktion, Ursprung, Legitimität?  
+2. Was heißt Stabilität, Fixierung an einen externen Maßstab oder interne dynamische Balance?
+3. Was bedeutet Autonomie in Systemen und ist ein Geldsystem überhaupt autonom möglich?
+4. Wie übersetzt ProjectUSD die Idee der Autonomie in Mechanismen, R, r, Vaults, Stability Pool, Redemption, Immutable Core?
+5. Welche normativen Konsequenzen hat Code als Geldordnung, Verantwortung, Freiheit, Gerechtigkeit, Fehlertoleranz?
 
 ## 1.3 Methode und Abgrenzung
 
