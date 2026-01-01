@@ -85,6 +85,18 @@ Structural decentralization vs governance-based systems.
 ### **14 – Efficiency of ProjectUSD on PulseChain**  
 Gas costs, scalability, and performance benchmarking vs Ethereum.
 
+### **15 – Extreme Stress Scenarios & Black Swan Resilience**  
+Worst-case analysis including collateral crashes, liquidity exodus, MEV extremes and chain instability.
+
+### **16 – The Theory of Self-Regulating Money**  
+Philosophical and system-theoretical foundations of autonomous monetary systems.
+
+### **17 – Network Effects & Ecosystem Growth**  
+How ProjectUSD strengthens PulseChain through integration, liquidity and TVL dynamics.
+
+### **18 – Unit of Account Adoption**  
+When and why ProjectUSD becomes the natural unit of account within an on-chain economy.
+
 ---
 
 ## File Naming Convention
