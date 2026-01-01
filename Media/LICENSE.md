@@ -3,7 +3,7 @@
 The ProjectUSD logo and all associated visual designs  
 are original creations by **Aqua75 / PulseChain Community Initiative**.
 
-© 2025 Aqua75 – All rights reserved for the name and logo “ProjectUSD”.
+© 2026 Aqua75 – All rights reserved for the name and logo “ProjectUSD”.
 
 These graphics are released under the **Creative Commons BY-NC-SA 4.0** license.  
 They may be shared and remixed for non-commercial purposes  
