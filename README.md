@@ -160,7 +160,7 @@ Formal research studies covering subjects such as:
 - long term surplus development  
 - gas usage and efficiency models  
 
-These studies offer quantitative models, simulations and deeper analytical insights into system behaviour.
+These studies provide quantitative models, conceptual frameworks and analytical insights into the structural behaviour of the ProjectUSD system.
 
 ---
 
