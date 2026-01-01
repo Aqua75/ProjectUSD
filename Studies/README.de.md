@@ -157,7 +157,7 @@ Alle anderen Implementierungen – auf PulseChain oder anderswo – müssen klar
 Die unautorisierte Nutzung des Namens oder Logos außerhalb des PulseChain-Kontexts  
 stellt einen Verstoß gegen die Lizenzbedingungen dar.
 
-© 2025 Aqua75 – Alle Rechte vorbehalten für den Namen und das Logo **„ProjectUSD“**.
+© 2026 Aqua75 – Alle Rechte vorbehalten für den Namen und das Logo **„ProjectUSD“**.
 
 ---
 
