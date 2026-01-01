@@ -154,7 +154,7 @@ All other implementations — on PulseChain or elsewhere — **must be clearly l
 Unauthorized use of the name or logo outside the PulseChain context  
 constitutes a breach of the license terms.
 
-© 2025 Aqua75 – All rights reserved for the name and logo **“ProjectUSD”**.
+© 2026 Aqua75 – All rights reserved for the name and logo **“ProjectUSD”**.
 
 ---
 
