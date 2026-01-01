@@ -10,7 +10,7 @@ In jedem DeFi-Ökosystem übernimmt stabiles Geld eine kritische Infrastrukturro
 
 ProjectUSD adressiert diese strukturelle Lücke im PulseChain-Kontext. Laut Whitepaper ist ProjectUSD als autonomes Geldsystem konzipiert, das Preisstabilität nicht durch externe Garantien, sondern durch ökonomische Rückkopplung und deterministische On-Chain-Mechanik erzeugen soll.
 
-Wichtig ist dabei die klare Einordnung als Vision und Blaupause, nicht als fertiger Produktlaunch. Diese Studie analysiert daher keine historischen Messdaten, sondern modelliert Netzwerk- und TVL-Effekte als Struktur- und Dynamikhypothesen. Ziel ist es zu zeigen, wie ProjectUSD - bei Implementierung gemäß Whitepaper - Netzwerk-Effekte verstärken, Liquidität vertiefen und zu höherer sowie potenziell stabilerer Total Value Locked im PulseChain-Ökosystem beitragen kann. :contentReference[oaicite:0]{index=0}
+Wichtig ist dabei die klare Einordnung als Vision und Blaupause, nicht als fertiger Produktlaunch. Diese Studie analysiert daher keine historischen Messdaten, sondern modelliert Netzwerk- und TVL-Effekte als Struktur- und Dynamikhypothesen. Ziel ist es zu zeigen, wie ProjectUSD - bei Implementierung gemäß Whitepaper - Netzwerk-Effekte verstärken, Liquidität vertiefen und zu höherer sowie potenziell stabilerer Total Value Locked im PulseChain-Ökosystem beitragen kann.
 
 ---
 
