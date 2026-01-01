@@ -12,7 +12,7 @@ Anschließend werden Konzepte der Systemtheorie und Kybernetik auf monetäre Ord
 
 Im vierten Kapitel wird ProjectUSD als Fallstudie gelesen: ein vollständig on chain entworfenes, algorithmisches Geldsystem für PulseChain, das Stabilität über einen internen Gleichgewichtspreis R, eine variable Systemrate r, Vault basiertes Collateral, Stability Pool und Redemption Mechanik herstellen will, ergänzt durch einen Immutable Core nach einem Freeze Event, Unveränderlichkeit als monetäre Verfassung.
 
-Das Fazit formuliert Kriterien, unter denen ProjectUSD als paradigmatischer Entwurf autonomen Geldes gelten kann, und benennt philosophische Spannungsfelder: Autonomie versus Anpassungsfähigkeit, Transparenz versus Komplexität, sowie die Frage, ob Stabilität ohne externen Nominalanker mehr ist als interne Kohärenz. :contentReference[oaicite:0]{index=0}
+Das Fazit formuliert Kriterien, unter denen ProjectUSD als paradigmatischer Entwurf autonomen Geldes gelten kann, und benennt philosophische Spannungsfelder: Autonomie versus Anpassungsfähigkeit, Transparenz versus Komplexität, sowie die Frage, ob Stabilität ohne externen Nominalanker mehr ist als interne Kohärenz.
 
 ---
 
