@@ -24,7 +24,7 @@ Geld ist nie nur ein neutrales Tauschmittel. Es ist zugleich Institution, Infras
 
 Dezentrale Finanzsysteme treten an, diese Machtarchitektur zu umgehen. Doch gerade bei Stablecoins zeigt sich ein Paradox: Stabilität wird häufig mit Zentralität erkauft, Verwahrer, Bankkonten, Blacklists, regulatorische Zugriffspunkte. Das ProjectUSD Whitepaper setzt hier an und formuliert eine Gegenposition: ein vollständig on chain operierendes, algorithmisches Geldsystem, das Preisstabilität ohne Banken und ohne zentrale Eingriffe erreichen will, zugleich aber ausdrücklich keine Produktankündigung, sondern eine konzeptionelle Blaupause ist.
 
-Philosophisch verschiebt sich damit die Frage von Ist das schon real zu Welche Art von Geld wäre denkbar, wenn wir das Steuer vollständig an Regeln übergeben.
+Philosophisch verschiebt sich damit die Frage von "Ist das schon real?" zu "Welche Art von Geld wäre denkbar, wenn wir das Steuer vollständig an Regeln übergeben?".
 
 ## 1.2 Leitfragen
 
