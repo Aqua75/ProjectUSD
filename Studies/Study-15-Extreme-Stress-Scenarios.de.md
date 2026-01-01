@@ -1,4 +1,3 @@
-```markdown
 # Study 15 – Extreme Stress Scenarios  
 *Extremstresstests, Worst Case Szenarien und Black Swan Resilienz*  
 *(Level-3 Research Format)*
@@ -332,4 +331,3 @@ Der konservative Pfad über Guarded Launch und späteren Freeze ist der einzig g
 - Lassen sich die Szenarien in Simulationen und Testnet-Tests überführen?
 
 Diese Studie dient als Grundlage für formale Simulationen, Audits und Testnet-Stresstests vor einem finalen Freeze Event.
-```
