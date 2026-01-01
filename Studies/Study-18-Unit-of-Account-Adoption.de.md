@@ -10,7 +10,7 @@ Geld erfüllt klassisch drei Funktionen: Tauschmittel, Wertspeicher und Rechenei
 
 Diese Studie untersucht unter welchen Bedingungen ProjectUSD zur natürlichen Wertmaß-Einheit innerhalb der PulseChain-Ökonomie werden kann. „Natürlich“ bedeutet hierbei nicht per Dekret oder UI-Zwang, sondern durch spontane, koordinierte Nutzung durch Marktteilnehmer: Preise, Verträge, Bilanzen, Risiken und mentale Preisanker werden standardmäßig in ProjectUSD ausgedrückt.
 
-Auf Basis geldtheoretischer Konzepte, Netzwerk- und Adoptionsmodelle sowie der im Whitepaper beschriebenen Mechanik von ProjectUSD wird ein makroökonomischer Schwellenwert-Ansatz entwickelt. Ziel ist es, nachvollziehbar zu machen, wann und warum der Übergang von einem stabilen Asset zu einer dominanten Recheneinheit erfolgt und welche Rolle Stabilität, Liquidität, Glaubwürdigkeit und Integration dabei spielen. :contentReference[oaicite:0]{index=0}
+Auf Basis geldtheoretischer Konzepte, Netzwerk- und Adoptionsmodelle sowie der im Whitepaper beschriebenen Mechanik von ProjectUSD wird ein makroökonomischer Schwellenwert-Ansatz entwickelt. Ziel ist es, nachvollziehbar zu machen, wann und warum der Übergang von einem stabilen Asset zu einer dominanten Recheneinheit erfolgt und welche Rolle Stabilität, Liquidität, Glaubwürdigkeit und Integration dabei spielen.
 
 ---
 
