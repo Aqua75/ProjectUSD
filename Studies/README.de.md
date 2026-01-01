@@ -91,6 +91,18 @@ Strukturelle Dezentralität vs. Governance-basierte Systeme.
 ### **14 – Effizienz von ProjectUSD auf PulseChain**  
 Gas-Kosten, Skalierung und Performance-Vergleich zu Ethereum.
 
+### **15 – Extremstresstests & Black-Swan-Resilienz**  
+Worst-Case-Analyse zu Collateral-Crashs, Liquiditätsabflüssen, MEV-Extremen und Chain-Instabilität.
+
+### **16 – Die Theorie des selbstregulierenden Geldes**  
+Philosophische und systemtheoretische Grundlagen autonomen Geldes.
+
+### **17 – Netzwerk-Effekte & Ökosystem-Wachstum**  
+Wie ProjectUSD PulseChain durch Integration, Liquidität und TVL-Dynamik stärkt.
+
+### **18 – Recheneinheits-Adoption**  
+Wann und warum ProjectUSD zur natürlichen Wertmaß-Einheit einer On-Chain-Ökonomie wird.
+
 ---
 
 ## Dateibenennung
