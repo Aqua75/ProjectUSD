@@ -7,9 +7,8 @@
 
 ## Abstract
 
-ProjectUSD ist als vollständig on-chain operierendes, autonomes Geldsystem ohne Admin-Keys, ohne Pause-Mechanismus und mit einem nach dem Freeze Event unveränderlichen Kern entworfen.
-
-Diese Architektur maximiert Glaubwürdigkeit und Neutralität, verschiebt jedoch die gesamte Verantwortung für Stabilität und Überlebensfähigkeit auf **Mechanik, Parameterwahl und Marktanreize**.
+ProjectUSD ist als vollständig on-chain operierendes, autonomes Geldsystem ohne Admin-Keys, ohne Pause-Mechanismus und mit einem nach dem Freeze Event unveränderlichen Kern entworfen.  
+Diese Architektur maximiert Glaubwürdigkeit und Neutralität, verschiebt jedoch die gesamte Verantwortung für Stabilität und Überlebensfähigkeit auf Mechanik, Parameterwahl und Marktanreize.
 
 Diese Studie untersucht die Robustheit von ProjectUSD unter extremen, aber plausiblen Stressbedingungen:
 
@@ -19,7 +18,8 @@ Diese Studie untersucht die Robustheit von ProjectUSD unter extremen, aber plaus
 - MEV-Extremphasen mit Front Running und Sandwiching  
 - kombinierte Kaskadenszenarien
 
-Ziel ist es, zu analysieren, **ob und unter welchen Bedingungen ProjectUSD systemisch überlebt**, wo seine strukturellen Grenzen liegen und welche Design- und Betriebsmaßnahmen notwendig sind, um Black Swan Risiken zu beherrschen.
+Ziel ist es, zu analysieren:  
+> Unter welchen Bedingungen überlebt ProjectUSD systemisch, wo liegen strukturelle Grenzen und welche Maßnahmen erhöhen Black Swan Resilienz?
 
 ---
 
@@ -61,19 +61,6 @@ ProjectUSD kann jederzeit zum Gleichgewichtspreis R gegen Collateral eingelöst 
 
 **Controller und Zinssatz r**  
 Abweichungen zwischen Marktpreis P und Gleichgewichtspreis R steuern r. Höhere r dämpfen Nachfrage, niedrigere r fördern Minting. Anpassungen sind bewusst begrenzt.
-
----
-
-## 1.2 Fokus dieser Studie
-
-Diese Studie betrachtet Stressereignisse, die gleichzeitig wirken:
-
-- ökonomisch  
-- liquiditätsseitig  
-- netzwerktechnisch  
-- adversarial durch MEV
-
-und damit mehrere Schutzmechanismen parallel herausfordern.
 
 ---
 
@@ -125,7 +112,7 @@ Ein Szenario gilt als bestanden, wenn:
 
 # 3. Simulationsrahmen
 
-Diese Studie ist konzeptionell. Konkrete Parameter sind im Whitepaper bewusst nicht finalisiert und müssen vor Implementierung kalibriert werden.
+Diese Studie ist konzeptionell. Konkrete Parameter sind bewusst nicht finalisiert und müssen vor Implementierung kalibriert werden.
 
 ---
 
@@ -202,8 +189,8 @@ Ein 90 Prozent Preisverfall skaliert jede Collateral Ratio effektiv mit 0,1.
 
 Beispiel:
 
-- 300 Prozent CR → 30 Prozent  
-- 170 Prozent CR erfordert vorab ca. 1700 Prozent
+- 300 Prozent CR werden zu 30 Prozent  
+- 170 Prozent CR erfordern vorab ungefähr 1700 Prozent
 
 Ergebnis:  
 Ein solcher Crash liquidiert nahezu alle normal gehebelten Vaults.
@@ -212,9 +199,9 @@ Ein solcher Crash liquidiert nahezu alle normal gehebelten Vaults.
 
 ## 4.2 Stability Pool unter Extremstress
 
-- schneller Abbau des SP  
+- schneller Abbau des Stability Pools  
 - Konzentration von Collateral bei SP-Einlegern  
-- Risiko eines SP-Runs aus psychologischen Gründen
+- Risiko eines Stability-Pool-Runs aus psychologischen Gründen
 
 ---
 
@@ -236,7 +223,7 @@ Reorgs können:
 
 - Liquidationen reverteren  
 - Reihenfolgen verändern  
-- Oracle-Fenster verzerren  
+- Oracle-Fenster verzerren
 
 Ohne Pause-Mechanismus ist Reorg-Resilienz zwingend architektonisch zu lösen.
 
@@ -248,7 +235,7 @@ MEV führt primär zu:
 
 - Value Leakage  
 - höheren Nutzerkosten  
-- zusätzlichem Liquiditätsabzug  
+- zusätzlichem Liquiditätsabzug
 
 Der Peg kann formal halten, während Vertrauen schwindet.
 
@@ -256,12 +243,12 @@ Der Peg kann formal halten, während Vertrauen schwindet.
 
 ## 4.7 S5 – Kaskade
 
-Schutzmechanismen wirken gegeneinander:
+Schutzmechanismen können gegeneinander arbeiten:
 
 - Liquidationen  
 - Oracle-Lags  
 - MEV  
-- Reorgs  
+- Reorgs
 
 Die Peg-Erholungszeit steigt stark. Vertrauen wird zum kritischen Faktor.
 
@@ -280,7 +267,7 @@ Die Peg-Erholungszeit steigt stark. Vertrauen wird zum kritischen Faktor.
 
 ## 5.2 Gegenmaßnahmen gegen Single-Collateral-Risiko
 
-- hohe empfohlene Collateral Ratios  
+- höhere empfohlene Collateral Ratios  
 - explizite Fallback-Liquidationsregeln  
 - langfristige Collateral-Diversifikation
 
@@ -307,7 +294,7 @@ Die Peg-Erholungszeit steigt stark. Vertrauen wird zum kritischen Faktor.
 - Batching  
 - Commit-Reveal für große Redemptions  
 - MEV-aware Execution  
-- Transparente On-Chain-Telemetrie
+- transparente On-Chain-Telemetrie
 
 ---
 
@@ -328,9 +315,9 @@ Zentrale Erkenntnisse:
 - Single-Collateral-Systeme sind bei 90 Prozent Crash strukturell extrem gefordert  
 - Liquidity Exodus verlängert Peg-Abweichungen  
 - MEV erzeugt Reibungsverluste, auch ohne formalen Peg-Bruch  
-- Reorgs sind ein ernstzunehmender Execution-Risiko-Faktor  
+- Reorgs sind ein ernstzunehmender Execution-Risiko-Faktor
 
-Der im Whitepaper vorgesehene Weg – Guarded Launch, konservative Parameter, späterer Freeze – ist der einzig glaubwürdige Ansatz, um diese Risiken beherrschbar zu machen.
+Der konservative Pfad über Guarded Launch und späteren Freeze ist der einzig glaubwürdige Ansatz, um diese Risiken beherrschbar zu machen.
 
 ---
 
