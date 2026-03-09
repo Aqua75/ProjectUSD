@@ -2,7 +2,8 @@
 
 ## Einleitung
 
-Die drei Variablen **P**, **R** und **r** bilden das Fundament der Preisstabilität von ProjectUSD.  
+Die drei Variablen **P**, **R** und **r** bilden das Fundament der Preisstabilität von ProjectUSD.
+Zusammen sorgen sie dafür, dass sich der Marktpreis immer wieder um einen stabilen inneren Wert bewegt.
 Sie sind einfach zu verstehen, aber ökonomisch tief – und genau diese Kombination macht das System einzigartig.  
 
 Dieser Artikel erklärt die drei Größen so klar wie möglich, ohne mathematische Überladung.  
@@ -15,6 +16,14 @@ Denn im Gegensatz zu klassischen Stablecoins benötigt ProjectUSD weder:
 
 Die Stabilität entsteht **rein durch interne Rückkopplung**.  
 Diese Rückkopplung wird durch das Zusammenspiel von **P**, **R** und **r** erzeugt.
+
+**Wichtig zu verstehen ist dabei:**
+
+**ProjectUSD besitzt gleichzeitig zwei Preise:**
+einen **Marktpreis P** und einen **internen Gleichgewichtspreis R**.
+
+Der Marktpreis **P** kann schwanken, während **R** als stabiler Referenzpunkt dient.
+Die Aufgabe des Systems ist es, den Marktpreis **P** immer wieder in Richtung dieses Gleichgewichtspreises **R** zurückzuführen.
 
 ---
 
@@ -36,7 +45,7 @@ Es misst lediglich die Abweichung zu R – und darauf reagiert der Controller.
 
 ## 2. R – der interne Gleichgewichtspreis
 
-**R** ist der Wert, den das System als „fairen“ inneren Referenzpreis definiert.
+**R** ist der interne Gleichgewichtspreis des Systems – der Referenzwert, um den sich der Marktpreis langfristig bewegt.
 
 Wichtig ist, was R **nicht** ist:
 
@@ -46,6 +55,7 @@ Wichtig ist, was R **nicht** ist:
 - R ist nicht an den Dollar gekoppelt.  
 
 Stattdessen ist R ein **rein interner, mathematisch abgeleiteter Wert**, der aus der Struktur des Systems entsteht.
+Man kann sich R als festen Mittelpunkt vorstellen, um den sich der Marktpreis bewegt.
 
 R ist der Preis, zu dem ProjectUSD jederzeit **intern in PLS eingelöst** werden kann.  
 Diese Einlösbarkeit erzeugt einen natürlichen Wertanker und sorgt dafür, dass der Marktpreis P nicht langfristig vom Systemwert abweichen kann.
