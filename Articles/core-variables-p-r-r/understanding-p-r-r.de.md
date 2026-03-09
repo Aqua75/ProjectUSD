@@ -136,7 +136,25 @@ R ist der Wert, zu dem das System ProjectUSD immer ausgeben kann – garantiert 
 
 ---
 
-## 7. R und interne Kaufkraft
+## 7. Wie ProjectUSD entsteht
+
+ProjectUSD kann auf zwei Arten in Umlauf kommen:
+
+**1. Kauf auf der DEX**
+
+Nutzer können ProjectUSD direkt auf PulseX kaufen.  
+Der Preis entspricht dabei dem Marktpreis **P**.
+
+**2. Minting über Vaults**
+
+Nutzer können **PLS als Sicherheit hinterlegen** und daraus neue ProjectUSD erzeugen.  
+Dabei entsteht ProjectUSD als **besicherte Schuldposition**, nicht als direkter Kauf zum Gleichgewichtspreis **R**.
+
+Der Gleichgewichtspreis **R** dient im System lediglich als Referenzpunkt für Stabilität, nicht als Verkaufspreis.
+
+---
+
+## 8. R und interne Kaufkraft
 
 R stabilisiert nicht nur den inneren Wert von ProjectUSD –  
 er stabilisiert auch die **Kaufkraft des Tokens innerhalb der PulseChain-Ökonomie**.
@@ -150,7 +168,7 @@ Eine ausführliche Analyse der internen Kaufkraft findest du im separaten Artike
 
 ---
 
-## 8. Zusammenfassung
+## 9. Zusammenfassung
 
 - **P** ist volatil und bildet den Markt ab.  
 - **R** ist der interne Gleichgewichtspreis – stabil, träge und systemisch.  
