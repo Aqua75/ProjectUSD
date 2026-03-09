@@ -46,7 +46,7 @@ It only measures the deviation from R, and the controller reacts to that deviati
 
 ## 2. R - the internal equilibrium price
 
-**R** is the internal equilibrium price of the system, the reference value around which the market price moves over time.
+**R** is the internal equilibrium price of the system, the reference value around which the market price tends to move over time.
 
 What matters most is what R **is not**:
 
@@ -117,7 +117,7 @@ It can change, but:
 
 - only slowly
 - never abruptly
-- never depending on external markets
+- never dependent on external markets
 - exclusively for internal reasons
 
 The reason is that debt, collateral, and redemptions are dynamic.
@@ -139,7 +139,7 @@ R emerges from the **internal states of the system**, in particular:
 
 This makes R a **book accurate internal fair value** that has nothing to do with external prices.
 
-R is the value at which the system can always issue ProjectUSD, guaranteed by mathematics, not by promises.
+R is the value at which ProjectUSD can always be created and redeemed within the system, guaranteed by mathematics, not by promises.
 
 ---
 
