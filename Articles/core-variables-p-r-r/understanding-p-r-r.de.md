@@ -132,7 +132,7 @@ R entsteht aus den **inneren Zuständen des Systems**, insbesondere:
 
 Das macht R zu einem **buchhalterisch korrekten, internen Fair Value**, der nichts mit externen Preisen zu tun hat.
 
-R ist der Wert, zu dem das System ProjectUSD immer ausgeben kann – garantiert durch Mathematik, nicht durch Versprechen.
+R ist der Wert, zu dem ProjectUSD im System erzeugt und eingelöst werden können – garantiert durch Mathematik, nicht durch Versprechen.
 
 ---
 
