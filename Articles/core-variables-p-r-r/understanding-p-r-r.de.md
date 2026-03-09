@@ -147,10 +147,11 @@ Der Preis entspricht dabei dem Marktpreis **P**.
 
 **2. Minting über Vaults**
 
-Nutzer können **PLS als Sicherheit hinterlegen** und daraus neue ProjectUSD erzeugen.  
+Nutzer können im ProjectUSD-System **PLS in einem Vault hinterlegen und daraus neue ProjectUSD minten**.  
 Dabei entsteht ProjectUSD als **besicherte Schuldposition**, zum Gleichgewichtspreis **R**.
 
-Der Gleichgewichtspreis **R** dient im System als Referenzpunkt für Stabilität, als Verkaufspreis beim Minting und als Einlösepreis bei der Redemption.
+Der Gleichgewichtspreis **R** ist der feste Systempreis von ProjectUSD.  
+Zu diesem Preis werden ProjectUSD beim Minting erzeugt und zu diesem Preis können sie später wieder gegen **PLS eingelöst** werden.
 
 ---
 
