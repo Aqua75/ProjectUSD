@@ -18,7 +18,7 @@ Diese Studie untersucht:
 - und wie der Puffer als dezentrales Äquivalent zu nachhaltigen Staatshaushalten oder Notenbankbilanzen wirkt.
 
 Wir zeigen:  
-Der Surplus-Puffer ist das **energetische Rückgrat** von ProjectUSD – ein Vermögensspeicher, der systemweite Schocks abfedert, negative r-Phasen finanzieren kann und langfristige Stabilität ermöglicht, ohne Governance oder externe Einnahmequellen.
+Der Surplus-Puffer ist das energetische Rückgrat von ProjectUSD – ein Vermögensspeicher, der systemweite Schocks abfedert und langfristige Stabilität während struktureller Stressphasen sowie Wachstumsphasen unterstützt, ohne Governance oder externe Einnahmequellen.
 
 ---
 
@@ -38,7 +38,7 @@ Er sorgt dafür, dass ProjectUSD:
 
 - Krisen übersteht,  
 - jahrelang stabil bleibt,  
-- negative r-Phasen finanzieren kann,  
+- Stabilität in Phasen schwacher Nachfrage unterstützen kann,  
 - zukünftige Erweiterungen ermöglicht.
 
 Ohne Surplus-Puffer wäre ProjectUSD langfristig fragil, egal wie gut der Controller funktioniert.
@@ -68,8 +68,8 @@ Der Puffer erfüllt drei Hauptaufgaben:
 ### 1) **Sicherheitsschicht gegen systemische Schocks**  
 Er absorbiert Verluste, die sonst zu Instabilität führen könnten.
 
-### 2) **Energiequelle für negative r-Phasen**  
-Wenn r < 0 (Deflationsanreize), muss das System Netzwerkkosten decken und Nachfrage erzeugen können.
+### 2) **Energiequelle für strukturelle Stabilisationsphasen**  
+In Phasen schwacher Nachfrage oder längerer Marktstressperioden kann das System zusätzliche Stabilisationsmechanismen benötigen.
 
 ### 3) **Finanzierung langfristiger Sparmechanismen**  
 Er ermöglicht Dividenden, Rabatte oder Belohnungen, ohne das System zu destabilisieren.
@@ -147,14 +147,14 @@ Er ermöglicht, dass ProjectUSD **autonom und unabhängig** operieren kann.
 
 ---
 
-## 4.2 Rolle in negativen r-Phasen
+## 4.2 Rolle in Nachfragekontraktionsphasen
 
-Wenn das System die Nachfrage stimulieren möchte, kann r negativ werden.  
-Negative r-Phasen:
+Wenn die Marktnachfrage deutlich nachlässt kann das System zusätzliche Stabilisationsmechanismen benötigen. 
+Stabilisierungsphasen können:
 
-- sind wichtig für Preisstabilität,  
-- belohnen Halten und Neuverschuldung,  
-- schaffen Nachfrage.
+- Nachfrage über Redemption-Arbitrage unterstützen
+- Borrowingdruck reduzieren
+- den Marktpreis wieder näher an R führen
 
 Während dieser Phasen benötigt das System Liquidität, um:
 
@@ -162,7 +162,7 @@ Während dieser Phasen benötigt das System Liquidität, um:
 - Stabilisierungsprozesse fortzuführen,  
 - langfristige Angebotsdynamiken auszugleichen.
 
-Der Surplus-Puffer übernimmt diese Kosten.
+Der Surplus-Puffer kann diese Stabilisationsdynamiken unterstützen.
 
 ---
 
@@ -240,7 +240,7 @@ Der Puffer:
 
 - dämpft Schocks,  
 - verhindert Instabilität in r-extremen Phasen,  
-- ermöglicht Expansion durch negative r-Impulse,  
+- ermöglicht Expansion durch stabilisierte Nachfragezyklen,  
 - schafft Vertrauen in das gesamte System.
 
 Langfristig bildet er die **Fundamentalschicht** der monetären Glaubwürdigkeit von ProjectUSD.
@@ -271,7 +271,7 @@ Volatilität, Nutzerzahlen und Liquidationsvolumen beeinflussen das Pufferwachst
 ## 7.2 Zu schnelle Ausschüttungen
 Zu hohe Sparraten können den Puffer zu schnell leeren.
 
-## 7.3 Reduktionszeiten bei Negativphasen
+## 7.3 Reduktionszeiten bei Nachfragekontraktionsphasen
 In langen Stressperioden schrumpft der Puffer.
 
 ## 7.4 Peripheriemodule können Risiken hinzufügen
@@ -287,7 +287,7 @@ Ohne ihn wäre das System zwar kurzfristig stabilisierungsfähig, aber makroöko
 Mit ihm verfügt ProjectUSD über:
 
 - eine energieähnliche Ressource zur Abfederung von Schocks,  
-- die Fähigkeit, negative r-Phasen zu finanzieren,  
+- die finanzielle Kapazität Stabilisation in Nachfragekontraktionsphasen zu unterstützen,  
 - die Grundlage für dezentrale Sparraten,  
 - eine monetäre Tiefe, die für autonome Ökonomien entscheidend ist.
 
@@ -300,7 +300,7 @@ Er verwandelt ProjectUSD von einem reaktiven in ein **strategisch stabiles, lang
 > ## 📘 Prüfkriterien für Reviewer
 - Sind Surplus-Puffer-Definition und Mechanismen korrekt?  
 - Sind Quellen und Wachstumsmechanismen vollständig beschrieben?  
-- Ist die Rolle des Puffers in r-negativen Phasen korrekt dargestellt?  
+- Ist die Rolle des Puffers in Nachfragekontraktionsphasen korrekt dargestellt?  
 - Sind Sparraten und ihre Grenzen realistisch modelliert?  
 - Sind Risiken angemessen dokumentiert?  
 
