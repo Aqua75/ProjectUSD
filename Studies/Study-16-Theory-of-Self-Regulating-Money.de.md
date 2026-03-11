@@ -94,7 +94,7 @@ Der Konflikt ist nicht technisch, sondern politisch philosophisch: Wollen wir ei
 
 In Systemtheorie und Kybernetik bezeichnet Autonomie nicht primär Abgeschlossenheit, sondern die Fähigkeit, wesentliche Zustände durch interne Prozesse zu reproduzieren. Ein autonomes System verarbeitet Störungen über Rückkopplung, nicht über Befehl von außen.
 
-ProjectUSD beschreibt genau dieses Motiv: Abweichungen zwischen Marktpreis P und internem Preis R führen zu Anpassungen der Systemrate r, wodurch Verhalten von Schuldnern und Sparern beeinflusst wird. Der Controller wirkt wie ein Regelkreis: messen, vergleichen, korrigieren.
+ProjectUSD beschreibt genau dieses Motiv: Abweichungen zwischen Marktpreis P und internem Preis R führen zu Anpassungen der Systemrate r innerhalb definierter Grenzen, wodurch Verhalten von Schuldnern, Arbitrageuren und Liquiditätsanbietern beeinflusst wird. Der Controller wirkt wie ein Regelkreis: messen, vergleichen, korrigieren.
 
 ## 3.2 Rückkopplung und Homeostase
 
@@ -147,7 +147,7 @@ Philosophisch ist das eine Umdeutung von Zentralbankfunktionen in Code:
 
 ## 4.2 R und r - endogener Maßstab statt externer Peg
 
-Im Zentrum steht der interne Gleichgewichtspreis R als Referenz, um den der Marktpreis P pendeln soll. Die Steuergröße r kann positiv oder negativ sein und beeinflusst Minting und Holding von ProjectUSD.
+Im Zentrum steht der interne Gleichgewichtspreis R als Referenz, um den der Marktpreis P pendeln soll. Die Steuergröße r ist eine nicht negative Systemrate, die Kreditbedingungen anpasst und dadurch Anreize zum Prägen oder Zurückzahlen von ProjectUSD beeinflusst.
 
 Die Mechanik impliziert eine kybernetische These: Stabilität entsteht, wenn Anreize so gesetzt sind, dass Abweichungen unattraktiv werden. Nicht Befehl, sondern Feld, ein Anreizfeld, in dem Akteure durch Eigeninteresse zur Rückkehr in die Nähe des Gleichgewichts beitragen.
 
