@@ -74,7 +74,7 @@ Philosophically, this can be understood as an attempt to realize credit money wi
 
 Stability is not merely a price concept, but also an argument about welfare and justice. Unstable units of account generate redistribution by distorting calculation and contractual relations. Traditionally, stability is therefore anchored to an external nominal reference: gold, a state inflation target or a currency basket.
 
-ProjectUSD proposes a different definition: stability as oscillation around an internal equilibrium price R, with deviations dampened through an endogenous rate r. This stability is not identical to an external parity. The whitepaper explicitly emphasizes that ProjectUSD is not intended as a fiat replica, but as an independent digital unit of account.
+ProjectUSD proposes a different definition: stability as oscillation around an internal equilibrium price R, with deviations dampened through an endogenous adjustment of the system rate r. This stability is not identical to an external parity. The whitepaper explicitly emphasizes that ProjectUSD is not intended as a fiat replica, but as an independent digital unit of account.
 
 The concept thus shifts: “stable” no longer means external parity, but internal coherence and redeemability.
 
@@ -94,7 +94,7 @@ The conflict is not technical, but political-philosophical: do we want a form of
 
 In systems theory and cybernetics, autonomy does not primarily mean isolation, but the ability to reproduce essential states through internal processes. An autonomous system processes disturbances through feedback, not through external command.
 
-ProjectUSD embodies this idea. Deviations between market price P and internal price R lead to adjustments of the system rate r, influencing the behavior of borrowers and holders. The controller functions as a feedback loop: measure, compare, correct.
+ProjectUSD embodies this idea. Deviations between market price P and internal price R lead to adjustments of the system rate r within predefined bounds, influencing the incentives of borrowers, arbitrageurs and liquidity providers. The controller functions as a feedback loop: measure, compare, correct.
 
 ## 3.2 Feedback and homeostasis
 
@@ -147,7 +147,7 @@ Philosophically, this is a translation of central banking functions into code:
 
 ## 4.2 R and r – endogenous reference instead of external peg
 
-At the center lies the internal equilibrium price R as the reference around which the market price P is intended to oscillate. The control variable r can be positive or negative and influences minting and holding of ProjectUSD.
+At the center lies the internal equilibrium price R as the reference around which the market price P is intended to oscillate. The control variable r is a non negative system rate that adjusts borrowing conditions and influences the incentives to mint or repay ProjectUSD.
 
 The mechanism implies a cybernetic thesis: stability emerges when incentives are structured such that deviations become unattractive. Not command, but a field of incentives in which actors, driven by self-interest, contribute to restoring equilibrium.
 
@@ -228,7 +228,7 @@ This represents an ethics of explicit rules: the goal is not absence of risk, bu
 
 ## 5.1 Results stated as theses
 
-1. Self-regulating money is philosophically plausible if stability is understood as dynamic feedback rather than rigid parity; ProjectUSD designs stability as a control loop around R with adjustment via r  
+1. Self-regulating money is philosophically plausible if stability is understood as dynamic feedback rather than rigid parity; ProjectUSD designs stability as a control loop around R with bounded adjustments of the system rate r 
 2. Autonomy does not mean freedom from the environment, but the capacity to process environmental disturbances through internal operations; ProjectUSD operationalizes this through on-chain measurement, rule adjustment and redeemability  
 3. Immutability via Immutable Core and freeze event constitutes monetary constitutionalism; it limits power but increases the cost of irreversible errors  
 4. Transparency only partially replaces trust; it enables verification but does not automatically create shared understanding; expertise and expectation coordination remain necessary  
