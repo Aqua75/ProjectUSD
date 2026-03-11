@@ -17,7 +17,7 @@ This study examines:
 - the economic limits and risks associated with its use,  
 - and why the buffer functions as a decentralized analogue to sovereign reserves or central bank balance sheets.
 
-We show that the Surplus Buffer is ProjectUSD’s **stored energy resource** — a value reserve that absorbs shocks, finances negative-r phases, and enables sustained long-term stability without governance and without external revenue streams.
+We show that the Surplus Buffer is ProjectUSD’s stored energy resource — a value reserve that absorbs shocks and supports long-term stability during structural stress and expansion phases without governance and without external revenue streams.
 
 ---
 
@@ -36,7 +36,7 @@ These resources form the Surplus Buffer — a reserve of value that allows Proje
 
 - withstand structural shocks,  
 - maintain stability for years,  
-- finance negative-r periods,  
+- support stability during prolonged demand contractions,  
 - operate autonomously without external dependency.
 
 Without a Surplus Buffer, ProjectUSD would be dynamically stable but **macro-economically fragile**.
@@ -66,8 +66,8 @@ The buffer serves three primary purposes:
 ### 1) **Shock absorption**  
 It protects the system from losses that would otherwise threaten stability.
 
-### 2) **Financing negative-r periods**  
-When r < 0, the system must be able to support operations and stimulate demand.
+### 2) **Financing structural stabilization phases**  
+During periods of weak demand or prolonged market stress, the system may require additional economic support mechanisms to maintain stability.
 
 ### 3) **Enabling decentralized savings mechanisms**  
 Dividends, rebates or long-term incentives require financial backing.
@@ -144,13 +144,13 @@ It allows ProjectUSD to operate **autonomously and sustainably**.
 
 ---
 
-## 4.2 Role during negative-r phases
+## 4.2 Role during demand contraction phases
 
-When demand must be stimulated, r may become negative.  
-Negative-r periods:
+When market demand weakens significantly, the system may require additional stabilization mechanisms.
+Stabilization phases may:
 
-- support demand,  
-- incentivize borrowing and holding,  
+- support demand through redemption arbitrage
+- reduce borrowing pressure
 - stabilize P around R.
 
 During these phases, the system must cover:
@@ -159,7 +159,7 @@ During these phases, the system must cover:
 - liquidity adjustments,  
 - incentive dynamics.
 
-The Surplus Buffer finances these costs.
+The Surplus Buffer can support these stabilization dynamics.
 
 ---
 
@@ -225,7 +225,7 @@ A viable decentralized savings mechanism must be:
 ## 6.1 r regulates supply → buffer absorbs the cost
 
 - r controls the pace of supply expansion,  
-- the Surplus Buffer covers costs of negative-r states,  
+- the Surplus Buffer supports stabilization during demand contraction phases,  
 - together they stabilize the market price.
 
 ---
@@ -267,7 +267,7 @@ Growth relies on liquidations, usage and system adoption.
 ## 7.2 Excessive payouts  
 Savings distributions that exceed buffer growth weaken the system.
 
-## 7.3 Prolonged negative phases  
+## 7.3 Prolonged demand contraction phases  
 Long stress cycles can reduce the buffer significantly.
 
 ## 7.4 Peripheral module risks  
