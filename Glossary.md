@@ -38,14 +38,19 @@ R is immutable and forms the foundation of purchasing power stability.
 
 ---
 
-## **r – Combined Debt and Savings Rate**  
-An internal parameter that shapes the structural dynamics of the system.  
-r influences:
-- the growth rate of total system debt  
-- the implicit savings rate  
-- long-term supply elasticity  
+## **r – System Debt Rate**  
+An internal parameter that regulates the cost of system debt.
 
-r is adjusted dynamically by the Controller to reduce structural tension.
+r influences:
+- the growth rate of outstanding vault debt
+- borrowing incentives
+- supply elasticity through minting activity
+
+The Controller dynamically adjusts r in response to deviations between market price P and equilibrium value R.
+
+The system rate is bounded:
+
+0 ≤ r ≤ r_cap
 
 ---
 
@@ -68,7 +73,7 @@ It describes the interaction between:
 
 - **P** – market price impulse  
 - **R** – internal value unit (price anchor)  
-- **r** – combined debt and savings rate  
+- **r** – system debt rate  
 
 The model explains:
 - price stability  
