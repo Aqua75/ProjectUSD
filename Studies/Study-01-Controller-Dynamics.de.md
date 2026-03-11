@@ -12,7 +12,7 @@ ProjectUSD ist ein vollständig on-chain operierendes, algorithmisches Geldsyste
 - dem Gleichgewichtspreis R  
 - der Systemrate r  
 
-Diese Studie analysiert die mathematische Struktur dieses Controllers, der Abweichungen zwischen Markt- und Gleichgewichtspreis misst und über r die ökonomischen Anreize von Schuldnern, Haltern und Arbitrageuren beeinflusst.
+Diese Studie analysiert die mathematische Struktur dieses Controllers, der Abweichungen zwischen Markt- und Gleichgewichtspreis misst und über r Borrowing-Anreize und Arbitragedynamiken im System beeinflusst.
 
 Wir entwickeln ein formales Modell für die Preisabweichung, leiten Konvergenzbedingungen ab und diskutieren vier Szenarien: Überbewertung, Unterbewertung, extreme Volatilität und niedrige Liquidität.
 
@@ -58,7 +58,7 @@ Der Regelkreis:
 
 - **Rₜ** – Gleichgewichtspreis  
 - **Pₜ** – Marktpreis laut Oracle  
-- **rₜ** – Systemrate  
+- **rₜ** – Systemschuldrate, die auf Vault-Verbindlichkeiten angewendet wird
 - **εₜ** – relative Preisabweichung  
 
 $$
@@ -287,7 +287,7 @@ Beides kann Marktreaktionen verstärken, die über die mathematische Logik hinau
 
 # 7. Schlussfolgerung
 
-Der Controller ist ein zentraler Baustein im autonomen Stabilitätsmechanismus von ProjectUSD. Er misst Preisabweichungen zwischen P und R und übersetzt sie in Anpassungen der Systemrate r, die wiederum das Verhalten von Schuldnern, Sparern und Arbitrageuren beeinflusst.
+Der Controller ist ein zentraler Baustein im autonomen Stabilitätsmechanismus von ProjectUSD. Er misst Preisabweichungen zwischen P und R und übersetzt sie in Anpassungen der Systemrate r, die wiederum das Verhalten von Schuldnern und Arbitrageuren beeinflusst.
 
 In Kombination mit:
 
