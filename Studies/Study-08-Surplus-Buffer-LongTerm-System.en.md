@@ -283,7 +283,7 @@ Without it, the system would be stable only in the short run but fragile in macr
 With the buffer, ProjectUSD gains:
 
 - the ability to absorb economic shocks,  
-- the financial base for negative-r periods,  
+- the financial capacity to support stabilization during prolonged demand contraction phases,  
 - the foundation for decentralized savings mechanisms,  
 - a durable monetary depth required for autonomous on-chain economies.
 
