@@ -38,14 +38,19 @@ R ist unveränderlich und bildet die Grundlage der Kaufkraftstabilität.
 
 ---
 
-## **r – Kombinierte Schuld- und Sparerate**  
-Interner Parameter, der die strukturelle Dynamik des Systems steuert.  
-r beeinflusst:  
-- die Wachstumsrate der Systemschuld  
-- die implizite Sparrate  
-- die langfristige Angebotselastizität  
+## **r – Systemschuldrate**  
+Interner Parameter, der die Kosten der Systemschuld reguliert.
 
-r wird durch den Controller dynamisch angepasst, um strukturelle Spannungen abzubauen.
+r beeinflusst:
+- die Wachstumsrate der ausstehenden Vault-Schulden
+- Borrowing-Anreize
+- die Angebotselastizität über die Minting-Aktivität
+
+Der Controller passt r dynamisch an, wenn der Marktpreis P vom Gleichgewichtswert R abweicht.
+
+Die Systemrate ist begrenzt:
+
+0 ≤ r ≤ r_cap
 
 ---
 
@@ -68,7 +73,7 @@ Es beschreibt die Interaktion von:
 
 - **P** – Marktpreisimpuls  
 - **R** – interne Werteinheit (Preisanker)  
-- **r** – kombinierte Schuld- und Sparerate  
+- **r** – Systemschuldrate  
 
 Das Modell erklärt:  
 - Preisstabilität  
