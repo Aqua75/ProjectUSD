@@ -12,7 +12,7 @@ ProjectUSD is a fully on-chain, algorithmic monetary system on PulseChain. Its p
 - the equilibrium price **R**,  
 - and the system rate **r**.
 
-This study analyzes the mathematical structure of this controller, which measures deviations between the market price and the equilibrium price and adjusts **r** to influence the economic behavior of borrowers, holders, and arbitrageurs.
+This study analyzes the mathematical structure of this controller, which measures deviations between the market price and the equilibrium price and adjusts r to influence borrowing incentives and arbitrage dynamics in the system.
 
 We develop a formal model for price deviation, derive convergence conditions, and discuss four core scenarios: overvaluation, undervaluation, extreme volatility, and low liquidity.
 
@@ -62,7 +62,7 @@ Together, these components form a closed monetary mechanism when combined with t
 
 - **Rₜ** – equilibrium price (redemption price)  
 - **Pₜ** – market price from the oracle  
-- **rₜ** – system rate (interest / savings rate)  
+- **rₜ** – system debt rate applied to vault liabilities 
 - **εₜ** – relative price deviation  
 
 $$
@@ -285,7 +285,7 @@ Transparent metrics (e.g., peg deviation, half-life) strengthen credibility.
 # 7. Conclusion
 
 The controller is a core component of ProjectUSD’s autonomous stability architecture.  
-It measures deviations between **P** and **R** and adjusts **r** to influence the incentives of borrowers, savers, and arbitrageurs.
+It measures deviations between P and R and adjusts r to influence the incentives of borrowers and arbitrageurs.
 
 In combination with:
 
