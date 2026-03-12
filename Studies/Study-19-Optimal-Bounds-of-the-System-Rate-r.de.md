@@ -6,13 +6,13 @@
 
 ## Abstract
 
-Diese Studie untersucht, welche Unter- und Obergrenzen für die Systemrate `r` im ProjectUSD-Protokoll technisch, ökonomisch und systemisch sinnvoll sind. Im Zentrum steht die Frage, ob der Core von ProjectUSD negative Werte für `r` zulassen sollte oder ob ein strikt nichtnegativer Bereich die robustere Architektur darstellt.
+Diese Studie untersucht, welche Unter- und Obergrenzen für die Systemrate `r` im ProjectUSD-Protokoll technisch, ökonomisch und systemisch sinnvoll sind. Im Zentrum steht die Frage, wie die Grenzen von `r` im Core von ProjectUSD so bestimmt werden können, dass Regelbarkeit, Stabilität und Systemrobustheit zugleich gewahrt bleiben.
 
-Die Analyse basiert primär auf den normativen Core-Spezifikationen, da diese nach dem Freeze-Ereignis bindend wären. Dabei zeigt sich zunächst eine Dokumentationsspannung: Einerseits definieren die Spezifikationen `r` als nichtnegative System- beziehungsweise Schuldrate, andererseits diskutieren einzelne Studien konzeptionell auch negative `r`-Phasen. Gerade deshalb ist die Frage nach dem unteren Grenzwert nicht bloß eine Parametrierungsfrage, sondern eine Frage der Core-Semantik.
+Die Analyse basiert primär auf den normativen Core-Spezifikationen, da diese nach dem Freeze-Ereignis bindend wären. Maßgeblich ist dabei, dass `r` im dokumentierten Core durchgängig als nichtnegative System- beziehungsweise Schuldrate definiert ist. Die Untersuchung prüft vor diesem Hintergrund, welche Konsequenzen sich ergäben, wenn ein negativer Bereich hypothetisch zugelassen würde, und warum die dokumentierte Untergrenze bei null systemisch vorzugswürdig ist.
 
-Im weiteren Verlauf wird gezeigt, dass ein negatives `r` im aktuellen Design nicht einfach eine lockerere geldpolitische Stellung bedeutet, sondern mechanisch eine Reduktion von Vault-Schulden. Dadurch entsteht kein neutraler Stabilisierungsimpuls, sondern potenziell ein regelbasierter Transfer zugunsten von Schuldnern. Zwar erweitert ein negativer Untergrenzwert die Eingriffsreichweite des Controllers in Unterpeg-Phasen, doch erzeugt er keinen garantierten Erholungsmechanismus. Für ein unveränderliches Protokoll überwiegen deshalb die Risiken.
+Im weiteren Verlauf wird gezeigt, dass ein negatives `r` im aktuellen Design nicht einfach eine lockerere geldpolitische Stellung bedeuten würde, sondern mechanisch eine Reduktion von Vault-Schulden. Dadurch entstünde kein neutraler Stabilisierungsimpuls, sondern potenziell ein regelbasierter Transfer zugunsten von Schuldnern. Zwar würde ein negativer Untergrenzwert die Eingriffsreichweite des Controllers in Unterpeg-Phasen erweitern, doch erzeugte er keinen garantierten Erholungsmechanismus. Für ein unveränderliches Protokoll überwiegen deshalb die Risiken.
 
-Die Studie kommt zu dem Ergebnis, dass unter der derzeit dokumentierten Core-Architektur die Option `0 ≤ r ≤ +20 %` klar vorzuziehen ist. Negative `r`-Werte sind in autonomen Geldsystemen prinzipiell nicht illegitim, wirken im vorliegenden Design jedoch auf dem falschen Kanal und sollten daher nicht Teil eines eingefrorenen Core-Systems sein.
+Die Studie kommt zu dem Ergebnis, dass unter der derzeit dokumentierten Core-Architektur die Grenze `0 ≤ r ≤ +20 %` klar vorzuziehen ist. Negative `r`-Werte sind in autonomen Geldsystemen prinzipiell nicht illegitim, wirken im vorliegenden Design jedoch auf dem falschen Kanal und sollten daher nicht Teil eines eingefrorenen Core-Systems sein.
 
 ---
 
@@ -22,15 +22,15 @@ Die Studie kommt zu dem Ergebnis, dass unter der derzeit dokumentierten Core-Arc
 
 ProjectUSD verwendet `r` als zentrale Regelgröße seines internen Stabilisierungsmechanismus. Der Controller misst Abweichungen zwischen Marktpreis `P` und Gleichgewichtspreis `R` und passt daraufhin die Systemrate `r` an. Diese beeinflusst Vault-Anreize, Schuldendynamik, Arbitrageverhalten und damit mittelbar die monetäre Stabilisierung.
 
-Die entscheidende offene Frage lautet jedoch: Wie weit darf `r` nach unten reichen.
+Die entscheidende offene Frage lautet jedoch, wie weit `r` nach unten reichen darf.
 
-Drei Grundoptionen stehen zur Debatte:
+Drei Grundoptionen strukturieren die Analyse:
 
 1. **Option A:** negativer Floor bei `-5 %`  
 2. **Option B:** negativer Floor bei `-2 %`  
 3. **Option C:** Floor bei `0 %`
 
-Auf den ersten Blick könnte ein negativer Bereich attraktiv wirken, weil er dem Controller in längeren Unterpeg-Phasen zusätzlichen Handlungsspielraum verschafft. Doch gerade im aktuellen Core-Design wirkt `r` direkt auf Vault-Schulden. Deshalb ist die technische und ökonomische Bedeutung eines negativen Bereichs wesentlich tiefgreifender, als es eine reine Parameterdebatte vermuten lässt. :contentReference[oaicite:1]{index=1}
+Auf den ersten Blick könnte ein negativer Bereich attraktiv wirken, weil er dem Controller in längeren Unterpeg-Phasen zusätzlichen Handlungsspielraum verschafft. Doch gerade im aktuellen Core-Design wirkt `r` direkt auf Vault-Schulden. Deshalb ist die technische und ökonomische Bedeutung eines negativen Bereichs wesentlich tiefgreifender, als es eine reine Parameterdebatte vermuten lässt.
 
 ## 1.2 Methodische Grundlage
 
@@ -41,15 +41,17 @@ Diese Untersuchung basiert primär auf den normativen Core-Spezifikationen, insb
 - `liquidation-redemption-spec`
 - `Glossary`
 
-Diese Quellen sind maßgeblich, weil sie nach dem Protokoll-Freeze bindend wären. Studien und konzeptionelle Texte werden ergänzend berücksichtigt, haben jedoch nicht denselben normativen Rang. Bereits daraus ergibt sich, dass jede Einführung negativer `r`-Werte nicht bloß als Parameterverschiebung, sondern als Eingriff in Typen, Semantik und Abrechnungssystem verstanden werden muss. :contentReference[oaicite:2]{index=2}
+Diese Quellen sind maßgeblich, weil sie nach dem Protokoll-Freeze bindend wären. Studien und konzeptionelle Texte werden ergänzend berücksichtigt, haben jedoch nicht denselben normativen Rang. Bereits daraus ergibt sich, dass jede hypothetische Einführung negativer `r`-Werte nicht bloß als Parameterverschiebung, sondern als Eingriff in Typen, Semantik und Abrechnungssystem verstanden werden müsste.
 
 ## 1.3 Zwei Vorbemerkungen
 
 Zwei Vorbemerkungen sind für die gesamte Analyse entscheidend.
 
-Erstens ist die Dokumentation derzeit nicht vollständig konsistent. Die normativen Spezifikationen definieren `r` als nichtnegative System- oder Schuldrate, während einzelne Studien negative `r`-Phasen konzeptionell mitdenken. Daraus folgt unmittelbar, dass ein negativer Floor nicht nur eine andere Einstellung derselben Logik wäre, sondern eine Änderung der Core-Bedeutung von `r`. :contentReference[oaicite:3]{index=3}
+Erstens ist die Dokumentation in diesem Punkt nun konsistent. Die normativen Spezifikationen wie auch die überarbeiteten Studien definieren `r` durchgängig als nichtnegative System- beziehungsweise Schuldrate. Ein negativer Wertebereich gehört damit nicht zur dokumentierten Core-Architektur.
 
-Zweitens ist der Wirkkanal von `r` auf den Marktpreis `P` noch nicht vollständig mechanisch spezifiziert. Manche Formulierungen legen nahe: `P < R -> r sinkt -> P steigt`. Der eindeutig definierte On-Chain-Effekt einer Senkung von `r` ist jedoch im aktuellen Core nur, dass Vault-Schulden langsamer wachsen oder schrumpfen. Ob daraus zuverlässig eine Preisstabilisierung entsteht, hängt zusätzlich von Verhalten, Liquidität und Marktbedingungen ab. Gerade deshalb ist die Wahl eines negativen Floors besonders sensibel. :contentReference[oaicite:4]{index=4}
+Daraus folgt unmittelbar, dass ein negativer Floor nicht als dokumentierte Designvariante des bestehenden Core verstanden werden kann, sondern nur als hypothetische Abweichung von der festgelegten Semantik von `r`.
+
+Zweitens ist der Wirkkanal von `r` auf den Marktpreis `P` noch nicht vollständig mechanisch spezifiziert. Manche Formulierungen legen nahe: `P < R -> r sinkt -> P steigt`. Der eindeutig definierte On-Chain-Effekt einer Senkung von `r` ist jedoch im aktuellen Core nur, dass Vault-Schulden langsamer wachsen oder schrumpfen. Ob daraus zuverlässig eine Preisstabilisierung entsteht, hängt zusätzlich von Verhalten, Liquidität und Marktbedingungen ab. Gerade deshalb ist die Wahl eines negativen Floors besonders sensibel.
 
 ---
 
@@ -57,7 +59,7 @@ Zweitens ist der Wirkkanal von `r` auf den Marktpreis `P` noch nicht vollständi
 
 ## 2.1 Sind negative Raten grundsätzlich legitim
 
-Negative Zinsen oder negative Regelraten sind als regulatorisches Instrument nicht grundsätzlich illegitim. In der Makroökonomie wurden negative Zinsen eingesetzt, um Kreditaufnahme, Ausgaben und Investitionen anzuregen. Auch im Kryptobereich existieren Systeme wie RAI, in denen positive und negative Signale verwendet wurden. Daraus folgt: Ein autonomes Geldsystem kann prinzipiell mit einem bidirektionalen Signal arbeiten. :contentReference[oaicite:5]{index=5}
+Negative Zinsen oder negative Regelraten sind als regulatorisches Instrument nicht grundsätzlich illegitim. In der Makroökonomie wurden negative Zinsen eingesetzt, um Kreditaufnahme, Ausgaben und Investitionen anzuregen. Auch im Kryptobereich existieren Systeme wie RAI, in denen positive und negative Signale verwendet wurden. Daraus folgt, dass ein autonomes Geldsystem prinzipiell mit einem bidirektionalen Signal arbeiten kann.
 
 ## 2.2 Entscheidend ist nicht das Vorzeichen, sondern der Wirkkanal
 
@@ -67,7 +69,7 @@ Im Fall von RAI wirkt das Vorzeichen auf die Redemption- oder Zielpreisdynamik, 
 
 `debt_next = debt_prev * (1 + r_epoch)`
 
-Damit ist ein negatives `r` hier nicht bloß eine lockerere geldpolitische Stellung, sondern ökonomisch eine regelbasierte Schuldreduktion. Das ist ein qualitativ anderer Aktor. :contentReference[oaicite:6]{index=6}
+Damit wäre ein negatives `r` hier nicht bloß eine lockerere geldpolitische Stellung, sondern ökonomisch eine regelbasierte Schuldreduktion. Das ist ein qualitativ anderer Aktor.
 
 ## 2.3 Strukturelle Asymmetrie des Controllers
 
@@ -75,11 +77,11 @@ Ein Controller mit `r ∈ [0, r_max]` ist strukturell asymmetrisch. Nach unten i
 
 `r_(t+1) = sat(r_t + K * ε_t, r_min, r_max)`
 
-Mit `r_min = 0` kann ein anhaltend negativer Fehler `ε < 0` in einen Bereich führen, in dem die gewünschte Reglerreaktion unterhalb des Floors läge. Dann tritt Residualfehler auf. Der Controller würde weiter lockern wollen, kann es aber nicht. :contentReference[oaicite:7]{index=7}
+Mit `r_min = 0` kann ein anhaltend negativer Fehler `ε < 0` in einen Bereich führen, in dem die gewünschte Reglerreaktion unterhalb des Floors läge. Dann tritt Residualfehler auf. Der Controller würde weiter lockern wollen, kann es aber nicht.
 
 ## 2.4 Interimsschluss
 
-Aus systemtheoretischer Sicht kann negatives `r` also durchaus legitim sein, aber nur dann, wenn der negative Ast über einen klar definierten Kanal mit begrenztem Budget und eindeutigem Zieleffekt arbeitet. Im gegenwärtig dokumentierten ProjectUSD-Core ist genau das nicht erfüllt. Daher folgt aus der Asymmetrie des Controllers noch nicht, dass negative Werte notwendig oder ratsam wären. :contentReference[oaicite:8]{index=8}
+Aus systemtheoretischer Sicht kann negatives `r` also durchaus legitim sein, aber nur dann, wenn der negative Ast über einen klar definierten Kanal mit begrenztem Budget und eindeutigem Zieleffekt arbeitet. Im gegenwärtig dokumentierten ProjectUSD-Core ist genau das nicht erfüllt. Daher folgt aus der Asymmetrie des Controllers noch nicht, dass negative Werte notwendig oder ratsam wären.
 
 ---
 
@@ -95,17 +97,17 @@ Für `r_t < 0` gilt daher:
 
 `D_(t+1) < D_t`
 
-Dies ist keine Interpretation, sondern Mechanik. Der Schuldner schuldet in der nächsten Epoche weniger als zuvor. Ein negativer Wert bedeutet also unmittelbare Entlastung bestehender Vault-Schulden. :contentReference[oaicite:9]{index=9}
+Dies ist keine Interpretation, sondern Mechanik. Der Schuldner schuldet in der nächsten Epoche weniger als zuvor. Ein negativer Wert würde also unmittelbare Entlastung bestehender Vault-Schulden bedeuten.
 
 ## 3.2 Rational entstehende Arbitragestrategien
 
-Sobald `r < 0` zulässig ist, entstehen mehrere rationale Strategien:
+Sobald `r < 0` zulässig wäre, entstünden mehrere rationale Strategien:
 
 - **Passive Carry-Subvention:** Vault öffnen, ProjectUSD minten und einfach halten, während die Schuld automatisch sinkt  
 - **Hebelung externer Nutzung:** ProjectUSD minten, anderweitig einsetzen oder in andere Assets verschieben, während die Verbindlichkeit sinkt  
 - **Zeit-Arbitrage:** heute minten und später mit geringerer Restschuld zurückzahlen
 
-Alle drei Strategien werden umso attraktiver, je länger eine negative Phase andauert. Damit wirkt negatives `r` nicht neutral, sondern als systematischer Anreiz zugunsten von Schuldnern. :contentReference[oaicite:10]{index=10}
+Alle drei Strategien würden umso attraktiver, je länger eine negative Phase andauerte. Damit wirkte negatives `r` nicht neutral, sondern als systematischer Anreiz zugunsten von Schuldnern.
 
 ## 3.3 Subventionscharakter und Überschusspuffer
 
@@ -117,7 +119,7 @@ Daraus entsteht eine ernste semantische Spannung. Entweder:
 2. die Implementierung kappt negative Raten implizit  
 3. die Invariante wird verletzt
 
-Genau diese Frage ist derzeit nicht sauber spezifiziert. Für ein unveränderliches System ist das ein zentrales Problem. :contentReference[oaicite:11]{index=11}
+Genau diese Frage ist für einen negativen Ast nicht sauber spezifiziert. Für ein unveränderliches System ist das ein zentrales Problem.
 
 ## 3.4 Langfristige Wirkung auf Angebotsdynamik
 
@@ -128,27 +130,27 @@ Daraus können gleichzeitig zwei Effekte entstehen:
 - bestehende Schulden werden subventioniert  
 - neue Verschuldung wird attraktiver
 
-Gerade dadurch steigt die Wahrscheinlichkeit, dass Marktteilnehmer größere oder länger laufende Positionen halten. Das ist besonders relevant, weil Stabilisierung in Unterpeg-Phasen typischerweise eher zusätzliche Rückkäufe und Redemption-Nachfrage benötigt als sinkenden Rückzahlungsdruck. :contentReference[oaicite:12]{index=12}
+Gerade dadurch steigt die Wahrscheinlichkeit, dass Marktteilnehmer größere oder länger laufende Positionen halten. Das ist besonders relevant, weil Stabilisierung in Unterpeg-Phasen typischerweise eher zusätzliche Rückkäufe und Redemption-Nachfrage benötigt als sinkenden Rückzahlungsdruck.
 
 ## 3.5 Größenordnung des Effekts
 
-Die PDF liefert dazu eine illustrative Epochenrechnung:
+Eine illustrative Epochenrechnung zeigt die Größenordnung:
 
 - `r = -2 %` über 20 Epochen reduziert die Schuld auf etwa `0.98^20 ≈ 0.668`, also rund **33 %** Reduktion  
 - `r = -5 %` über 20 Epochen reduziert die Schuld auf etwa `0.95^20 ≈ 0.359`, also rund **64 %** Reduktion
 
-Das zeigt, dass auch scheinbar kleine negative Floors kumulativ keineswegs klein sind. :contentReference[oaicite:13]{index=13}
+Das zeigt, dass auch scheinbar kleine negative Floors kumulativ keineswegs klein sind.
 
 ## 3.6 Folgen für Vault-Anreize und Holder
 
-Wenn `r < 0` ist, werden Vaults nicht nur günstiger, sondern potenziell zu Subventionscontainern. Das verschiebt die Anreize in Richtung:
+Wenn `r < 0` wäre, würden Vaults nicht nur günstiger, sondern potenziell zu Subventionscontainern. Das verschöbe die Anreize in Richtung:
 
 - höherer gewünschter Hebelung  
 - längerer Positionsdauer  
 - geringerer Rückzahlungsdringlichkeit  
 - geringerer Bereitschaft, ProjectUSD am Markt zurückzukaufen
 
-Für Holder entsteht dabei kein direkter Vorteil. Begünstigt wird primär die Schuldnerseite, während das System gleichzeitig mit geringerem Puffer, kleinerer zukünftiger Gebührenbasis und potenziell größerem ausstehenden Schuldvolumen belastet wird. Ökonomisch ähnelt dies eher einem Transfer von der Sicherheitsmarge des Systems zugunsten der Schuldner. :contentReference[oaicite:14]{index=14}
+Für Holder entstünde dabei kein direkter Vorteil. Begünstigt würde primär die Schuldnerseite, während das System gleichzeitig mit geringerem Puffer, kleinerer zukünftiger Gebührenbasis und potenziell größerem ausstehenden Schuldvolumen belastet würde. Ökonomisch ähnelte dies eher einem Transfer von der Sicherheitsmarge des Systems zugunsten der Schuldner.
 
 ## 3.7 Begrenzende Mechanismen reichen nicht aus
 
@@ -159,7 +161,7 @@ Andere Mechanismen des Systems begrenzen das Problem nur teilweise:
 - die Stability Pool absorbiert Liquidationen, nicht Schuldnersubventionen  
 - Redemption verknappt Angebot nur, wenn tatsächlich aktiv gekauft und eingelöst wird
 
-Deshalb verändern diese Mechanismen negatives `r` nicht von einer Subvention in ein neutrales Signal. :contentReference[oaicite:15]{index=15}
+Deshalb verändern diese Mechanismen negatives `r` nicht von einer Subvention in ein neutrales Signal.
 
 ---
 
@@ -174,28 +176,28 @@ Die Studie betrachtet ein klares Stressszenario:
 - Arbitragekapital fehlt  
 - das Marktvertrauen ist schwach
 
-Die eigentliche Frage lautet dann nicht, ob negatives `r` theoretisch helfen könnte, sondern ob es unter diesen Bedingungen das System verlässlich zurück ins Gleichgewicht bringt. :contentReference[oaicite:16]{index=16}
+Die eigentliche Frage lautet dann nicht, ob negatives `r` theoretisch helfen könnte, sondern ob es unter diesen Bedingungen das System verlässlich zurück ins Gleichgewicht bringt.
 
 ## 4.2 Verlauf ohne negatives r
 
-Ohne negative Werte senkt der Controller `r` schrittweise auf null und sättigt dort. Ab diesem Punkt verliert er zusätzliche Lockerungskapazität. Das ist ein realer Nachteil, weil dem System ein Freiheitsgrad verloren geht. :contentReference[oaicite:17]{index=17}
+Ohne negative Werte senkt der Controller `r` schrittweise auf null und sättigt dort. Ab diesem Punkt verliert er zusätzliche Lockerungskapazität. Das ist ein realer Nachteil, weil dem System ein Freiheitsgrad verloren geht.
 
 ## 4.3 Verlauf mit negativem Floor
 
-Mit einem negativen Floor gewinnt der Controller zusätzlichen Handlungsspielraum. Die Studie beschreibt diesen Zusatzraum näherungsweise durch:
+Mit einem negativen Floor gewönne der Controller zusätzlichen Handlungsspielraum. Der Zusatzraum lässt sich näherungsweise beschreiben durch:
 
 `N_extra ≈ |r_min| / Δr_max`
 
 Mit einem illustrativen `Δr_max = 50` Basispunkten pro Epoche ergäbe das ungefähr:
 
-- bei **Option B** (`-2 %`) etwa vier zusätzliche limitergebundene Epochen  
-- bei **Option A** (`-5 %`) etwa zehn zusätzliche limitergebundene Epochen
+- bei **Option B** mit `-2 %` etwa vier zusätzliche limitergebundene Epochen  
+- bei **Option A** mit `-5 %` etwa zehn zusätzliche limitergebundene Epochen
 
-Das ist das stärkste Argument zugunsten eines negativen Floors: Er erweitert den aktiven Regelbereich des Controllers. :contentReference[oaicite:18]{index=18}
+Das ist das stärkste Argument zugunsten eines negativen Floors. Er erweitert den aktiven Regelbereich des Controllers.
 
 ## 4.4 Warum das dennoch kein verlässlicher Erholungsmechanismus ist
 
-Der entscheidende Punkt ist jedoch: Selbst mit `r < 0` kann der Controller keine Erholung erzwingen.
+Der entscheidende Punkt ist jedoch: Selbst mit `r < 0` könnte der Controller keine Erholung erzwingen.
 
 Er:
 
@@ -204,7 +206,7 @@ Er:
 - erzwingt keine Redemption-Nachfrage  
 - erzeugt kein externes Arbitragekapital
 
-Er verändert nur Anreize. In moderatem Stress kann das hilfreich sein. In tiefem Stress mit wenig Vertrauen und schwacher Liquidität bleibt dieser Kanal jedoch schwach. Schlimmer noch: Weil der einzig garantierte mechanische Effekt von `r < 0` Schuldnerentlastung ist, kann das Signal gerade in dieser Situation in die falsche Richtung wirken. :contentReference[oaicite:19]{index=19}
+Er verändert nur Anreize. In moderatem Stress kann das hilfreich sein. In tiefem Stress mit wenig Vertrauen und schwacher Liquidität bleibt dieser Kanal jedoch schwach. Schlimmer noch: Weil der einzig garantierte mechanische Effekt von `r < 0` Schuldnerentlastung wäre, könnte das Signal gerade in dieser Situation in die falsche Richtung wirken.
 
 ## 4.5 Präzisierter Stressschluss
 
@@ -213,7 +215,7 @@ Die starke Behauptung, ohne negatives `r` habe das System keinen internen Erholu
 - ohne negatives `r` verliert der Controller einen Teil seiner Autorität in längeren Unterpeg-Phasen  
 - mit negativem `r` gewinnt er zusätzliche Autorität zurück, aber keinen garantierten Recovery-Mechanismus
 
-Genau darin liegt die eigentliche Abwägung. :contentReference[oaicite:20]{index=20}
+Genau darin liegt die eigentliche Abwägung.
 
 ---
 
@@ -225,11 +227,11 @@ Aus regelungstechnischer Sicht ist der Controller kein klassischer PI-Block, abe
 
 `r_(t+1) = r_t + K_p * ε_t`
 
-ergänzt um Deadband, Limiter und Sättigung. Diese Architektur erklärt sowohl die Attraktivität eines symmetrischeren Aktorraums als auch die Gefahren eines negativen Bereichs. :contentReference[oaicite:21]{index=21}
+ergänzt um Deadband, Limiter und Sättigung. Diese Architektur erklärt sowohl die Attraktivität eines symmetrischeren Aktorraums als auch die Gefahren eines negativen Bereichs.
 
 ## 5.2 Sättigung bei r = 0
 
-Ein Floor bei null erzeugt Sättigung. In der Regelungstechnik ist bekannt, dass Sättigung die Leistung verschlechtert und langsamere Erholung aus nichtlinearen Zuständen verursacht. Im vorliegenden System existiert jedoch keine versteckte Integratorstruktur mit klassischem Windup. `r` selbst ist der Zustand und wird direkt geclippt. Daher ist klassisches Windup-Risiko geringer als in einem Standard-PID mit separatem Integrator. :contentReference[oaicite:22]{index=22}
+Ein Floor bei null erzeugt Sättigung. In der Regelungstechnik ist bekannt, dass Sättigung die Leistung verschlechtert und langsamere Erholung aus nichtlinearen Zuständen verursacht. Im vorliegenden System existiert jedoch keine versteckte Integratorstruktur mit klassischem Windup. `r` selbst ist der Zustand und wird direkt geclippt. Daher ist klassisches Windup-Risiko geringer als in einem Standard-PID mit separatem Integrator.
 
 ## 5.3 Was tatsächlich bleibt
 
@@ -239,18 +241,18 @@ Auch ohne klassisches Windup bleiben jedoch:
 - Residualfehler  
 - langsamere Erholung aus Unterpeg-Zuständen
 
-Ein negativer Bereich macht den Aktorraum zwar symmetrischer, doch Symmetrie im Regelraum ist nicht identisch mit Symmetrie der ökonomischen Wohlfahrtseffekte. :contentReference[oaicite:23]{index=23}
+Ein negativer Bereich machte den Aktorraum zwar symmetrischer, doch Symmetrie im Regelraum ist nicht identisch mit Symmetrie der ökonomischen Wohlfahrtseffekte.
 
 ## 5.4 Oszillationsrisiken
 
-Je breiter der negative Bereich, desto größer wird das Risiko von:
+Je breiter der negative Bereich wäre, desto größer würde das Risiko von:
 
 - Überlockerung in illiquiden Phasen  
 - verzögerter Gegenreaktion durch TWAP- oder Oracle-Lag  
 - Rebound-Oszillation  
 - späterem Overshoot, wenn das Vertrauen plötzlich zurückkehrt
 
-Die Studie betont ausdrücklich, dass **Option A** dieses Risiko deutlich stärker erhöht als **Option B**. :contentReference[oaicite:24]{index=24}
+**Option A** erhöht dieses Risiko deutlich stärker als **Option B**.
 
 ---
 
@@ -258,7 +260,7 @@ Die Studie betont ausdrücklich, dass **Option A** dieses Risiko deutlich stärk
 
 ## 6.1 Nüchterner Vergleich der Optionen
 
-Die Studie vergleicht die drei Varianten entlang von Kontrollgewinn, Subventionsrisiko und Eignung für ein unveränderliches Design:
+Die drei Varianten lassen sich entlang von Kontrollgewinn, Subventionsrisiko und Eignung für ein unveränderliches Design vergleichen:
 
 | Option | Untergrenze | Kontrollgewinn im Unterpeg | Subventionsrisiko | Eignung für Immutable Design |
 |---|---:|---|---|---|
@@ -266,22 +268,22 @@ Die Studie vergleicht die drei Varianten entlang von Kontrollgewinn, Subventions
 | B | -2 % | niedrig bis moderat | moderat bis hoch | fraglich |
 | C | 0 % | kein negativer Ast | kein Schuldensubventionsast | am stärksten |
 
-Dieser Vergleich verdichtet die gesamte Untersuchung sehr klar. :contentReference[oaicite:25]{index=25}
+Dieser Vergleich verdichtet die gesamte Untersuchung sehr klar.
 
 ## 6.2 Risiko 1 - Subvention durch negatives r
 
-Die Eintrittswahrscheinlichkeit dieses Risikos ist unter Option A hoch und unter Option B weiterhin substanziell, sobald längere Unterpeg-Phasen auftreten. Das Schadenspotenzial ist ebenfalls hoch, weil:
+Die Eintrittswahrscheinlichkeit dieses Risikos wäre unter Option A hoch und unter Option B weiterhin substanziell, sobald längere Unterpeg-Phasen auftreten. Das Schadenspotenzial wäre ebenfalls hoch, weil:
 
-- Puffer erodieren können  
-- Schuldner systematisch begünstigt werden  
-- Preiswirkungen unsicher bleiben  
-- der Effekt in einem Immutable Core nicht nachträglich korrigiert werden kann
+- Puffer erodieren könnten  
+- Schuldner systematisch begünstigt würden  
+- Preiswirkungen unsicher blieben  
+- der Effekt in einem Immutable Core nicht nachträglich korrigiert werden könnte
 
-Damit ist dieses Risiko für ein eingefrorenes Protokoll besonders kritisch. :contentReference[oaicite:26]{index=26}
+Damit ist dieses Risiko für ein eingefrorenes Protokoll besonders kritisch.
 
 ## 6.3 Risiko 2 - Kontrollverlust bei r >= 0
 
-Auch ein nichtnegativer Bereich hat ein Risiko: Der Controller kann im Unterpeg-Fall bei null sättigen und zusätzliche Lockerungskapazität verlieren. Die Eintrittswahrscheinlichkeit dieses Problems ist jedoch stärker szenarioabhängig. Außerdem löst negatives `r` tiefe Krisenlagen eben nicht zuverlässig. :contentReference[oaicite:27]{index=27}
+Auch ein nichtnegativer Bereich hat ein Risiko. Der Controller kann im Unterpeg-Fall bei null sättigen und zusätzliche Lockerungskapazität verlieren. Die Eintrittswahrscheinlichkeit dieses Problems ist jedoch stärker szenarioabhängig. Außerdem löst negatives `r` tiefe Krisenlagen eben nicht zuverlässig.
 
 ## 6.4 Langfristige Systemstabilität
 
@@ -291,11 +293,11 @@ Option C erzeugt einen klaren Fehlermodus:
 
 - Der Controller sättigt bei null.
 
-Optionen A und B erzeugen dagegen einen zweiten und gefährlicheren Fehlermodus:
+Optionen A und B erzeugten dagegen einen zweiten und gefährlicheren Fehlermodus:
 
-- Das Protokoll wird zu einem automatischen und potenziell langanhaltenden Schuldenentlastungsmechanismus.
+- Das Protokoll würde zu einem automatischen und potenziell langanhaltenden Schuldenentlastungsmechanismus.
 
-Für eine eingefrorene monetäre Architektur ist dieser zweite Fehlermodus gefährlicher. :contentReference[oaicite:28]{index=28}
+Für eine eingefrorene monetäre Architektur ist dieser zweite Fehlermodus gefährlicher.
 
 ---
 
@@ -307,23 +309,23 @@ Die Studie empfiehlt eindeutig:
 
 `0 ≤ r ≤ +20 %`
 
-Diese Empfehlung ergibt sich nicht daraus, dass negative Raten immer falsch wären, sondern daraus, dass sie in der vorliegenden Architektur auf dem falschen Wirkkanal operieren. :contentReference[oaicite:29]{index=29}
+Diese Empfehlung ergibt sich nicht daraus, dass negative Raten immer falsch wären, sondern daraus, dass sie in der vorliegenden Architektur auf dem falschen Wirkkanal operieren würden.
 
 ## 7.2 Begründung in einem Satz
 
-ProjectUSD sollte im aktuellen Core keinen negativen Ast in Form negativer Schuldrate implementieren. Wenn ein negativer Stabilisierungsmechanismus jemals gewünscht ist, müsste er als separater, explizit budgetierter Kanal entworfen werden und nicht als automatische Schuldenreduktion. :contentReference[oaicite:30]{index=30}
+ProjectUSD sollte im aktuellen Core keinen negativen Ast in Form negativer Schuldrate implementieren. Wenn ein negativer Stabilisierungsmechanismus jemals gewünscht wäre, müsste er als separater, explizit budgetierter Kanal entworfen werden und nicht als automatische Schuldenreduktion.
 
 ## 7.3 Warum nicht Option A
 
-`-5 %` ist für ein unveränderliches Schuldratensystem deutlich zu aggressiv. Die zusätzliche Kontrollautorität rechtfertigt weder die Größenordnung kumulierter Schuldnersubventionen noch die Overshoot-Risiken. Diese Option sollte daher verworfen werden. :contentReference[oaicite:31]{index=31}
+`-5 %` wäre für ein unveränderliches Schuldratensystem deutlich zu aggressiv. Die zusätzliche Kontrollautorität rechtfertigte weder die Größenordnung kumulierter Schuldnersubventionen noch die Overshoot-Risiken. Diese Option ist daher zu verwerfen.
 
 ## 7.4 Warum auch Option B problematisch bleibt
 
-`-2 %` ist weniger extrem als Option A, bleibt aber unter dem aktuellen Core weiterhin problematisch. Sie wäre nicht bloß Parametrierung, sondern reale Schuldenvergebung, ohne verlässlich Gleichgewicht im Krisenfall herzustellen. Zudem ist die Dokumentation für diesen Ast noch nicht vollständig spezifiziert. Zulässig würde Option B allenfalls nach grundlegender Neugestaltung mit expliziter Finanzierungslogik, strikten Grenzen und präzisen Rechnungsregeln. :contentReference[oaicite:32]{index=32}
+`-2 %` wäre weniger extrem als Option A, bliebe aber unter dem aktuellen Core weiterhin problematisch. Sie wäre nicht bloß Parametrierung, sondern reale Schuldenvergebung, ohne verlässlich Gleichgewicht im Krisenfall herzustellen. Zudem wäre ein solcher Ast nur nach grundlegender Neugestaltung mit expliziter Finanzierungslogik, strikten Grenzen und präzisen Rechnungsregeln überhaupt diskutierbar.
 
 ## 7.5 Warum Option C trotz Asymmetrie vorzuziehen ist
 
-Ja, bei einem Floor von null kann der Controller sättigen. Ja, tiefe Unterpeg-Phasen können dadurch länger andauern. Trotzdem ist diese Asymmetrie das kleinere Risiko, weil sie verhindert, dass das Protokoll in Stressphasen automatisch Schuldner bezahlt, ohne einen garantierten stabilisierenden Preiseffekt zu liefern. :contentReference[oaicite:33]{index=33}
+Ja, bei einem Floor von null kann der Controller sättigen. Ja, tiefe Unterpeg-Phasen können dadurch länger andauern. Trotzdem ist diese Asymmetrie das kleinere Risiko, weil sie verhindert, dass das Protokoll in Stressphasen automatisch Schuldner bezahlt, ohne einen garantierten stabilisierenden Preiseffekt zu liefern.
 
 ---
 
@@ -333,22 +335,22 @@ Negative Werte für `r` sind in autonomen Geldsystemen nicht grundsätzlich ille
 
 Daraus ergibt sich folgende Rangfolge:
 
-1. **Option C (`0 %`)** - klar bevorzugt  
-2. **Option B (`-2 %`)** - nur nach grundlegender Neugestaltung des negativen Astes  
-3. **Option A (`-5 %`)** - verwerfen
+1. **Option C mit `0 %`** - klar bevorzugt  
+2. **Option B mit `-2 %`** - nur nach grundlegender Neugestaltung des negativen Astes  
+3. **Option A mit `-5 %`** - verwerfen
 
-Die technisch wichtigste Schlussfolgerung vor dem Freeze geht sogar noch tiefer als die reine Floor-Frage: Die Vorzeichenlogik des Übertragungskanals `r -> P` muss vollständig spezifiziert und intern konsistent sein. Solange der einzig garantierte On-Chain-Effekt von negativem `r` die Reduktion von Schulden ist, sollte ein unveränderlicher Core diesen Ast nicht enthalten. :contentReference[oaicite:34]{index=34}
+Die technisch wichtigste Schlussfolgerung vor dem Freeze geht sogar noch tiefer als die reine Floor-Frage. Die Vorzeichenlogik des Übertragungskanals `r -> P` muss vollständig spezifiziert und intern konsistent sein. Solange der einzig garantierte On-Chain-Effekt von negativem `r` die Reduktion von Schulden wäre, sollte ein unveränderlicher Core diesen Ast nicht enthalten.
 
 ---
 
 # 9. Verifikation
 
-> ## 📘 Reviewer-Checkliste
+## Reviewer-Checkliste
 
 - Ist sauber zwischen Controller-Asymmetrie und ökonomischer Symmetrie unterschieden  
 - Ist die mechanische Bedeutung von `r < 0` als Schuldreduktion korrekt dargestellt  
-- Ist die Spannung zwischen Spezifikation und konzeptionellen Studien klar benannt  
-- Ist die Rolle des `surplusBuffer` als zentraler semantischer Konflikt korrekt beschrieben  
+- Ist klar benannt, dass `r` in der dokumentierten Core-Architektur durchgängig nichtnegativ definiert ist  
+- Ist die Rolle des `surplusBuffer` als zentraler semantischer Konflikt eines hypothetischen negativen Astes korrekt beschrieben  
 - Ist der Unterschied zwischen zusätzlicher Controller-Autorität und einem echten Recovery-Mechanismus sauber herausgearbeitet  
 - Sind die Optionen A, B und C konsistent nach Kontrollgewinn, Subventionsrisiko und Immutable-Eignung bewertet  
 - Ist die Empfehlung `0 ≤ r ≤ +20 %` logisch aus der Gesamtanalyse abgeleitet  
