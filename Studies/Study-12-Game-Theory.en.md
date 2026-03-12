@@ -142,7 +142,8 @@ Price drops → supply increases → price drops further → collapse.
 
 ProjectUSD exhibits **strictly negative feedback**:
 
-Price drops → r decreases → demand rises → P rises  
+Price drops → r decreases toward zero → borrowing conditions improve → demand rises → P rises
+
 Price rises → r increases → demand cools → P falls  
 
 This is the essential reason spirals cannot form.
@@ -238,7 +239,7 @@ Strategic behavior:
 
 - Liquidators take over vaults  
 - Stability Pool absorbs collateral efficiently  
-- r decreases → demand for ProjectUSD rises  
+- r decreases toward its lower bound → borrowing conditions improve → demand for ProjectUSD rises
 - Arbitrage stabilizes P
 
 The system remains operational and stable.
@@ -276,10 +277,10 @@ creates **coordinated strategic responses** that prevent collapse.
 
 The Surplus Buffer enhances equilibrium stability by:
 
-- absorbing shocks,  
-- supporting negative-r phases,  
-- increasing confidence of holders and borrowers,  
-- strengthening long-term predictability.
+- absorbing shocks,
+- strengthening protocol solvency,
+- increasing confidence of holders and borrowers,
+- supporting long-term predictability during extended stress periods.
 
 It acts as a **strategic insurance layer**.
 
