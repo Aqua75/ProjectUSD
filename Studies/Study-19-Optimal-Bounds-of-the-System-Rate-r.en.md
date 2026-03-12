@@ -55,7 +55,7 @@ Second, the transmission channel from `r` to the market price `P` is still not f
 
 ---
 
-# 2. System Theoretical Analysis
+# 2. System-Theoretical Analysis
 
 ## 2.1 Are Negative Rates Legitimate in Principle
 
@@ -121,7 +121,7 @@ This creates a serious semantic tension. Either:
 
 This exact question is not cleanly specified for a negative branch. For an immutable system, that is a central problem.
 
-## 3.4 Long Term Effect on Supply Dynamics
+## 3.4 Long-Term Effect on Supply Dynamics
 
 A frequently underestimated point is that negative `r` does not directly reduce the circulating token supply. It merely reduces the liabilities of borrowers.
 
@@ -219,11 +219,11 @@ That is where the real trade off lies.
 
 ---
 
-# 5. Control Theoretical Perspective
+# 5. Control-Theoretical Perspective
 
 ## 5.1 The Controller as a PI Like Regulator
 
-From a control theoretical perspective, the controller is not a classical PI block, but PI like, because `r` itself represents the integrated controller state:
+From a control theoretical perspective, the controller is not a classical PI block, but PI-like, because `r` itself represents the integrated controller state:
 
 `r_(t+1) = r_t + K_p * ε_t`
 
