@@ -47,7 +47,7 @@ ProjectUSD ist ein vollständig on-chain operierendes, algorithmisches Geldsyste
 - **Systemrate r**, gesteuert über einen autonomen Controller  
 
 Weicht P von R ab, passt der Controller r an.  
-Hohe r → weniger Geldschöpfung; niedrige/negative r → Nachfrage und Prägung werden attraktiver.
+Hohe r → weniger Geldschöpfung; niedrige r → Kreditaufnahme wird günstiger und wirtschaftliche Aktivität attraktiver.
 
 Das System reguliert sich ausschließlich anhand eigener Zustände – ohne externes USD-Oracle.
 
