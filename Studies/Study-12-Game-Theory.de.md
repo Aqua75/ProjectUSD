@@ -145,8 +145,9 @@ Preis fällt → Supply steigt → Preis fällt stärker → System kollabiert.
 
 ProjectUSD besitzt **ausschließlich negative Rückkopplung**:
 
-Preis fällt → r sinkt → Nachfrage steigt → P steigt  
-Preis steigt → r steigt → Nachfrage sinkt → P fällt  
+Preis fällt → r sinkt in Richtung seiner unteren Grenze → Kreditaufnahme wird attraktiver → Nachfrage steigt → P steigt
+
+Preis steigt → r steigt → Kreditaufnahme wird teurer → Nachfrage sinkt → P fällt
 
 Dies verhindert systemische Eskalation.
 
@@ -238,7 +239,7 @@ Strategische Reaktionen:
 
 - Liquidatoren übernehmen Vaults  
 - Stability Pool erhält wertvolle Collateral-Bestände  
-- r sinkt → Nachfrage nach ProjectUSD steigt  
+- r sinkt in Richtung seiner unteren Grenze → Kreditaufnahme wird attraktiver → Nachfrage nach ProjectUSD steigt
 - Arbitrage hält P stabil
 
 Ergebnis:  
@@ -277,12 +278,12 @@ die Paniklimitierung unterstützen.
 
 Der Surplus-Puffer erweitert das strategische Gleichgewicht:
 
-- bietet Sicherheit bei Stress  
-- stabilisiert negative r-Phasen  
-- erzeugt Vertrauen für Halter und Schuldner  
-- ermöglicht systemische Resilienz
+- absorbiert ökonomische Schocks
+- stärkt die Solvenz des Protokolls
+- erhöht das Vertrauen von Haltern und Schuldnern
+- verbessert die langfristige Stabilität in Stressphasen
 
-Der Puffer fungiert als **strategische Versicherung** für alle Akteure.
+Der Puffer fungiert als strategische Sicherheitsschicht für das System.
 
 ---
 
