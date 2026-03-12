@@ -95,7 +95,7 @@ $$
 P = \text{median}(P_{\text{twap},1}, \dots, P_{\text{twap},n})
 $$
 
-Das Oracle liefert ein **gefiltertes, träge reagierendes** Signal.
+Das Oracle liefert ein **geglättetes, manipulationsresistentes** Signal.
 
 ---
 
@@ -124,7 +124,7 @@ $$
 Neue Systemrate:
 
 $$
-r_{t+1} = r_t + \Delta r_t
+r_{t+1} = clamp(r_t + Δr_t, 0, r_{cap})
 $$
 
 Interpretation:
@@ -165,7 +165,7 @@ Damit wirkt r indirekt über Angebots- und Nachfrageverschiebungen auf den Preis
 Für kleine Kₚ und moderate Preisänderungskoeffizienten gilt:
 
 $$
-r_{t+1} = r_t + K_p \cdot \varepsilon_t
+r_{t+1} = clamp(r_t + K_p · ε_t, 0, r_{cap})
 $$
 
 $$
@@ -307,7 +307,8 @@ RateLimiter:
 Der Surplus-Puffer:
 
 - speichert Gebühren  
-- kann negative r-Phasen kompensieren  
+- stärkt langfristig die Protokollsolvenz
+- erhöht die Widerstandsfähigkeit des Systems in längeren Stressphasen
 - wirkt als langfristiger Energiespeicher des Systems  
 
 ---
