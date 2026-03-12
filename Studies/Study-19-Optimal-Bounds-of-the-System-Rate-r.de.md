@@ -347,13 +347,13 @@ Die technisch wichtigste Schlussfolgerung vor dem Freeze geht sogar noch tiefer 
 
 ## Reviewer-Checkliste
 
-- Ist sauber zwischen Controller-Asymmetrie und ökonomischer Symmetrie unterschieden  
-- Ist die mechanische Bedeutung von `r < 0` als Schuldreduktion korrekt dargestellt  
-- Ist klar benannt, dass `r` in der dokumentierten Core-Architektur durchgängig nichtnegativ definiert ist  
-- Ist die Rolle des `surplusBuffer` als zentraler semantischer Konflikt eines hypothetischen negativen Astes korrekt beschrieben  
-- Ist der Unterschied zwischen zusätzlicher Controller-Autorität und einem echten Recovery-Mechanismus sauber herausgearbeitet  
-- Sind die Optionen A, B und C konsistent nach Kontrollgewinn, Subventionsrisiko und Immutable-Eignung bewertet  
-- Ist die Empfehlung `0 ≤ r ≤ +20 %` logisch aus der Gesamtanalyse abgeleitet  
-- Ist das Schlussurteil konsistent mit der dokumentierten Core-Architektur von ProjectUSD
+- Ist sauber zwischen Controller-Asymmetrie und ökonomischer Symmetrie unterschieden?
+- Ist die mechanische Bedeutung von `r < 0` als Schuldreduktion korrekt dargestellt?
+- Ist klar benannt, dass `r` in der dokumentierten Core-Architektur durchgängig nichtnegativ definiert ist?  
+- Ist die Rolle des `surplusBuffer` als zentraler semantischer Konflikt eines hypothetischen negativen Astes korrekt beschrieben?  
+- Ist der Unterschied zwischen zusätzlicher Controller-Autorität und einem echten Recovery-Mechanismus sauber herausgearbeitet?  
+- Sind die Optionen A, B und C konsistent nach Kontrollgewinn, Subventionsrisiko und Immutable-Eignung bewertet?  
+- Ist die Empfehlung `0 ≤ r ≤ +20 %` logisch aus der Gesamtanalyse abgeleitet?  
+- Ist das Schlussurteil konsistent mit der dokumentierten Core-Architektur von ProjectUSD?
 
 Diese Studie dient als Grundlage für die Entscheidung über die zulässigen Grenzen von `r` vor dem Protokoll-Freeze und für die Einordnung, ob ein negativer Ast als legitimer Stabilisierungsmechanismus oder als systemischer Designfehler zu bewerten ist.
