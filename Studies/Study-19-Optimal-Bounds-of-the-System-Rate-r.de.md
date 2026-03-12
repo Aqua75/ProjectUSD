@@ -1,4 +1,4 @@
-# Studie XX - Analyse der optimalen Grenzen der Systemrate r im ProjectUSD-Protokoll
+# Studie 19 - Analyse der optimalen Grenzen der Systemrate r im ProjectUSD-Protokoll
 *Wissenschaftliche Untersuchung der zulässigen Unter- und Obergrenzen von `r` im Core-Design von ProjectUSD*  
 *(Level-3 Research Format)*
 
