@@ -97,6 +97,9 @@ How ProjectUSD strengthens PulseChain through integration, liquidity and TVL dyn
 ### **18 – Unit of Account Adoption**  
 When and why ProjectUSD becomes the natural unit of account within an on-chain economy.
 
+### **19 – Optimal Bounds of the System Rate r**  
+Analysis of why `0 ≤ r ≤ +20 %` is the most robust Core configuration, and why negative `r` would create debt subsidy dynamics instead of a reliable stabilization channel.
+
 ---
 
 ## File Naming Convention
