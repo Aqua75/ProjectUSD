@@ -49,7 +49,7 @@ Instead, it defines its own internal unit of value via:
 
 When P deviates from R, the controller adjusts r.  
 High r → new borrowing becomes unattractive.  
-Low or negative r → borrowing and activity become attractive.
+Low r → borrowing becomes cheaper and economic activity becomes more attractive.
 
 The system operates using internal signals — not external USD price feeds.
 
