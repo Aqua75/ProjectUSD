@@ -125,7 +125,7 @@ $$
 New system rate:
 
 $$
-r_{t+1} = r_t + \Delta r_t
+r_{t+1} = clamp(r_t + Δr_t, 0, r_{cap})
 $$
 
 Interpretation:
@@ -166,7 +166,7 @@ Thus, r influences price indirectly through shifting supply and demand curves.
 With small Kₚ and moderate price sensitivity:
 
 $$
-r_{t+1} = r_t + K_p \varepsilon_t
+r_{t+1} = clamp(r_t + K_p ε_t, 0, r_{cap})
 $$
 
 $$
@@ -310,8 +310,8 @@ Rate limiter:
 The surplus buffer:
 
 - accumulates fees  
-- supports negative-r phases  
-- provides long-term system resilience  
+- strengthens long-term protocol solvency 
+- provides additional resilience during prolonged stress periods  
 - acts like a stored energy reserve for stabilization  
 
 ---
