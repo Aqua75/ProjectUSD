@@ -103,6 +103,9 @@ Wie ProjectUSD PulseChain durch Integration, Liquidität und TVL-Dynamik stärkt
 ### **18 – Recheneinheits-Adoption**  
 Wann und warum ProjectUSD zur natürlichen Wertmaß-Einheit einer On-Chain-Ökonomie wird.
 
+### **19 – Optimale Grenzen der Systemrate r**  
+Analyse, warum `0 ≤ r ≤ +20 %` die robusteste Core-Konfiguration ist und warum ein negatives `r` keinen sauberen Stabilisierungsmechanismus, sondern eine Schuldensubventionsdynamik erzeugen würde.
+
 ---
 
 ## Dateibenennung
