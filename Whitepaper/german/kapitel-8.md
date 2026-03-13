@@ -1,7 +1,7 @@
 # Kapitel 8 - Risiken und Grenzen: Was ProjectUSD leisten kann ... und was nicht
 
-Jedes System, das Werte verwaltet, trägt Risiko in sich.
-Der Unterschied liegt nicht darin, ob Risiken existieren,
+Jedes System, das Werte verwaltet, trägt Risiko in sich.<br>
+Der Unterschied liegt nicht darin, ob Risiken existieren,<br>
 sondern wo sie liegen - und wer sie kontrolliert.
 
 ProjectUSD kann vieles:
