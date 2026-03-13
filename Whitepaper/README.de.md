@@ -1,87 +1,113 @@
 # ProjectUSD Whitepaper  
-*Das grundlegende Referenzdokument zur Architektur und ökonomischen Struktur von ProjectUSD*
+*Zentrale Dokumentation der konzeptionellen und fortlaufenden Whitepaper-Entwicklung von ProjectUSD*
 
 ---
 
 ## Überblick
 
-Dieses Verzeichnis enthält das **ProjectUSD Whitepaper** in Markdown-Form.
+Dieses Verzeichnis dient als zentraler Dokumentationsbereich für das **ProjectUSD Whitepaper**.
 
-Das Whitepaper beschreibt die grundlegende Architektur, die zentralen Mechanismen sowie die ökonomischen Prinzipien des autonomen Geldsystems **ProjectUSD** für PulseChain.
+Es enthält die sprachspezifischen Einführungsdateien zu diesem Verzeichnis sowie die fortlaufend gepflegten Whitepaper-Fassungen in Markdown-Form.
 
-Während die offiziell formatierten Ausgaben des Whitepapers weiterhin als **PDF-Versionen** über die Hauptseite des Repositories bereitgestellt werden, dient dieses Verzeichnis der **direkten Lesbarkeit und transparenten Versionsnachverfolgung innerhalb von GitHub**.
+ProjectUSD ist ein autonomes, oracle-unabhängiges und selbstregulierendes Geldsystem für PulseChain.
 
-Die Markdown-Version ermöglicht:
+Während die **PDF-Ausgaben der Version 2.1** weiterhin über die Hauptseite des Repositories verfügbar sind, werden **alle späteren inhaltlichen Aktualisierungen des Whitepapers** in diesem Verzeichnis als Markdown-Dateien in **Englisch** und **Deutsch** bereitgestellt.
 
-- direkte Lesbarkeit des Whitepapers im Repository  
-- nachvollziehbare Änderungsverläufe über Git  
-- klare Referenzierung einzelner Abschnitte durch Entwickler, Forscher und Auditoren  
-- langfristige Dokumentation der Weiterentwicklung des Protokolls  
+Dieses Verzeichnis erfüllt damit mehrere Funktionen:
+
+- transparente Dokumentation der Whitepaper-Weiterentwicklung  
+- direkte Lesbarkeit auf GitHub  
+- nachvollziehbare Versionshistorie über Git  
+- saubere Referenzierbarkeit einzelner Textstände und Änderungen  
 
 ---
 
 ## Inhalt dieses Verzeichnisses
 
-Das Verzeichnis enthält die Markdown-Fassungen des Whitepapers in den derzeit gepflegten Sprachen:
+Dieses Verzeichnis enthält derzeit:
 
-- **README.md** – englische Version des Whitepapers  
-- **README.de.md** – deutsche Version des Whitepapers  
+- **README.md** – englische Einführung zu diesem Whitepaper-Verzeichnis  
+- **README.de.md** – deutsche Einführung zu diesem Whitepaper-Verzeichnis  
 
-Beide Dokumente enthalten denselben inhaltlichen Kern und unterscheiden sich ausschließlich in der Sprache.
+Zusätzliche Whitepaper-Dateien und spätere überarbeitete Fassungen werden in diesem Verzeichnis in strukturierter Form ergänzt.
 
 ---
 
 ## Rolle des Whitepapers im Repository
 
-Das Whitepaper bildet die **konzeptionelle Grundlage** des gesamten ProjectUSD-Systems.
+Das Whitepaper bildet das grundlegende Referenzdokument für die Architektur und ökonomische Logik von **ProjectUSD**.
 
-Es erklärt unter anderem:
+Es beschreibt unter anderem:
 
-- die grundlegende Systemarchitektur  
-- den Aufbau des Vault-basierten Collateral-Systems  
+- die Systemarchitektur  
+- die Vault-Struktur  
 - den Redemption-Mechanismus  
-- die Rolle des Stability Pools  
-- die Funktion des Controllers und der Systemrate `r`  
-- die ökonomischen Stabilitätsmechanismen des Protokolls  
+- den Stability Pool  
+- die Rolle des Controllers  
+- die Funktion der Systemrate `r`  
+- die ökonomischen Stabilitätsprinzipien des Protokolls  
 
-Für detaillierte technische Spezifikationen einzelner Module wird ergänzend auf die Dokumentation im Verzeichnis **/Architecture/** verwiesen.
+Für formale Modulspezifikationen und detaillierte technische Dokumentation wird ergänzend auf **/Architecture/** verwiesen.
+
+---
+
+## Versionslogik
+
+Die **PDF-Versionen** auf der Hauptseite des Repositories dokumentieren den formatierten Stand des Whitepapers in **Version 2.1**.
+
+**Spätere Aktualisierungen und Weiterentwicklungen** des Whitepapers werden nicht mehr zwingend als PDF gepflegt, sondern primär in **Markdown-Form** innerhalb dieses Verzeichnisses veröffentlicht.
+
+Damit dient dieses Verzeichnis als laufender, offen einsehbarer Entwicklungs- und Dokumentationsraum des Whitepapers in:
+
+- **Deutsch**
+- **Englisch**
 
 ---
 
 ## Verhältnis zu weiteren Dokumenten
 
-Das Whitepaper stellt die **konzeptionelle Übersicht** des Systems dar.  
-Weitere Teile der Dokumentation vertiefen spezifische Aspekte:
+Das Whitepaper bildet die konzeptionelle Gesamtsicht auf das System.
+
+Ergänzende Verzeichnisse vertiefen einzelne Bereiche:
 
 - **/Architecture/**  
-  formale Modul- und Protokollspezifikationen
+  formale Spezifikationen und Moduldefinitionen
 
 - **/Studies/**  
-  wissenschaftliche Analysen einzelner Mechanismen und ökonomischer Eigenschaften
+  wissenschaftliche und ökonomische Tiefenanalysen
 
 - **/Articles/**  
-  erklärende Texte und konzeptionelle Einführungen
+  erklärende Begleittexte und konzeptionelle Einführungen
 
 - **/Developer_Playbook/**  
-  praktische Orientierung für Entwickler und Implementierungen
+  entwicklerorientierte Hinweise zur praktischen Umsetzung
 
 ---
 
-## Offizielle Whitepaper-Ausgaben
+## Lizenz, Namensnutzung und Attribution
 
-Die offiziell gesetzten und veröffentlichten Whitepaper-Versionen sind weiterhin als **PDF-Ausgaben** verfügbar und können über die Links auf der Hauptseite des Repositories heruntergeladen werden.
+**ProjectUSD** ist ein originäres Open-Source-Konzept, veröffentlicht von  
+**Aqua75 / PulseChain Community Initiative**  
+unter der Lizenz **Creative Commons BY-NC-SA 4.0**.
 
-Die Markdown-Version dient primär der **offenen Dokumentation, Lesbarkeit und Versionshistorie**.
+Diese Lizenz gilt für alle Dokumentationen, Spezifikationen, Studien, Whitepaper und Medieninhalte in diesem Repository.
 
----
+Der Name **ProjectUSD** sowie das **ProjectUSD-Logo** sind jedoch geschützte Bezeichner des ursprünglichen PulseChain-basierten Designs.
 
-## Lizenz
+### Verwendung des Namens „ProjectUSD“
 
-**ProjectUSD** ist ein originäres Open-Source-Konzept der  
-**PulseChain Community Initiative**.
+Implementierungen auf **PulseChain** dürfen den Namen **ProjectUSD** nur verwenden, wenn sie:
 
-Die Inhalte dieses Repositories, einschließlich Whitepaper, Studien, Spezifikationen und begleitender Materialien, stehen unter der Lizenz:
+1. vollständig der offiziellen ProjectUSD-Spezifikation entsprechen und  
+2. den Konsolidierungsprozess durchlaufen haben  
 
-**Creative Commons BY-NC-SA 4.0**
+### Unabhängige Forks
 
-© 2026 Aqua75
+Alle anderen Implementierungen, auf PulseChain oder anderswo, müssen klar als **unabhängige Forks** gekennzeichnet sein und die folgende Attribution enthalten:
+
+> Based on the “ProjectUSD” concept by Aqua75 / PulseChain Community Initiative  
+> https://github.com/Aqua75/ProjectUSD
+
+Die nicht autorisierte Nutzung des Namens oder Logos außerhalb dieses Rahmens verletzt die festgelegten Nutzungsbedingungen.
+
+© 2026 Aqua75 – Alle Rechte vorbehalten für den Namen und das Logo **ProjectUSD**.
