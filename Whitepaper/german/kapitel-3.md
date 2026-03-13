@@ -1,14 +1,14 @@
 # Kapitel 3 - Das ökonomische Herz: Wie ProjectUSD Stabilität erzeugt
 
 Jede Ökonomie braucht ein Herz - etwas, das schlägt, reagiert und die Balance hält.
-Bei ProjectUSD ist dieses Herz der Controller.
+Bei ProjectUSD ist dieses Herz der **Controller**.
 Er ist kein Mensch, kein Governance-Gremium, kein externer Algorithmus, der auf Preisfeeds reagiert.
 Er ist ein mathematisches Regelwerk, das die Dynamik des Systems steuert.
 
 Seine Aufgabe ist einfach zu beschreiben, aber tief in ihrer Wirkung:
 Er sorgt dafür, dass der Marktpreis P des Stablecoins
 um den inneren Gleichgewichtspreis R pendelt -
-nicht durch starre Bindung, sondern durch Rückkopplung.
+nicht durch starre Bindung, sondern durch **Rückkopplung**.
 
 ---
 
@@ -16,7 +16,7 @@ nicht durch starre Bindung, sondern durch Rückkopplung.
 
 Wenn der Marktpreis über R steigt, signalisiert das ein Überangebot an Nachfrage.
 ProjectUSD ist zu teuer geworden - das System muss „abkühlen“.
-Der Controller erhöht die variable Rate r,
+Der Controller erhöht die variable Rate **r**,
 die als kombinierte Zinsgröße sowohl für Schuldner als auch für Sparer gilt.
 
 - Für Schuldner: das Prägen neuer ProjectUSD-Token wird teurer.
@@ -32,7 +32,7 @@ dann lohnt es sich, ProjectUSD zu halten oder zu erzeugen.
 Arbitrageure kaufen unterbewertete Tokens auf,
 der Preis steigt - und das Gleichgewicht kehrt zurück.
 
-So entsteht ein digitaler Zinsmechanismus,
+So entsteht ein **digitaler Zinsmechanismus**,
 vergleichbar mit geldpolitischer Steuerung, nur völlig automatisch und fälschungssicher.
 
 ---
@@ -78,6 +78,6 @@ Dieses Versprechen hängt an Bankkonten, Jurisdiktionen und Vertrauen.
 
 Bei ProjectUSD gibt es kein solches Versprechen -
 nur Code, der das Verhalten der Marktteilnehmer aufeinander abstimmt.
-Das Vertrauen wird durch Verlässlichkeit ersetzt.
+Das Vertrauen wird durch **Verlässlichkeit** ersetzt.
 Jeder kann die Mechanik prüfen, jede Variable nachverfolgen, jede Anpassung beobachten.
 Das ist Stabilität durch Sichtbarkeit - und damit die ehrlichste Form von Geld.
