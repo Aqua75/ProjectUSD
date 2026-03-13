@@ -1,56 +1,46 @@
-## Chapter 3 - The Economic Heart: How ProjectUSD Creates Stability
+# Chapter 3 - The Economic Heart: How ProjectUSD Creates Stability
 
 Every economy needs a heart - something that beats, responds, and maintains balance.
-
 In ProjectUSD, that heart is the Controller.
-
 It is not a person, not a governance body, not an external algorithm reacting to price feeds.
-
 It is a mathematical framework that governs the system’s dynamics.
 
 Its function is simple to describe but profound in effect:
-
 it ensures that the market price P of the stablecoin oscillates around the internal equilibrium price R -
-
 not through a rigid peg, but through feedback.
+
+---
 
 ### The Feedback Between Price and Rate
 
 When the market price rises above R, it signals excessive demand.
-
 ProjectUSD has become “too expensive” - the system needs to cool down.
-
 The Controller increases the variable rate r,
-
 a combined interest metric that applies to both debtors and savers.
 
-• For debtors: minting new ProjectUSD tokens becomes more costly.
-
-• For savers: holding ProjectUSD becomes less attractive.
+- For debtors: minting new ProjectUSD tokens becomes more costly.
+- For savers: holding ProjectUSD becomes less attractive.
 
 The result: supply expansion slows, demand decreases,
-
 and the price gradually returns toward R.
 
 When the market price falls below R, the opposite occurs:
-
 ProjectUSD is undervalued - the system is “too cold.”
-
 The Controller lowers r, sometimes even into negative territory -
-
 making it profitable again to hold or mint ProjectUSD.
-
 Arbitrageurs buy the underpriced tokens,
-
 the price rises, and equilibrium is restored.
 
 Thus, a digital interest-rate mechanism emerges -
-
 similar to monetary policy, but fully automatic and incorruptible.
+
+---
 
 ### Mathematical Simplicity, Economic Depth
 
 The logic behind it can be expressed in a simple equation:
+
+
 
 ε measures how far the market price deviates from the internal equilibrium.
 
