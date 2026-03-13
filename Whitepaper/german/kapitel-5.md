@@ -1,12 +1,12 @@
 # Kapitel 5 - Sicherheit und Transparenz: Wenn Code das Vertrauen ersetzt
 
 In einer Welt, in der Geldsysteme auf Versprechen gebaut sind, wählt ProjectUSD einen anderen Weg:<br>
-Sicherheit durch Mathematik, Vertrauen durch Sichtbarkeit.
+**Sicherheit durch Mathematik, Vertrauen durch Sichtbarkeit**.
 
 Das System wurde so gestaltet, dass kein einzelner Akteur - weder Mensch, noch Behörde, noch Miner -<br>
 es kontrollieren oder korrumpieren kann.<br>
-Sicherheit bedeutet hier nicht, Risiken zu vermeiden, sondern sie so zu gestalten, dass sie vorhersehbar<br> 
-und begrenzt sind.
+Sicherheit bedeutet hier nicht, Risiken zu vermeiden, sondern sie so zu gestalten, dass sie **vorhersehbar<br> 
+und begrenzt** sind.
 
 ---
 
@@ -22,7 +22,7 @@ Einführungsphase eingefroren.<br>
 Niemand kann ihn mehr stoppen, umschreiben oder anpassen.<br>
 Selbst die Governance hat nur Zugriff auf die äußere Schicht, niemals auf den inneren Code.
 
-Dadurch entsteht ein autarkes Geldsystem, das nicht auf Vertrauen in Entwickler, Teams oder <br>
+Dadurch entsteht ein **autarkes Geldsystem**, das nicht auf Vertrauen in Entwickler, Teams oder <br>
 Institutionen angewiesen ist.<br>
 Es existiert, weil es läuft - nicht, weil jemand es erlaubt.
 
@@ -52,17 +52,17 @@ Preisfeeds, Orakel und Pools sind Angriffspunkte für Miner Extractable Value (M
 und Sandwiching.<br>
 ProjectUSD begegnet diesen Risiken mit mehrschichtiger Logik:
 
-- Median-TWAP-Orakel:<br>
+- **Median-TWAP-Orakel:** <br>
 Der Preis speist sich aus mehreren PulseChain-Paaren (z. B. ProjectUSD/PLS, <br>
 ProjectUSD/PLSX) und bildet daraus einen Medianwert über Zeit. Kurzzeitige Pump-and<br>
 Dump-Manöver verlieren so ihren Einfluss.<br>
-- Outlier-Filter:<br>
+- **Outlier-Filter:** <br>
 Paare mit zu geringer Liquidität oder statistischen Ausreißern werden automatisch<br> 
 ausgeschlossen.<br>
-- Rate-Limiter:<br>
+- **Rate-Limiter:** <br>
 Die Veränderung der Systemrate r ist pro Epoche begrenzt, etwa auf 50 Basispunkte. Das <br>
 verhindert abrupte Zinssprünge durch Marktstress.<br>
-- Reentrancy- und Governance-Capture-Schutz:<br>
+- **Reentrancy- und Governance-Capture-Schutz:** <br>
 Kritische Funktionen sind voneinander isoliert, Rückrufe ausgeschlossen, Governance<br>
 Änderungen timelocked und vollständig transparent.<br>
 
@@ -73,7 +73,7 @@ Autonomie zu gefährden.
 
 ## 5.4 Der Surplus-Puffer - das kollektive Sicherheitsnetz
 
-Jede Transaktion innerhalb von ProjectUSD erzeugt minimale Gebühren, die in einen Surplus-Puffer<br>
+Jede Transaktion innerhalb von ProjectUSD erzeugt minimale Gebühren, die in einen **Surplus-Puffer**<br>
 fließen.<br>
 Dieser Puffer fungiert als kollektive Reserve, die eingesetzt werden kann, um:
 
@@ -89,7 +89,7 @@ ein selbstverstärkender Schutzmechanismus, gespeist aus der Aktivität der Nutz
 ## 5.5 Governance als Wächter, nicht als Herrscher
 
 ProjectUSD definiert Governance neu:<br>
-Sie darf koordinieren, aber nicht kontrollieren.
+Sie darf **koordinieren**, aber nicht **kontrollieren**.
 
 Nach dem Parameter-Freeze ist ihre Aufgabe auf die Pflege der Peripherie beschränkt:<br>
 neue Collateral-Typen, AMO-Parameter, oder optionale PSM-Module.<br>
@@ -106,6 +106,6 @@ Ein System, das sich selbst beschränkt, befreit sich von der Willkür seiner Sc
 Was einmal läuft, läuft für immer - so lange, wie PulseChain selbst existiert.
 
 Hier liegt das wahre Versprechen:<br>
-Nicht „Code is Law“ - sondern Code ist Vertrag.<br>
+Nicht „Code is Law“ - sondern **Code ist Vertrag**.<br>
 Ein Vertrag, der nicht gebrochen werden kann,<br>
 weil niemand mehr die Macht hat, ihn zu brechen.
