@@ -7,7 +7,7 @@
 
 Dieses Verzeichnis dient als zentraler Dokumentationsbereich für das **ProjectUSD Whitepaper**.
 
-Es enthält die sprachspezifischen Einführungsdateien zu diesem Verzeichnis sowie die fortlaufend gepflegten Whitepaper-Fassungen in Markdown-Form.
+Es enthält sprachspezifische Einführungsdateien zu diesem Verzeichnis sowie die fortlaufend gepflegten Whitepaper-Fassungen in Markdown-Form.
 
 ProjectUSD ist ein autonomes, oracle-unabhängiges und selbstregulierendes Geldsystem für PulseChain.
 
@@ -29,7 +29,9 @@ Dieses Verzeichnis enthält derzeit:
 - **README.en.md** – englische Einführung zu diesem Whitepaper-Verzeichnis  
 - **README.de.md** – deutsche Einführung zu diesem Whitepaper-Verzeichnis  
 
-Zusätzliche Whitepaper-Dateien und spätere überarbeitete Fassungen werden in diesem Verzeichnis in strukturierter Form ergänzt.
+Aktualisierte Fassungen des Whitepapers ersetzen jeweils die vorherige Version.  
+Der Ordner enthält daher immer nur die aktuellste Fassung jeder Sprachversion.  
+Frühere Änderungen bleiben über die Versionshistorie auf GitHub nachvollziehbar.
 
 ---
 
@@ -57,7 +59,7 @@ Die **PDF-Versionen** auf der Hauptseite des Repositories dokumentieren den form
 
 **Spätere Aktualisierungen und Weiterentwicklungen** des Whitepapers werden nicht mehr zwingend als PDF gepflegt, sondern primär in **Markdown-Form** innerhalb dieses Verzeichnisses veröffentlicht.
 
-Damit dient dieses Verzeichnis als laufender, offen einsehbarer Entwicklungs- und Dokumentationsraum des Whitepapers in:
+Damit dient dieses Verzeichnis als laufende, öffentlich einsehbare Dokumentation der Weiterentwicklung des Whitepapers in:
 
 - **Deutsch**
 - **Englisch**
@@ -84,30 +86,17 @@ Ergänzende Verzeichnisse vertiefen einzelne Bereiche:
 
 ---
 
-## Lizenz, Namensnutzung und Attribution
+## Lizenz
 
-**ProjectUSD** ist ein originäres Open-Source-Konzept, veröffentlicht von  
-**Aqua75 / PulseChain Community Initiative**  
-unter der Lizenz **Creative Commons BY-NC-SA 4.0**.
+**ProjectUSD** ist ein originäres Open-Source Konzept der  
+**Aqua75 / PulseChain Community Initiative**.
 
-Diese Lizenz gilt für alle Dokumentationen, Spezifikationen, Studien, Whitepaper und Medieninhalte in diesem Repository.
+Die Inhalte dieses Verzeichnisses stehen unter der Lizenz:
 
-Der Name **ProjectUSD** sowie das **ProjectUSD-Logo** sind jedoch geschützte Bezeichner des ursprünglichen PulseChain-basierten Designs.
+**Creative Commons BY-NC-SA 4.0**
 
-### Verwendung des Namens „ProjectUSD“
+Der Name **ProjectUSD** sowie das **ProjectUSD-Logo** sind geschützte Bezeichner des ursprünglichen PulseChain Designs.
 
-Implementierungen auf **PulseChain** dürfen den Namen **ProjectUSD** nur verwenden, wenn sie:
+Die vollständigen Lizenz und Namensrichtlinien sind in der **Projekt README auf der Hauptseite dieses Repositories** beschrieben.
 
-1. vollständig der offiziellen ProjectUSD-Spezifikation entsprechen und  
-2. den Konsolidierungsprozess durchlaufen haben  
-
-### Unabhängige Forks
-
-Alle anderen Implementierungen, auf PulseChain oder anderswo, müssen klar als **unabhängige Forks** gekennzeichnet sein und die folgende Attribution enthalten:
-
-> Based on the “ProjectUSD” concept by Aqua75 / PulseChain Community Initiative  
-> https://github.com/Aqua75/ProjectUSD
-
-Die nicht autorisierte Nutzung des Namens oder Logos außerhalb dieses Rahmens verletzt die festgelegten Nutzungsbedingungen.
-
-© 2026 Aqua75 – Alle Rechte vorbehalten für den Namen und das Logo **ProjectUSD**.
+© 2026 Aqua75
