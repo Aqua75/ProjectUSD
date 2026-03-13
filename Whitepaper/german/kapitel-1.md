@@ -27,10 +27,10 @@ ProjectUSD ist ein Vorschlag - eine **Blaupause**.
 Sein Ziel ist nicht, ein fertiges Protokoll vorzustellen,
 sondern eine Idee so klar zu formulieren,
 dass andere sie aufgreifen, erweitern und verwirklichen können.
-Dieses Whitepaper ist deshalb ein **Staffelstab**:
+Dieses Whitepaper ist deshalb ein **Staffelstab**:<br>
 
-von der Vision zur Umsetzung.
-Von Theorie zu Code.
+von der Vision zur Umsetzung.<br>
+Von Theorie zu Code.<br>
 Von Gedanke zu Realität.
 
 Es richtet sich an jene, die in PulseChain mehr sehen als nur einen neuen Markt:
