@@ -41,7 +41,9 @@ vergleichbar mit geldpolitischer Steuerung, nur völlig automatisch und fälschu
 
 Die Logik dahinter lässt sich in einer einfachen Formel ausdrücken:
 
-FORMEL
+$$
+\varepsilon = \frac{P - R}{R}
+$$
 
 ε misst, wie stark der Marktpreis vom internen Gleichgewicht abweicht.
 Der Controller übersetzt diese Abweichung in eine Anpassung von r.
