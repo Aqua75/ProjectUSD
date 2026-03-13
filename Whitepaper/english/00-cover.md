@@ -4,7 +4,7 @@
 
 ---
 
-**Whitepaper V2.1 - Vision & Architecture of a Self-Regulating Blockchain Economy**
+# Whitepaper V2.1 - Vision & Architecture of a Self-Regulating Blockchain Economy
 
 ---
 
