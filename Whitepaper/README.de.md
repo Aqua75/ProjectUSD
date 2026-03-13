@@ -17,7 +17,7 @@ Dieses Verzeichnis erfüllt damit mehrere Funktionen:
 
 - transparente Dokumentation der Whitepaper-Weiterentwicklung  
 - direkte Lesbarkeit auf GitHub  
-- nachvollziehbare Versionshistorie über Git  
+- nachvollziehbare Versionshistorie über GitHub  
 - saubere Referenzierbarkeit einzelner Textstände und Änderungen  
 
 ---
@@ -26,7 +26,7 @@ Dieses Verzeichnis erfüllt damit mehrere Funktionen:
 
 Dieses Verzeichnis enthält derzeit:
 
-- **README.md** – englische Einführung zu diesem Whitepaper-Verzeichnis  
+- **README.en.md** – englische Einführung zu diesem Whitepaper-Verzeichnis  
 - **README.de.md** – deutsche Einführung zu diesem Whitepaper-Verzeichnis  
 
 Zusätzliche Whitepaper-Dateien und spätere überarbeitete Fassungen werden in diesem Verzeichnis in strukturierter Form ergänzt.
