@@ -40,52 +40,42 @@ similar to monetary policy, but fully automatic and incorruptible.
 
 The logic behind it can be expressed in a simple equation:
 
-
+$$
+\varepsilon = \frac{P - R}{R}
+$$
 
 ε measures how far the market price deviates from the internal equilibrium.
-
 The Controller translates this deviation into an adjustment of r.
-
 The larger ε, the stronger the system’s response -
-
 but always within defined limits to prevent overreactions.
 
 This mechanism is the true genius of ProjectUSD:
-
 stability is not achieved through fixation, but through motion.
-
 Not through control, but through resonance.
+
+---
 
 ### The Self-Regulation Effect
 
 The system breathes.
-
 Every price deviation triggers a counterforce -
-
 economic, algorithmic, predictable.
-
 The larger the swing, the stronger the correction.
 
 The result is a harmonic equilibrium:
-
 never perfectly static, never entirely chaotic.
-
 A living form of money - one that stabilizes itself.
+
+---
 
 ### Why It Replaces Trust
 
 In traditional stablecoins, a company guarantees:
-
 “1 token = 1 USD.”
-
 That promise relies on bank accounts, jurisdictions, and trust.
 
 In ProjectUSD, no such promise exists -
-
 only code that synchronizes the behavior of market participants.
-
 Trust is replaced by reliability.
-
 Anyone can inspect the mechanics, trace every variable, and observe every adjustment.
-
 This is stability through visibility - and therefore, the most honest form of money.
