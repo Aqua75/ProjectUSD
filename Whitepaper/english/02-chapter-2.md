@@ -22,9 +22,9 @@ In this way, the price continually gravitates back toward its inner anchor, **R*
 
 This equilibrium arises **without oracles** -<br>
 without anyone declaring from outside what “one dollar” should be worth.<br>
-Value emerges organically from the interaction of participants -
-from Vaults that provide collateral,
-from Stability Pools that absorb weak positions,
+Value emerges organically from the interaction of participants -<br>
+from Vaults that provide collateral,<br>
+from Stability Pools that absorb weak positions,<br>
 and from the Redemption Engine that allows anyone to redeem ProjectUSD for PLS at the internal price.
 
 Three simple components, one closed cycle:<br>
