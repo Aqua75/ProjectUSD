@@ -26,7 +26,7 @@ This directory therefore fulfills several functions:
 
 This directory currently contains:
 
-- **README.en.md** – English introduction to this whitepaper directory  
+- **README.md** – English introduction to this whitepaper directory  
 - **README.de.md** – German introduction to this whitepaper directory  
 
 Updated versions of the whitepaper replace the previous version.  
