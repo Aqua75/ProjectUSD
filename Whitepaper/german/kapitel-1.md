@@ -29,9 +29,9 @@ sondern eine Idee so klar zu formulieren,<br>
 dass andere sie aufgreifen, erweitern und verwirklichen können.<br>
 Dieses Whitepaper ist deshalb ein **Staffelstab**:<br>
 
-von der Vision zur Umsetzung.<br>
-Von Theorie zu Code.<br>
-Von Gedanke zu Realität.
+- Von der Vision zur Umsetzung.<br>
+- Von Theorie zu Code.<br>
+- Von Gedanke zu Realität.
 
 Es richtet sich an jene, die in PulseChain mehr sehen als nur einen neuen Markt:<br>
 an Entwickler, die an das Prinzip der Unveränderlichkeit glauben,<br>
