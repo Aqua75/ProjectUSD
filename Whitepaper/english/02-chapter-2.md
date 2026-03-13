@@ -1,4 +1,4 @@
-## Chapter 2 - What Is ProjectUSD?
+# Chapter 2 - What Is ProjectUSD?
 
 ProjectUSD is not just another stablecoin in the endless stream of new tokens.<br>
 It is an attempt to **redefine money** - without oracles, without banks, without reliance on people or institutions.<br>
