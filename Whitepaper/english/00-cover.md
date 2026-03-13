@@ -1,8 +1,12 @@
 # ProjectUSD
 
-A Self-Governing Monetary System for PulseChain
+**A Self-Governing Monetary System for PulseChain**
 
-Whitepaper V2.1 - Vision & Architecture of a Self-Regulating Blockchain Economy
+---
+
+**Whitepaper V2.1 - Vision & Architecture of a Self-Regulating Blockchain Economy**
+
+---
 
 ## Summary
 
@@ -10,18 +14,16 @@ ProjectUSD is a fully on-chain, algorithmic monetary system that achieves price 
 
 This document is not a product launch, but a vision - a relay baton: from idea to code, from theory to implementation, from trust to transparency.
 
-Project Status:
+---
 
+**Project Status:** <br>
 Conceptual blueprint (open to developers, researchers, and capital contributors)
 
-Authors:
-
+**Authors:** <br>
 Aqua75, PulseChain Community Initiative
 
-Version:
-
+**Version:** <br>
 Whitepaper V2.1 - November 2025
 
-License:
-
+**License:** <br>
 CC BY-NC-SA 4.0 - Creative Commons Attribution-NonCommercial-ShareAlike
