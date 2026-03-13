@@ -30,9 +30,7 @@ dass andere sie aufgreifen, erweitern und verwirklichen können.
 Dieses Whitepaper ist deshalb ein **Staffelstab**:
 
 von der Vision zur Umsetzung.
-
 Von Theorie zu Code.
-
 Von Gedanke zu Realität.
 
 Es richtet sich an jene, die in PulseChain mehr sehen als nur einen neuen Markt:
