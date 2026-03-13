@@ -1,4 +1,4 @@
-## Chapter 1 - The Promise of Autonomous Money
+# Chapter 1 - The Promise of Autonomous Money
 
 There are moments in history when an idea grows larger than its creators.<br>
 ProjectUSD is exactly that: not a finished product, not a startup, not a company -<br>
