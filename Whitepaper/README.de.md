@@ -26,7 +26,7 @@ Dieses Verzeichnis erfüllt damit mehrere Funktionen:
 
 Dieses Verzeichnis enthält derzeit:
 
-- **README.en.md** – englische Einführung zu diesem Whitepaper-Verzeichnis  
+- **README.md** – englische Einführung zu diesem Whitepaper-Verzeichnis  
 - **README.de.md** – deutsche Einführung zu diesem Whitepaper-Verzeichnis  
 
 Aktualisierte Fassungen des Whitepapers ersetzen jeweils die vorherige Version.  
