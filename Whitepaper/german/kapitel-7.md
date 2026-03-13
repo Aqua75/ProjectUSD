@@ -40,19 +40,19 @@ die Preisstabilität garantiert, ohne sich auf externe Mechanismen zu verlassen.
 
 **Beispiele für Nutzungsszenarien:**
 
-- **Dezentrale Börsen (DEX):**
-Liquiditätspools mit ProjectUSD/PLS oder ProjectUSD/PLSX
+- **Dezentrale Börsen (DEX):**<br>
+Liquiditätspools mit ProjectUSD/PLS oder ProjectUSD/PLSX<br>
 schaffen stabile Handelspaare und erhöhen Marktliquidität.
-- **Lending-Protokolle:**
-ProjectUSD kann als Collateral oder als Borrow-Asset dienen -
+- **Lending-Protokolle:**<br>
+ProjectUSD kann als Collateral oder als Borrow-Asset dienen -<br>
 Zinsen und Sicherheiten bleiben vollständig on-chain.
-- **Derivate und Perpetuals:**
-Als Abrechnungseinheit für gehebelte Positionen wird ProjectUSD
+- **Derivate und Perpetuals:**<br>
+Als Abrechnungseinheit für gehebelte Positionen wird ProjectUSD<br>
 zum stabilen Maß in volatilen Märkten.
-- **Zahlungen & Settlement:**
+- **Zahlungen & Settlement:**<br>
 Überweisungen ohne Volatilität, Smart-Contract-Abwicklungen ohne Fiat-Risiko.
-- **Yield-Strategien:**
-Teilnehmer können den Stability Pool nutzen,
+- **Yield-Strategien:**<br>
+Teilnehmer können den Stability Pool nutzen,<br>
 AMO-Arbitrage-Modelle anwenden oder vom Surplus-Puffer profitieren.
 
 ---
