@@ -1,16 +1,16 @@
 # Kapitel 6 - Der Weg zur Autarkie: Roadmap und Entwicklungsphasen
 
-ProjectUSD ist keine Idee für einen schnellen Token-Launch.
-Es ist eine Infrastruktur-Vision - ein stabiles Nervensystem für die gesamte PulseChain-Ökonomie.
-Damit ein System, das sich selbst regulieren soll, auch wirklich funktioniert, muss sein Start 
-**schrittweise** erfolgen.
+ProjectUSD ist keine Idee für einen schnellen Token-Launch.<br>
+Es ist eine Infrastruktur-Vision - ein stabiles Nervensystem für die gesamte PulseChain-Ökonomie.<br>
+Damit ein System, das sich selbst regulieren soll, auch wirklich funktioniert, muss sein Start <br>
+**schrittweise** erfolgen.<br>
 Jede Phase ist ein Test, jede Phase ein Beweis, dass das System ohne Eingriffe stabil bleibt.
 
 ---
 
 ## 6.1 Phase 1 - Guarded Launch
 
-Der Anfang ist bewusst klein.
+Der Anfang ist bewusst klein.<br>
 In der Guarded-Launch-Phase gelten enge Grenzen:
 
 - geringe maximale Schuldensumme,
