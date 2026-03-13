@@ -8,7 +8,7 @@
 
 ---
 
-# Summary
+**Summary**
 
 ProjectUSD is a fully on-chain, algorithmic monetary system that achieves price stability without oracles, banks, or centralized intervention. It combines economic feedback, immutable code, and a dual structure of Vaults, a Stability Pool, and a Redemption mechanism to create a truly autonomous DeFi economy on PulseChain.
 
