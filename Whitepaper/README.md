@@ -85,16 +85,16 @@ The whitepaper provides the conceptual overview of the system.
 
 Additional directories expand on specific aspects:
 
-- **/Architecture/**  
+- **[Architecture](../Architecture/)**  
   formal specifications and module definitions
 
-- **/Studies/**  
+- **[Studies](../Studies/)**  
   scientific and economic deep analyses
 
-- **/Articles/**  
+- **[Articles](../Articles/)**  
   explanatory texts and conceptual introductions
 
-- **/Developer_Playbook/**  
+- **[Developer Playbook](../Developer_Playbook/)**  
   practical guidance for developers and implementations
 
 ---
