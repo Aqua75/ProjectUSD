@@ -19,10 +19,6 @@ ein **selbstregulierender ökonomischer Motor**, der ausschließlich durch trans
 
 ## 📘 Whitepaper V2.1 (Mehrsprachig)
 
-Die fortlaufend gepflegte Markdown-Version des Whitepapers ist hier verfügbar:
-
-➡ [`/Whitepaper`](./Whitepaper)
-
 **Verfügbare PDF-Ausgaben:**
 
 - 🇩🇪 [Deutsche Version (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-DE/ProjectUSD.Whitepaper.V2.1.German.pdf)  
@@ -43,6 +39,10 @@ Die fortlaufend gepflegte Markdown-Version des Whitepapers ist hier verfügbar:
 - 🇰🇷 [Koreanisch (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-KR/ProjectUSD_Whitepaper_V2.1_KR_Korean.pdf)  
 - 🇸🇦 [Arabisch (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-AR/ProjectUSD_Whitepaper_V2.1_AR_Arabic.pdf)  
 - 🕉 [Sanskrit (Experimentell)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-SA/ProjectUSD_Whitepaper_V2.1_SA_Sanskrit.pdf)
+
+Die fortlaufend gepflegte Markdown-Version des Whitepapers ist hier verfügbar:
+
+➡ [`/Whitepaper`](./Whitepaper)
 
 ---
 
