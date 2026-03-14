@@ -1,3 +1,7 @@
+[← Kapitel 5](05-kapitel-5.md) | [Inhaltsverzeichnis](README.md) | [Kapitel 7 →](07-kapitel-7.md)
+
+---
+
 # Kapitel 6 - Der Weg zur Autarkie: Roadmap und Entwicklungsphasen
 
 ProjectUSD ist keine Idee für einen schnellen Token-Launch.<br>
@@ -120,3 +124,7 @@ Jede Phase beginnt erst, wenn die vorherige stabil ist.<br>
 Vertrauen entsteht nicht durch Versprechen, sondern durch Beobachtung.<br>
 Das Ziel ist kein kurzfristiger TVL-Erfolg,<br>
 sondern ein dauerhaft funktionierendes Fundament für dezentrales Geld.
+
+---
+
+[← Kapitel 5](05-kapitel-5.md) | [Inhaltsverzeichnis](README.md) | [Kapitel 7 →](07-kapitel-7.md)
