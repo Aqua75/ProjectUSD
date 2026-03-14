@@ -49,5 +49,3 @@ Und es kann hier, auf PulseChain, entstehen.
 ---
 
 [← Deckblatt](00-deckblatt.md) | [Inhaltsverzeichnis](README.md) | [Kapitel 2 →](02-kapitel-2.md)
-
----
