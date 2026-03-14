@@ -1,3 +1,7 @@
+[← Kapitel 8](08-kapitel-8.md) | [Inhaltsverzeichnis](README.md) | [Glossar →](10-glossar.md)
+
+---
+
 # Kapitel 9 - Philosophie und Ausblick: Die Idee hinter dem Code
 
 ProjectUSD ist mehr als ein Stablecoin.<br>
@@ -51,3 +55,7 @@ dann braucht der Mensch es nicht mehr.
 Und genau dort,<br>
 in dieser Ehrlichkeit des Systems,<br>
 liegt das Fundament des kommenden Wohlstands.
+
+---
+
+[← Kapitel 8](08-kapitel-8.md) | [Inhaltsverzeichnis](README.md) | [Glossar →](10-glossar.md)
