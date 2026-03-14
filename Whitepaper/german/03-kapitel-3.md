@@ -1,3 +1,7 @@
+[← Kapitel 2](02-kapitel-2.md) | [Inhaltsverzeichnis](README.md) | [Kapitel 4 →](04-kapitel-4.md)
+
+---
+
 # Kapitel 3 - Das ökonomische Herz: Wie ProjectUSD Stabilität erzeugt
 
 Jede Ökonomie braucht ein Herz - etwas, das schlägt, reagiert und die Balance hält.<br>
@@ -79,3 +83,7 @@ nur Code, der das Verhalten der Marktteilnehmer aufeinander abstimmt.<br>
 Das Vertrauen wird durch **Verlässlichkeit** ersetzt.<br>
 Jeder kann die Mechanik prüfen, jede Variable nachverfolgen, jede Anpassung beobachten.<br>
 Das ist Stabilität durch Sichtbarkeit - und damit die ehrlichste Form von Geld.
+
+---
+
+[← Kapitel 2](02-kapitel-2.md) | [Inhaltsverzeichnis](README.md) | [Kapitel 4 →](04-kapitel-4.md)
