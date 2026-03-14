@@ -1,3 +1,7 @@
+[← Chapter 1](01-chapter-1.md) | [Contents](README.md) | [Chapter 3 →](03-chapter-3.md)
+
+---
+
 # Chapter 2 - What Is ProjectUSD?
 
 ProjectUSD is not just another stablecoin in the endless stream of new tokens.<br>
@@ -41,3 +45,7 @@ The result is **a self-sustaining equilibrium system** -<br>
 one that draws its stability from motion,<br>
 like a planet that remains steady not because it stands still,<br>
 but because it moves in perfect orbit.
+
+---
+
+[← Chapter 1](01-chapter-1.md) | [Contents](README.md) | [Chapter 3 →](03-chapter-3.md)
