@@ -1,8 +1,8 @@
 # ProjectUSD
 
-Ein autonomes Geldsystem für PulseChain
+**Ein autonomes Geldsystem für PulseChain**
 
-Whitepaper V2.1 - Vision & Architektur einer selbstregulierenden Blockchain-Ökonomie
+**Whitepaper V2.1 - Vision & Architektur einer selbstregulierenden Blockchain-Ökonomie**
 
 ## Zusammenfassung
 
