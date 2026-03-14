@@ -42,7 +42,7 @@ ein **selbstregulierender ökonomischer Motor**, der ausschließlich durch trans
 
 <br>
 Die fortlaufend gepflegte Markdown-Version des Whitepapers ist hier verfügbar:
-
+<br>
 ➡ [`/Whitepaper`](./Whitepaper)
 
 ---
