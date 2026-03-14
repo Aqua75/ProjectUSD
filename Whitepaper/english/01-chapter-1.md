@@ -1,3 +1,7 @@
+[← Cover](00-cover.md) | [Contents](README.md) | [Chapter 2 →](02-chapter-2.md)
+
+---
+
 # Chapter 1 - The Promise of Autonomous Money
 
 There are moments in history when an idea grows larger than its creators.<br>
@@ -38,3 +42,7 @@ one that cannot be bought, only built.
 If this document proves one thing, it is this:<br>
 An autonomous, self-regulating monetary system is possible.<br>
 And it can be born here - on PulseChain.
+
+---
+
+[← Cover](00-cover.md) | [Contents](README.md) | [Chapter 2 →](02-chapter-2.md)
