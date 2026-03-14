@@ -1,3 +1,7 @@
+[← Chapter 7](07-chapter-7.md) | [Contents](README.md) | [Chapter 9 →](09-chapter-9.md)
+
+---
+
 # Chapter 8 - Risks and Limitations: What ProjectUSD can and cannot do…
 
 Every system that manages value carries risk within it.<br>
@@ -99,3 +103,7 @@ but to make it visible, measurable, and fair.
 Because in the end, **risk is not the opposite of trust - it is its foundation**.<br>
 Only those who understand where danger lies<br>
 can remain resilient over time.
+
+---
+
+[← Chapter 7](07-chapter-7.md) | [Contents](README.md) | [Chapter 9 →](09-chapter-9.md)
