@@ -44,7 +44,7 @@ ein **selbstregulierender ökonomischer Motor**, der ausschließlich durch trans
 
 Die fortlaufend gepflegte Markdown-Version des Whitepapers ist hier verfügbar:
 
-➡ [`/Whitepaper`](./Whitepaper)
+➡ [`Whitepaper-Dokumentation öffnen`](./Whitepaper)
 
 ---
 
