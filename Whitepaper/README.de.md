@@ -26,8 +26,8 @@ Dieses Verzeichnis erfüllt damit mehrere Funktionen:
 
 Die Markdown-Versionen des Whitepapers können hier aufgerufen werden:
 
-- 🇬🇧 **Englische Version** – [Öffnen](english/README.md)  
 - 🇩🇪 **Deutsche Version** – [Öffnen](german/README.md)
+- 🇬🇧 **Englische Version** – [Öffnen](english/README.md)  
 
 Die originale **formatierte PDF-Version (Whitepaper V2.1)** ist weiterhin auf der Hauptseite des Repositories verfügbar.
 
