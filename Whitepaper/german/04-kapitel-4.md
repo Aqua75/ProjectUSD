@@ -1,3 +1,7 @@
+[← Kapitel 3](03-kapitel-3.md) | [Inhaltsverzeichnis](README.md) | [Kapitel 5 →](05-kapitel-5.md)
+
+---
+
 # Kapitel 4 - Die Architektur: Aufbau eines unbestechlichen Systems
 
 Ein System kann nur so stark sein wie seine Architektur.<br>
@@ -106,3 +110,7 @@ Sobald es einmal deployed ist, gehört es niemandem - und damit allen.<br>
 Diese Unbestechlichkeit ist kein Nebeneffekt, sondern das Ziel selbst:<br>
 Ein Geldsystem, das keiner Kontrolle mehr bedarf,<br>
 weil es im Innersten bereits perfekt ausbalanciert ist.
+
+---
+
+[← Kapitel 3](03-kapitel-3.md) | [Inhaltsverzeichnis](README.md) | [Kapitel 5 →](05-kapitel-5.md)
