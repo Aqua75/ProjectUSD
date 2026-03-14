@@ -1,3 +1,7 @@
+[← Kapitel 7](07-kapitel-7.md) | [Inhaltsverzeichnis](README.md) | [Kapitel 9 →](09-kapitel-9.md)
+
+---
+
 # Kapitel 8 - Risiken und Grenzen: Was ProjectUSD leisten kann ... und was nicht
 
 Jedes System, das Werte verwaltet, trägt Risiko in sich.<br>
@@ -99,3 +103,7 @@ Denn am Ende ist Risiko nicht das Gegenteil von Vertrauen,<br>
 sondern seine Voraussetzung.<br>
 Nur wer versteht, wo Gefahr liegt,<br>
 kann ihr auf Dauer standhalten.
+
+---
+
+[← Kapitel 7](07-kapitel-7.md) | [Inhaltsverzeichnis](README.md) | [Kapitel 9 →](09-kapitel-9.md)
