@@ -40,9 +40,7 @@ similar to monetary policy, but fully automatic and incorruptible.
 
 The logic behind it can be expressed in a simple equation:
 
-$$
-\varepsilon = \frac{P - R}{R}
-$$
+$\varepsilon = \frac{P - R}{R}$
 
 ε measures how far the market price deviates from the internal equilibrium.<br>
 The Controller translates this deviation into an adjustment of **r**.<br>
