@@ -1,3 +1,7 @@
+[← Chapter 5](05-chapter-5.md) | [Contents](README.md) | [Chapter 7 →](07-chapter-7.md)
+
+---
+
 # Chapter 6 - The Path to Autonomy: Roadmap and Development Phases
 
 ProjectUSD is not an idea for a quick token launch.<br>
@@ -121,3 +125,7 @@ Each phase begins only when the previous one is proven stable.<br>
 Trust is not built through promises, but through observation.<br>
 The goal is not short-term TVL success,<br>
 but a lasting foundation for decentralized money.
+
+---
+
+[← Chapter 5](05-chapter-5.md) | [Contents](README.md) | [Chapter 7 →](07-chapter-7.md)
