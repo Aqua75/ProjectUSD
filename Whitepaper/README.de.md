@@ -28,9 +28,11 @@ Dieses Verzeichnis enthält derzeit:
 
 - **README.md** – englische Einführung zu diesem Whitepaper-Verzeichnis  
 - **README.de.md** – deutsche Einführung zu diesem Whitepaper-Verzeichnis  
+- **/english/** – englische Markdown-Version des Whitepapers  
+- **/german/** – deutsche Markdown-Version des Whitepapers  
 
 Aktualisierte Fassungen des Whitepapers ersetzen jeweils die vorherige Version.  
-Der Ordner enthält daher immer nur die aktuellste Fassung jeder Sprachversion.  
+Die Sprachordner enthalten daher immer nur die aktuellste Fassung jeder Sprachversion.  
 Frühere Änderungen bleiben über die Versionshistorie auf GitHub nachvollziehbar.
 
 ---
