@@ -50,14 +50,17 @@ front-running, and sandwiching.<br>
 ProjectUSD counters these risks with multi-layered logic:
 
 - **Median-TWAP Oracle:**
-Prices are aggregated from multiple PulseChain pairs (e.g., ProjectUSD/PLS, ProjectUSD/PLSX) to form a time-weighted median.
+Prices are aggregated from multiple PulseChain pairs (e.g., ProjectUSD/PLS,<br>
+ProjectUSD/PLSX) to form a time-weighted median.<br>
 Short-term pump-and-dump moves lose their impact.
 - **Outlier Filter:**
 Pairs with insufficient liquidity or statistical anomalies are automatically excluded.
 - **Rate Limiter:**
-Adjustments to the system rate r are capped per epoch (e.g., 50 basis points), preventing sudden interest spikes during market stress.
+Adjustments to the system rate r are capped per epoch (e.g., 50 basis points), preventing sudden<br>
+interest spikes during market stress.<br>
 - **Reentrancy & Governance-Capture Protection:**
-Critical functions are isolated; callbacks are disabled; governance changes are time-locked and fully transparent.
+Critical functions are isolated; callbacks are disabled; governance changes are time-locked and<br>
+fully transparent.
 
 The result is a security model that defends against both technical and economic attacks -<br>
 without ever compromising autonomy.
