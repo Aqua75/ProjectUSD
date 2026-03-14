@@ -1,3 +1,7 @@
+[← Chapter 4](04-chapter-4.md) | [Contents](README.md) | [Chapter 6 →](06-chapter-6.md)
+
+---
+
 # Chapter 5 - Security and Transparency: When Code Replaces Trust
 
 In a world where monetary systems are built on promises, ProjectUSD chooses a different path:<br>
@@ -105,3 +109,7 @@ Here lies the true promise:<br>
 Not “Code is law” - but **Code is a contract**.<br>
 A contract that cannot be broken,<br>
 because no one holds the power to break it.
+
+---
+
+[← Chapter 4](04-chapter-4.md) | [Contents](README.md) | [Chapter 6 →](06-chapter-6.md)
