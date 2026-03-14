@@ -7,9 +7,9 @@
 
 This directory serves as the central documentation area for the **ProjectUSD Whitepaper**.
 
-It contains language specific introduction files for this directory as well as the continuously maintained whitepaper versions in Markdown format.
+It contains language-specific introduction files for this directory as well as continuously maintained Markdown versions of the whitepaper.
 
-ProjectUSD is an autonomous, oracle independent and self regulating monetary system for PulseChain.
+ProjectUSD is an autonomous, oracle-independent and self-regulating monetary system for PulseChain.
 
 While the **PDF editions of version 2.1** remain available through the main page of the repository, **all later content updates of the whitepaper** will be provided in this directory as Markdown files in **English** and **German**.
 
