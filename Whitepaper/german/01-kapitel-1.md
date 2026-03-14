@@ -1,3 +1,7 @@
+[← Deckblatt](00-deckblatt.md) | [Inhaltsverzeichnis](README.md) | [Kapitel 2 →](02-kapitel-2.md)
+
+---
+
 # Kapitel 1 - Das Versprechen eines autonomen Geldes
 
 Es gibt Momente in der Geschichte, in denen eine Idee größer ist als ihre Urheber.<br>
@@ -41,3 +45,9 @@ eines, das man nicht kaufen, sondern nur bauen kann.
 Wenn dieses Dokument eines beweisen soll, dann dies:<br>
 Ein autonomes, selbstregulierendes Geldsystem ist möglich.<br>
 Und es kann hier, auf PulseChain, entstehen.
+
+---
+
+[← Deckblatt](00-deckblatt.md) | [Inhaltsverzeichnis](README.md) | [Kapitel 2 →](02-kapitel-2.md)
+
+---
