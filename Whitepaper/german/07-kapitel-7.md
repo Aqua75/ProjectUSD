@@ -1,3 +1,7 @@
+[← Kapitel 6](06-kapitel-6.md) | [Inhaltsverzeichnis](README.md) | [Kapitel 8 →](08-kapitel-8.md)
+
+---
+
 # Kapitel 7 - Anwendung und Nutzen: PulseChain als Ökonomie mit Eigenwährung
 
 Wenn ein Ökosystem eine eigene stabile Währung besitzt, ändert sich alles.<br>
@@ -94,3 +98,7 @@ Ein System, das beweist, dass Stabilität aus Logik entstehen kann.<br>
 Dass Vertrauen nicht erzwungen werden muss.<br>
 Und dass ein Geld, das niemand kontrolliert,<br>
 den Menschen zum ersten Mal wirklich **gehört**.
+
+---
+
+[← Kapitel 6](06-kapitel-6.md) | [Inhaltsverzeichnis](README.md) | [Kapitel 8 →](08-kapitel-8.md)
