@@ -1,3 +1,7 @@
+[← Chapter 9](09-chapter-9.md) | [Contents](README.md)
+
+---
+
 # Glossary - Key Terms of ProjectUSD
 
 **R - Equilibrium Price (Redemption Price)** <br>
@@ -85,3 +89,7 @@ The economic control center of ProjectUSD.<br>
 It measures the price deviation between the market price (**P**) and the equilibrium price (**R**),<br>
 then adjusts the system rate (**r**) accordingly.<br>
 Through this feedback, it dynamically regulates the entire system and maintains stability.
+
+---
+
+[← Chapter 9](09-chapter-9.md) | [Contents](README.md)
