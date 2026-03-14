@@ -85,16 +85,16 @@ Das Whitepaper bildet die konzeptionelle Gesamtsicht auf das System.
 
 Ergänzende Verzeichnisse vertiefen einzelne Bereiche:
 
-- **/Architecture/**  
+- **[Architecture](../Architecture/)**  
   formale Spezifikationen und Moduldefinitionen
 
-- **/Studies/**  
+- **[Studies](../Studies/)**  
   wissenschaftliche und ökonomische Tiefenanalysen
 
-- **/Articles/**  
+- **[Articles](../Articles/)**  
   erklärende Begleittexte und konzeptionelle Einführungen
 
-- **/Developer_Playbook/**  
+- **[Developer Playbook](../Developer_Playbook/)**  
   entwicklerorientierte Hinweise zur praktischen Umsetzung
 
 ---
