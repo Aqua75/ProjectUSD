@@ -1,3 +1,7 @@
+[← Chapter 6](06-chapter-6.md) | [Contents](README.md) | [Chapter 8 →](08-chapter-8.md)
+
+---
+
 # Chapter 7 - Application and Utility: PulseChain as an Economy with Its Own Currency
 
 When an ecosystem gains its own stable currency, everything changes -<br>
@@ -94,3 +98,7 @@ a system proving that stability can arise from logic,<br>
 that trust need not be imposed,<br>
 and that money controlled by no one<br>
 can, for the first time, truly **belong** to everyone.
+
+---
+
+[← Chapter 6](06-chapter-6.md) | [Contents](README.md) | [Chapter 8 →](08-chapter-8.md)
