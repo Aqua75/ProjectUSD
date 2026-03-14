@@ -24,7 +24,7 @@ The continuously maintained Markdown version of the whitepaper is available here
 
 ➡ [`/Whitepaper`](./Whitepaper)
 
-**Available Editions:**
+**Available PDF Editions:**
 
 - 🇩🇪 [Download German Edition (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-DE/ProjectUSD.Whitepaper.V2.1.German.pdf)  
 - 🇺🇸 [Download English Edition (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-EN/ProjectUSD.Whitepaper.V2.1.EN.Englisch.pdf)
