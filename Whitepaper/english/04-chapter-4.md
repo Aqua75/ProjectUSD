@@ -1,3 +1,7 @@
+[← Chapter 3](03-chapter-3.md) | [Contents](README.md) | [Chapter 5 →](05-chapter-5.md)
+
+---
+
 # Chapter 4 - The Architecture: Building an Incorruptible System
 
 A system can only be as strong as its architecture.<br>
@@ -100,3 +104,7 @@ Once deployed, it belongs to no one - and therefore to everyone.<br>
 This incorruptibility is not a byproduct but the goal itself:<br>
 a monetary system that requires no control,<br>
 because it is already perfectly balanced at its core.
+
+---
+
+[← Chapter 3](03-chapter-3.md) | [Contents](README.md) | [Chapter 5 →](05-chapter-5.md)
