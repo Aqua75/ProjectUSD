@@ -40,9 +40,8 @@ ein **selbstregulierender ökonomischer Motor**, der ausschließlich durch trans
 - 🇸🇦 [Arabisch (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-AR/ProjectUSD_Whitepaper_V2.1_AR_Arabic.pdf)  
 - 🕉 [Sanskrit (Experimentell)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-SA/ProjectUSD_Whitepaper_V2.1_SA_Sanskrit.pdf)
 
-<br>
 Die fortlaufend gepflegte Markdown-Version des Whitepapers ist hier verfügbar:
-<br>
+
 ➡ [`/Whitepaper`](./Whitepaper)
 
 ---
