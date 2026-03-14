@@ -2,7 +2,7 @@
 
 ProjectUSD is not an idea for a quick token launch.
 It is an infrastructure vision - a stable nervous system for the entire PulseChain economy.
-For a system designed to regulate itself to truly function, its launch must happen step by step.
+For a system designed to regulate itself to truly function, its launch must happen **step by step**.
 Each phase is both a test and a proof - a demonstration that stability can be maintained without intervention.
 
 ---
@@ -19,7 +19,7 @@ During the Guarded Launch phase, strict limits apply:
 The goal is to measure, under real market conditions,
 how efficiently the Controller responds to price deviations,
 how well the Stability Pool absorbs stress periods,
-and how quickly the market price stabilizes around R.
+and how quickly the market price stabilizes around **R**.
 
 All data is public.
 Every metric can be viewed in real time -
@@ -39,7 +39,7 @@ the core parameters are frozen.
 This means:
 
 - The Collateral Ratio, liquidation threshold, Controller logic, and Redemption mechanism become permanently fixed.
-- The ProjectUSD core becomes immutable.
+- The ProjectUSD core becomes **immutable**.
 
 From that moment, ProjectUSD is no longer an experiment
 but an independent, living organism.
@@ -85,10 +85,10 @@ without exposing itself to centralized interference.
 Once ProjectUSD has proven itself as a stable value anchor,
 it begins integration into the broader PulseChain network:
 
-- DEX pairs: ProjectUSD/PLS, ProjectUSD/PLSX, ProjectUSD/INC
-- Lending protocols: ProjectUSD as collateral and borrowable asset
-- Derivatives & perpetuals: ProjectUSD as margin and settlement currency
-- Payment gateways: ProjectUSD as a neutral unit of account
+- **DEX pairs:** ProjectUSD/PLS, ProjectUSD/PLSX, ProjectUSD/INC
+- **Lending protocols:** ProjectUSD as collateral and borrowable asset
+- **Derivatives & perpetuals:** ProjectUSD as margin and settlement currency
+- **Payment gateways:** ProjectUSD as a neutral unit of account
 
 With each integration, the network effect grows.
 The more protocols adopt ProjectUSD as their base currency,
@@ -105,7 +105,7 @@ Once established in the market, ProjectUSD can evolve organically:
 - Decentralized governance of AMO parameters,
 - Synergies with PulseX, LiquidLoans, and other ecosystem projects.
 
-Over time, ProjectUSD could become the unit of account for the entire PulseChain economy -
+Over time, ProjectUSD could become the **unit of account for the entire PulseChain economy** -
 not as a dollar substitute, but as its own mathematically defined currency.
 
 ---
