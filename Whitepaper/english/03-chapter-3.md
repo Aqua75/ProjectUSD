@@ -1,3 +1,7 @@
+[← Chapter 2](02-chapter-2.md) | [Contents](README.md) | [Chapter 4 →](04-chapter-4.md)
+
+---
+
 # Chapter 3 - The Economic Heart: How ProjectUSD Creates Stability
 
 Every economy needs a heart - something that beats, responds, and maintains balance.<br>
@@ -78,3 +82,7 @@ only **code** that synchronizes the behavior of market participants.<br>
 Trust is replaced by **reliability**.<br>
 Anyone can inspect the mechanics, trace every variable, and observe every adjustment.<br>
 This is stability through visibility - and therefore, the most honest form of money.
+
+---
+
+[← Chapter 2](02-chapter-2.md) | [Contents](README.md) | [Chapter 4 →](04-chapter-4.md)
