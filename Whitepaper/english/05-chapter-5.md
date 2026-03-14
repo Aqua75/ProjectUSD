@@ -49,16 +49,16 @@ Price feeds, oracles, and liquidity pools are common attack vectors for Miner Ex
 front-running, and sandwiching.<br>
 ProjectUSD counters these risks with multi-layered logic:
 
-- **Median-TWAP Oracle:**
+- **Median-TWAP Oracle:**<br>
 Prices are aggregated from multiple PulseChain pairs (e.g., ProjectUSD/PLS,<br>
 ProjectUSD/PLSX) to form a time-weighted median.<br>
 Short-term pump-and-dump moves lose their impact.
-- **Outlier Filter:**
+- **Outlier Filter:**<br>
 Pairs with insufficient liquidity or statistical anomalies are automatically excluded.
-- **Rate Limiter:**
+- **Rate Limiter:**<br>
 Adjustments to the system rate r are capped per epoch (e.g., 50 basis points), preventing sudden<br>
 interest spikes during market stress.<br>
-- **Reentrancy & Governance-Capture Protection:**
+- **Reentrancy & Governance-Capture Protection:**<br>
 Critical functions are isolated; callbacks are disabled; governance changes are time-locked and<br>
 fully transparent.
 
