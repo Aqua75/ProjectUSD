@@ -1,3 +1,7 @@
+[← Kapitel 1](01-kapitel-1.md) | [Inhaltsverzeichnis](README.md) | [Kapitel 3 →](03-kapitel-3.md)
+
+---
+
 # Kapitel 2 - Was ist ProjectUSD?
 
 ProjectUSD ist kein weiterer Stablecoin im endlosen Strom neuer Token.<br>
@@ -42,3 +46,7 @@ Und statt Zwangsbindung an den US-Dollar gibt es einen inneren, algorithmisch de
 Das Ergebnis ist ein **autarkes Gleichgewichtssystem**,<br>
 das seine Stabilität aus Dynamik gewinnt - wie ein Planet, der sich nicht bewegt, weil er starr ist,<br>
 sondern weil er im perfekten Umlauf bleibt.
+
+---
+
+[← Kapitel 1](01-kapitel-1.md) | [Inhaltsverzeichnis](README.md) | [Kapitel 3 →](03-kapitel-3.md)
