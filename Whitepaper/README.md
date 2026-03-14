@@ -22,15 +22,15 @@ This directory therefore fulfills several functions:
 
 ---
 
-## Contents of this directory
-
 This directory currently contains:
 
-- **README.md** – English introduction to this whitepaper directory  
-- **README.de.md** – German introduction to this whitepaper directory  
+- README.md – English introduction to this whitepaper directory
+- README.de.md – German introduction to this whitepaper directory
+- /english/ – English Markdown version of the whitepaper
+- /german/ – German Markdown version of the whitepaper
 
-Updated versions of the whitepaper replace the previous version.  
-The directory therefore always contains only the most recent version of each language edition.  
+Updated versions of the whitepaper replace the previous version.
+The language directories therefore always contain only the most recent version of each language edition.
 Earlier changes remain traceable through the version history on GitHub.
 
 ---
