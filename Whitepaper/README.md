@@ -26,11 +26,8 @@ This directory therefore fulfills several functions:
 
 The Markdown versions of the whitepaper can be accessed here:
 
-- 🇬🇧 **English Version**  
-  /Whitepaper/english/README.md
-
-- 🇩🇪 **German Version**  
-  /Whitepaper/german/README.md
+- 🇬🇧 **English Version** – [Open](english/README.md)  
+- 🇩🇪 **German Version** – [Open](german/README.md)
 
 The original **formatted PDF version (Whitepaper V2.1)** remains available on the main page of the repository.
 
