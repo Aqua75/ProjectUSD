@@ -1,3 +1,7 @@
+[← Chapter 8](08-chapter-8.md) | [Contents](README.md) | [Glossary →](10-glossary.md)
+
+---
+
 # Chapter 9 - Philosophy and Outlook: The Idea Behind the Code
 
 ProjectUSD is more than a stablecoin.<br>
@@ -50,3 +54,7 @@ And so this vision ends as it began - with a simple truth:<br>
 And it is precisely there,<br>
 in the honesty of such a system,<br>
 that the foundation of future prosperity is found.
+
+---
+
+[← Chapter 8](08-chapter-8.md) | [Contents](README.md) | [Glossary →](10-glossary.md)
