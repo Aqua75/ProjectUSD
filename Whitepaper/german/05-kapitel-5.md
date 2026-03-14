@@ -1,3 +1,7 @@
+[← Kapitel 4](04-kapitel-4.md) | [Inhaltsverzeichnis](README.md) | [Kapitel 6 →](06-kapitel-6.md)
+
+---
+
 # Kapitel 5 - Sicherheit und Transparenz: Wenn Code das Vertrauen ersetzt
 
 In einer Welt, in der Geldsysteme auf Versprechen gebaut sind, wählt ProjectUSD einen anderen Weg:<br>
@@ -109,3 +113,7 @@ Hier liegt das wahre Versprechen:<br>
 Nicht „Code is Law“ - sondern **Code ist Vertrag**.<br>
 Ein Vertrag, der nicht gebrochen werden kann,<br>
 weil niemand mehr die Macht hat, ihn zu brechen.
+
+---
+
+[← Kapitel 4](04-kapitel-4.md) | [Inhaltsverzeichnis](README.md) | [Kapitel 6 →](06-kapitel-6.md)
