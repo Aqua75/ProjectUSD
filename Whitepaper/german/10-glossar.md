@@ -1,3 +1,7 @@
+[← Kapitel 9](09-kapitel-9.md) | [Inhaltsverzeichnis](README.md)
+
+---
+
 # Glossar - Schlüsselbegriffe von ProjectUSD
 
 ## R - Gleichgewichtspreis (Redemption Price)<br>
@@ -85,3 +89,7 @@ Das ökonomische Steuerzentrum von ProjectUSD.<br>
 Er misst die Preisabweichung zwischen Marktpreis (P) und Gleichgewichtspreis (R)<br>
 und passt daraufhin die Systemrate (r) an.<br>
 So reguliert er das gesamte System dynamisch und hält die Stabilität aufrecht.
+
+---
+
+[← Kapitel 9](09-kapitel-9.md) | [Inhaltsverzeichnis](README.md)
