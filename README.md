@@ -20,10 +20,6 @@ a **self-regulating economic engine** powered solely by transparent, immutable l
 
 ## 📘 Whitepaper V2.1
 
-The continuously maintained Markdown version of the whitepaper is available here:
-
-➡ [`/Whitepaper`](./Whitepaper)
-
 **Available PDF Editions:**
 
 - 🇩🇪 [Download German Edition (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-DE/ProjectUSD.Whitepaper.V2.1.German.pdf)  
@@ -44,6 +40,12 @@ The continuously maintained Markdown version of the whitepaper is available here
 - 🇰🇷 [Download Korean Edition (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-KR/ProjectUSD_Whitepaper_V2.1_KR_Korean.pdf)
 - 🇸🇦 [Download Arabic Edition (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-AR/ProjectUSD_Whitepaper_V2.1_AR_Arabic.pdf)
 - 🕉 [Download Sanskrit Edition (PDF)](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-SA/ProjectUSD_Whitepaper_V2.1_SA_Sanskrit.pdf) *(Experimental)*
+
+---
+
+The continuously maintained Markdown version of the whitepaper is available here:
+
+➡ [`Open Whitepaper Documentation`](./Whitepaper)
 
 ---
 
