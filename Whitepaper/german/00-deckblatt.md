@@ -6,7 +6,7 @@
 
 **Ein autonomes Geldsystem für PulseChain**
 
-**Whitepaper V2.1 - Vision & Architektur einer selbstregulierenden Blockchain-Ökonomie**
+**Whitepaper V2.2 - Vision & Architektur einer selbstregulierenden Blockchain-Ökonomie**
 
 ## Zusammenfassung
 
@@ -28,7 +28,7 @@ Aqua75, PulseChain Community Initiative
 
 ## Version:
 
-Whitepaper V2.1 - November 2025
+Whitepaper V2.2 - März 2026
 
 ## Lizenz:
 
