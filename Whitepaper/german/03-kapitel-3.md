@@ -31,8 +31,9 @@ und der Preis kehrt allmählich zu R zurück.
 
 Wenn der Marktpreis unter R fällt, geschieht das Gegenteil:<br>
 ProjectUSD ist zu billig, das System ist „unterkühlt“.<br>
-Der Controller senkt r, manchmal bis in den negativen Bereich -<br>
-dann lohnt es sich, ProjectUSD zu halten oder zu erzeugen.<br>
+Der Controller senkt r.<br>
+Niedrigere Finanzierungskosten machen das Prägen neuer ProjectUSD attraktiver.<br>
+Marktteilnehmer reagieren mit erhöhter Nachfrage.<br>
 Arbitrageure kaufen unterbewertete Tokens auf,<br>
 der Preis steigt - und das Gleichgewicht kehrt zurück.
 
