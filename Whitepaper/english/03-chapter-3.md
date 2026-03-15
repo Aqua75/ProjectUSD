@@ -30,8 +30,9 @@ and the price gradually returns toward **R**.
 
 When the market price falls below **R**, the opposite occurs:<br>
 ProjectUSD is undervalued - the system is “too cold.”<br>
-The Controller lowers **r**, sometimes even into negative territory -<br>
-making it profitable again to hold or mint ProjectUSD.<br>
+The Controller lowers **r**.<br>
+Lower financing costs make minting new ProjectUSD more attractive.<br>
+Market participants respond with increased demand.<br>
 Arbitrageurs buy the underpriced tokens,<br>
 the price rises, and equilibrium is restored.
 
