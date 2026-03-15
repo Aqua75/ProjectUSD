@@ -13,8 +13,7 @@ through external oracles or fiat price feeds.
 
 **r - System Rate (Interest / Saving Rate)** <br>
 The variable control parameter of the Controller.<br>
-**r** can be positive (interest rate) or negative (saving incentive) and regulates the behavior of borrowers<br>
-and savers.
+**r** is the system rate and regulates the behavior of borrowers and savers.
 
 - When **r** rises → minting becomes more expensive → supply decreases.
 - When **r** falls → holding or minting becomes more attractive → demand increases.
