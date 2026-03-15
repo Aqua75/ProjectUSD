@@ -8,7 +8,7 @@
 
 ---
 
-**Whitepaper V2.1 - Vision & Architecture of a Self-Regulating Blockchain Economy**
+**Whitepaper V2.2 - Vision & Architecture of a Self-Regulating Blockchain Economy**
 
 ---
 
@@ -27,7 +27,7 @@ Conceptual blueprint (open to developers, researchers, and capital contributors)
 Aqua75, PulseChain Community Initiative
 
 **Version:** <br>
-Whitepaper V2.1 - November 2025
+Whitepaper V2.2 - March 2026
 
 **License:** <br>
 CC BY-NC-SA 4.0 - Creative Commons Attribution-NonCommercial-ShareAlike
