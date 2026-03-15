@@ -17,7 +17,7 @@ Die variable Steuerungsgröße des Controllers.<br>
 - Steigt r → Geldschöpfung wird teurer → Angebot sinkt.<br>
 - Sinkt r → Halten und Prägen werden attraktiver → Nachfrage steigt.<br>
 
-So sorgt r für das Gleichgewicht zwischen Marktpreis (P) und internem Preis (R).
+So sorgt r für das Gleichgewicht zwischen Marktpreis (**P**) und internem Preis (**R**).
 
 ---
 
