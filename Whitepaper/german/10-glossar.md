@@ -13,9 +13,9 @@ Mechanismen bestimmt - nicht durch externe Orakel oder Fiat-Preise.
 
 ## r - Systemrate (Interest / Saving Rate)<br>
 Die variable Steuerungsgröße des Controllers.<br>
-r ist die Systemrate (Zins- bzw. Sparrate) und reguliert das Verhalten von Schuldnern und Sparern.<br>
-Steigt r → Geldschöpfung wird teurer → Angebot sinkt.<br>
-Sinkt r → Halten und Prägen werden attraktiver → Nachfrage steigt.<br>
+**r** ist die Systemrate (Zins- bzw. Sparrate) und reguliert das Verhalten von Schuldnern und Sparern.<br>
+- Steigt r → Geldschöpfung wird teurer → Angebot sinkt.<br>
+- Sinkt r → Halten und Prägen werden attraktiver → Nachfrage steigt.<br>
 So sorgt r für das Gleichgewicht zwischen Marktpreis (P) und internem Preis (R).
 
 ---
