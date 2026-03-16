@@ -1,3 +1,6 @@
+⬅️ [Back to the article index](https://github.com/Aqua75/ProjectUSD/tree/main/Articles#projectusd--research-articles--economic-analysis)
+
+---
 # Friedrich Hayek and ProjectUSD
 ## Denationalisation of Money in the Age of Blockchain
 
@@ -190,3 +193,7 @@ ProjectUSD represents an attempt to implement this possibility in practice. It r
 In this sense, ProjectUSD can be understood as a Hayekian evolution under blockchain conditions.
 
 Not as an exact implementation of Hayek’s original model, but as its logical continuation within a new technological environment.
+
+---
+
+⬅️ [Back to the article index](https://github.com/Aqua75/ProjectUSD/tree/main/Articles#projectusd--research-articles--economic-analysis)
