@@ -1,3 +1,6 @@
+⬅️ [Back to the article index](https://github.com/Aqua75/ProjectUSD/tree/main/Articles#projectusd--research-articles--economic-analysis)
+
+---
 # Nikolai Mushegian’s RICO Concept and its Further Development in ProjectUSD
 
 ## Introduction
@@ -171,3 +174,7 @@ The vision remains the same:
 
 RICO expressed this thought.  
 ProjectUSD implements it in code.
+
+---
+
+⬅️ [Back to the article index](https://github.com/Aqua75/ProjectUSD/tree/main/Articles#projectusd--research-articles--economic-analysis)
