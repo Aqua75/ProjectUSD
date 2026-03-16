@@ -1,3 +1,6 @@
+⬅️ [Back to the article index](https://github.com/Aqua75/ProjectUSD/tree/main/Articles#projectusd--research-articles--economic-analysis)
+
+---
 # ProjectUSD and the Stablecoin Ecosystem  
 ## Why All Stablecoins Benefit – and No Competition Arises
 
@@ -182,3 +185,7 @@ It is the **economic layer PulseChain has been missing.**
 **Not competition.  
 Not replacement.  
 But foundation.**
+
+---
+
+⬅️ [Back to the article index](https://github.com/Aqua75/ProjectUSD/tree/main/Articles#projectusd--research-articles--economic-analysis)
