@@ -14,13 +14,17 @@ language: "en"
 It is **not a market price** and not derived from external price feeds.  
 Instead, `R` is a protocol defined reference value used internally by the system.
 
-`R` serves two fundamental roles:
+`R` serves three fundamental roles:
 
 1. **Controller reference value**  
    The Controller compares the market price `P` to `R` in order to determine the direction and magnitude of system rate adjustments `r`.
 
 2. **Redemption reference price**  
-   The Redemption mechanism uses `R` as the internal conversion reference when ProjectUSD is exchanged for collateral inside the protocol.
+   The Redemption mechanism uses `R` as the internal conversion reference when ProjectUSD is exchanged for PLS collateral from existing Vaults inside the protocol.
+
+3. **Vault reference value**  
+   During the creation of ProjectUSD from Vault collateral, `R` acts as the internal valuation reference used to determine the relationship between deposited PLS and the resulting ProjectUSD debt.  
+   The exact logic for collateral ratio and maximum debt is defined in the VaultEngine specification.
 
 `R` therefore acts as the **internal equilibrium anchor** of the ProjectUSD system.
 
@@ -109,6 +113,10 @@ PLS_out = 100 × 0.002 = 0.2 PLS
 
 Redemption therefore establishes the **internal system value** of ProjectUSD independent of external fiat pricing.
 
+The selection of Vaults from which collateral is drawn during Redemption is **not defined in this specification**.
+
+The detailed Redemption procedure is defined in the **Liquidation-Redemption specification**.
+
 ---
 
 ## 6. System Invariants
@@ -123,6 +131,7 @@ The following invariants must always hold.
 | R4 | R must not depend on fiat references or off chain price feeds |
 | R5 | governance must not manually set or override R |
 | R6 | the same current R value must be used consistently across Controller, Redemption, and telemetry |
+| R7 | R must not be modified by the Controller |
 
 ---
 
@@ -151,11 +160,13 @@ Vault calculations
 
 The protocol deployment must define an initial value:
 
-R0
+R₀
+
+R₀ is stored in the Immutable Core and serves as the initial Redemption reference price of the system.
 
 Requirements:
 
-R0 > 0  
+R₀ > 0  
 consistent with the unit definition  
 identical across all modules at deployment
 
