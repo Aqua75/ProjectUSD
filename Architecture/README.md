@@ -93,7 +93,7 @@ In case of conflicting descriptions, **the specifications always take precedence
 ## 📘 Reference
 
 All architectural concepts are derived from the  
-[ProjectUSD Whitepaper V2.2 – Vision & Architecture of a Self-Regulating Blockchain Economy](https://github.com/Aqua75/ProjectUSD/tree/main/Whitepaper)
+[ProjectUSD Whitepaper – Vision & Architecture of a Self-Regulating Blockchain Economy](https://github.com/Aqua75/ProjectUSD/tree/main/Whitepaper)
 
 ---
 
