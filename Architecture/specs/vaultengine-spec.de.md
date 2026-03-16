@@ -1,7 +1,7 @@
 ---
 title: "ProjectUSD – VaultEngine SPEC v1"
 status: "Draft"
-last_updated: "2025-11-14"
+last_updated: "2026-03-16"
 author: "Aqua75"
 language: "de"
 related_whitepaper_sections: ["Kap. 2 – Systemübersicht", "Kap. 5.1 – Collateral & Vaults", "Kap. 6 – Liquidation & Redemption", "Glossar S. 18–24"]
@@ -15,7 +15,7 @@ Die **VaultEngine** ist das zentrale Buchhaltungssystem von ProjectUSD.
 Sie verwaltet:
 
 - alle besicherten Positionen (Vaults),
-- das Verhältnis zwischen gebundenem PLS und ausgegebenen ProjectUSD Coins,
+- das Verhältnis zwischen gebundenem PLS und ausstehenden ProjectUSD Coins,
 - die Schnittstelle zu Liquidation, Redemption und Controller.
 
 Die VaultEngine selbst hält **kein externes Preiswissen** und trifft **keine** Liquidationsentscheidungen.  
@@ -67,7 +67,7 @@ Die VaultEngine garantiert:
 ### 2.2 Externe Module
 
 - **Controller:** liefert `r_epoch` und beeinflusst damit Schuldenentwicklung.  
-- **Oracle:** liefert den Preis `P` (PLS pro ProjectUSD Coin) an Liquidationslogik.  
+- **Oracle:** liefert den Preis `P` (PLS pro ProjectUSD Coin) an die Liquidationslogik.  
 - **Liquidation & Redemption:** führen Aktionen aus, die über definierte Schnittstellen  
   Collateral und Schulden in der VaultEngine anpassen.  
 - **StabilityPool / SurplusBuffer:** nehmen Gebühren und Überschüsse auf und  
@@ -155,7 +155,7 @@ statt jede Position einzeln zu aktualisieren. Die Invariante bleibt jedoch ident
 - `redeem(uint256 amountProjectUSD, RedemptionContext ctx)`  
   – nur aufrufbar durch das Redemption-Modul,  
   – reduziert systemweite `totalDebt`,  
-  – bewegt Collateral aus übersicherten Vaults an den Redeemer,  
+  – bewegt Collateral aus den gemäß liquidation-redemption-spec ausgewählten Vaults an den Redeemer,
   – Details siehe `liquidation-redemption-spec`.
 
 ---
@@ -213,7 +213,7 @@ wird in der Liquidations-SPEC geregelt.
 | `SurplusLevel`     | Höhe des Systempuffers                     | VaultEngine-Events    |
 
 Empfehlung: 
-- wöchentliche „State of the System“-Berichte analog zum „State of the Peg“ aus der Controller-SPEC.
+- Wöchentliche „State of the System“-Berichte analog zum „State of the Peg“ aus der Controller-SPEC.
 
 ---
 
@@ -287,6 +287,6 @@ Nachweis, dass die VaultEngine:
 
 ## 11. Lizenz & Referenzen
 
-© 2025 Aqua75 / ProjectUSD  
+© 2026 Aqua75 / ProjectUSD  
 Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation  
-Verweis: ProjectUSD Whitepaper V2.1 (Kap. 2, 5.1, 6, Glossar S. 18–24)
+Verweis: ProjectUSD Whitepaper V2.2 (Kap. 2, 5.1, 6, Glossar S. 18–24)
