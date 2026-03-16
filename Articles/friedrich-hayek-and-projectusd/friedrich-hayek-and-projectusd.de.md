@@ -3,7 +3,7 @@
 
 ## Einleitung
 
-Im Jahr 1976 veröffentlichte der Ökonom Friedrich Hayek sein Buch *Denationalisation of Money*. Darin formulierte er eine der radikalsten geldtheoretischen Ideen des 20. Jahrhunderts: Geld sollte nicht länger unter staatlichem Monopol stehen.
+Im Jahr 1976 veröffentlichte der Ökonom Friedrich August von Hayek sein Buch *Denationalisation of Money*. Darin formulierte er eine der radikalsten geldtheoretischen Ideen des 20. Jahrhunderts: Geld sollte nicht länger unter staatlichem Monopol stehen.
 
 Hayek argumentierte, dass stabile Währungen nicht durch politische Steuerung entstehen, sondern durch Wettbewerb. Wenn verschiedene private Institutionen eigene Währungen emittieren dürften, würden sich langfristig jene durchsetzen, die ihre Kaufkraft am zuverlässigsten stabil halten.
 
