@@ -1,3 +1,6 @@
+⬅️ [Back to the article index](https://github.com/Aqua75/ProjectUSD/tree/main/Articles#projectusd--research-articles--economic-analysis)
+
+---
 # The Meaning of the Name ProjectUSD  
 _Origin, Misconceptions, and the Logic of an Autonomous Unit of Account_
 
@@ -145,3 +148,7 @@ The name began as an intuition, but the technical evolution of the system confir
 ProjectUSD is not a dollar.  
 It is its own economic reality –  
 and the name tells exactly that story.
+
+---
+
+⬅️ [Back to the article index](https://github.com/Aqua75/ProjectUSD/tree/main/Articles#projectusd--research-articles--economic-analysis)
