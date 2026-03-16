@@ -9,24 +9,29 @@ language: "en"
 
 ## 1. Purpose
 
-`R` defines the internal protocol reference price of ProjectUSD.
+`R` defines the **internal reference price** of the ProjectUSD protocol.
 
-It is **not a market price** and not derived from external price feeds.  
-Instead, `R` is a protocol defined reference value used internally by the system.
+It is **not a market price** and is not derived from external price feeds.  
+Instead, `R` emerges from the **internal states of the system** and acts as an
+internal valuation unit used by the protocol.
 
 `R` serves three fundamental roles:
 
 1. **Controller reference value**  
-   The Controller compares the market price `P` to `R` in order to determine the direction and magnitude of system rate adjustments `r`.
+   The Controller compares the market price `P` with `R` to determine the direction
+   and magnitude of adjustments to the system rate `r`.
 
 2. **Redemption reference price**  
-   The Redemption mechanism uses `R` as the internal conversion reference when ProjectUSD is exchanged for PLS collateral from existing Vaults inside the protocol.
+   The Redemption mechanism uses `R` as the internal conversion reference when
+   ProjectUSD is exchanged for PLS collateral from existing Vaults inside the protocol.
 
 3. **Vault reference value**  
-   During the creation of ProjectUSD from Vault collateral, `R` acts as the internal valuation reference used to determine the relationship between deposited PLS and the resulting ProjectUSD debt.  
-   The exact logic for collateral ratio and maximum debt is defined in the VaultEngine specification.
+   During the creation of ProjectUSD from Vault collateral, `R` acts as the internal
+   valuation reference used to determine the relationship between deposited PLS and
+   resulting ProjectUSD debt.
 
-`R` therefore acts as the **internal equilibrium anchor** of the ProjectUSD system.
+`R` therefore functions as the **internal equilibrium anchor** of the ProjectUSD system
+and as the internal valuation reference for core protocol mechanisms.
 
 ---
 
@@ -42,9 +47,18 @@ Instead, `R` is a protocol defined reference value used internally by the system
 
 Normative definition:
 
-`R` is the protocol defined internal reference price of ProjectUSD expressed in **PLS per ProjectUSD Coin**.
+`R` is the **internal reference price of the ProjectUSD system**, expressed in
+PLS per ProjectUSD Coin.
 
-This value represents the internal system price used for protocol calculations and redemption operations.
+The value of `R` emerges from the **internal state of the protocol**, including:
+
+- collateral and debt positions across Vaults
+- Redemption operations
+- system debt structure
+- liquidation dynamics
+- surplus and bad debt conditions
+
+`R` is **not set by governance** and **not determined by external price feeds**.
 
 ---
 
@@ -56,13 +70,16 @@ PLS per ProjectUSD Coin
 
 This unit must be used consistently across all protocol components.
 
-Example interpretation:
+Example (momentary system state):
 
 R = 0.002 PLS per ProjectUSD
 
-This means:
+This means that in the current system state:
 
-1 ProjectUSD Coin = 0.002 PLS
+1 ProjectUSD Coin corresponds internally to 0.002 PLS.
+
+This value is **not a fixed protocol parameter** and may change as the internal
+state of the system evolves.
 
 All Controller calculations must use the same unit convention for `P`.
 
@@ -70,11 +87,12 @@ All Controller calculations must use the same unit convention for `P`.
 
 ## 4. Controller Interaction
 
-The Controller measures the deviation between market price `P` and internal reference price `R`.
+The Controller measures the deviation between market price `P`
+and internal reference price `R`.
 
 Deviation signal:
 
-ε = (P - R) / R
+ε = (P − R) / R
 
 Interpretation:
 
@@ -89,20 +107,23 @@ Controller reaction:
 if P > R → system rate `r` increases  
 if P < R → system rate `r` decreases
 
-The Controller **does not modify `R`**.  
-It reacts only to deviations between `P` and `R`.
+The Controller **does not compute `R`** and **does not modify `R`**.
+
+It reacts only to deviations between market price `P` and the current
+internal reference price `R`.
 
 ---
 
 ## 5. Redemption Interaction
 
-The Redemption mechanism allows ProjectUSD to be exchanged for collateral using the internal reference price `R`.
+The Redemption mechanism allows ProjectUSD to be exchanged for collateral
+using the **current internal reference price `R`**.
 
 Normative redemption conversion:
 
 PLS_out = ProjectUSD_redeemed × R
 
-Example:
+Example (given current system state):
 
 R = 0.002 PLS per ProjectUSD  
 Redeem = 100 ProjectUSD
@@ -111,11 +132,14 @@ Output:
 
 PLS_out = 100 × 0.002 = 0.2 PLS
 
-Redemption therefore establishes the **internal system value** of ProjectUSD independent of external fiat pricing.
+Redemption therefore establishes the **internal system value of ProjectUSD**
+based on the current reference price `R`.
 
-The selection of Vaults from which collateral is drawn during Redemption is **not defined in this specification**.
+The selection of Vaults from which collateral is drawn during Redemption
+is **not defined in this specification**.
 
-The detailed Redemption procedure is defined in the **Liquidation-Redemption specification**.
+The detailed Redemption procedure is defined in the
+**Liquidation-Redemption specification**.
 
 ---
 
@@ -127,11 +151,11 @@ The following invariants must always hold.
 |----|-----------|
 | R1 | R > 0 |
 | R2 | P and R must share the same unit convention when used in controller calculations |
-| R3 | R must be defined by deterministic on chain protocol logic |
-| R4 | R must not depend on fiat references or off chain price feeds |
+| R3 | R must be deterministically derivable from system states |
+| R4 | R must not depend directly on fiat references or off chain price feeds |
 | R5 | governance must not manually set or override R |
 | R6 | the same current R value must be used consistently across Controller, Redemption, and telemetry |
-| R7 | R must not be modified by the Controller |
+| R7 | the Controller must not modify R |
 
 ---
 
@@ -158,17 +182,21 @@ Vault calculations
 
 ## 8. Initialization
 
-The protocol deployment must define an initial value:
+Protocol deployment must define an initial value:
 
 R₀
 
-R₀ is stored in the Immutable Core and serves as the initial Redemption reference price of the system.
+R₀ acts as the **initial system reference value** until the internal
+protocol dynamics establish a stable reference value.
 
 Requirements:
 
 R₀ > 0  
 consistent with the unit definition  
 identical across all modules at deployment
+
+The subsequent value of `R` emerges from the **dynamic internal state
+of the system**.
 
 ---
 
@@ -183,7 +211,8 @@ monitoring
 audits  
 economic analysis
 
-`R` is treated as a **first class system variable** within ProjectUSD telemetry.
+`R` is treated as a **first class system variable**
+within ProjectUSD telemetry.
 
 ---
 
@@ -199,4 +228,5 @@ The following verification checks must pass for any implementation.
 | R-04 | Governance cannot override R |
 | R-05 | R is externally readable |
 
-A production implementation must satisfy all invariants and verification tests defined in this specification.
+A production implementation must satisfy all invariants and
+verification tests defined in this specification.
