@@ -1,7 +1,7 @@
 ---
 title: "ProjectUSD – VaultEngine SPEC v1"
 status: "Draft"
-last_updated: "2025-11-14"
+last_updated: "2026-03-16"
 author: "Aqua75"
 language: "en"
 related_whitepaper_sections: ["Ch. 2 – System Overview", "Ch. 5.1 – Collateral & Vaults", "Ch. 6 – Liquidation & Redemption", "Glossary pp. 18–24"]
@@ -158,7 +158,7 @@ remains the same.
 - `redeem(uint256 amountProjectUSD, RedemptionContext ctx)`  
   – callable only by the redemption module,  
   – reduces system-wide `totalDebt`,  
-  – moves collateral from overcollateralized vaults to the redeemer,  
+  – moves collateral from eligible vaults to the redeemer according to the procedure defined in the Liquidation-Redemption SPEC,
   – details see `liquidation-redemption-spec`.  
 
 ---
@@ -292,6 +292,6 @@ Demonstrate that the VaultEngine:
 
 ## 11. License & References
 
-© 2025 Aqua75 / ProjectUSD  
+© 2026 Aqua75 / ProjectUSD  
 License: MIT for code, CC BY-NC-SA 4.0 for documentation  
-Reference: ProjectUSD Whitepaper V2.1 (Ch. 2, 5.1, 6, Glossary pp. 18–24)  
+Reference: ProjectUSD Whitepaper V2.2 (Ch. 2, 5.1, 6, Glossary pp. 18–24)  
