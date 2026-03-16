@@ -1,7 +1,7 @@
 ---
 title: "ProjectUSD – Liquidation & Redemption SPEC v1"
 status: "Draft"
-last_updated: "2025-11-18"
+last_updated: "2026-03-16"
 author: "Aqua75"
 language: "de"
 related_whitepaper_sections: ["Kap. 6 – Liquidation & Rücktausch", "Kap. 9 – Sicherheit", "Glossar S. 18–22"]
@@ -172,7 +172,7 @@ Redemption ermöglicht es, ProjectUSD Coin jederzeit gegen PLS einzutauschen
 
 Dies schafft einen absoluten Mindestwert für ProjectUSD und stabilisiert den Peg.
 
-`1 ProjectUSD Coin → (1 / R) PLS`
+PLS_out = ProjectUSD × R
 
 R = Systemgleichgewichtspreis aus Controller-SPEC.
 
@@ -192,7 +192,7 @@ R = Systemgleichgewichtspreis aus Controller-SPEC.
 ### 2.3 Ablauf der Redemption
 
 - Nutzer sendet ProjectUSD Coin an VaultEngine  
-- System wählt den am stärksten überbesicherten Vault  
+- System wählt den Vault mit der niedrigsten Collateral Ratio (CR)
 - Collateral dieses Vaults wird reduziert  
 - Schulden dieses Vaults werden reduziert  
 - Nutzer erhält entsprechend PLS  
@@ -207,13 +207,22 @@ Es ist ein reiner, algorithmischer Prozess.
 
 ---
 
-### 2.4 Auswahl der Vaults (FIFO nach Überbesicherung)
+### 2.4 Auswahl der Vaults
 
-Vaults werden in folgender Reihenfolge reduziert:
+Vaults werden nach steigender Collateral Ratio (CR) geordnet.
 
-- höchstes CR zuerst  
-- nächstes höchstes CR  
-- usw.  
+Reihenfolge:
+
+- niedrigste CR zuerst
+- danach nächstniedrigere CR
+- usw.
+
+Der Vault mit der niedrigsten CR wird zuerst für Redemption verwendet.
+
+Falls ein Vault die gesamte Redemption nicht vollständig bedienen kann,
+wird der verbleibende Betrag mit dem nächsten Vault in der Reihenfolge fortgesetzt.
+
+Teilredemptions sind erlaubt.
 
 Dies stellt sicher:
 
@@ -240,7 +249,7 @@ Dies stellt sicher:
 | -- | ------------------------------------------ | --------------------- |
 | R1 | Redemption erzeugt nie BadDebt             | System bleibt gedeckt |
 | R2 | Vault bleibt nie negativ                   | Collateral >= 0       |
-| R3 | nur überbesicherte Vaults werden reduziert | Fairness              |
+| R3 | Redemption verarbeitet Vaults nach steigender Collateral Ratio | deterministische Reihenfolge |
 | R4 | Systemwert bleibt erhalten                 | Konsistenz            |
 | R5 | keine DEX-Preiskomponente                  | Manipulationsschutz   |
 
@@ -303,6 +312,6 @@ Dies stellt sicher:
 
 ## Lizenz & Referenzen
 
-© 2025 Aqua75 / ProjectUSD  
+© 2026 Aqua75 / ProjectUSD  
 Lizenz: MIT für Code, CC BY-NC-SA 4.0 für Dokumentation  
-Verweis: ProjectUSD Whitepaper V2.1 (Kap. 6, 9, Glossar S. 18–22)  
+Verweis: ProjectUSD Whitepaper V2.2 (Kap. 6, 9, Glossar S. 18–22)  
