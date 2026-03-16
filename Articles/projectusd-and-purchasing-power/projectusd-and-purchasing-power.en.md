@@ -1,3 +1,6 @@
+⬅️ [Back to the article index](https://github.com/Aqua75/ProjectUSD/tree/main/Articles#projectusd--research-articles--economic-analysis)
+
+---
 # ProjectUSD – and the Secret of Purchasing Power  
 **How PulseChain learns to generate and preserve its own value**
 
@@ -175,3 +178,7 @@ What matters is no longer what the dollar says –
 but what the **economy itself** can do.
 
 Thus ProjectUSD transforms PulseChain from a mere market into a **true economy**, capable of attracting, retaining, and converting foreign purchasing power into lasting economic energy.
+
+---
+
+⬅️ [Back to the article index](https://github.com/Aqua75/ProjectUSD/tree/main/Articles#projectusd--research-articles--economic-analysis)
