@@ -16,22 +16,25 @@ a transparent and modular specification set essential.
 
 The SPECS are organized into the following categories:
 
-### **Core Modules (immutable after freeze)**
+### Core Modules (immutable after freeze)
 
-- **vaultengine-spec.en.md / .de.md**  
-  Logic for vaults, collateral, debt, CR calculation, atomic state transitions.
+- vaultengine-spec.en.md / .de.md  
+  Logic for vaults, collateral, debt accounting and CR calculations.
 
-- **controller-spec.en.md / .de.md**  
-  Algorithm for the equilibrium price R and r-epoch updates.
+- R-spec.en.md / .de.md  
+  Definition of the internal system reference price R used by Controller and Redemption.
 
-- **oracle-spec.en.md / .de.md**  
-  Medianizer, redundancy, block-delay, deviation limits.
+- controller-spec.en.md / .de.md  
+  Control algorithm for the system rate r based on deviations between market price P and internal reference price R.
 
-- **liquidation-redemption-spec.en.md / .de.md**  
-  Liquidation, redemption, invariants, safety rules, atomic flows.
+- oracle-spec.en.md / .de.md  
+  Market price feed P, medianizer logic, redundancy and safety limits.
 
-- **stabilitypool-spec.en.md / .de.md**  
-  StabilityPool mechanics, debt absorption, collateral distribution.
+- liquidation-redemption-spec.en.md / .de.md  
+  Liquidation and redemption flows, vault selection rules and safety invariants.
+
+- stabilitypool-spec.en.md / .de.md  
+  StabilityPool mechanics, debt absorption and collateral redistribution.
 
 ### **Security & Freeze**
 
@@ -61,15 +64,16 @@ The SPECS are organized into the following categories:
 
 ## 🗂️ Recommended Reading Order (for developers)
 
-1. **vaultengine-spec**  
-2. **controller-spec**  
-3. **oracle-spec**  
-4. **liquidation-redemption-spec**  
-5. **stabilitypool-spec**  
-6. **security-spec**  
-7. **governance-freeze-spec** → then **freeze-checklist**  
-8. **incident-runbook**  
-9. **kpi-subgraph-spec**
+1. vaultengine-spec  
+2. R-spec  
+3. controller-spec  
+4. oracle-spec  
+5. liquidation-redemption-spec  
+6. stabilitypool-spec  
+7. security-spec  
+8. governance-freeze-spec → then freeze-checklist  
+9. incident-runbook  
+10. kpi-subgraph-spec
 
 This order explains:
 
@@ -99,11 +103,11 @@ This order explains:
 ## 📘 Whitepaper Reference
 
 All SPECS follow the architecture and principles defined in the  
-**ProjectUSD Whitepaper V2.1**  
+**ProjectUSD Whitepaper V2.2**  
 (System equilibrium, invariants, freeze model).
 
 ---
 
 ## 🪙 License
 CC BY-NC-SA 4.0  
-© 2025 Aqua75 / ProjectUSD
+© 2026 Aqua75 / ProjectUSD
