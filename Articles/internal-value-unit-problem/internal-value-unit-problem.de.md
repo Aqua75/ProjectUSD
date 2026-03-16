@@ -1,3 +1,6 @@
+⬅️ [Zurück zur Artikelliste](https://github.com/Aqua75/ProjectUSD/blob/main/Articles/README.de.md#projectusd--fachartikel--%C3%B6konomische-analysen)
+
+---
 # Das Problem der fehlenden Wertreferenz auf PulseChain  
 ## Warum eine selbstregulierende native Recheneinheit ökonomisch unvermeidlich ist
 
@@ -160,3 +163,7 @@ Eine autonome Recheneinheit transformiert PulseChain von:
 
 **ProjectUSD adressiert genau diese Lücke:  
 nicht als Kopie des Dollars, sondern als das mathematische Herz einer unabhängigen PulseChain-Ökonomie.**
+
+---
+
+⬅️ [Zurück zur Artikelliste](https://github.com/Aqua75/ProjectUSD/blob/main/Articles/README.de.md#projectusd--fachartikel--%C3%B6konomische-analysen)
