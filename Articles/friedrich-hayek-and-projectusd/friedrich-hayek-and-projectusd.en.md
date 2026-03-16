@@ -3,13 +3,24 @@
 
 ## Introduction
 
-In 1976 the economist Friedrich August von Hayek published his book *Denationalisation of Money*. In it he formulated one of the most radical monetary ideas of the twentieth century: money should no longer exist under a state monopoly.
+In 1976 the economist **Friedrich August von Hayek** published his book *Denationalisation of Money*. In it he presented one of the most radical monetary ideas of the twentieth century: money should no longer exist under a state monopoly.
 
 Hayek argued that stable currencies do not emerge from political control but from competition. If different private institutions were allowed to issue their own currencies, those that preserved their purchasing power most reliably would ultimately prevail.
 
-Almost fifty years later, blockchain technology opens a new possibility to rethink this idea. Instead of competition between banks, money can now potentially be stabilised through transparent and immutable rules.
+The central insight of his theory was simple but far reaching:  
+stable money does not arise from promises or authority, but from **rules and discipline**.
 
-In this context, ProjectUSD can be understood as an attempt to reinterpret Hayek’s fundamental idea under the conditions of a blockchain economy.
+However, in Hayek’s time this idea inevitably remained institutional. Even private currencies would still have depended on banks, organisations and human decision making.
+
+Almost fifty years later, a new technology fundamentally changes this situation.
+
+Blockchains make it possible to write monetary rules directly into code. Money can therefore be organised not only privately but **as a protocol**: transparent, verifiable and potentially immutable.
+
+In this context, **ProjectUSD** can be understood as an attempt to reinterpret Hayek’s fundamental idea under the conditions of a blockchain economy.
+
+Instead of competition between banks, a rule based monetary protocol emerges that attempts to stabilise value through algorithmic feedback.
+
+In this sense, ProjectUSD can be read as a possible continuation of Hayek’s idea, not as a direct implementation of his model, but as its evolution within a new technological environment.
 
 ---
 
