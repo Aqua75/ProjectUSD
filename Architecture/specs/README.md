@@ -88,10 +88,11 @@ This order explains:
 
 ### **Core (immutable after freeze)**
 - VaultEngine  
-- Liquidation & Redemption  
+- R  
 - Controller  
 - Oracle  
-- StabilityPool  
+- Liquidation & Redemption  
+- StabilityPool
 
 ### **Periphery (governance-controlled after freeze)**
 - Analytics (Subgraph)  
