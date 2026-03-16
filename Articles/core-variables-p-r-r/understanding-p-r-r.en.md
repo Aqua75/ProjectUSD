@@ -1,3 +1,6 @@
+⬅️ [Back to the article index](https://github.com/Aqua75/ProjectUSD/tree/main/Articles#projectusd--research-articles--economic-analysis)
+
+---
 # The Heart of ProjectUSD - A Simple Explanation of P, R and r
 
 ## Introduction
@@ -195,3 +198,7 @@ This is why ProjectUSD works:
 **ProjectUSD stabilizes itself because r continuously drives P back toward R.**
 
 This creates an autonomous monetary system that enables a stable internal economy on PulseChain.
+
+---
+
+⬅️ [Back to the article index](https://github.com/Aqua75/ProjectUSD/tree/main/Articles#projectusd--research-articles--economic-analysis)
