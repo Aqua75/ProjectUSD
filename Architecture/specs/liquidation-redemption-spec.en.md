@@ -1,7 +1,7 @@
 ---
 title: "ProjectUSD – Liquidation & Redemption SPEC v1"
 status: "Draft"
-last_updated: "2025-11-18"
+last_updated: "2026-03-16"
 author: "Aqua75"
 language: "en"
 related_whitepaper_sections: ["Ch. 6 – Liquidation & Redemption", "Ch. 9 – Security", "Glossary pp. 18–22"]
@@ -115,13 +115,13 @@ Liquidators earn:
 
 ## 1.7 Liquidation Invariants
 
-| ID | Invariant                                | Meaning                            |
-| -- | ---------------------------------------- | ---------------------------------- |
-| L1 | liquidation never creates BadDebt        | system always remains fully backed |
-| L2 | liquidation is atomic                    | no partial states                  |
-| L3 | only triggered when `CR < LiquidationCR` | no false liquidations              |
-| L4 | StabilityPool never goes negative        | pool safety guaranteed             |
-| L5 | Oracle controls all liquidation prices   | DEX manipulation impossible        |
+| ID | Invariant | Meaning |
+|----|-----------|--------|
+| L1 | liquidation never creates BadDebt | system always remains fully backed |
+| L2 | liquidation is atomic | no partial states |
+| L3 | only triggered when `CR < LiquidationCR` | no false liquidations |
+| L4 | StabilityPool never goes negative | pool safety guaranteed |
+| L5 | Oracle controls all liquidation prices | DEX manipulation impossible |
 
 ---
 
@@ -160,39 +160,41 @@ Liquidators earn:
 
 ---
 
-## 2. Redemption (system-price collateral exchange)
+# 2. Redemption (system-price collateral exchange)
 
-### 2.1 Principle
+## 2.1 Principle
 
 Redemption allows users to exchange ProjectUSD Coin
-for PLS at the system equilibrium price R, not at market price.
+for PLS at the internal system price `R`, not at market price.
 
-This creates an absolute price floor and maintains peg stability.
+This creates an absolute price floor and stabilizes the peg.
 
-`1 ProjectUSD → (1 / R) PLS`
+```
+PLS_out = ProjectUSD_redeemed × R
+```
 
-Where `R` is defined in Controller-SPEC.
+`R` is defined in the **R-SPEC**.
 
 ---
 
-### 2.2 Why Redemption is Necessary
+## 2.2 Why Redemption is Necessary
 
 - creates a guaranteed minimum value  
 - prevents long-term underpricing  
 - removes PLS/ProjectUSD arbitrage zones  
 - keeps market price near `R`  
 - enables automatic price correction  
-- gives long-term protection to holders  
+- protects long-term holders  
 
 ---
 
-### 2.3 Redemption Flow
+## 2.3 Redemption Flow
 
 - user sends ProjectUSD Coin to the VaultEngine  
-- system selects the most overcollateralized vault  
-- that vault’s collateral is reduced  
-- that vault’s debt is reduced  
-- user receives PLS at system rate  
+- system selects the vault with the **lowest Collateral Ratio (CR)**  
+- collateral of that vault is reduced  
+- debt of that vault is reduced  
+- user receives PLS according to the redemption formula  
 
 Redemption is **not**:
 
@@ -200,76 +202,90 @@ Redemption is **not**:
 - an emergency tool  
 - a governance-controlled price mechanism  
 
-It is a pure algorithmic stabilizer.
+It is a purely algorithmic stabilization mechanism.
 
 ---
 
-### 2.4 Vault Selection (highest CR first)
+## 2.4 Vault Selection
 
-Vaults are processed in this order:
+Vaults are processed in order of **ascending Collateral Ratio (CR)**.
 
-- highest CR first  
-- then the next highest  
-- etc.  
+Order:
+
+- lowest CR first  
+- then the next lowest CR  
+- and so on  
+
+The vault with the lowest CR is always selected first.
+
+If a vault cannot fully satisfy the redemption amount,
+the remaining redemption continues with the next vault in the order.
+
+Partial redemptions are allowed.
 
 This ensures:
 
-- fairness  
-- no individual user is drained disproportionately  
-- natural smoothing of overall collateral structure
+- fair system behavior  
+- deterministic processing order  
+- natural harmonization of the collateral structure  
+
+A vault may be completely emptied through redemption.
+
+If the debt of a vault reaches zero,
+the vault is considered closed.
 
 ---
 
-### 2.5 Security & MEV Protection
+## 2.5 Security & MEV Protection
 
 - no external calls  
 - no DEX exposure  
-- only Oracle price + `R` determine redemption  
+- Oracle price + `R` are the only pricing inputs  
 - optional per-block `RedeemLimit`  
 - no flash-loan arbitrage possible  
 - atomic execution  
 
 ---
 
-### 2.6 Redemption Invariants
+## 2.6 Redemption Invariants
 
-| ID | Invariant                                  | Meaning                          |
-| -- | ------------------------------------------ | -------------------------------- |
-| R1 | redemption never creates BadDebt           | full collateralization preserved |
-| R2 | vault collateral never becomes negative    | safety for all users             |
-| R3 | only overcollateralized vaults are reduced | fairness                         |
-| R4 | system value is preserved                  | consistency                      |
-| R5 | no DEX price used                          | anti-manipulation                |
+| ID | Invariant | Meaning |
+|----|-----------|--------|
+| R1 | redemption never creates BadDebt | system remains fully collateralized |
+| R2 | vault collateral never becomes negative | safety for all users |
+| R3 | vaults processed by ascending CR | deterministic ordering |
+| R4 | system value is preserved | consistency |
+| R5 | no DEX price component | manipulation resistance |
 
 ---
 
-### 2.7 Telemetry & Monitoring
+## 2.7 Telemetry & Monitoring
 
 - total redemption volume  
 - number of affected vaults  
 - average CR change  
-- collateral outflow  
-- oracle price movement  
-- equilibrium price `R`  
+- collateral outflow due to redemption  
+- oracle price movements  
+- system reference price `R`  
 
 ---
 
-### 2.8 Tests (Redemption)
+## 2.8 Tests (Redemption)
 
-#### UnitTests
+### UnitTests
 
-- redemption selects only overcollateralized vaults  
-- CR-ordering correct  
+- redemption selects vaults with lowest CR first  
+- correct CR ordering  
 - atomic execution  
-- correct price computation  
+- correct redemption price calculation  
 
-#### Property-Based Tests
+### Property-Based Tests
 
 - extreme price movement  
-- multiple redemption chains  
-- stress redemption  
+- multi-redemption sequences  
+- stress redemption scenarios  
 
-#### Static Analysis
+### Static Analysis
 
 - no external calls  
 - no manipulable loops  
@@ -278,28 +294,31 @@ This ensures:
 
 ## 3. Interaction with Other SPECS
 
-- **VaultEngine-SPEC:**  
-  – liquidation and redemption modify vaults atomically  
+- **VaultEngine-SPEC**  
+  liquidation and redemption modify vaults atomically  
 
-- **StabilityPool-SPEC:**  
-  – absorbs debt during liquidation  
+- **StabilityPool-SPEC**  
+  absorbs debt during liquidation  
 
-- **Oracle-SPEC:**  
-  – provides all CR and redemption prices  
+- **Oracle-SPEC**  
+  provides prices for CR calculations  
 
-- **Controller-SPEC:**  
-  – defines the equilibrium price `R`  
+- **R-SPEC**  
+  defines the internal redemption reference price  
 
-- **Security-SPEC:**  
-  – ensures atomic, manipulation-free execution  
+- **Controller-SPEC**  
+  reacts to deviations between `P` and `R`  
 
-- **Freeze-SPEC:**  
-  – liquidation & redemption remain immutable after freeze  
+- **Security-SPEC**  
+  ensures atomic and manipulation-resistant execution  
+
+- **Freeze-SPEC**  
+  liquidation and redemption remain immutable after freeze  
 
 ---
 
-## 4. License & References
+## License & References
 
-© 2025 Aqua75 / ProjectUSD  
+© 2026 Aqua75 / ProjectUSD  
 License: MIT for code, CC BY-NC-SA 4.0 for documentation  
-Reference: ProjectUSD Whitepaper V2.1 (Ch. 6, 9, Glossary pp. 18–22)  
+Reference: ProjectUSD Whitepaper V2.2 (Ch. 6, 9, Glossary pp. 18–22)
