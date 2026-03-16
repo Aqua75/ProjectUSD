@@ -1,5 +1,4 @@
-⬅️ Zurück zur Artikelliste  
-https://github.com/Aqua75/ProjectUSD/blob/main/Articles/README.de.md#projectusd--fachartikel--%C3%B6konomische-analysen
+⬅️ [Zurück zur Artikelliste](https://github.com/Aqua75/ProjectUSD/blob/main/Articles/README.de.md#projectusd--fachartikel--%C3%B6konomische-analysen)
 
 ---
 # Wie ein autonomes Geldsystem ohne Startkapital entsteht  
@@ -163,5 +162,4 @@ Ein System, das Stabilität durch Logik erzeugt statt durch Kapital, ist nicht n
 Es ist der nächste notwendige Schritt.
 ---
 
-⬅️ Weitere ProjectUSD Artikel  
-https://github.com/Aqua75/ProjectUSD/blob/main/Articles/README.de.md#projectusd--fachartikel--%C3%B6konomische-analysen
+⬅️ [Zurück zur Artikelliste](https://github.com/Aqua75/ProjectUSD/blob/main/Articles/README.de.md#projectusd--fachartikel--%C3%B6konomische-analysen)
