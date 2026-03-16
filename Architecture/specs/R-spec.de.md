@@ -20,7 +20,7 @@ Stattdessen ist `R` eine vom Protokoll definierte Referenzgröße, die intern vo
    Der Controller vergleicht den Marktpreis `P` mit `R`, um Richtung und Stärke der Anpassung der Systemrate `r` zu bestimmen.
 
 2. **Referenzpreis für Redemption**  
-   Der Redemption-Mechanismus verwendet `R` als internen Umrechnungswert, wenn ProjectUSD innerhalb des Protokolls gegen Collateral eingelöst wird.
+   Der Redemption-Mechanismus verwendet `R` als internen Umrechnungswert, wenn ProjectUSD innerhalb des Protokolls gegen PLS-Collateral aus bestehenden Vaults eingelöst wird.
 
 `R` fungiert somit als **interner Gleichgewichtsanker** des ProjectUSD-Systems.
 
@@ -109,6 +109,12 @@ PLS_out = 100 × 0.002 = 0.2 PLS
 
 Redemption definiert damit den **internen Systemwert** von ProjectUSD unabhängig von externen Fiat-Preisen.
 
+Die Auswahl der Vaults, aus denen Collateral für Redemption entnommen wird,
+ist nicht Bestandteil dieser Spezifikation.
+
+Der genaue Ablauf der Redemption-Operation wird in der
+Liquidation-Redemption-Spezifikation definiert.
+
 ---
 
 ## 6. System-Invarianten
@@ -123,6 +129,7 @@ Die folgenden Invarianten müssen jederzeit gelten.
 | R4 | R darf nicht von Fiat-Referenzen oder Off-Chain-Preisfeeds abhängen |
 | R5 | Governance darf R nicht manuell setzen oder überschreiben |
 | R6 | derselbe aktuelle R-Wert muss konsistent von Controller, Redemption und Telemetrie verwendet werden |
+| R7 | R wird durch den Controller nicht verändert |
 
 ---
 
@@ -149,15 +156,18 @@ Vault-Berechnungen
 
 ## 8. Initialisierung
 
-Beim Deployment des Protokolls muss ein Anfangswert definiert werden:
+Beim Deployment des Protokolls muss ein initialer Referenzwert definiert werden:
 
-R0
+R₀
+
+R₀ wird im Immutable Core gespeichert und dient als initialer
+Redemptionpreis des Systems.
 
 Anforderungen:
 
-R0 > 0  
-konsistent mit der Einheitsdefinition  
-identisch in allen Modulen beim Deployment
+R₀ > 0  
+R₀ muss in der Einheit PLS pro ProjectUSD Coin definiert sein  
+R₀ muss bei Deployment für alle Module identisch initialisiert werden
 
 ---
 
