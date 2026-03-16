@@ -116,6 +116,21 @@ original RICO idea finds its modern fully implemented continuation in ProjectUSD
 
 ---
 
+### 9. Friedrich Hayek and ProjectUSD  
+A theoretical article exploring the relationship between Friedrich August von Hayek’s  
+concept of the **Denationalisation of Money** and the architecture of ProjectUSD.  
+It examines how blockchain protocols enable a new form of rule based monetary systems  
+and how ProjectUSD can be interpreted as a possible continuation of this idea  
+under modern technological conditions.
+
+- 🇩🇪 German:  
+  [`friedrich-hayek-and-projectusd/friedrich-hayek-and-projectusd.de.md`](./friedrich-hayek-and-projectusd/friedrich-hayek-and-projectusd.de.md)
+
+- 🇬🇧 English:  
+  [`friedrich-hayek-and-projectusd/friedrich-hayek-and-projectusd.en.md`](./friedrich-hayek-and-projectusd/friedrich-hayek-and-projectusd.en.md)
+
+---
+
 ## 🧭 Structure & Expansion
 
 New articles follow the same structure:
