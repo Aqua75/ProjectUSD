@@ -3,13 +3,24 @@
 
 ## Einleitung
 
-Im Jahr 1976 veröffentlichte der Ökonom Friedrich August von Hayek sein Buch *Denationalisation of Money*. Darin formulierte er eine der radikalsten geldtheoretischen Ideen des 20. Jahrhunderts: Geld sollte nicht länger unter staatlichem Monopol stehen.
+Im Jahr 1976 veröffentlichte der Ökonom **Friedrich August von Hayek** sein Buch *Denationalisation of Money*. Darin formulierte er eine der radikalsten geldtheoretischen Ideen des 20. Jahrhunderts: Geld sollte nicht länger unter staatlichem Monopol stehen.
 
 Hayek argumentierte, dass stabile Währungen nicht durch politische Steuerung entstehen, sondern durch Wettbewerb. Wenn verschiedene private Institutionen eigene Währungen emittieren dürften, würden sich langfristig jene durchsetzen, die ihre Kaufkraft am zuverlässigsten stabil halten.
 
-Fast fünfzig Jahre später eröffnet die Blockchain-Technologie eine neue Möglichkeit, diese Idee weiterzudenken. Statt Wettbewerb zwischen Banken könnte Geld auch durch transparente, unveränderliche Regeln stabilisiert werden.
+Die zentrale Einsicht seiner Theorie war einfach, aber weitreichend:  
+Stabiles Geld entsteht nicht durch Versprechen oder Autorität, sondern durch **Regeln und Disziplin**.
 
-In diesem Kontext lässt sich ProjectUSD als ein Versuch verstehen, Hayeks Grundgedanken unter den Bedingungen einer Blockchain-Ökonomie neu zu formulieren.
+Doch zu Hayeks Zeit blieb diese Idee zwangsläufig institutionell. Selbst private Währungen wären weiterhin von Banken, Organisationen und menschlichen Entscheidungen abhängig gewesen.
+
+Fast fünfzig Jahre später verändert eine neue Technologie die Ausgangslage grundlegend.
+
+Blockchains ermöglichen es erstmals, monetäre Regeln direkt in Code zu schreiben. Geld kann damit nicht nur privat, sondern **protokollarisch organisiert** werden: transparent, überprüfbar und langfristig unveränderlich.
+
+Vor diesem Hintergrund lässt sich **ProjectUSD** als ein Versuch verstehen, Hayeks Grundgedanken unter den Bedingungen einer Blockchain-Ökonomie neu zu formulieren.
+
+Statt Wettbewerb zwischen Banken entsteht ein regelgebundenes monetäres Protokoll, das Stabilität durch algorithmische Rückkopplung erzeugt.
+
+In diesem Sinne kann ProjectUSD als eine mögliche Weiterentwicklung von Hayeks Idee gelesen werden – nicht als direkte Umsetzung seines Modells, sondern als dessen Fortführung in einer neuen technologischen Umgebung.
 
 ---
 
