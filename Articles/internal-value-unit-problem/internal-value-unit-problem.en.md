@@ -1,3 +1,6 @@
+⬅️ [Back to the article index](https://github.com/Aqua75/ProjectUSD/tree/main/Articles#projectusd--research-articles--economic-analysis)
+
+---
 # The Internal Value Unit Problem on PulseChain  
 ## Why a Self-Regulating Native Measure of Value Is Economically Unavoidable
 
@@ -156,3 +159,7 @@ A native autonomous value unit transforms PulseChain from:
 - a speculation arena → into a financial system  
 
 **ProjectUSD addresses exactly this missing foundation — not as a dollar copy, but as the mathematical core of a sovereign PulseChain economy.**
+
+---
+
+⬅️ [Back to the article index](https://github.com/Aqua75/ProjectUSD/tree/main/Articles#projectusd--research-articles--economic-analysis)
