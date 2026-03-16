@@ -1,3 +1,6 @@
+⬅️ [Zurück zur Artikelliste](https://github.com/Aqua75/ProjectUSD/blob/main/Articles/README.de.md#projectusd--fachartikel--%C3%B6konomische-analysen)
+
+---
 # Die Bedeutung des Namens ProjectUSD  
 _Ursprung, Missverständnisse und die Logik einer autonomen Recheneinheit_
 
@@ -143,3 +146,7 @@ Der Name entstand intuitiv, wurde aber durch die technische Evolution des System
 ProjectUSD ist kein Dollar.  
 Es ist eine eigene ökonomische Realität –  
 und der Name erzählt genau diese Geschichte.
+
+---
+
+⬅️ [Zurück zur Artikelliste](https://github.com/Aqua75/ProjectUSD/blob/main/Articles/README.de.md#projectusd--fachartikel--%C3%B6konomische-analysen)
