@@ -69,10 +69,31 @@ for developers, auditors, and researchers.
 
 ---
 
+## 📐 Normative Sources
+
+ProjectUSD documentation exists in several formats, including specifications, whitepapers, articles, and research studies.  
+If differences between documents appear, the following priority order defines the **normative source of truth**.
+
+1. **Architecture Specifications (`/Architecture/specs/`)**  
+   The specifications define the formal behavior of the protocol and are the authoritative reference for implementation.
+
+2. **Controller and Core Module Specifications**  
+   These documents define the operational parameters and invariants of the immutable core.
+
+3. **Whitepaper**  
+   The whitepaper explains the architecture and economic design but may contain simplified explanations.
+
+4. **Articles and Studies**  
+   These texts provide conceptual explanations and research perspectives but are not normative.
+
+In case of conflicting descriptions, **the specifications always take precedence**.
+
+---
+
 ## 📘 Reference
 
 All architectural concepts are derived from the  
-[ProjectUSD Whitepaper V2.1 – Vision & Architecture of a Self-Regulating Blockchain Economy](https://github.com/Aqua75/ProjectUSD/releases/download/v2.1-EN/ProjectUSD.Whitepaper.V2.1.EN.Englisch.pdf)
+[ProjectUSD Whitepaper V2.2 – Vision & Architecture of a Self-Regulating Blockchain Economy](https://github.com/Aqua75/ProjectUSD/tree/main/Whitepaper)
 
 ---
 
