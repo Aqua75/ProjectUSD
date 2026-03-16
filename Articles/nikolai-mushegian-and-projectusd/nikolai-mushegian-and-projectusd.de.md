@@ -1,3 +1,6 @@
+⬅️ [Zurück zur Artikelliste](https://github.com/Aqua75/ProjectUSD/blob/main/Articles/README.de.md#projectusd--fachartikel--%C3%B6konomische-analysen)
+
+---
 # Nikolai Mushegians RICO Konzept und seine Weiterführung in ProjectUSD  
 Wie die Vision eines autonomen Geldes weiterlebt
 
@@ -170,3 +173,7 @@ Die Vision bleibt dieselbe:
 
 RICO sprach diesen Gedanken aus.  
 ProjectUSD schreibt ihn in Code.
+
+---
+
+⬅️ [Zurück zur Artikelliste](https://github.com/Aqua75/ProjectUSD/blob/main/Articles/README.de.md#projectusd--fachartikel--%C3%B6konomische-analysen)
