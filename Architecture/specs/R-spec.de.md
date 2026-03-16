@@ -14,13 +14,17 @@ language: "de"
 Er ist **kein Marktpreis** und wird nicht aus externen Preisfeeds abgeleitet.  
 Stattdessen ist `R` eine vom Protokoll definierte Referenzgröße, die intern vom System verwendet wird.
 
-`R` erfüllt zwei grundlegende Funktionen:
+`R` erfüllt drei grundlegende Funktionen:
 
 1. **Referenzwert für den Controller**  
    Der Controller vergleicht den Marktpreis `P` mit `R`, um Richtung und Stärke der Anpassung der Systemrate `r` zu bestimmen.
 
 2. **Referenzpreis für Redemption**  
    Der Redemption-Mechanismus verwendet `R` als internen Umrechnungswert, wenn ProjectUSD innerhalb des Protokolls gegen PLS-Collateral aus bestehenden Vaults eingelöst wird.
+
+3. **Referenzwert für Vault-Operationen**  
+   Bei der Erzeugung von ProjectUSD aus Vault-Collateral wird `R` als interner Bewertungsmaßstab verwendet, um das Verhältnis zwischen hinterlegtem PLS und erzeugter ProjectUSD-Schuld zu bestimmen.  
+   Die genaue Berechnungslogik für Collateral Ratio und maximale Schuld wird in der VaultEngine-Spezifikation definiert.
 
 `R` fungiert somit als **interner Gleichgewichtsanker** des ProjectUSD-Systems.
 
