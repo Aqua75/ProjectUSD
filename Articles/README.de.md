@@ -117,6 +117,21 @@ Weiterentwicklung findet.
 
 ---
 
+### 9. Friedrich Hayek und ProjectUSD  
+Ein theoretischer Artikel über den Zusammenhang zwischen Friedrich August von Hayeks  
+Konzept der **Denationalisation of Money** und der Architektur von ProjectUSD.  
+Er untersucht, wie Blockchain-Protokolle eine neue Form regelbasierter Geldsysteme  
+ermöglichen und wie ProjectUSD als mögliche Weiterentwicklung dieser Idee verstanden  
+werden kann.
+
+- 🇩🇪 Deutsch:  
+  [`friedrich-hayek-and-projectusd/friedrich-hayek-and-projectusd.de.md`](./friedrich-hayek-and-projectusd/friedrich-hayek-and-projectusd.de.md)
+
+- 🇬🇧 Englisch:  
+  [`friedrich-hayek-and-projectusd/friedrich-hayek-and-projectusd.en.md`](./friedrich-hayek-and-projectusd/friedrich-hayek-and-projectusd.en.md)
+  
+---
+
 ## 🧭 Struktur & Erweiterungen
 
 Neue Artikel folgen der gleichen Struktur:
