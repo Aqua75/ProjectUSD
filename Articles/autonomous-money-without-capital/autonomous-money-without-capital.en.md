@@ -1,3 +1,6 @@
+⬅️ [Back to the article index](https://github.com/Aqua75/ProjectUSD/tree/main/Articles#projectusd--research-articles--economic-analysis)
+
+---
 # How an Autonomous Money System Starts Without Capital  
 *A conceptual journey into the logic of ProjectUSD*
 
@@ -161,3 +164,6 @@ but because creating the **most stable reference point in the ecosystem** change
 A system that creates stability through logic instead of capital is not just possible.  
 It is the next necessary step.
 
+---
+
+⬅️ [Back to the article index](https://github.com/Aqua75/ProjectUSD/tree/main/Articles#projectusd--research-articles--economic-analysis)
