@@ -1,3 +1,6 @@
+⬅️ [Zurück zur Artikelliste](https://github.com/Aqua75/ProjectUSD/blob/main/Articles/README.de.md#projectusd--fachartikel--%C3%B6konomische-analysen)
+
+---
 # ProjectUSD – und das Geheimnis der Kaufkraft  
 **Wie PulseChain lernt, eigenen Wert zu erzeugen und zu erhalten**
 
@@ -174,3 +177,7 @@ Wichtig ist nicht, was der Dollar sagt –
 sondern **was die Ökonomie leisten kann**.
 
 So verwandelt ProjectUSD PulseChain von einem Markt in eine **vollwertige Ökonomie**, die fremde Kaufkraft anzieht, bindet und in dauerhafte wirtschaftliche Energie verwandelt.
+
+---
+
+⬅️ [Zurück zur Artikelliste](https://github.com/Aqua75/ProjectUSD/blob/main/Articles/README.de.md#projectusd--fachartikel--%C3%B6konomische-analysen)
