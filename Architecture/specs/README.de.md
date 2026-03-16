@@ -18,20 +18,23 @@ Die SPECS gliedern sich in die folgenden Bereiche:
 
 ### **Core Module (unveränderlich nach Freeze)**
 
-- **vaultengine-spec.de.md / .en.md**  
-  Logik der Vaults, Schulden, Collateral, CR-Berechnung, atomare Zustandsänderungen.
+- vaultengine-spec.de.md / .en.md  
+  Logik der Vaults, Schulden, Collateral, CR-Berechnung und atomare Zustandsänderungen.
 
-- **controller-spec.de.md / .en.md**  
-  Algorithmus für Systemgleichgewichtspreis R und r-Epoch Logik.
+- R-spec.de.md / .en.md  
+  Definition des internen Referenzpreises R des Systems, der von Controller und Redemption verwendet wird.
 
-- **oracle-spec.de.md / .en.md**  
-  Medianizer, Redundanz, Block-Delay, Deviation Limits.
+- controller-spec.de.md / .en.md  
+  Kontrollalgorithmus für die Systemrate r basierend auf der Abweichung zwischen Marktpreis P und internem Referenzpreis R.
 
-- **liquidation-redemption-spec.de.md / .en.md**  
-  Liquidation, Redemption, Invarianten, Sicherheit, atomare Abläufe.
+- oracle-spec.de.md / .en.md  
+  Marktpreisfeed P, Medianizer-Logik, Redundanz und Sicherheitslimits.
 
-- **stabilitypool-spec.de.md / .en.md**  
-  Mechanismus des StabilityPools, Absorption von Systemschulden, Verteilung des Collaterals.
+- liquidation-redemption-spec.de.md / .en.md  
+  Liquidations- und Redemption-Abläufe, Vault-Auswahlregeln und Sicherheitsinvarianten.
+
+- stabilitypool-spec.de.md / .en.md  
+  Mechanik des StabilityPools, Absorption von Schulden und Verteilung von Collateral.
 
 ### **Security & Freeze**
 
@@ -61,15 +64,16 @@ Die SPECS gliedern sich in die folgenden Bereiche:
 
 ## 🗂️ Lesereihenfolge (Empfehlung für neue Entwickler)
 
-1. **vaultengine-spec**  
-2. **controller-spec**  
-3. **oracle-spec**  
-4. **liquidation-redemption-spec**  
-5. **stabilitypool-spec**  
-6. **security-spec**  
-7. **governance-freeze-spec** → dann **freeze-checklist**  
-8. **incident-runbook**  
-9. **kpi-subgraph-spec**
+1. **vaultengine-spec**
+2. **R-spec**
+3. **controller-spec**  
+4. **oracle-spec**  
+5. **liquidation-redemption-spec**  
+6. **stabilitypool-spec**  
+7. **security-spec**  
+8. **governance-freeze-spec** → dann **freeze-checklist**  
+9. **incident-runbook**  
+10. **kpi-subgraph-spec**
 
 Diese Reihenfolge erläutert zuerst die ökonomische Basis (Vaults),  
 dann das Steuerungssystem (Controller, Oracle),  
@@ -83,10 +87,11 @@ und abschließend Monitoring & Diagnostik.
 Die SPECS unterscheiden zwischen:
 
 ### **Core (nach Freeze unveränderlich)**
-- VaultEngine  
-- Liquidation & Redemption  
+- VaultEngine
+- R
 - Controller  
-- Oracle  
+- Oracle
+- Liquidation & Redemption  
 - StabilityPool  
 
 ### **Periphery (änderbar via Governance)**
@@ -99,11 +104,11 @@ Die SPECS unterscheiden zwischen:
 ## 📘 Whitepaper-Bezug
 
 Alle SPECS entsprechen den Konzepten aus dem  
-**ProjectUSD Whitepaper V2.1**  
+**ProjectUSD Whitepaper V2.2**  
 (Architektur, Invarianten, Freeze-Modell, Systemgleichgewichtspreis R).
 
 ---
 
 ## 🪙 Lizenz
 CC BY-NC-SA 4.0  
-© 2025 Aqua75 / ProjectUSD
+© 2026 Aqua75 / ProjectUSD
