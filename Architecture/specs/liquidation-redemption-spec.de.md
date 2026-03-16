@@ -172,7 +172,7 @@ Redemption ermöglicht es, ProjectUSD Coin jederzeit gegen PLS einzutauschen
 
 Dies schafft einen absoluten Mindestwert für ProjectUSD und stabilisiert den Peg.
 
-PLS_out = ProjectUSD × R
+PLS_out = ProjectUSD_redeemed × R
 
 R = Systemgleichgewichtspreis aus Controller-SPEC.
 
@@ -229,6 +229,9 @@ Dies stellt sicher:
 - fairen Ausgleich  
 - keine Überbelastung einzelner Nutzer  
 - natürliche Harmonisierung der Collateralstruktur  
+
+Ein Vault kann durch Redemption vollständig reduziert werden.
+Wenn die Schuld eines Vaults auf Null fällt, wird der Vault geschlossen.
 
 ---
 
