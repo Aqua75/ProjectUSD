@@ -1,3 +1,6 @@
+⬅️ [Zurück zur Artikelliste](https://github.com/Aqua75/ProjectUSD/blob/main/Articles/README.de.md#projectusd--fachartikel--%C3%B6konomische-analysen)
+
+---
 # Wie Investoren von ProjectUSD profitieren – Technische Kurzzusammenfassung
 
 ProjectUSD ist ein vollständig algorithmisches Geldsystem auf PulseChain. Es erzeugt Preisstabilität, indem es Marktpreisabweichungen über mathematische Rückkopplung ausgleicht. Für Investoren ergeben sich daraus zwei unabhängige, aber miteinander verflochtene Ertragsquellen: systembasierte Cashflows aus der Geldmechanik sowie Wertsteigerungseffekte des hinterlegten Collaterals (PLS). Dieser Artikel fasst die technischen Grundlagen der Investorenvorteile kompakt zusammen.
@@ -86,3 +89,7 @@ ProjectUSD bietet Investoren zwei unabhängige und technisch begründete Ertrags
    – Angebotsverknappung, erhöhte Nachfrage, Kapitalbindung.
 
 Damit bildet ProjectUSD eine ökonomische Struktur, die gleichzeitig Stabilität und Ertragskraft liefert und als fundamentales Monetärsystem innerhalb von PulseChain fungieren kann.
+
+---
+
+⬅️ [Zurück zur Artikelliste](https://github.com/Aqua75/ProjectUSD/blob/main/Articles/README.de.md#projectusd--fachartikel--%C3%B6konomische-analysen)
